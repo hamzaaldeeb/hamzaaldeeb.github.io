@@ -809,7 +809,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         ['التفاصيل',data.get('details')]
       ];
       var lines=fields.filter(function(item){return item[1] && String(item[1]).trim() && item[1]!==' م²';}).map(function(item){return item[0]+': '+String(item[1]).trim();});
-      var message='السلام عليكم، أرغب في الاستفسار عن خدمة هندسية.\\n'+lines.join('\\n')+'\\nبرجاء التواصل معي لمناقشة التفاصيل.';
+      var message='السلام عليكم، أرغب في الاستفسار عن خدمة هندسية.\n'+lines.join('\n')+'\nبرجاء التواصل معي لمناقشة التفاصيل.';
       window.open('https://wa.me/966561565066?text='+encodeURIComponent(message),'_blank','noopener');
     });
   }
