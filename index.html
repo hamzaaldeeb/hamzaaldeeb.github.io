@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>حمزة أبو الديب | Hamza Al Deeb – مهندس إنشائي | Structural Design Engineer – Makkah</title>
-<meta name="description" content="حمزة أبو الديب (Hamza Al Deeb) حمزة أبو الديب، مهندس تصميم إنشائي في مكة المكرمة، يعرض ملفه المهني وخبراته ومشروعاته للتواصل بشأن فرص العمل والتعاون في التصميم الإنشائي بالسعودية. Structural Design Engineer profile, experience and projects.">
+<meta name="description" content="الموقع المهني للمهندس حمزة أبو الديب، مهندس تصميم إنشائي في مكة المكرمة والسعودية. استعرض الخبرات والمشروعات وخدمات التصميم والتحليل الإنشائي للمباني الخرسانية والتواصل لطلبات التصميم والتعاون الهندسي. Structural Design Engineer in Makkah, Saudi Arabia.">
 <meta name="keywords" content="حمزة أبو الديب, حمزة أبو الديب مهندس إنشائي, حمزة الديب, حمزة الديب مهندس إنشائي, Hamza Al Deeb, Hamza El Deeb, Structural Design Engineer, Makkah, ETABS, SAFE, SAP2000, AutoCAD, SBC, Balady, مهندس إنشائي مكة">
 <meta name="author" content="Hamza Al Deeb">
 <meta name="robots" content="index, follow">
@@ -15,6 +15,8 @@
 <meta property="og:title" content="حمزة أبو الديب | Hamza Al Deeb – Structural Design Engineer">
 <meta property="og:description" content="مهندس إنشائي في مكة المكرمة – مباني خرسانية مسلحة، SBC وACI وECP، ETABS وSAFE وAutoCAD.">
 <meta property="og:url" content="https://hamzaaldeeb.github.io/">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:site_name" content="Hamza Al Deeb | الديب للتصميم الإنشائي">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="حمزة أبو الديب | Hamza Al Deeb – Structural Design Engineer">
@@ -183,6 +185,14 @@ ul.tl li ul{list-style:disc}
 .project-visual-mark,.project-visual-caption{z-index:1}
 .project-visual.has-image::before,.project-visual.has-image::after{display:none}
 .project-visual.has-image .project-visual-mark,.project-visual.has-image .project-visual-caption{display:none}
+.project-visual.has-image{cursor:zoom-in}
+.project-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(3,8,18,.94);backdrop-filter:blur(7px)}
+.project-lightbox.open{display:flex}
+.project-lightbox img{display:block;max-width:min(1100px,94vw);max-height:82vh;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 18px 60px rgba(0,0,0,.5)}
+.project-lightbox-close{position:absolute;top:16px;inset-inline-end:18px;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--ink);font-size:1.8rem;cursor:pointer}
+.project-lightbox-caption{position:absolute;bottom:14px;inset-inline:55px;text-align:center;color:var(--ink);font-size:.9rem}
+@media(max-width:560px){.project-lightbox{padding:12px}.project-lightbox img{max-width:96vw;max-height:78vh}.project-lightbox-caption{font-size:.78rem;bottom:10px}}
+
 .project-visual::before,.project-visual::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.25;background-image:linear-gradient(rgba(245,165,36,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(245,165,36,.22) 1px,transparent 1px);background-size:24px 24px}
 .project-visual::after{inset:18px;border:1px dashed rgba(245,165,36,.55);background:none}
 .project-visual-mark{font-size:3.2rem;font-weight:800;letter-spacing:5px;color:rgba(245,165,36,.24);text-shadow:0 4px 24px rgba(0,0,0,.2)}
@@ -926,8 +936,45 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     });
   }
 
+
+  // Accessible full-screen viewer for real project photos when uploaded.
+  var projectLightbox=document.createElement('div');
+  projectLightbox.className='project-lightbox';
+  projectLightbox.setAttribute('role','dialog');
+  projectLightbox.setAttribute('aria-modal','true');
+  projectLightbox.setAttribute('aria-label','معاينة صورة المشروع');
+  projectLightbox.innerHTML='<button class="project-lightbox-close" type="button" aria-label="إغلاق الصورة">×</button><img alt=""><div class="project-lightbox-caption"></div>';
+  document.body.appendChild(projectLightbox);
+  var lightboxImage=projectLightbox.querySelector('img');
+  var lightboxCaption=projectLightbox.querySelector('.project-lightbox-caption');
+  var lightboxClose=projectLightbox.querySelector('.project-lightbox-close');
+  var lastProjectTrigger=null;
+  function closeProjectLightbox(){
+    projectLightbox.classList.remove('open');
+    lightboxImage.removeAttribute('src');
+    if(lastProjectTrigger) lastProjectTrigger.focus();
+  }
+  document.querySelectorAll('.project-visual').forEach(function(slot){
+    slot.addEventListener('click',function(){
+      var image=slot.querySelector('.project-image');
+      if(!image || image.hidden || !image.complete || !image.naturalWidth) return;
+      lastProjectTrigger=slot;
+      lightboxImage.src=image.currentSrc || image.src;
+      lightboxImage.alt=image.alt || 'صورة مشروع';
+      var title=slot.parentElement.querySelector('.project-body h3');
+      lightboxCaption.textContent=title ? title.textContent.trim() : image.alt;
+      projectLightbox.classList.add('open');
+      lightboxClose.focus();
+    });
+  });
+  lightboxClose.addEventListener('click',closeProjectLightbox);
+  projectLightbox.addEventListener('click',function(event){
+    if(event.target===projectLightbox) closeProjectLightbox();
+  });
+
   document.addEventListener('keydown',function(event){
-    if(event.key==='Escape') closeServiceModal();
+    if(event.key==='Escape'){ closeServiceModal(); if(projectLightbox.classList.contains('open')) closeProjectLightbox(); }
+    if(event.key==='Tab' && projectLightbox.classList.contains('open')){ event.preventDefault(); lightboxClose.focus(); }
   });
 
 
