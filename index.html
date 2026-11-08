@@ -16,7 +16,9 @@
 <meta property="og:description" content="مهندس إنشائي في مكة المكرمة – مباني خرسانية مسلحة، SBC وACI وECP، ETABS وSAFE وAutoCAD.">
 <meta property="og:url" content="https://hamzaaldeeb.github.io/">
 <meta property="og:image" content="https://hamzaaldeeb.github.io/images/hamza.jpg">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="حمزة أبو الديب | Hamza Al Deeb – Structural Design Engineer">
+<meta name="twitter:description" content="مهندس تصميم إنشائي في مكة المكرمة. تصميم وتحليل المباني الخرسانية المسلحة وفق SBC وACI وECP.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,6 +43,8 @@
   --acc:#f5a524;--acc2:#ffcc66;--line:#22305a;--radius:14px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+.skip-link{position:absolute;top:-60px;inset-inline-start:12px;z-index:100;background:var(--acc);color:#111;padding:8px 14px;border-radius:8px;font-weight:700}
+.skip-link:focus{top:10px}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
 body{background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif;line-height:1.85;-webkit-font-smoothing:antialiased}
 body[data-lang="ar"] .en{display:none!important}
@@ -58,7 +62,9 @@ nav a{color:var(--mute);text-decoration:none;padding:4px 10px;border-radius:8px;
 nav a:hover{color:var(--ink);background:var(--card)}
 button.lang{background:transparent;color:var(--acc);border:1px solid var(--acc);padding:4px 14px;border-radius:20px;cursor:pointer;font-size:.88rem;font-family:inherit}
 button.lang:hover{background:var(--acc);color:#111}
-@media(max-width:820px){nav{display:none}}
+.menu-toggle{display:none;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:6px 11px;font:inherit;cursor:pointer}
+.menu-toggle:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--acc2);outline-offset:3px}
+@media(max-width:820px){header.top .wrap{height:auto;min-height:60px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}.menu-toggle{display:inline-flex;align-items:center;gap:6px;margin-inline-start:auto}nav{display:none;order:3;width:100%;flex-direction:column;gap:4px;padding:8px 0 4px}nav.open{display:flex}nav a{padding:9px 12px}.lang{order:2}}
 
 /* hero */
 .hero{background:radial-gradient(1000px 420px at 80% -10%,#1b2b5a 0%,transparent 60%),var(--bg);padding:64px 0 56px}
@@ -145,11 +151,13 @@ footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;borde
 </style>
 </head>
 <body data-lang="ar">
+<a class="skip-link" href="#main-content"><span class="ar">تخطّي إلى المحتوى</span><span class="en">Skip to content</span></a>
 
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top"><span class="ar">حمزة <b>أبو الديب</b></span><span class="en">Hamza <b>Al Deeb</b></span></a>
-    <nav>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-controls="siteNav" aria-expanded="false"><span aria-hidden="true">☰</span><span class="ar">القائمة</span><span class="en">Menu</span></button>
+    <nav id="siteNav">
       <a href="#about"><span class="ar">نبذة</span><span class="en">About</span></a>
       <a href="#work"><span class="ar">الخبرة</span><span class="en">Experience</span></a>
       <a href="#projects"><span class="ar">المشاريع</span><span class="en">Projects</span></a>
@@ -163,7 +171,7 @@ footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;borde
   </div>
 </header>
 
-<main id="top">
+<main id="top" tabindex="-1">
 
 <div class="hero">
   <div class="wrap">
@@ -199,6 +207,18 @@ footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;borde
     </div>
   </div>
 </div>
+
+<section id="services" class="alt">
+  <div class="wrap">
+    <h2><span class="ar">الخدمات الهندسية</span><span class="en">Engineering Services</span></h2>
+    <div class="grid">
+      <article class="card"><h3><span class="ar">التحليل والتصميم الإنشائي</span><span class="en">Structural Analysis &amp; Design</span></h3><p class="ar">نمذجة وتحليل وتصميم المباني الخرسانية المسلحة ومراجعة العناصر والأنظمة الإنشائية.</p><p class="en">Modeling, analysis and design of reinforced-concrete buildings, with structural system and member checks.</p></article>
+      <article class="card"><h3><span class="ar">الأساسات والبدرومات</span><span class="en">Foundations &amp; Basements</span></h3><p class="ar">تصميم القواعد واللبشات والحوائط الساندة والبدرومات والخزانات وحمامات السباحة.</p><p class="en">Design of footings, rafts, retaining walls, basements, water tanks and swimming pools.</p></article>
+      <article class="card"><h3><span class="ar">اللوحات والمذكرات الحسابية</span><span class="en">Drawings &amp; Calculation Reports</span></h3><p class="ar">إعداد اللوحات الإنشائية والمذكرات الحسابية وتنسيق المخرجات الفنية.</p><p class="en">Preparation of structural drawings, calculation reports and coordinated technical deliverables.</p></article>
+      <article class="card"><h3><span class="ar">المراجعة الفنية وحصر الكميات</span><span class="en">Technical Review &amp; Quantity Takeoff</span></h3><p class="ar">مراجعة النماذج والنتائج والتفاصيل، وإعداد حصر كميات الخرسانة وحديد التسليح.</p><p class="en">Review of models, results and detailing, plus concrete and reinforcement quantity takeoff.</p></article>
+    </div>
+  </div>
+</section>
 
 <section id="about">
   <div class="wrap">
@@ -535,6 +555,17 @@ var WORKS = [
   var s='ar';try{s=localStorage.getItem('lang')||'ar'}catch(e){}
   set(s);
   btn.addEventListener('click',function(){set(b.getAttribute('data-lang')==='ar'?'en':'ar')});
+  var menuBtn=document.getElementById('menuToggle'),nav=document.getElementById('siteNav');
+  menuBtn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded',String(open));
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.closest('a')){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}
+  });
+  window.addEventListener('resize',function(){
+    if(window.innerWidth>820){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}
+  });
 })();
 </script>
 </body>
