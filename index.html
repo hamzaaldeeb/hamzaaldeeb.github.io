@@ -145,9 +145,9 @@ ul.tl li ul{list-style:disc}
 .service-dialog h2{margin:0 0 8px}
 .service-dialog p{color:var(--mute);margin:0}
 .service-close{flex:0 0 auto;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.35rem;cursor:pointer}
-.service-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.service-option{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:58px;padding:13px 15px;text-align:start;border:1px solid var(--line);border-radius:11px;background:var(--card);color:var(--ink);font:inherit;font-weight:600;cursor:pointer;transition:.15s}
-.service-option:hover{border-color:var(--acc);background:#1a294b}
+.service-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.service-options-visible{margin-top:22px}
+.service-option{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:58px;padding:13px 15px;text-align:start;text-decoration:none;border:1px solid var(--line);border-radius:11px;background:var(--card);color:var(--ink);font:inherit;font-weight:600;cursor:pointer;transition:.15s}
+.service-option:hover{border-color:var(--acc);background:#1a294b}.service-option:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 .service-option span:last-child{color:var(--acc);font-size:1.2rem}
 .service-dialog-note{margin-top:16px!important;font-size:.85rem}
 @media(max-width:560px){.service-dialog{padding:18px}.service-options{grid-template-columns:1fr}.hero{padding-top:42px}.avatar{width:210px;height:210px}}
@@ -205,7 +205,7 @@ footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;borde
         <a class="btn primary" href="mailto:eng2231110@gmail.com">✉ <span class="ar">راسلني</span><span class="en">Email me</span></a>
         <a class="btn" href="https://wa.me/966561565066" target="_blank" rel="noopener">💬 <span class="ar">واتساب</span><span class="en">WhatsApp</span></a>
         <a class="btn" href="https://drive.google.com/file/d/1gLiRjLgWxEJ61EYdB0jg1tDcft9mYwCz/view?usp=drivesdk" target="_blank" rel="noopener">⬇ <span class="ar">السيرة الذاتية</span><span class="en">Download CV</span></a>
-        <button class="btn primary" type="button" data-service-picker aria-haspopup="dialog">📐 <span class="ar">اطلب خدمة هندسية</span><span class="en">Request a Service</span></button>
+        <a class="btn primary" href="#service-options">📐 <span class="ar">اطلب خدمة هندسية</span><span class="en">Request a Service</span></a>
       </div>
     </div>
   </div>
@@ -282,7 +282,17 @@ footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;borde
     </div>
     <div class="services-cta">
       <div><strong><span class="ar">عندك مشروع أو محتاج مراجعة إنشائية؟</span><span class="en">Have a project or need a structural review?</span></strong><p class="ar">ابعت تفاصيل المشروع والرسومات المتاحة لتحديد نطاق العمل والمخرجات المطلوبة.</p><p class="en">Share your project details and available drawings to define the scope and required deliverables.</p></div>
-      <button class="btn primary" type="button" data-service-picker aria-haspopup="dialog"><span class="ar">اختار الخدمة المطلوبة</span><span class="en">Choose a Service</span> ↗</button>
+      <a class="btn primary" href="#service-options"><span class="ar">اختار الخدمة المطلوبة</span><span class="en">Choose a Service</span> ↗</a>
+    </div>
+
+    <div id="service-options" class="service-options service-options-visible" aria-label="اختيار الخدمة">
+      <a class="service-option" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%3A%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9.%0A%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D8%B7%D9%84%D8%A8%3A%20%0A" target="_blank" rel="noopener"><span class="ar">استشارة هندسية</span><span class="en">Engineering consultation</span><span aria-hidden="true">↗</span></a>
+      <a class="service-option" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%3A%20%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1%20%D8%B1%D8%AE%D8%B5%D8%A9%20%D8%A8%D9%86%D8%A7%D8%A1.%0A%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D8%B7%D9%84%D8%A8%3A%20%0A" target="_blank" rel="noopener"><span class="ar">إصدار رخصة بناء</span><span class="en">Building permit issuance</span><span aria-hidden="true">↗</span></a>
+      <a class="service-option" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%3A%20%D8%AA%D8%B9%D8%AF%D9%8A%D9%84%20%D9%88%D8%A5%D8%B6%D8%A7%D9%81%D8%A9%20%D9%85%D9%83%D9%88%D9%86%D8%A7%D8%AA%20%D8%A8%D9%86%D8%A7%D8%A1.%0A%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D8%B7%D9%84%D8%A8%3A%20%0A" target="_blank" rel="noopener"><span class="ar">تعديل وإضافة مكونات بناء</span><span class="en">Building modifications and additions</span><span aria-hidden="true">↗</span></a>
+      <a class="service-option" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%3A%20%D8%B4%D9%87%D8%A7%D8%AF%D8%A9%20%D8%A5%D8%B4%D8%BA%D8%A7%D9%84.%0A%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D8%B7%D9%84%D8%A8%3A%20%0A" target="_blank" rel="noopener"><span class="ar">شهادة إشغال</span><span class="en">Occupancy certificate</span><span aria-hidden="true">↗</span></a>
+      <a class="service-option" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%3A%20%D9%85%D8%AE%D8%B7%D8%B7%D8%A7%D8%AA%20%D9%85%D8%B9%D9%85%D8%A7%D8%B1%D9%8A%D8%A9.%0A%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D8%B7%D9%84%D8%A8%3A%20%0A" target="_blank" rel="noopener"><span class="ar">مخططات معمارية</span><span class="en">Architectural drawings</span><span aria-hidden="true">↗</span></a>
+      <a class="service-option" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%3A%20%D9%85%D8%AE%D8%B7%D8%B7%D8%A7%D8%AA%20%D8%A5%D9%86%D8%B4%D8%A7%D8%A6%D9%8A%D8%A9.%0A%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D8%B7%D9%84%D8%A8%3A%20%0A" target="_blank" rel="noopener"><span class="ar">مخططات إنشائية</span><span class="en">Structural drawings</span><span aria-hidden="true">↗</span></a>
+      <a class="service-option" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%3A%20%D8%A5%D8%B4%D8%B1%D8%A7%D9%81%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0.%0A%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%20%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D8%B7%D9%84%D8%A8%3A%20%0A" target="_blank" rel="noopener"><span class="ar">إشراف على التنفيذ</span><span class="en">Construction supervision</span><span aria-hidden="true">↗</span></a>
     </div>
     <p class="service-note ar">يتم تحديد نطاق الخدمة والمخرجات والمدة بعد مراجعة بيانات المشروع والاتفاق المسبق. تخضع جميع التصميمات والمراجعات للكود المعتمد ومتطلبات المشروع.</p>
     <p class="service-note en">Scope, deliverables and timeline are confirmed after reviewing the project information and agreeing the engagement. All design and review work is subject to the applicable code and project requirements.</p>
@@ -516,28 +526,6 @@ footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;borde
 </section>
 
 
-<div class="service-modal" id="serviceModal" aria-hidden="true">
-  <div class="service-dialog" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle" aria-describedby="serviceModalDescription">
-    <div class="service-dialog-head">
-      <div>
-        <h2 id="serviceModalTitle"><span class="ar">اختار الخدمة المطلوبة</span><span class="en">Choose the service you need</span></h2>
-        <p id="serviceModalDescription"><span class="ar">اضغط على الخدمة، وهتفتح محادثة واتساب برسالة جاهزة لتوضيح طلبك.</span><span class="en">Select a service to open WhatsApp with a prepared message about your request.</span></p>
-      </div>
-      <button class="service-close" type="button" id="serviceModalClose" aria-label="Close">×</button>
-    </div>
-    <div class="service-options">
-      <button class="service-option" type="button" data-service-ar="استشارة هندسية" data-service-en="Engineering consultation"><span class="ar">استشارة هندسية</span><span class="en">Engineering consultation</span><span aria-hidden="true">↗</span></button>
-      <button class="service-option" type="button" data-service-ar="إصدار رخصة بناء" data-service-en="Building permit issuance"><span class="ar">إصدار رخصة بناء</span><span class="en">Building permit issuance</span><span aria-hidden="true">↗</span></button>
-      <button class="service-option" type="button" data-service-ar="تعديل وإضافة مكونات بناء" data-service-en="Building modifications and additions"><span class="ar">تعديل وإضافة مكونات بناء</span><span class="en">Building modifications and additions</span><span aria-hidden="true">↗</span></button>
-      <button class="service-option" type="button" data-service-ar="شهادة إشغال" data-service-en="Occupancy certificate"><span class="ar">شهادة إشغال</span><span class="en">Occupancy certificate</span><span aria-hidden="true">↗</span></button>
-      <button class="service-option" type="button" data-service-ar="مخططات معمارية" data-service-en="Architectural drawings"><span class="ar">مخططات معمارية</span><span class="en">Architectural drawings</span><span aria-hidden="true">↗</span></button>
-      <button class="service-option" type="button" data-service-ar="مخططات إنشائية" data-service-en="Structural drawings"><span class="ar">مخططات إنشائية</span><span class="en">Structural drawings</span><span aria-hidden="true">↗</span></button>
-      <button class="service-option" type="button" data-service-ar="إشراف على التنفيذ" data-service-en="Construction supervision"><span class="ar">إشراف على التنفيذ</span><span class="en">Construction supervision</span><span aria-hidden="true">↗</span></button>
-    </div>
-    <p class="service-dialog-note"><span class="ar">بعد فتح واتساب، تقدر تضيف موقع المشروع ونوعه وأي رسومات متاحة.</span><span class="en">In WhatsApp, you can add the project location, type and any available drawings.</span></p>
-  </div>
-</div>
-
 </main>
 
 <footer>
@@ -584,45 +572,7 @@ footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;borde
     }
   });
 
-  var modal=document.getElementById('serviceModal');
-  var closeButton=document.getElementById('serviceModalClose');
-  var lastTrigger=null;
-  function openModal(event){
-    lastTrigger=event.currentTarget;
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden';
-    var firstOption=modal.querySelector('.service-option');
-    if(firstOption) firstOption.focus();
-  }
-  function closeModal(){
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
-    if(lastTrigger) lastTrigger.focus();
-  }
-  document.querySelectorAll('[data-service-picker]').forEach(function(button){
-    button.addEventListener('click',openModal);
-  });
-  closeButton.addEventListener('click',closeModal);
-  modal.addEventListener('click',function(event){
-    if(event.target===modal) closeModal();
-  });
-  document.addEventListener('keydown',function(event){
-    if(event.key==='Escape'&&modal.classList.contains('open')) closeModal();
-  });
-  modal.querySelectorAll('.service-option').forEach(function(option){
-    option.addEventListener('click',function(){
-      var lang=body.getAttribute('data-lang');
-      var service=lang==='ar'?option.getAttribute('data-service-ar'):option.getAttribute('data-service-en');
-      var message=lang==='ar'
-        ?'السلام عليكم، أرغب في طلب خدمة: '+service+'.\nموقع المشروع: \nنوع المشروع: \nتفاصيل الطلب: \n'
-        :'Hello, I would like to request: '+service+'.\nProject location: \nProject type: \nRequest details: \n';
-      var url='https://wa.me/966561565066?text='+encodeURIComponent(message);
-      closeModal();
-      window.open(url,'_blank','noopener');
-    });
-  });
+
 })();
 </script>
 </body>
