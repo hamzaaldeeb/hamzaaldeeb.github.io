@@ -179,6 +179,10 @@ ul.tl li ul{list-style:disc}
 .projects-grid{align-items:stretch}
 .project-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
 .project-visual{position:relative;min-height:172px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#142344,#0d172c 55%,#26365c);border-bottom:1px solid var(--line);isolation:isolate}
+.project-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+.project-visual-mark,.project-visual-caption{z-index:1}
+.project-visual.has-image::before,.project-visual.has-image::after{display:none}
+.project-visual.has-image .project-visual-mark,.project-visual.has-image .project-visual-caption{display:none}
 .project-visual::before,.project-visual::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.25;background-image:linear-gradient(rgba(245,165,36,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(245,165,36,.22) 1px,transparent 1px);background-size:24px 24px}
 .project-visual::after{inset:18px;border:1px dashed rgba(245,165,36,.55);background:none}
 .project-visual-mark{font-size:3.2rem;font-weight:800;letter-spacing:5px;color:rgba(245,165,36,.24);text-shadow:0 4px 24px rgba(0,0,0,.2)}
@@ -492,7 +496,8 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     <p class="projects-intro en">A selection of projects I have contributed to. Drawing, model and project-detail images will be added progressively while respecting client confidentiality.</p>
     <div class="grid projects-grid">
       <article class="card project-card">
-        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 1">
+        <div class="project-visual" role="img" aria-label="صورة عمارات سكنية 10 أدوار">
+          <img class="project-image" src="images/projects/project-01.jpg" alt="عمارات سكنية 10 أدوار" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
           <span class="project-visual-mark">HD</span>
           <span class="project-visual-caption"><span class="ar">صورة المشروع 01 – ستضاف لاحقًا</span><span class="en">Project image 01 – coming soon</span></span>
         </div>
@@ -504,7 +509,8 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         </div>
       </article>
       <article class="card project-card">
-        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 2">
+        <div class="project-visual" role="img" aria-label="صورة فلل سكنية">
+          <img class="project-image" src="images/projects/project-02.jpg" alt="فلل سكنية" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
           <span class="project-visual-mark">HD</span>
           <span class="project-visual-caption"><span class="ar">صورة المشروع 02 – ستضاف لاحقًا</span><span class="en">Project image 02 – coming soon</span></span>
         </div>
@@ -516,7 +522,8 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         </div>
       </article>
       <article class="card project-card">
-        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 3">
+        <div class="project-visual" role="img" aria-label="صورة مركز ناصر الطبي">
+          <img class="project-image" src="images/projects/project-03.jpg" alt="مركز ناصر الطبي" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
           <span class="project-visual-mark">HD</span>
           <span class="project-visual-caption"><span class="ar">صورة المشروع 03 – ستضاف لاحقًا</span><span class="en">Project image 03 – coming soon</span></span>
         </div>
@@ -528,7 +535,8 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         </div>
       </article>
       <article class="card project-card">
-        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 4">
+        <div class="project-visual" role="img" aria-label="صورة إكسبو مول وEHZM مول">
+          <img class="project-image" src="images/projects/project-04.jpg" alt="إكسبو مول وEHZM مول" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
           <span class="project-visual-mark">HD</span>
           <span class="project-visual-caption"><span class="ar">صورة المشروع 04 – ستضاف لاحقًا</span><span class="en">Project image 04 – coming soon</span></span>
         </div>
@@ -540,7 +548,8 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         </div>
       </article>
       <article class="card project-card">
-        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 5">
+        <div class="project-visual" role="img" aria-label="صورة مصنع Arab Electric ومدارس">
+          <img class="project-image" src="images/projects/project-05.jpg" alt="مصنع Arab Electric ومدارس" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
           <span class="project-visual-mark">HD</span>
           <span class="project-visual-caption"><span class="ar">صورة المشروع 05 – ستضاف لاحقًا</span><span class="en">Project image 05 – coming soon</span></span>
         </div>
@@ -552,7 +561,8 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         </div>
       </article>
       <article class="card project-card">
-        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 6">
+        <div class="project-visual" role="img" aria-label="صورة مول تجاري – مدينة بدر">
+          <img class="project-image" src="images/projects/project-06.jpg" alt="مول تجاري – مدينة بدر" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
           <span class="project-visual-mark">HD</span>
           <span class="project-visual-caption"><span class="ar">صورة المشروع 06 – ستضاف لاحقًا</span><span class="en">Project image 06 – coming soon</span></span>
         </div>
@@ -564,7 +574,8 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         </div>
       </article>
       <article class="card project-card">
-        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 7">
+        <div class="project-visual" role="img" aria-label="صورة مسجد – مدينة المستقبل">
+          <img class="project-image" src="images/projects/project-07.jpg" alt="مسجد – مدينة المستقبل" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
           <span class="project-visual-mark">HD</span>
           <span class="project-visual-caption"><span class="ar">صورة المشروع 07 – ستضاف لاحقًا</span><span class="en">Project image 07 – coming soon</span></span>
         </div>
