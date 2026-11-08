@@ -101,6 +101,23 @@ p{color:#cdd8ef;max-width:780px;margin-bottom:12px}
 .card h3{font-size:1.08rem;margin-bottom:8px}
 .card p{font-size:.94rem;color:var(--mute);margin:0}
 .card .meta{color:var(--acc);font-size:.82rem;font-weight:600;margin-bottom:4px}
+.services-grid{margin-top:22px}
+.service-card{display:flex;flex-direction:column;min-height:100%}
+.service-card h3{margin-bottom:10px}
+.service-card p+p{margin-top:8px}
+.service-tags{margin-top:auto;padding-top:14px}
+.service-process{margin-top:34px;padding:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.service-process h3{margin-bottom:18px}
+.process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.process-grid>div{position:relative;padding:14px;border:1px solid var(--line);border-radius:10px}
+.process-grid b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--acc);color:#141414;margin-bottom:10px}
+.process-grid strong{display:block;margin-bottom:6px}
+.process-grid p{font-size:.88rem;color:var(--mute);margin:5px 0 0}
+.services-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:22px;padding:22px;border:1px solid var(--acc);border-radius:var(--radius);background:rgba(245,165,36,.06)}
+.services-cta strong{font-size:1.08rem}
+.services-cta p{color:var(--mute);margin:6px 0 0}
+.service-note{font-size:.82rem;color:var(--mute);margin-top:14px}
+
 .tag{display:inline-block;background:#1b2a52;color:#cfe0ff;border-radius:6px;padding:1px 10px;font-size:.82rem;margin:3px 3px;font-family:Consolas,monospace}
 .skills .tag{font-size:.93rem;padding:4px 14px;border-radius:20px;font-family:inherit}
 .skgroup{margin-bottom:18px}
@@ -212,12 +229,67 @@ footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;borde
 <section id="services" class="alt">
   <div class="wrap">
     <h2><span class="ar">الخدمات الهندسية</span><span class="en">Engineering Services</span></h2>
-    <div class="grid">
-      <article class="card"><h3><span class="ar">التحليل والتصميم الإنشائي</span><span class="en">Structural Analysis &amp; Design</span></h3><p class="ar">نمذجة وتحليل وتصميم المباني الخرسانية المسلحة ومراجعة العناصر والأنظمة الإنشائية.</p><p class="en">Modeling, analysis and design of reinforced-concrete buildings, with structural system and member checks.</p></article>
-      <article class="card"><h3><span class="ar">الأساسات والبدرومات</span><span class="en">Foundations &amp; Basements</span></h3><p class="ar">تصميم القواعد واللبشات والحوائط الساندة والبدرومات والخزانات وحمامات السباحة.</p><p class="en">Design of footings, rafts, retaining walls, basements, water tanks and swimming pools.</p></article>
-      <article class="card"><h3><span class="ar">اللوحات والمذكرات الحسابية</span><span class="en">Drawings &amp; Calculation Reports</span></h3><p class="ar">إعداد اللوحات الإنشائية والمذكرات الحسابية وتنسيق المخرجات الفنية.</p><p class="en">Preparation of structural drawings, calculation reports and coordinated technical deliverables.</p></article>
-      <article class="card"><h3><span class="ar">المراجعة الفنية وحصر الكميات</span><span class="en">Technical Review &amp; Quantity Takeoff</span></h3><p class="ar">مراجعة النماذج والنتائج والتفاصيل، وإعداد حصر كميات الخرسانة وحديد التسليح.</p><p class="en">Review of models, results and detailing, plus concrete and reinforcement quantity takeoff.</p></article>
+    <p class="ar">خدمات تصميم ومراجعة هندسية للمباني والمنشآت الخرسانية، مع مخرجات فنية منظمة تساعد المكاتب الهندسية والمطورين والملاك على اتخاذ قرارات واضحة.</p>
+    <p class="en">Structural design and engineering review services for reinforced-concrete buildings, with organized technical deliverables for engineering offices, developers and property owners.</p>
+    <div class="grid services-grid">
+      <article class="card service-card">
+        <div class="meta">01 · STRUCTURAL DESIGN</div>
+        <h3><span class="ar">التحليل والتصميم الإنشائي</span><span class="en">Structural Analysis &amp; Design</span></h3>
+        <p class="ar">نمذجة وتحليل وتصميم المباني الخرسانية المسلحة، ودراسة النظام الإنشائي وتصميم البلاطات والكمرات والأعمدة والحوائط.</p>
+        <p class="en">Modeling, analysis and design of reinforced-concrete buildings, including structural systems, slabs, beams, columns and walls.</p>
+        <div class="service-tags"><span class="tag">ETABS</span><span class="tag">SAFE</span><span class="tag">SAP2000</span></div>
+      </article>
+      <article class="card service-card">
+        <div class="meta">02 · FOUNDATIONS</div>
+        <h3><span class="ar">تصميم الأساسات والمنشآت الخاصة</span><span class="en">Foundations &amp; Special Structures</span></h3>
+        <p class="ar">تصميم القواعد المنفصلة والمشتركة واللبشات، والحوائط الساندة والبدرومات والخزانات وحمامات السباحة.</p>
+        <p class="en">Design of isolated and combined footings, rafts, retaining walls, basements, water tanks and swimming pools.</p>
+        <div class="service-tags"><span class="tag">SAFE</span><span class="tag">ACI</span><span class="tag">SBC</span></div>
+      </article>
+      <article class="card service-card">
+        <div class="meta">03 · DRAWINGS &amp; REPORTS</div>
+        <h3><span class="ar">اللوحات والمذكرات الحسابية</span><span class="en">Structural Drawings &amp; Reports</span></h3>
+        <p class="ar">إعداد وتنسيق اللوحات الإنشائية والتفاصيل التنفيذية والمذكرات الحسابية طبقًا لمتطلبات المشروع والكود المعتمد.</p>
+        <p class="en">Preparation and coordination of structural drawings, construction details and calculation reports in line with project requirements and the applicable code.</p>
+        <div class="service-tags"><span class="tag">AutoCAD</span><span class="tag">ETABS</span></div>
+      </article>
+      <article class="card service-card">
+        <div class="meta">04 · TECHNICAL REVIEW</div>
+        <h3><span class="ar">المراجعة والتدقيق الإنشائي</span><span class="en">Structural Model &amp; Design Review</span></h3>
+        <p class="ar">مراجعة النماذج والافتراضات والأحمال والتركيبات والنتائج والتسليح، ورصد الملاحظات الفنية قبل اعتماد المخرجات.</p>
+        <p class="en">Review of structural models, assumptions, loads, combinations, analysis results and reinforcement, with documented technical observations.</p>
+        <div class="service-tags"><span class="tag">ETABS</span><span class="tag">SAFE</span><span class="tag">SBC · ACI · ECP</span></div>
+      </article>
+      <article class="card service-card">
+        <div class="meta">05 · QUANTITY TAKEOFF</div>
+        <h3><span class="ar">حصر الكميات ومراجعة الحديد</span><span class="en">Quantity Takeoff &amp; Rebar Review</span></h3>
+        <p class="ar">حصر كميات الخرسانة وحديد التسليح للعناصر الإنشائية، وتنظيم جداول الكميات ومراجعة بيانات الحصر.</p>
+        <p class="en">Concrete and reinforcement quantity takeoff for structural elements, with organized quantity schedules and quantity-data checks.</p>
+        <div class="service-tags"><span class="tag">Excel</span><span class="tag">AutoCAD</span></div>
+      </article>
+      <article class="card service-card">
+        <div class="meta">06 · TECHNICAL OFFICE</div>
+        <h3><span class="ar">الدعم الفني والمكتب الفني</span><span class="en">Technical Office Support</span></h3>
+        <p class="ar">تنسيق المستندات الفنية، ومراجعة الرسومات والتفاصيل، ودعم متابعة الأعمال واستلام البنود الإنشائية بالموقع حسب نطاق التكليف.</p>
+        <p class="en">Technical documentation coordination, drawing and detail checks, and support for site follow-up and structural work inspections within the agreed scope.</p>
+        <div class="service-tags"><span class="tag">Technical Office</span><span class="tag">Site Support</span></div>
+      </article>
     </div>
+    <div class="service-process">
+      <h3><span class="ar">خطوات العمل</span><span class="en">How It Works</span></h3>
+      <div class="process-grid">
+        <div><b>1</b><strong><span class="ar">استلام البيانات</span><span class="en">Project Brief</span></strong><p class="ar">استلام الرسومات والمتطلبات والأحمال وبيانات الموقع.</p><p class="en">Receive drawings, requirements, loads and site information.</p></div>
+        <div><b>2</b><strong><span class="ar">الدراسة والتنسيق</span><span class="en">Assessment</span></strong><p class="ar">مراجعة المدخلات وتحديد نطاق العمل والكود المناسب.</p><p class="en">Review inputs and confirm scope and applicable design code.</p></div>
+        <div><b>3</b><strong><span class="ar">التصميم والمراجعة</span><span class="en">Design &amp; Checks</span></strong><p class="ar">تنفيذ الأعمال المطلوبة ومراجعة النتائج والتفاصيل.</p><p class="en">Complete the requested work and check results and details.</p></div>
+        <div><b>4</b><strong><span class="ar">تسليم المخرجات</span><span class="en">Deliverables</span></strong><p class="ar">تسليم الملفات والمخرجات المتفق عليها مع توضيح الملاحظات.</p><p class="en">Deliver agreed files and outputs with clear technical notes.</p></div>
+      </div>
+    </div>
+    <div class="services-cta">
+      <div><strong><span class="ar">عندك مشروع أو محتاج مراجعة إنشائية؟</span><span class="en">Have a project or need a structural review?</span></strong><p class="ar">ابعت تفاصيل المشروع والرسومات المتاحة لتحديد نطاق العمل والمخرجات المطلوبة.</p><p class="en">Share your project details and available drawings to define the scope and required deliverables.</p></div>
+      <a class="btn primary" href="https://wa.me/966561565066?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%AD%D9%85%D8%B2%D8%A9%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%20%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9." target="_blank" rel="noopener"><span class="ar">تواصل عبر واتساب</span><span class="en">Contact on WhatsApp</span> ↗</a>
+    </div>
+    <p class="service-note ar">يتم تحديد نطاق الخدمة والمخرجات والمدة بعد مراجعة بيانات المشروع والاتفاق المسبق. تخضع جميع التصميمات والمراجعات للكود المعتمد ومتطلبات المشروع.</p>
+    <p class="service-note en">Scope, deliverables and timeline are confirmed after reviewing the project information and agreeing the engagement. All design and review work is subject to the applicable code and project requirements.</p>
   </div>
 </section>
 
