@@ -526,6 +526,27 @@ footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;borde
 </section>
 
 
+
+<div class="service-modal" id="serviceModal" aria-hidden="true">
+  <div class="service-dialog" role="dialog" aria-modal="true" aria-labelledby="serviceDialogTitle">
+    <div class="service-dialog-head">
+      <div><h2 id="serviceDialogTitle"><span class="ar">اختار الخدمة المطلوبة</span><span class="en">Choose a service</span></h2>
+      <p><span class="ar">اختار الخدمة، وهيتفتح واتساب برسالة خاصة بيها.</span><span class="en">Choose a service to open WhatsApp with a message about it.</span></p></div>
+      <button class="service-close" id="serviceClose" type="button" aria-label="إغلاق">×</button>
+    </div>
+    <div class="service-options" id="service-options">
+      <a class="service-option" data-service="استشارة هندسية" href="#"><span>استشارة هندسية</span><span>←</span></a>
+      <a class="service-option" data-service="إصدار رخصة بناء" href="#"><span>إصدار رخصة بناء</span><span>←</span></a>
+      <a class="service-option" data-service="تعديل وإضافة مكونات بناء" href="#"><span>تعديل وإضافة مكونات بناء</span><span>←</span></a>
+      <a class="service-option" data-service="شهادة إشغال" href="#"><span>شهادة إشغال</span><span>←</span></a>
+      <a class="service-option" data-service="مخططات معمارية" href="#"><span>مخططات معمارية</span><span>←</span></a>
+      <a class="service-option" data-service="مخططات إنشائية" href="#"><span>مخططات إنشائية</span><span>←</span></a>
+      <a class="service-option" data-service="إشراف على التنفيذ" href="#"><span>إشراف على التنفيذ</span><span>←</span></a>
+    </div>
+    <p class="service-dialog-note"><span class="ar">بعد اختيار الخدمة، تقدر تعدل الرسالة قبل إرسالها.</span><span class="en">You can edit the message before sending it.</span></p>
+  </div>
+</div>
+
 </main>
 
 <footer>
@@ -570,6 +591,45 @@ footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;borde
       nav.classList.remove('open');
       menuButton.setAttribute('aria-expanded','false');
     }
+  });
+
+
+  // Engineering service chooser: open the selector first, then WhatsApp only after a service is selected.
+  var serviceModal=document.getElementById('serviceModal');
+  var serviceClose=document.getElementById('serviceClose');
+  var serviceTrigger=document.querySelector('a[href="#service-options"]');
+  function closeServiceModal(){
+    if(!serviceModal) return;
+    serviceModal.classList.remove('open');
+    serviceModal.setAttribute('aria-hidden','true');
+  }
+  if(serviceTrigger && serviceModal){
+    serviceTrigger.addEventListener('click',function(event){
+      event.preventDefault();
+      serviceModal.classList.add('open');
+      serviceModal.setAttribute('aria-hidden','false');
+      var first=serviceModal.querySelector('.service-option');
+      if(first) first.focus();
+    });
+  }
+  if(serviceClose) serviceClose.addEventListener('click',closeServiceModal);
+  if(serviceModal){
+    serviceModal.addEventListener('click',function(event){
+      if(event.target===serviceModal) closeServiceModal();
+    });
+    serviceModal.querySelectorAll('.service-option').forEach(function(link){
+      link.addEventListener('click',function(event){
+        event.preventDefault();
+        var service=link.getAttribute('data-service');
+        var message='السلام عليكم، أرغب في طلب خدمة: '+service+'. برجاء التواصل معي لمعرفة التفاصيل.';
+        var phone=body.getAttribute('data-lang')==='en'?'966561565066':'966561565066';
+        window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(message),'_blank','noopener');
+        closeServiceModal();
+      });
+    });
+  }
+  document.addEventListener('keydown',function(event){
+    if(event.key==='Escape') closeServiceModal();
   });
 
 
