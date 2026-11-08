@@ -744,6 +744,24 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     });
   });
 
+  // Expand collapsed sections automatically when a visitor follows an in-page link.
+  document.addEventListener('click',function(event){
+    var link=event.target.closest('a[href^="#"]');
+    if(!link) return;
+    var id=link.getAttribute('href').slice(1);
+    if(!id) return;
+    var target=document.getElementById(id);
+    var section=target && (target.matches('section')?target:target.closest('section'));
+    if(!section) return;
+    var panel=section.querySelector(':scope > .wrap > .section-content');
+    var toggle=section.querySelector(':scope > .wrap > h2 > .section-toggle');
+    if(panel && toggle && panel.hidden){
+      panel.hidden=false;
+      toggle.setAttribute('aria-expanded','true');
+      toggle.setAttribute('aria-label','إغلاق القسم');
+    }
+  });
+
   // Engineering service chooser: open the selector first, then WhatsApp only after a service is selected.
   var serviceModal=document.getElementById('serviceModal');
   var serviceClose=document.getElementById('serviceClose');
