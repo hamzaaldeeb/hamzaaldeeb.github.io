@@ -171,6 +171,15 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 .section-toggle[aria-expanded="true"]{transform:rotate(180deg)}
 .section-content{padding-top:18px}
 
+
+.service-options{display:grid;grid-template-columns:1fr;gap:9px}
+.service-option{width:100%;font-family:inherit}
+.service-option-title{flex:1}
+.permit-details{margin:-2px 0 7px;padding:14px 18px;background:#0d172c;border:1px solid var(--line);border-radius:10px;color:var(--mute)}
+.permit-details p{margin:0 0 7px;color:var(--acc2)}
+.permit-details ul{padding-inline-start:22px;columns:2}
+.permit-request{margin-top:12px;padding:9px 15px;border:0;border-radius:8px;background:var(--acc);color:#111;font:inherit;font-weight:700;cursor:pointer}
+
 </style>
 </head>
 <body data-lang="ar">
@@ -545,20 +554,28 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
       <button class="service-close" id="serviceClose" type="button" aria-label="إغلاق">×</button>
     </div>
     <div class="service-options" id="service-options">
-      <a class="service-option" data-service="استشارة هندسية" href="#"><span>استشارة هندسية</span><span>←</span></a>
-      <a class="service-option" data-service="إصدار رخصة بناء" href="#"><span>إصدار رخصة بناء</span><span>←</span></a>
-      <a class="service-option" data-service="تعديل وإضافة مكونات بناء" href="#"><span>تعديل وإضافة مكونات بناء</span><span>←</span></a>
-      <a class="service-option" data-service="شهادة إشغال" href="#"><span>شهادة إشغال</span><span>←</span></a>
-      <a class="service-option" data-service="مخططات معمارية" href="#"><span>مخططات معمارية</span><span>←</span></a>
-      <a class="service-option" data-service="مخططات إنشائية" href="#"><span>مخططات إنشائية</span><span>←</span></a>
-      <a class="service-option" data-service="إشراف على التنفيذ" href="#"><span>إشراف على التنفيذ</span><span>←</span></a>
-      <a class="service-option" data-service="عقد نظافة" href="#"><span class="ar">عقد نظافة</span><span class="en">Cleanliness Contract</span><span>←</span></a>
-      <a class="service-option" data-service="تقرير تربة" href="#"><span class="ar">تقرير تربة</span><span class="en">Soil Report</span><span>←</span></a>
-      <a class="service-option" data-service="كروكي مساحي" href="#"><span class="ar">كروكي مساحي</span><span class="en">Survey Sketch</span><span>←</span></a>
-      <a class="service-option" data-service="مخططات كهربائية" href="#"><span class="ar">مخططات كهربائية</span><span class="en">Electrical Drawings</span><span>←</span></a>
-      <a class="service-option" data-service="مخططات صحية" href="#"><span class="ar">مخططات صحية</span><span class="en">Plumbing Drawings</span><span>←</span></a>
-    </div>
-    <p class="service-dialog-note"><span class="ar">بعد اختيار الخدمة، تقدر تعدل الرسالة قبل إرسالها.</span><span class="en">You can edit the message before sending it.</span></p>
+      <button class="service-option service-permit" type="button" data-service="إصدار رخصة البناء">
+        <span class="service-option-title">إصدار رخصة البناء</span><span>＋</span>
+      </button>
+      <div class="permit-details" id="permitDetails" hidden>
+        <p>خدمة إصدار رخصة البناء تشمل:</p>
+        <ul>
+          <li>فكرة معمارية</li>
+          <li>تصميم إنشائي آمن واقتصادي</li>
+          <li>تقرير تربة</li>
+          <li>عقد نظافة</li>
+          <li>كروكي مساحي</li>
+          <li>مخططات ميكانيكية</li>
+          <li>مخططات كهربائية</li>
+          <li>مخططات سلامة</li>
+        </ul>
+        <button class="permit-request" type="button" data-service="إصدار رخصة البناء – باقة متكاملة تشمل فكرة معمارية وتصميم إنشائي آمن واقتصادي وتقرير تربة وعقد نظافة وكروكي مساحي ومخططات ميكانيكية وكهربائية ومخططات سلامة">اطلب إصدار رخصة البناء</button>
+      </div>
+      <button class="service-option" type="button" data-service="تصميم إنشائي"><span>تصميم إنشائي</span><span>←</span></button>
+      <button class="service-option" type="button" data-service="حصر كميات خرسانات وحديد"><span>حصر كميات خرسانات وحديد</span><span>←</span></button>
+      <button class="service-option" type="button" data-service="تصميم واجهات"><span>تصميم واجهات</span><span>←</span></button>
+      <button class="service-option" type="button" data-service="إشراف على التنفيذ"><span>إشراف على التنفيذ</span><span>←</span></button>
+    </div>    <p class="service-dialog-note"><span class="ar">بعد اختيار الخدمة، تقدر تعدل الرسالة قبل إرسالها.</span><span class="en">You can edit the message before sending it.</span></p>
   </div>
 </div>
 
@@ -609,33 +626,36 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   });
 
 
-  // Compact accordion for every main page section.
-  document.querySelectorAll('main section .wrap>h2').forEach(function(heading,index){
+  // Build compact, independently expandable section panels.
+  document.querySelectorAll('main section').forEach(function(section,index){
+    var wrap=section.querySelector(':scope > .wrap');
+    var heading=wrap && wrap.querySelector(':scope > h2');
+    if(!heading || heading.querySelector('.section-toggle')) return;
     var panel=document.createElement('div');
     panel.className='section-content';
     panel.id='section-content-'+index;
-    var next=heading.nextElementSibling;
-    while(next){
-      var following=next.nextElementSibling;
-      panel.appendChild(next);
-      next=following;
+    var node=heading.nextElementSibling;
+    while(node){
+      var following=node.nextElementSibling;
+      panel.appendChild(node);
+      node=following;
     }
-    heading.after(panel);
+    heading.insertAdjacentElement('afterend',panel);
     panel.hidden=true;
     var toggle=document.createElement('button');
     toggle.type='button';
     toggle.className='section-toggle';
     toggle.setAttribute('aria-expanded','false');
     toggle.setAttribute('aria-controls',panel.id);
-    toggle.setAttribute('aria-label',body.getAttribute('data-lang')==='en'?'Expand section':'فتح القسم');
-    toggle.innerHTML='⌄';
-    toggle.addEventListener('click',function(){
-      var expanded=toggle.getAttribute('aria-expanded')==='true';
-      toggle.setAttribute('aria-expanded',String(!expanded));
-      panel.hidden=expanded;
-      toggle.setAttribute('aria-label',expanded?'فتح القسم':'إغلاق القسم');
-    });
+    toggle.setAttribute('aria-label','فتح القسم');
+    toggle.textContent='⌄';
     heading.appendChild(toggle);
+    toggle.addEventListener('click',function(){
+      var open=toggle.getAttribute('aria-expanded')!=='true';
+      toggle.setAttribute('aria-expanded',String(open));
+      panel.hidden=!open;
+      toggle.setAttribute('aria-label',open?'إغلاق القسم':'فتح القسم');
+    });
   });
 
   // Engineering service chooser: open the selector first, then WhatsApp only after a service is selected.
@@ -661,15 +681,26 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     serviceModal.addEventListener('click',function(event){
       if(event.target===serviceModal) closeServiceModal();
     });
-    serviceModal.querySelectorAll('.service-option').forEach(function(link){
-      link.addEventListener('click',function(event){
-        event.preventDefault();
-        var service=link.getAttribute('data-service');
-        var message='السلام عليكم، أرغب في طلب خدمة: '+service+'. برجاء التواصل معي لمعرفة التفاصيل.';
-        var phone=body.getAttribute('data-lang')==='en'?'966561565066':'966561565066';
-        window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(message),'_blank','noopener');
-        closeServiceModal();
+    function sendServiceRequest(service){
+      var message='السلام عليكم، أرغب في طلب خدمة: '+service+'. برجاء التواصل معي لمعرفة التفاصيل.';
+      window.open('https://wa.me/966561565066?text='+encodeURIComponent(message),'_blank','noopener');
+      closeServiceModal();
+    }
+    serviceModal.querySelectorAll('.service-option[data-service]').forEach(function(button){
+      button.addEventListener('click',function(){
+        if(button.classList.contains('service-permit')){
+          var details=document.getElementById('permitDetails');
+          var opened=!details.hidden;
+          details.hidden=opened;
+          button.querySelector('span:last-child').textContent=opened?'＋':'−';
+          return;
+        }
+        sendServiceRequest(button.getAttribute('data-service'));
       });
+    });
+    var permitRequest=serviceModal.querySelector('.permit-request');
+    if(permitRequest) permitRequest.addEventListener('click',function(){
+      sendServiceRequest(permitRequest.getAttribute('data-service'));
     });
   }
   document.addEventListener('keydown',function(event){
