@@ -210,6 +210,29 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 .permit-details ul{padding-inline-start:22px;columns:2}
 .permit-request{margin-top:12px;padding:9px 15px;border:0;border-radius:8px;background:var(--acc);color:#111;font:inherit;font-weight:700;cursor:pointer}
 
+
+/* Accessibility and print-friendly CV */
+:focus-visible{scroll-margin-top:82px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+@media print{
+  :root{--bg:#fff;--bg2:#fff;--card:#fff;--ink:#111;--mute:#444;--acc:#8a5a00;--acc2:#8a5a00;--line:#ccc}
+  body{background:#fff!important;color:#111!important;font-size:10.5pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  header.top,.floating-whatsapp,.service-modal,.btns,.services-cta,.inquiry-panel,.section-toggle,footer{display:none!important}
+  .hero{padding:18px 0;background:#fff!important}
+  .hero .wrap{gap:20px}
+  .avatar{width:115px;height:115px;box-shadow:none;border:1px solid #ccc}
+  section{padding:14px 0!important;break-inside:avoid;border-color:#ddd}
+  section .section-content{display:block!important;padding-top:10px}
+  .section-content[hidden]{display:block!important}
+  .card,.contact-card,.service-process,.project-visual{background:#fff!important;color:#111!important;border:1px solid #ccc;box-shadow:none}
+  p,.card p,.project-body p,.contact-card small{color:#333!important}
+  a{color:#111;text-decoration:none}
+  .project-visual{min-height:70px}
+  .project-visual-mark{color:#ddd}
+  .project-visual-caption{color:#333;background:#fff;border-color:#ddd}
+  .strip{background:#fff;border-color:#ddd}
+  .hl span{color:#333}
+}
 </style>
 </head>
 <body data-lang="ar">
