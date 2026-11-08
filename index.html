@@ -296,7 +296,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         <span class="en">Structural design, 3D analysis and documentation for residential, commercial, healthcare, religious and industrial projects to SBC, ACI and ECP, supported by intermediate programming and AI skills that speed up engineering work.</span>
       </p>
       <div class="btns">
-        <a class="btn primary" href="#services">📐 <span class="ar">الخدمات الهندسية</span><span class="en">Engineering Services</span></a>
+        <a class="btn primary" href="#service-options">📐 <span class="ar">اطلب خدمة هندسية</span><span class="en">Request an Engineering Service</span></a>
         <a class="btn" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A7%D8%B7%D9%84%D8%B9%D8%AA%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D9%85%D9%84%D9%81%20%D8%A7%D9%84%D9%85%D9%87%D9%86%D9%8A%20%D9%84%D9%84%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%AD%D9%85%D8%B2%D8%A9%20%D8%A3%D8%A8%D9%88%20%D8%A7%D9%84%D8%AF%D9%8A%D8%A8%D8%8C%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D9%85%D9%86%D8%A7%D9%82%D8%B4%D8%A9%20%D9%81%D8%B1%D8%B5%D8%A9%20%D8%B9%D9%85%D9%84%20%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9." target="_blank" rel="noopener">💬 <span class="ar">تواصل بخصوص وظيفة</span><span class="en">Discuss a Job Opportunity</span></a>
         <a class="btn" href="https://drive.google.com/file/d/1gLiRjLgWxEJ61EYdB0jg1tDcft9mYwCz/view?usp=drivesdk" target="_blank" rel="noopener">⬇ <span class="ar">تحميل السيرة الذاتية</span><span class="en">Download CV</span></a>
         <a class="btn" href="#contact">📋 <span class="ar">اطلب عرض سعر</span><span class="en">Request a Quote</span></a>
@@ -851,19 +851,21 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   // Engineering service chooser: open the selector first, then WhatsApp only after a service is selected.
   var serviceModal=document.getElementById('serviceModal');
   var serviceClose=document.getElementById('serviceClose');
-  var serviceTrigger=document.querySelector('a[href="#service-options"]');
+  var serviceTriggers=document.querySelectorAll('a[href="#service-options"]');
   function closeServiceModal(){
     if(!serviceModal) return;
     serviceModal.classList.remove('open');
     serviceModal.setAttribute('aria-hidden','true');
   }
-  if(serviceTrigger && serviceModal){
-    serviceTrigger.addEventListener('click',function(event){
-      event.preventDefault();
-      serviceModal.classList.add('open');
-      serviceModal.setAttribute('aria-hidden','false');
-      var first=serviceModal.querySelector('.service-option');
-      if(first) first.focus();
+  if(serviceTriggers.length && serviceModal){
+    serviceTriggers.forEach(function(serviceTrigger){
+      serviceTrigger.addEventListener('click',function(event){
+        event.preventDefault();
+        serviceModal.classList.add('open');
+        serviceModal.setAttribute('aria-hidden','false');
+        var first=serviceModal.querySelector('.service-option');
+        if(first) first.focus();
+      });
     });
   }
   if(serviceClose) serviceClose.addEventListener('click',closeServiceModal);
