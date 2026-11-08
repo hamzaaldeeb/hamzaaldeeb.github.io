@@ -152,6 +152,22 @@ ul.tl li ul{list-style:disc}
 .service-dialog-note{margin-top:16px!important;font-size:.85rem}
 @media(max-width:560px){.service-dialog{padding:18px}.service-options{grid-template-columns:1fr}.hero{padding-top:42px}.avatar{width:210px;height:210px}}
 
+
+/* Project portfolio cards and future image slots */
+.projects-intro{margin:-8px 0 22px;color:var(--mute)}
+.projects-grid{align-items:stretch}
+.project-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.project-visual{position:relative;min-height:172px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#142344,#0d172c 55%,#26365c);border-bottom:1px solid var(--line);isolation:isolate}
+.project-visual::before,.project-visual::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.25;background-image:linear-gradient(rgba(245,165,36,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(245,165,36,.22) 1px,transparent 1px);background-size:24px 24px}
+.project-visual::after{inset:18px;border:1px dashed rgba(245,165,36,.55);background:none}
+.project-visual-mark{font-size:3.2rem;font-weight:800;letter-spacing:5px;color:rgba(245,165,36,.24);text-shadow:0 4px 24px rgba(0,0,0,.2)}
+.project-visual-caption{position:absolute;bottom:12px;inset-inline:12px;text-align:center;color:#d6e0f4;font-size:.78rem;background:rgba(8,15,29,.72);border:1px solid rgba(245,165,36,.22);border-radius:7px;padding:5px 8px}
+.project-body{padding:20px 22px;display:flex;flex-direction:column;flex:1}
+.project-body h3{margin-bottom:8px}
+.project-body p{font-size:.92rem;color:var(--mute);margin:0}
+.projects-footnote{font-size:.82rem;color:var(--mute);margin:18px 0 0}
+@media(max-width:560px){.project-visual{min-height:145px}.project-body{padding:17px}}
+ 
 /* contact */
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
 .contact-card{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;text-decoration:none;color:var(--ink);transition:.15s}
@@ -372,50 +388,96 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 <section id="projects">
   <div class="wrap">
     <h2><span class="ar">مشاريع مختارة</span><span class="en">Selected Projects</span></h2>
-    <div class="grid">
-      <div class="card">
-        <div class="meta"><span class="ar">مكتب منشآت خالدة للاستشارات الهندسية، مكة المكرمة</span><span class="en">Munshaat Khalda Engineering Consultancies Office, Makkah</span></div>
-        <h3><span class="ar">عمارات سكنية 10 أدوار</span><span class="en">10-Storey Residential Buildings</span></h3>
-        <p class="ar">مساحة البناء 1,200 م². تصميم وفق SBC بما يحقق متطلبات بلدي وشركات التأمين والتفتيش، مع التحقق من فحوصات الزلازل والرياح.</p>
-        <p class="en">1,200 m² building area; designed to SBC, meeting Balady and insurance/inspection company requirements, with seismic and wind checks verified.</p>
-      </div>
-      <div class="card">
-        <div class="meta"><span class="ar">مكتب منشآت خالدة للاستشارات الهندسية</span><span class="en">Munshaat Khalda Engineering Consultancies Office</span></div>
-        <h3><span class="ar">فلل سكنية</span><span class="en">Residential Villas</span></h3>
-        <p class="ar">تشمل فللًا بدورين بدروم وحمامات سباحة وخزانات مياه.</p>
-        <p class="en">Including villas with two basements, swimming pools and water tanks.</p>
-      </div>
-      <div class="card">
-        <div class="meta"><span class="ar">مصر – ECG</span><span class="en">Egypt – ECG</span></div>
-        <h3><span class="ar">مركز ناصر الطبي</span><span class="en">Nasser Medical Center</span></h3>
-        <p class="ar">مستشفى على قطعة 1,500 م² بدور بدروم ودور انتظار وخمسة أدوار لغرف العمليات ومناطق الفحص وغرف المرضى.</p>
-        <p class="en">Hospital on a 1,500 m² plot with a basement, a parking floor, and five floors of operating rooms, examination areas and patient rooms.</p>
-      </div>
-      <div class="card">
-        <div class="meta"><span class="ar">الإسكندرية – ECG</span><span class="en">Alexandria – ECG</span></div>
-        <h3><span class="ar">إكسبو مول وEHZM مول</span><span class="en">Expo Mall and EHZM Mall</span></h3>
-        <p class="ar">مولات واسعة المسطح بها بدرومات ومستويات انتظار.</p>
-        <p class="en">Large-footprint malls incorporating basements and parking levels.</p>
-      </div>
-      <div class="card">
-        <div class="meta"><span class="ar">ECG</span><span class="en">ECG</span></div>
-        <h3><span class="ar">مصنع Arab Electric ومدارس</span><span class="en">Arab Electric Factory and Schools</span></h3>
-        <p class="ar">منشآت صناعية وتعليمية.</p>
-        <p class="en">Industrial and educational buildings.</p>
-      </div>
-      <div class="card">
-        <div class="meta"><span class="ar">مدينة بدر، القاهرة – BK Group</span><span class="en">Badr City, Cairo – BK Group</span></div>
-        <h3><span class="ar">مول تجاري</span><span class="en">Commercial Mall</span></h3>
-        <p class="ar">مول تجاري بمساحة 10,000 م².</p>
-        <p class="en">10,000 m² commercial mall.</p>
-      </div>
-      <div class="card">
-        <div class="meta"><span class="ar">مدينة المستقبل، القاهرة – BK Group</span><span class="en">Mostakbal City, Cairo – BK Group</span></div>
-        <h3><span class="ar">مسجد</span><span class="en">Mosque</span></h3>
-        <p class="ar">التصميم الإنشائي.</p>
-        <p class="en">Structural design.</p>
-      </div>
+    <p class="projects-intro ar">نماذج من مشروعات شاركت في أعمالها الهندسية. سيتم إضافة صور اللوحات والنماذج والتفاصيل تباعًا، مع مراعاة سرية بيانات العملاء.</p>
+    <p class="projects-intro en">A selection of projects I have contributed to. Drawing, model and project-detail images will be added progressively while respecting client confidentiality.</p>
+    <div class="grid projects-grid">
+      <article class="card project-card">
+        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 1">
+          <span class="project-visual-mark">HD</span>
+          <span class="project-visual-caption"><span class="ar">صورة المشروع 01 – ستضاف لاحقًا</span><span class="en">Project image 01 – coming soon</span></span>
+        </div>
+        <div class="project-body">
+          <div class="meta"><span class="ar">مكتب منشآت خالدة للاستشارات الهندسية، مكة المكرمة</span><span class="en">Munshaat Khalda Engineering Consultancies Office, Makkah</span></div>
+          <h3><span class="ar">عمارات سكنية 10 أدوار</span><span class="en">10-Storey Residential Buildings</span></h3>
+          <p class="ar">مساحة البناء 1,200 م². تصميم وفق SBC بما يحقق متطلبات بلدي وشركات التأمين والتفتيش، مع التحقق من فحوصات الزلازل والرياح.</p>
+          <p class="en">1,200 m² building area; designed to SBC, meeting Balady and insurance/inspection company requirements, with seismic and wind checks verified.</p>
+        </div>
+      </article>
+      <article class="card project-card">
+        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 2">
+          <span class="project-visual-mark">HD</span>
+          <span class="project-visual-caption"><span class="ar">صورة المشروع 02 – ستضاف لاحقًا</span><span class="en">Project image 02 – coming soon</span></span>
+        </div>
+        <div class="project-body">
+          <div class="meta"><span class="ar">مكتب منشآت خالدة للاستشارات الهندسية</span><span class="en">Munshaat Khalda Engineering Consultancies Office</span></div>
+          <h3><span class="ar">فلل سكنية</span><span class="en">Residential Villas</span></h3>
+          <p class="ar">تشمل فللًا بدورين بدروم وحمامات سباحة وخزانات مياه.</p>
+          <p class="en">Including villas with two basements, swimming pools and water tanks.</p>
+        </div>
+      </article>
+      <article class="card project-card">
+        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 3">
+          <span class="project-visual-mark">HD</span>
+          <span class="project-visual-caption"><span class="ar">صورة المشروع 03 – ستضاف لاحقًا</span><span class="en">Project image 03 – coming soon</span></span>
+        </div>
+        <div class="project-body">
+          <div class="meta"><span class="ar">مصر – ECG</span><span class="en">Egypt – ECG</span></div>
+          <h3><span class="ar">مركز ناصر الطبي</span><span class="en">Nasser Medical Center</span></h3>
+          <p class="ar">مستشفى على قطعة 1,500 م² بدور بدروم ودور انتظار وخمسة أدوار لغرف العمليات ومناطق الفحص وغرف المرضى.</p>
+          <p class="en">Hospital on a 1,500 m² plot with a basement, a parking floor, and five floors of operating rooms, examination areas and patient rooms.</p>
+        </div>
+      </article>
+      <article class="card project-card">
+        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 4">
+          <span class="project-visual-mark">HD</span>
+          <span class="project-visual-caption"><span class="ar">صورة المشروع 04 – ستضاف لاحقًا</span><span class="en">Project image 04 – coming soon</span></span>
+        </div>
+        <div class="project-body">
+          <div class="meta"><span class="ar">الإسكندرية – ECG</span><span class="en">Alexandria – ECG</span></div>
+          <h3><span class="ar">إكسبو مول وEHZM مول</span><span class="en">Expo Mall and EHZM Mall</span></h3>
+          <p class="ar">مولات واسعة المسطح بها بدرومات ومستويات انتظار.</p>
+          <p class="en">Large-footprint malls incorporating basements and parking levels.</p>
+        </div>
+      </article>
+      <article class="card project-card">
+        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 5">
+          <span class="project-visual-mark">HD</span>
+          <span class="project-visual-caption"><span class="ar">صورة المشروع 05 – ستضاف لاحقًا</span><span class="en">Project image 05 – coming soon</span></span>
+        </div>
+        <div class="project-body">
+          <div class="meta"><span class="ar">ECG</span><span class="en">ECG</span></div>
+          <h3><span class="ar">مصنع Arab Electric ومدارس</span><span class="en">Arab Electric Factory and Schools</span></h3>
+          <p class="ar">منشآت صناعية وتعليمية.</p>
+          <p class="en">Industrial and educational buildings.</p>
+        </div>
+      </article>
+      <article class="card project-card">
+        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 6">
+          <span class="project-visual-mark">HD</span>
+          <span class="project-visual-caption"><span class="ar">صورة المشروع 06 – ستضاف لاحقًا</span><span class="en">Project image 06 – coming soon</span></span>
+        </div>
+        <div class="project-body">
+          <div class="meta"><span class="ar">مدينة بدر، القاهرة – BK Group</span><span class="en">Badr City, Cairo – BK Group</span></div>
+          <h3><span class="ar">مول تجاري</span><span class="en">Commercial Mall</span></h3>
+          <p class="ar">مول تجاري بمساحة 10,000 م².</p>
+          <p class="en">10,000 m² commercial mall.</p>
+        </div>
+      </article>
+      <article class="card project-card">
+        <div class="project-visual" role="img" aria-label="مساحة مخصصة لصورة المشروع 7">
+          <span class="project-visual-mark">HD</span>
+          <span class="project-visual-caption"><span class="ar">صورة المشروع 07 – ستضاف لاحقًا</span><span class="en">Project image 07 – coming soon</span></span>
+        </div>
+        <div class="project-body">
+          <div class="meta"><span class="ar">مدينة المستقبل، القاهرة – BK Group</span><span class="en">Mostakbal City, Cairo – BK Group</span></div>
+          <h3><span class="ar">مسجد</span><span class="en">Mosque</span></h3>
+          <p class="ar">التصميم الإنشائي.</p>
+          <p class="en">Structural design.</p>
+        </div>
+      </article>
     </div>
+    <p class="projects-footnote ar">ملاحظة: تُعرض المشروعات بغرض توضيح طبيعة الخبرة والمشاركة المهنية، ولا تُنشر أي مخططات أو بيانات تخص العملاء دون تصريح.</p>
+    <p class="projects-footnote en">Projects are presented to illustrate professional experience and contribution. No client drawings or confidential information are published without permission.</p>
   </div>
 </section>
 
