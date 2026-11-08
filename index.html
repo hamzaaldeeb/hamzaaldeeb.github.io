@@ -614,7 +614,12 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     var panel=document.createElement('div');
     panel.className='section-content';
     panel.id='section-content-'+index;
-    while(heading.nextElementSibling) panel.appendChild(heading.nextElementSibling);
+    var next=heading.nextElementSibling;
+    while(next){
+      var following=next.nextElementSibling;
+      panel.appendChild(next);
+      next=following;
+    }
     heading.after(panel);
     panel.hidden=true;
     var toggle=document.createElement('button');
