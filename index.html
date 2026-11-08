@@ -168,6 +168,21 @@ ul.tl li ul{list-style:disc}
 .projects-footnote{font-size:.82rem;color:var(--mute);margin:18px 0 0}
 @media(max-width:560px){.project-visual{min-height:145px}.project-body{padding:17px}}
  
+/* Project inquiry form */
+.inquiry-panel{margin-top:24px;padding:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.inquiry-heading h3{font-size:1.15rem;margin-bottom:5px;color:var(--acc2)}
+.inquiry-heading p{color:var(--mute);margin-bottom:18px}
+.inquiry-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.inquiry-form label{display:flex;flex-direction:column;gap:6px;color:var(--ink);font-size:.9rem;font-weight:600}
+.inquiry-form input,.inquiry-form select,.inquiry-form textarea{width:100%;min-width:0;padding:11px 12px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);font:inherit;font-weight:400}
+.inquiry-form input:focus,.inquiry-form select:focus,.inquiry-form textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
+.inquiry-form textarea{resize:vertical}
+.inquiry-wide{grid-column:1/-1}
+.inquiry-submit{border:0;cursor:pointer;font-family:inherit;justify-content:center;grid-column:1/-1}
+.floating-whatsapp{position:fixed;z-index:20;bottom:18px;inset-inline-end:18px;display:flex;align-items:center;gap:8px;padding:11px 16px;border-radius:999px;background:#168a50;color:#fff;text-decoration:none;font-weight:700;box-shadow:0 8px 28px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.18)}
+.floating-whatsapp:hover{background:#117442;transform:translateY(-2px)}
+@media(max-width:560px){.inquiry-panel{padding:17px}.inquiry-form{grid-template-columns:1fr}.inquiry-wide,.inquiry-submit{grid-column:auto}.floating-whatsapp{bottom:12px;inset-inline-end:12px;padding:10px 13px}}
+ 
 /* contact */
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
 .contact-card{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;text-decoration:none;color:var(--ink);transition:.15s}
@@ -595,6 +610,26 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         <span><small>LinkedIn</small><strong>Hamza Al Deeb</strong></span>
       </a>
     </div>
+    <div class="inquiry-panel">
+      <div class="inquiry-heading">
+        <h3><span class="ar">اطلب عرضًا لمشروعك</span><span class="en">Request a project quotation</span></h3>
+        <p><span class="ar">اكتب بيانات مبدئية عن المشروع، وهتتبعت في رسالة واتساب جاهزة للمراجعة.</span><span class="en">Share a few project details and send them in a ready-to-review WhatsApp message.</span></p>
+      </div>
+      <form id="projectInquiry" class="inquiry-form">
+        <label><span class="ar">الاسم</span><span class="en">Name</span><input name="name" autocomplete="name" required maxlength="80" placeholder="الاسم / Name"></label>
+        <label><span class="ar">المدينة</span><span class="en">City</span><input name="city" autocomplete="address-level2" maxlength="80" placeholder="مكة / جدة / القاهرة..."></label>
+        <label><span class="ar">نوع المشروع</span><span class="en">Project type</span>
+          <select name="type" required>
+            <option value="">اختر نوع المشروع</option>
+            <option>فيلا سكنية</option><option>عمارة سكنية</option><option>مبنى تجاري</option><option>مبنى إداري أو طبي</option><option>مراجعة إنشائية</option><option>حصر كميات</option><option>أخرى</option>
+          </select>
+        </label>
+        <label><span class="ar">عدد الأدوار</span><span class="en">Number of floors</span><input name="floors" inputmode="numeric" maxlength="30" placeholder="مثال: أرضي + 4"></label>
+        <label><span class="ar">المساحة التقريبية (م²)</span><span class="en">Approx. area (m²)</span><input name="area" inputmode="decimal" maxlength="40" placeholder="مثال: 600"></label>
+        <label class="inquiry-wide"><span class="ar">تفاصيل أو متطلبات إضافية</span><span class="en">Additional details</span><textarea name="details" rows="4" maxlength="1200" placeholder="اكتب وصفًا مختصرًا للمطلوب..."></textarea></label>
+        <button class="btn primary inquiry-submit" type="submit"><span class="ar">إرسال التفاصيل عبر واتساب</span><span class="en">Send details via WhatsApp</span> ↗</button>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -634,6 +669,8 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 </div>
 
 </main>
+
+<a class="floating-whatsapp" href="https://wa.me/966561565066" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب"><span aria-hidden="true">●</span><span class="ar">تواصل واتساب</span><span class="en">WhatsApp</span></a>
 
 <footer>
   &copy; <span id="yr"></span> <span class="ar">حمزة أبو الديب</span><span class="en">Hamza Al Deeb</span>
@@ -757,6 +794,26 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
       sendServiceRequest(permitRequest.getAttribute('data-service'));
     });
   }
+  // Send project brief to WhatsApp; no form data is stored on the website.
+  var inquiryForm=document.getElementById('projectInquiry');
+  if(inquiryForm){
+    inquiryForm.addEventListener('submit',function(event){
+      event.preventDefault();
+      var data=new FormData(inquiryForm);
+      var fields=[
+        ['الاسم',data.get('name')],
+        ['المدينة',data.get('city')],
+        ['نوع المشروع',data.get('type')],
+        ['عدد الأدوار',data.get('floors')],
+        ['المساحة التقريبية',data.get('area')+' م²'],
+        ['التفاصيل',data.get('details')]
+      ];
+      var lines=fields.filter(function(item){return item[1] && String(item[1]).trim() && item[1]!==' م²';}).map(function(item){return item[0]+': '+String(item[1]).trim();});
+      var message='السلام عليكم، أرغب في الاستفسار عن خدمة هندسية.\\n'+lines.join('\\n')+'\\nبرجاء التواصل معي لمناقشة التفاصيل.';
+      window.open('https://wa.me/966561565066?text='+encodeURIComponent(message),'_blank','noopener');
+    });
+  }
+
   document.addEventListener('keydown',function(event){
     if(event.key==='Escape') closeServiceModal();
   });
