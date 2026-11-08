@@ -161,6 +161,16 @@ ul.tl li ul{list-style:disc}
 .contact-card strong{font-size:.98rem;word-break:break-all}
 
 footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;border-top:1px solid var(--line)}
+
+/* Compact collapsible section headings */
+section{padding:22px 0}
+section .wrap>h2{margin:0;min-height:42px;justify-content:space-between;cursor:default;gap:10px}
+section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
+.section-toggle{flex:0 0 28px;width:28px;height:28px;display:inline-grid;place-items:center;margin-inline-start:auto;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--acc);font-size:15px;line-height:1;cursor:pointer;transition:transform .18s,border-color .18s}
+.section-toggle:hover{border-color:var(--acc)}
+.section-toggle[aria-expanded="true"]{transform:rotate(180deg)}
+.section-content{padding-top:18px}
+
 </style>
 </head>
 <body data-lang="ar">
@@ -542,6 +552,11 @@ footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;borde
       <a class="service-option" data-service="مخططات معمارية" href="#"><span>مخططات معمارية</span><span>←</span></a>
       <a class="service-option" data-service="مخططات إنشائية" href="#"><span>مخططات إنشائية</span><span>←</span></a>
       <a class="service-option" data-service="إشراف على التنفيذ" href="#"><span>إشراف على التنفيذ</span><span>←</span></a>
+      <a class="service-option" data-service="عقد نظافة" href="#"><span class="ar">عقد نظافة</span><span class="en">Cleanliness Contract</span><span>←</span></a>
+      <a class="service-option" data-service="تقرير تربة" href="#"><span class="ar">تقرير تربة</span><span class="en">Soil Report</span><span>←</span></a>
+      <a class="service-option" data-service="كروكي مساحي" href="#"><span class="ar">كروكي مساحي</span><span class="en">Survey Sketch</span><span>←</span></a>
+      <a class="service-option" data-service="مخططات كهربائية" href="#"><span class="ar">مخططات كهربائية</span><span class="en">Electrical Drawings</span><span>←</span></a>
+      <a class="service-option" data-service="مخططات صحية" href="#"><span class="ar">مخططات صحية</span><span class="en">Plumbing Drawings</span><span>←</span></a>
     </div>
     <p class="service-dialog-note"><span class="ar">بعد اختيار الخدمة، تقدر تعدل الرسالة قبل إرسالها.</span><span class="en">You can edit the message before sending it.</span></p>
   </div>
@@ -593,6 +608,30 @@ footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;borde
     }
   });
 
+
+  // Compact accordion for every main page section.
+  document.querySelectorAll('main section .wrap>h2').forEach(function(heading,index){
+    var panel=document.createElement('div');
+    panel.className='section-content';
+    panel.id='section-content-'+index;
+    while(heading.nextElementSibling) panel.appendChild(heading.nextElementSibling);
+    heading.after(panel);
+    panel.hidden=true;
+    var toggle=document.createElement('button');
+    toggle.type='button';
+    toggle.className='section-toggle';
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-controls',panel.id);
+    toggle.setAttribute('aria-label',body.getAttribute('data-lang')==='en'?'Expand section':'فتح القسم');
+    toggle.innerHTML='⌄';
+    toggle.addEventListener('click',function(){
+      var expanded=toggle.getAttribute('aria-expanded')==='true';
+      toggle.setAttribute('aria-expanded',String(!expanded));
+      panel.hidden=expanded;
+      toggle.setAttribute('aria-label',expanded?'فتح القسم':'إغلاق القسم');
+    });
+    heading.appendChild(toggle);
+  });
 
   // Engineering service chooser: open the selector first, then WhatsApp only after a service is selected.
   var serviceModal=document.getElementById('serviceModal');
