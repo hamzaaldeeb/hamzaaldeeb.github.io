@@ -66,18 +66,23 @@ function doGet(e) {
 }
 
 function doPost(e) {
+  let requestId = '';
   try {
     const p = e && e.parameter ? e.parameter : {};
-    const requestId = safeCell_(p.requestId, 80);
+    requestId = safeCell_(p.requestId, 80);
+
     if (p.website) return submissionPage_('Spam check failed.', false, requestId);
     if (p.action !== 'submit') return submissionPage_('Invalid request.', false, requestId);
     if (p.consent !== 'yes') return submissionPage_('Consent is required.', false, requestId);
+
     const rating = Number(p.rating);
     const review = safeCell_(p.review, 700);
     const name = safeCell_(p.name, 60);
+
     if (!Number.isInteger(rating) || rating < 1 || rating > 5 || review.length < 3) {
       return submissionPage_('Please provide a valid rating and review.', false, requestId);
     }
+
     const lock = LockService.getScriptLock();
     lock.waitLock(10000);
     try {
@@ -86,9 +91,10 @@ function doPost(e) {
     } finally {
       lock.releaseLock();
     }
+
     return submissionPage_('Review published successfully.', true, requestId);
   } catch (err) {
-    return submissionPage_('Submission failed. Please try again later.', false, requestId);
+    return submissionPage_('Submission failed: ' + String(err.message || err), false, requestId);
   }
 }
 
