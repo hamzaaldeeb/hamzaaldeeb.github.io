@@ -328,7 +328,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   .hero .wrap{gap:28px}
   .hero-text{flex-basis:100%;min-width:0}
   .avatar{order:-1}
-  .career-grid,.reviews-summary-grid{grid-template-columns:minmax(0,1fr)}
+  .career-grid{grid-template-columns:minmax(0,1fr)}
   .grid,.projects-grid,.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .service-dialog{width:min(100%,620px)}
 }
@@ -397,7 +397,6 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
       <a href="#skills"><span class="ar">المهارات</span><span class="en">Skills</span></a>
       <a href="#programming"><span class="ar">البرمجة والـ AI</span><span class="en">Programming &amp; AI</span></a>
       <a href="#education"><span class="ar">التعليم</span><span class="en">Education</span></a>
-      <a href="#reviews"><span class="ar">آراء العملاء</span><span class="en">Reviews</span></a>
       <a href="#contact"><span class="ar">تواصل</span><span class="en">Contact</span></a>
     </nav>
     <button class="lang" id="toggle" type="button">English</button>
@@ -797,49 +796,6 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   </div>
 </section>
 
-<section id="reviews">
-  <div class="wrap">
-    <h2><span class="ar">آراء العملاء</span><span class="en">Client Reviews</span></h2>
-    <div class="reviews-summary-grid">
-      <div class="reviews-score card">
-        <span class="reviews-score-label ar">التقييم العام</span><span class="reviews-score-label en">Overall rating</span>
-        <strong id="reviewsAverage">—<small>/10</small></strong>
-        <div class="reviews-stars" id="reviewsAverageStars" aria-label="Average rating">☆☆☆☆☆</div>
-        <span class="reviews-count"><b id="reviewsCount">0</b> <span class="ar">تقييم منشور</span><span class="en">published reviews</span></span>
-      </div>
-      <div class="reviews-form-card card">
-        <h3><span class="ar">شاركنا رأيك</span><span class="en">Leave a review</span></h3>
-        <p class="ar">اختر عدد النجوم واكتب تجربتك. التقييمات لا تظهر للعامة إلا بعد مراجعتها والموافقة عليها.</p>
-        <p class="en">Choose a star rating and share your experience. Reviews appear publicly only after moderation.</p>
-        <form id="reviewForm" class="review-form">
-          <label for="reviewName"><span class="ar">الاسم (اختياري)</span><span class="en">Name (optional)</span></label>
-          <input id="reviewName" name="name" type="text" maxlength="60" autocomplete="name" placeholder="الاسم / Name">
-          <span class="review-field-label"><span class="ar">تقييمك</span><span class="en">Your rating</span></span>
-          <div class="review-star-picker" role="radiogroup" aria-label="اختر تقييمك من نجمة إلى خمس نجوم">
-            <button type="button" class="review-star" data-rating="1" role="radio" aria-checked="false" aria-label="1 star">★</button>
-            <button type="button" class="review-star" data-rating="2" role="radio" aria-checked="false" aria-label="2 stars">★</button>
-            <button type="button" class="review-star" data-rating="3" role="radio" aria-checked="false" aria-label="3 stars">★</button>
-            <button type="button" class="review-star" data-rating="4" role="radio" aria-checked="false" aria-label="4 stars">★</button>
-            <button type="button" class="review-star" data-rating="5" role="radio" aria-checked="false" aria-label="5 stars">★</button>
-          </div>
-          <input type="hidden" id="reviewRating" name="rating" value="">
-          <label for="reviewText"><span class="ar">اكتب رأيك</span><span class="en">Your review</span></label>
-          <textarea id="reviewText" name="review" rows="4" maxlength="700" required placeholder="اكتب تجربتك باختصار..."></textarea>
-          <label class="review-consent"><input type="checkbox" name="consent" value="yes" required><span class="ar">أوافق على مراجعة رأيي وإمكانية نشره على الموقع.</span><span class="en">I agree to moderation and possible publication of my review.</span></label>
-          <input type="text" name="website" class="review-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <button class="btn primary" id="reviewSubmit" type="submit"><span class="ar">إرسال التقييم</span><span class="en">Submit review</span></button>
-          <p id="reviewStatus" class="review-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </div>
-    <div id="reviewsList" class="reviews-list" aria-live="polite">
-      <p class="reviews-loading ar">جاري تحميل التقييمات المنشورة...</p>
-      <p class="reviews-loading en">Loading published reviews...</p>
-    </div>
-    <iframe name="reviewSubmitFrame" id="reviewSubmitFrame" title="Review submission" class="review-submit-frame"></iframe>
-  </div>
-</section>
-
 <section id="contact" class="alt">
   <div class="wrap">
     <h2><span class="ar">تواصل معي</span><span class="en">Contact</span></h2>
@@ -1088,121 +1044,6 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     });
   }
 
-
-
-  // Public reviews: publish only entries approved in the connected Google Sheet.
-  var REVIEWS_API_URL = 'https://script.google.com/macros/s/AKfycbyt-A5P2RV0FmPI14dDB2uipv_f3Xp3R6ifGlIdpqxnFpwdtEL_ZmyDkx533pP_pCInqw/exec';
-  var reviewForm=document.getElementById('reviewForm');
-  var reviewStars=reviewForm ? Array.from(reviewForm.querySelectorAll('.review-star')) : [];
-  var reviewRating=document.getElementById('reviewRating');
-  var reviewStatus=document.getElementById('reviewStatus');
-  var reviewSubmit=document.getElementById('reviewSubmit');
-  function setReviewStatus(message,isError){
-    if(!reviewStatus) return;
-    reviewStatus.textContent=message;
-    reviewStatus.classList.toggle('error',!!isError);
-  }
-  function chooseReviewRating(value){
-    if(reviewRating) reviewRating.value=String(value);
-    reviewStars.forEach(function(star){
-      var active=Number(star.dataset.rating)<=value;
-      star.classList.toggle('active',active);
-      star.setAttribute('aria-checked',String(Number(star.dataset.rating)===value));
-    });
-  }
-  reviewStars.forEach(function(star,index){
-    star.addEventListener('click',function(){chooseReviewRating(Number(star.dataset.rating));});
-    star.addEventListener('keydown',function(event){
-      if(event.key==='ArrowRight'||event.key==='ArrowLeft'){
-        event.preventDefault();
-        var next=Math.max(0,Math.min(4,index+(event.key==='ArrowRight'?1:-1)));
-        reviewStars[next].focus();chooseReviewRating(next+1);
-      }
-    });
-  });
-  function renderReviews(data){
-    var average=document.getElementById('reviewsAverage');
-    var count=document.getElementById('reviewsCount');
-    var averageStars=document.getElementById('reviewsAverageStars');
-    var list=document.getElementById('reviewsList');
-    var items=(data&&Array.isArray(data.reviews))?data.reviews:[];
-    var avg=Number(data&&data.average10)||0;
-    if(average) average.innerHTML=(items.length?avg.toFixed(1):'—')+'<small>/10</small>';
-    if(count) count.textContent=String(Number(data&&data.count)||items.length);
-    if(averageStars){
-      var stars=Math.round(avg/2);
-      averageStars.textContent='★'.repeat(stars)+'☆'.repeat(5-stars);
-      averageStars.setAttribute('aria-label','Average '+avg.toFixed(1)+' out of 10');
-    }
-    if(!list) return;
-    list.replaceChildren();
-    if(!items.length){
-      var empty=document.createElement('p');empty.className='reviews-empty-note';
-      empty.textContent=body.getAttribute('data-lang')==='en'?'No approved reviews yet. Be the first to share your experience.':'لا توجد تقييمات منشورة حتى الآن. كن أول من يشارك تجربته.';
-      list.appendChild(empty);return;
-    }
-    items.forEach(function(item){
-      var card=document.createElement('article');card.className='review-item card';
-      var stars=document.createElement('div');stars.className='review-item-stars';stars.textContent='★'.repeat(Math.max(0,Math.min(5,Number(item.rating)||0)))+'☆'.repeat(5-Math.max(0,Math.min(5,Number(item.rating)||0)));
-      var title=document.createElement('h4');title.textContent=item.name|| (body.getAttribute('data-lang')==='en'?'Verified client':'عميل');
-      var copy=document.createElement('p');copy.textContent=item.review||'';
-      card.append(stars,title,copy);
-      if(item.date){var time=document.createElement('time');time.textContent=item.date;card.appendChild(time);}
-      list.appendChild(card);
-    });
-  }
-  function loadPublicReviews(){
-    if(!REVIEWS_API_URL){
-      var list=document.getElementById('reviewsList');
-      if(list){list.replaceChildren();var note=document.createElement('p');note.className='reviews-empty-note';note.textContent=body.getAttribute('data-lang')==='en'?'The review form will be activated after the Google Sheets connection is published.':'سيتم تفعيل استقبال وعرض التقييمات بعد نشر اتصال Google Sheets.';list.appendChild(note);}
-      return;
-    }
-    var callback='reviewsCallback_'+Date.now();
-    window[callback]=function(data){renderReviews(data);try{delete window[callback]}catch(e){}script.remove();};
-    var script=document.createElement('script');
-    script.src=REVIEWS_API_URL+'?action=list&callback='+callback+'&_='+Date.now();
-    script.onerror=function(){setReviewStatus(body.getAttribute('data-lang')==='en'?'Could not load reviews. Please try again later.':'تعذر تحميل التقييمات حاليًا.',true);script.remove();};
-    document.body.appendChild(script);
-  }
-  if(reviewForm){
-    var reviewRequestId='';
-    var reviewSubmitTimer=null;
-    var reviewFrame=document.getElementById('reviewSubmitFrame');
-    window.addEventListener('message',function(event){
-      if(!reviewFrame) return;
-      var result=event.data;
-      if(!result || result.type!=='reviews-submit-result' || result.requestId!==reviewRequestId) return;
-      if(reviewSubmitTimer) clearTimeout(reviewSubmitTimer);
-      if(result.ok){
-        setReviewStatus(body.getAttribute('data-lang')==='en'?'Your review has been published successfully.':'تم نشر تقييمك بنجاح وظهر على الموقع.');
-        reviewForm.reset();chooseReviewRating(0);
-      }else{
-        setReviewStatus((body.getAttribute('data-lang')==='en'?'The review was not saved: ':'لم يتم حفظ التقييم: ')+(result.message||'Please try again.'),true);
-      }
-      reviewSubmit.disabled=false;reviewSubmit.style.opacity='';
-    });
-    reviewForm.addEventListener('submit',function(event){
-      event.preventDefault();
-      if(!REVIEWS_API_URL){setReviewStatus(body.getAttribute('data-lang')==='en'?'Google Sheets connection is not published yet.':'اتصال Google Sheets غير منشور، ولم يتم إرسال التقييم.',true);return;}
-      if(!reviewRating.value){setReviewStatus(body.getAttribute('data-lang')==='en'?'Please select a star rating.':'من فضلك اختار عدد النجوم.',true);return;}
-      if(!reviewForm.reportValidity()) return;
-      reviewRequestId='review_'+Date.now()+'_'+Math.random().toString(36).slice(2,9);
-      var request=document.createElement('input');request.type='hidden';request.name='requestId';request.value=reviewRequestId;reviewForm.appendChild(request);
-      var action=document.createElement('input');action.type='hidden';action.name='action';action.value='submit';reviewForm.appendChild(action);
-      reviewForm.action=REVIEWS_API_URL;
-      reviewForm.target='reviewSubmitFrame';
-      reviewSubmit.disabled=true;reviewSubmit.style.opacity='.65';
-      setReviewStatus(body.getAttribute('data-lang')==='en'?'Sending your review…':'جاري إرسال تقييمك…');
-      reviewForm.submit();
-      request.remove();action.remove();
-      if(reviewSubmitTimer) clearTimeout(reviewSubmitTimer);
-      reviewSubmitTimer=setTimeout(function(){
-        setReviewStatus(body.getAttribute('data-lang')==='en'?'No confirmation received. The review may not have been saved; please check the sheet before retrying.':'لم يصل تأكيد من Google Sheets. ممكن التقييم ما اتحفظش؛ راجع الشيت قبل إعادة الإرسال.',true);
-        reviewSubmit.disabled=false;reviewSubmit.style.opacity='';
-      },20000);
-    });
-  }
-  loadPublicReviews();
 
 
   // Accessible full-screen viewer for real project photos when uploaded.
