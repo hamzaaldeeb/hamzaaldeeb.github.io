@@ -245,7 +245,11 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 .section-toggle{flex:0 0 28px;width:28px;height:28px;display:inline-grid;place-items:center;margin-inline-start:auto;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--acc);font-size:15px;line-height:1;cursor:pointer;transition:transform .18s,border-color .18s}
 .section-toggle:hover{border-color:var(--acc)}
 .section-toggle[aria-expanded="true"]{transform:rotate(180deg)}
-.section-content{padding-top:18px}
+.section-content{display:block;width:100%;min-width:0;padding-top:18px;overflow:visible}
+.section-content[hidden]{display:none!important}
+#reviews .section-content{width:100%;max-width:100%;min-height:0}
+#reviews .reviews-summary-grid,#reviews .reviews-form-card,#reviews .reviews-score,#reviews .reviews-list{width:100%;min-width:0;max-width:100%}
+#reviews .section-toggle{flex:0 0 32px;width:32px;height:32px;font-size:18px}
 
 
 .service-options{display:grid;grid-template-columns:1fr;gap:9px}
@@ -993,6 +997,9 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
       toggle.setAttribute('aria-expanded',String(open));
       panel.hidden=!open;
       toggle.setAttribute('aria-label',open?'إغلاق القسم':'فتح القسم');
+      if(open && section.id==='reviews'){
+        window.setTimeout(function(){section.scrollIntoView({behavior:'smooth',block:'start'});},60);
+      }
     });
   });
 
