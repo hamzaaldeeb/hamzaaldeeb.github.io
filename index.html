@@ -1174,7 +1174,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
       if(!result || result.type!=='reviews-submit-result' || result.requestId!==reviewRequestId) return;
       if(reviewSubmitTimer) clearTimeout(reviewSubmitTimer);
       if(result.ok){
-        setReviewStatus(body.getAttribute('data-lang')==='en'?'Your review was saved and is awaiting approval.':'تم حفظ تقييمك بنجاح وهو الآن في انتظار المراجعة قبل النشر.');
+        setReviewStatus(body.getAttribute('data-lang')==='en'?'Your review has been published successfully.':'تم نشر تقييمك بنجاح وظهر على الموقع.');
         reviewForm.reset();chooseReviewRating(0);
       }else{
         setReviewStatus((body.getAttribute('data-lang')==='en'?'The review was not saved: ':'لم يتم حفظ التقييم: ')+(result.message||'Please try again.'),true);
