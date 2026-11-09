@@ -907,8 +907,6 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 
   // Build compact, independently expandable section panels.
   document.querySelectorAll('main section').forEach(function(section,index){
-    // Keep the reviews section permanently expanded so its form and cards never collapse on mobile.
-    if(section.id==='reviews') return;
     var wrap=section.querySelector(':scope > .wrap');
     var heading=wrap && wrap.querySelector(':scope > h2');
     if(!heading || heading.querySelector('.section-toggle')) return;
