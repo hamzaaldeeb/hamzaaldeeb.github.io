@@ -1158,25 +1158,41 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     document.body.appendChild(script);
   }
   if(reviewForm){
+    var reviewRequestId='';
+    var reviewSubmitTimer=null;
+    var reviewFrame=document.getElementById('reviewSubmitFrame');
+    window.addEventListener('message',function(event){
+      if(!reviewFrame || event.source!==reviewFrame.contentWindow) return;
+      var result=event.data;
+      if(!result || result.type!=='reviews-submit-result' || result.requestId!==reviewRequestId) return;
+      if(reviewSubmitTimer) clearTimeout(reviewSubmitTimer);
+      if(result.ok){
+        setReviewStatus(body.getAttribute('data-lang')==='en'?'Your review was saved and is awaiting approval.':'تم حفظ تقييمك بنجاح وهو الآن في انتظار المراجعة قبل النشر.');
+        reviewForm.reset();chooseReviewRating(0);
+      }else{
+        setReviewStatus((body.getAttribute('data-lang')==='en'?'The review was not saved: ':'لم يتم حفظ التقييم: ')+(result.message||'Please try again.'),true);
+      }
+      reviewSubmit.disabled=false;reviewSubmit.style.opacity='';
+    });
     reviewForm.addEventListener('submit',function(event){
       event.preventDefault();
-      if(!REVIEWS_API_URL){setReviewStatus(body.getAttribute('data-lang')==='en'?'Google Sheets connection is not published yet.':'اتصال Google Sheets لم يُنشر بعد، لذلك لم يتم إرسال التقييم.',true);return;}
+      if(!REVIEWS_API_URL){setReviewStatus(body.getAttribute('data-lang')==='en'?'Google Sheets connection is not published yet.':'اتصال Google Sheets غير منشور، ولم يتم إرسال التقييم.',true);return;}
       if(!reviewRating.value){setReviewStatus(body.getAttribute('data-lang')==='en'?'Please select a star rating.':'من فضلك اختار عدد النجوم.',true);return;}
-      var frame=document.getElementById('reviewSubmitFrame');
-      var submitted=false;
-      frame.onload=function(){
-        if(!submitted)return;
-        setReviewStatus(body.getAttribute('data-lang')==='en'?'Thank you! Your review was received and is awaiting approval.':'شكرًا ليك! تم استلام تقييمك وهو الآن في انتظار المراجعة قبل النشر.');
-        reviewForm.reset();chooseReviewRating(0);
-        reviewSubmit.disabled=false;reviewSubmit.style.opacity='';
-      };
-      reviewSubmit.disabled=true;reviewSubmit.style.opacity='.65';
-      submitted=true;
+      if(!reviewForm.reportValidity()) return;
+      reviewRequestId='review_'+Date.now()+'_'+Math.random().toString(36).slice(2,9);
+      var request=document.createElement('input');request.type='hidden';request.name='requestId';request.value=reviewRequestId;reviewForm.appendChild(request);
+      var action=document.createElement('input');action.type='hidden';action.name='action';action.value='submit';reviewForm.appendChild(action);
       reviewForm.action=REVIEWS_API_URL;
       reviewForm.target='reviewSubmitFrame';
-      var action=document.createElement('input');action.type='hidden';action.name='action';action.value='submit';reviewForm.appendChild(action);
+      reviewSubmit.disabled=true;reviewSubmit.style.opacity='.65';
+      setReviewStatus(body.getAttribute('data-lang')==='en'?'Sending your review…':'جاري إرسال تقييمك…');
       reviewForm.submit();
-      action.remove();
+      request.remove();action.remove();
+      if(reviewSubmitTimer) clearTimeout(reviewSubmitTimer);
+      reviewSubmitTimer=setTimeout(function(){
+        setReviewStatus(body.getAttribute('data-lang')==='en'?'No confirmation received. The review may not have been saved; please check the sheet before retrying.':'لم يصل تأكيد من Google Sheets. ممكن التقييم ما اتحفظش؛ راجع الشيت قبل إعادة الإرسال.',true);
+        reviewSubmit.disabled=false;reviewSubmit.style.opacity='';
+      },20000);
     });
   }
   loadPublicReviews();
