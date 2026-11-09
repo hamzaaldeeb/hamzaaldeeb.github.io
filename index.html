@@ -95,6 +95,9 @@ h1{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.2;margin-bottom:8px}
 .action-row-career .career-btn{background:#183d68;color:#eaf3ff;border-color:#315f91}
 .action-row-career .career-btn:hover{background:#225184;border-color:#6fa8e8}
 .action-row-project .project-btn{background:var(--card);color:var(--ink);border-color:var(--line);min-height:44px}
+.availability-row{display:flex;align-items:center;justify-content:flex-start;gap:12px;flex-wrap:wrap}
+.availability-badge{display:inline-flex;align-items:center;padding:7px 13px;border:1px solid #2b9b69;border-radius:999px;background:rgba(43,155,105,.13);color:#7ee0ad;font-size:.9rem;font-weight:700}
+.availability-row .career-btn{min-height:48px}
 @media(max-width:560px){.hero-actions{width:100%}.action-row{gap:8px}.action-row .btn{font-size:.88rem;padding:11px 8px;min-height:50px}}
 .reviews-empty{text-align:center;max-width:720px;margin:0 auto;padding:30px}
 .reviews-empty h3{font-size:1.2rem;color:var(--acc2);margin:4px 0 8px}
@@ -436,11 +439,14 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
           <a class="btn primary" href="#contact">📋 <span class="ar">اطلب عرض سعر</span><span class="en">Request a Quote</span></a>
         </div>
         <div class="action-row action-row-career">
-          <a class="btn career-btn" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D9%85%D9%86%D8%A7%D9%82%D8%B4%D8%A9%20%D9%81%D8%B1%D8%B5%D8%A9%20%D8%B9%D9%85%D9%84%20%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9%20%D9%84%D8%AE%D8%A8%D8%B1%D8%AA%D9%8A%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D8%A5%D9%86%D8%B4%D8%A7%D8%A6%D9%8A." target="_blank" rel="noopener">💼 <span class="ar">طلب فرصة وظيفية</span><span class="en">Job Opportunity</span></a>
           <a class="btn career-btn" href="https://drive.google.com/file/d/1gLiRjLgWxEJ61EYdB0jg1tDcft9mYwCz/view?usp=drivesdk" target="_blank" rel="noopener">📄 <span class="ar">السيرة الذاتية CV</span><span class="en">Download CV</span></a>
         </div>
         <div class="action-row action-row-project">
           <a class="btn project-btn" href="#projects">▦ <span class="ar">استعرض المشاريع</span><span class="en">View Projects</span></a>
+        </div>
+        <div class="availability-row">
+          <span class="availability-badge"><span class="ar">✓ متاح للتوظيف</span><span class="en">✓ Available for Hire</span></span>
+          <a class="btn career-btn" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D9%86%D8%AD%D9%86%20%D9%85%D9%83%D8%AA%D8%A8%20%D9%87%D9%86%D8%AF%D8%B3%D9%8A%20%D9%88%D9%86%D8%AD%D8%AA%D8%A7%D8%AC%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D9%84%D9%84%D8%A7%D9%86%D8%B6%D9%85%D8%A7%D9%85%20%D9%84%D9%81%D8%B1%D9%8A%D9%82%D9%86%D8%A7%D8%8C%20%D9%88%D9%86%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%88%D8%B8%D8%A7%D8%A6%D9%81%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9." target="_blank" rel="noopener">💼 <span class="ar">الاستفسار عن وظائف متاحة</span><span class="en">Inquire About Available Positions</span></a>
         </div>
       </div>   </div>
   </div>
