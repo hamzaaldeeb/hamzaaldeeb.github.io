@@ -1169,7 +1169,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     var reviewSubmitTimer=null;
     var reviewFrame=document.getElementById('reviewSubmitFrame');
     window.addEventListener('message',function(event){
-      if(!reviewFrame || event.source!==reviewFrame.contentWindow) return;
+      if(!reviewFrame) return;
       var result=event.data;
       if(!result || result.type!=='reviews-submit-result' || result.requestId!==reviewRequestId) return;
       if(reviewSubmitTimer) clearTimeout(reviewSubmitTimer);
