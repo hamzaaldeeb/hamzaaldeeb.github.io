@@ -82,11 +82,11 @@ function doPost(e) {
     lock.waitLock(10000);
     try {
       const sheet = getReviewsSheet_();
-      sheet.appendRow([new Date(), name, rating, review, 'PENDING']);
+      sheet.appendRow([new Date(), name, rating, review, 'APPROVED']);
     } finally {
       lock.releaseLock();
     }
-    return submissionPage_('Review received. Awaiting approval.', true, requestId);
+    return submissionPage_('Review published successfully.', true, requestId);
   } catch (err) {
     return submissionPage_('Submission failed. Please try again later.', false, requestId);
   }
