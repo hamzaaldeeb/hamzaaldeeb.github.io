@@ -106,10 +106,11 @@ function submissionPage_(message, ok, requestId) {
     message: String(message || '')
   }).replace(/</g, '\\u003c');
   const safeMessage = String(message || '').replace(/[<>&"]/g, '');
-  return ContentService.createTextOutput(
+  // HTML responses must use HtmlService; ContentService does not provide an HTML MIME type.
+  return HtmlService.createHtmlOutput(
     '<!doctype html><html><head><meta charset="utf-8"></head><body>' +
     safeMessage + '<script>window.top.postMessage(' + payload + ', "*");</script></body></html>'
-  ).setMimeType(ContentService.MimeType.HTML);
+  ).setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
 
 // Run this once from the Apps Script editor after setting SPREADSHEET_ID
