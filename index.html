@@ -95,10 +95,11 @@ h1{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.2;margin-bottom:8px}
 .action-row-career .career-btn{background:#183d68;color:#eaf3ff;border-color:#315f91}
 .action-row-career .career-btn:hover{background:#225184;border-color:#6fa8e8}
 .action-row-project .project-btn{background:var(--card);color:var(--ink);border-color:var(--line);min-height:44px}
-.availability-row{display:flex;align-items:center;justify-content:flex-start;gap:12px;flex-wrap:wrap}
-.availability-badge{display:inline-flex;align-items:center;padding:7px 13px;border:1px solid #2b9b69;border-radius:999px;background:rgba(43,155,105,.13);color:#7ee0ad;font-size:.9rem;font-weight:700}
-.availability-row .career-btn{min-height:48px}
-@media(max-width:560px){.hero-actions{width:100%}.action-row{gap:8px}.action-row .btn{font-size:.88rem;padding:11px 8px;min-height:50px}}
+.availability-row{display:flex;align-items:stretch;justify-content:flex-start;gap:10px;flex-wrap:nowrap}
+.availability-row>a{flex:1 1 0;min-width:0;min-height:50px;display:inline-flex;align-items:center;justify-content:center;text-align:center;white-space:nowrap}
+.availability-badge{padding:9px 12px;border:1px solid #2b9b69;border-radius:999px;background:rgba(43,155,105,.13);color:#7ee0ad;text-decoration:none;font-size:1.02rem;font-weight:800}
+.availability-row .career-btn{min-height:50px;padding:8px 10px;font-size:.84rem}
+@media(max-width:560px){.hero-actions{width:100%}.action-row{gap:8px}.action-row .btn{font-size:.88rem;padding:11px 8px;min-height:50px}.availability-row{gap:7px}.availability-row>a{min-height:46px}.availability-badge{font-size:.91rem;padding:7px 6px}.availability-row .career-btn{font-size:.76rem;padding:7px 6px}}
 .reviews-empty{text-align:center;max-width:720px;margin:0 auto;padding:30px}
 .reviews-empty h3{font-size:1.2rem;color:var(--acc2);margin:4px 0 8px}
 .reviews-empty p{color:var(--mute);margin:0 auto 18px}
