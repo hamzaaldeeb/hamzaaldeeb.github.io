@@ -23,7 +23,7 @@ function getReviewsSheet_() {
 function safeCell_(value, maxLength) {
   let text = String(value || '').trim().slice(0, maxLength);
   // Prevent user-submitted text from being interpreted as a spreadsheet formula.
-  if (/^[=+\\-@]/.test(text)) text = "'" + text;
+  if (/^[=+\-@]/.test(text)) text = "'" + text;
   return text;
 }
 
@@ -68,14 +68,15 @@ function doGet(e) {
 function doPost(e) {
   try {
     const p = e && e.parameter ? e.parameter : {};
-    if (p.website) return submissionPage_('Thank you.');
-    if (p.action !== 'submit') return submissionPage_('Invalid request.');
-    if (p.consent !== 'yes') return submissionPage_('Consent is required.');
+    const requestId = safeCell_(p.requestId, 80);
+    if (p.website) return submissionPage_('Spam check failed.', false, requestId);
+    if (p.action !== 'submit') return submissionPage_('Invalid request.', false, requestId);
+    if (p.consent !== 'yes') return submissionPage_('Consent is required.', false, requestId);
     const rating = Number(p.rating);
     const review = safeCell_(p.review, 700);
     const name = safeCell_(p.name, 60);
     if (!Number.isInteger(rating) || rating < 1 || rating > 5 || review.length < 3) {
-      return submissionPage_('Please provide a valid rating and review.');
+      return submissionPage_('Please provide a valid rating and review.', false, requestId);
     }
     const lock = LockService.getScriptLock();
     lock.waitLock(10000);
@@ -85,16 +86,23 @@ function doPost(e) {
     } finally {
       lock.releaseLock();
     }
-    return submissionPage_('Review received. Awaiting approval.');
+    return submissionPage_('Review received. Awaiting approval.', true, requestId);
   } catch (err) {
-    return submissionPage_('Submission failed. Please try again later.');
+    return submissionPage_('Submission failed. Please try again later.', false, requestId);
   }
 }
 
-function submissionPage_(message) {
-  const safeMessage = String(message).replace(/[<>&"]/g, '');
+function submissionPage_(message, ok, requestId) {
+  const payload = JSON.stringify({
+    type: 'reviews-submit-result',
+    ok: Boolean(ok),
+    requestId: String(requestId || ''),
+    message: String(message || '')
+  }).replace(/</g, '\\u003c');
+  const safeMessage = String(message || '').replace(/[<>&"]/g, '');
   return ContentService.createTextOutput(
-    '<!doctype html><html><head><meta charset="utf-8"></head><body>' + safeMessage + '</body></html>'
+    '<!doctype html><html><head><meta charset="utf-8"></head><body>' +
+    safeMessage + '<script>window.top.postMessage(' + payload + ', "*");</script></body></html>'
   ).setMimeType(ContentService.MimeType.HTML);
 }
 
