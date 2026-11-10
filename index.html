@@ -393,10 +393,12 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 }
 
 
-/* Four equal-sized images for Sandra Mall */
-.mall-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;background:var(--line)}
-.mall-gallery .project-visual{min-height:0;aspect-ratio:4/3;background:#fff}
-.mall-gallery .project-image{object-fit:cover;width:100%;height:100%}
+/* Project image galleries */
+.mall-gallery,.sandra-gallery,.tower-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;background:var(--line)}
+.mall-gallery .project-visual,.sandra-gallery .project-visual,.tower-gallery .project-visual{min-height:0;aspect-ratio:4/3;background:#fff}
+.mall-gallery .project-image,.tower-gallery .project-image{object-fit:contain;width:100%;height:100%;background:#fff}
+.sandra-gallery .project-image{object-fit:contain;width:100%;height:100%;background:#fff}
+.tower-gallery .project-visual:first-child{grid-column:1/-1;aspect-ratio:16/9}
 </style>
 </head>
 <body data-lang="ar">
@@ -660,7 +662,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         </div>
       </article>
       <article class="card project-card">
-        <div class="mall-gallery" aria-label="معرض صور مسجد بمدينة العاشر من رمضان">
+        <div class="school-gallery" aria-label="معرض صور مسجد بمدينة العاشر من رمضان">
           <div class="project-visual"><img class="project-image" src="Screenshot_٢٠٢٦١١٠٩_١٤٠٤٢٩_Chrome.jpg" alt="مسجد بمدينة العاشر من رمضان – صورة 2" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
           <div class="project-visual"><img class="project-image" src="Screenshot_٢٠٢٦١١٠٩_١٤٠٣٤١_Chrome.jpg" alt="مسجد بمدينة العاشر من رمضان – صورة 3" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
           <div class="project-visual"><img class="project-image" src="Screenshot_٢٠٢٦١١٠٩_١٤٠٢١٥_Chrome.jpg" alt="مسجد بمدينة العاشر من رمضان – صورة 4" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
@@ -712,7 +714,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         </div>
       </article>
       <article class="card project-card">
-        <div class="mall-gallery" aria-label="معرض صور مول ساندرا – برج العرب">
+        <div class="sandra-gallery" aria-label="معرض صور مول ساندرا – برج العرب">
           <div class="project-visual"><img class="project-image" src="IMG-20261109-WA0004.jpg" alt="مول ساندرا – برج العرب، صورة 1" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
           <div class="project-visual"><img class="project-image" src="IMG-20261109-WA0005.jpg" alt="مول ساندرا – برج العرب، صورة 2" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
           <div class="project-visual"><img class="project-image" src="IMG-20261109-WA0006.jpg" alt="مول ساندرا – برج العرب، صورة 3" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
@@ -727,13 +729,24 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
       </article>
       
       <article class="card project-card">
-        <div class="mall-gallery" aria-label="معرض صور مول تجاري بمدينة العاشر من رمضان">
-          <div class="project-visual"><img class="project-image" src="Screenshot_٢٠٢٦١١٠٩_١٤١٠١٢_Chrome.jpg" alt="مول تجاري بمدينة العاشر من رمضان – صورة 1" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
-          <div class="project-visual"><img class="project-image" src="Screenshot_٢٠٢٦١١٠٩_١٤١٠٢٩_Chrome.jpg" alt="مول تجاري بمدينة العاشر من رمضان – صورة 2" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
-          <div class="project-visual"><img class="project-image" src="Screenshot_٢٠٢٦١١٠٩_١٤١٠٥٥_Chrome.jpg" alt="مول تجاري بمدينة العاشر من رمضان – صورة 3" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
+        <div class="tower-gallery" aria-label="معرض صور برج العاشر من رمضان">
+          <div class="project-visual"><img class="project-image" src="Screenshot_٢٠٢٦١١٠٩_١٤١٠١٢_Chrome.jpg" alt="برج العاشر من رمضان – صورة 1" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
+          <div class="project-visual"><img class="project-image" src="Screenshot_٢٠٢٦١١٠٩_١٤١٠٢٩_Chrome.jpg" alt="برج العاشر من رمضان – صورة 2" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
+          <div class="project-visual"><img class="project-image" src="Screenshot_٢٠٢٦١١٠٩_١٤١٠٥٥_Chrome.jpg" alt="برج العاشر من رمضان – صورة 3" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
         </div>
         <div class="project-body">
-          <div class="meta"><span class="ar">مدينة بدر، القاهرة – BK Group</span><span class="en">Badr City, Cairo – BK Group</span></div>
+          <div class="meta"><span class="ar">مدينة العاشر من رمضان – BK Group</span><span class="en">10th of Ramadan City – BK Group</span></div>
+          <h3><span class="ar">برج العاشر من رمضان</span><span class="en">10th of Ramadan Tower</span></h3>
+          <p class="ar">مجموعة صور للمشروع توضح نماذج ومناظير البرج.</p>
+          <p class="en">Project views and images of the tower.</p>
+        </div>
+      </article><article class="card project-card">
+        <div class="project-visual" role="img" aria-label="صور مول تجاري بمدينة العاشر من رمضان ستضاف لاحقًا">
+          <span class="project-visual-mark">HD</span>
+          <span class="project-visual-caption"><span class="ar">صور المشروع ستضاف لاحقًا</span><span class="en">Project images coming soon</span></span>
+        </div>
+        <div class="project-body">
+          <div class="meta"><span class="ar">مدينة العاشر من رمضان – BK Group</span><span class="en">10th of Ramadan City – BK Group</span></div>
           <h3><span class="ar">مول تجاري – العاشر من رمضان</span><span class="en">Commercial Mall – 10th of Ramadan City</span></h3>
           <p class="ar">مول تجاري بمساحة 10,000 م².</p>
           <p class="en">10,000 m² commercial mall.</p>
