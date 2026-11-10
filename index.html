@@ -407,6 +407,11 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 .sandra-gallery .project-image,
 .tower-gallery .project-image,
 .school-gallery .project-image{object-fit:fill!important;background:transparent!important}
+
+/* Six 10th Ramadan mall images: uniform two-column layout */
+.mall-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.mall-gallery .project-visual,
+.mall-gallery .project-visual:first-child{grid-column:auto!important;aspect-ratio:4/3!important;min-height:0!important}
 </style>
 </head>
 <body data-lang="ar">
@@ -647,7 +652,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     <p class="projects-intro ar">نماذج من مشروعات شاركت في أعمالها الهندسية. سيتم إضافة صور اللوحات والنماذج والتفاصيل تباعًا، مع مراعاة سرية بيانات العملاء.</p>
     <p class="projects-intro en">A selection of projects I have contributed to. Drawing, model and project-detail images will be added progressively while respecting client confidentiality.</p>
     <div class="grid projects-grid">
-      <article class="card project-card">
+<article class="card project-card">
         <div class="school-gallery" aria-label="معرض صور مدرسة العلمين">
           <div class="project-visual" role="img" aria-label="مدرسة العلمين – منظور إنشائي أول">
             <img class="project-image" src="IMG-20261109-WA0002.jpg" alt="مدرسة العلمين – منظور إنشائي أول" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
@@ -669,7 +674,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
           <p class="en">Three views of the 3D structural model, showing the layout of columns, beams, slabs and the building’s structural elements.</p>
         </div>
       </article>
-      <article class="card project-card">
+<article class="card project-card">
         <div class="school-gallery" aria-label="معرض صور مسجد بمدينة العاشر من رمضان">
           <div class="project-visual"><img class="project-image" src="Screenshot_٢٠٢٦١١٠٩_١٤٠٤٢٩_Chrome.jpg" alt="مسجد بمدينة العاشر من رمضان – صورة 2" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
           <div class="project-visual"><img class="project-image" src="Screenshot_٢٠٢٦١١٠٩_١٤٠٣٤١_Chrome.jpg" alt="مسجد بمدينة العاشر من رمضان – صورة 3" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
@@ -682,46 +687,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
           <p class="en">A collection of architectural elevations and 3D visualizations of the mosque.</p>
         </div>
       </article>
-      <article class="card project-card">
-        <div class="project-visual" role="img" aria-label="صورة عمارات سكنية 10 أدوار">
-          <img class="project-image" src="images/projects/project-01.jpg" alt="عمارات سكنية 10 أدوار" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
-          <span class="project-visual-mark">HD</span>
-          <span class="project-visual-caption"><span class="ar">صورة المشروع 01 – ستضاف لاحقًا</span><span class="en">Project image 01 – coming soon</span></span>
-        </div>
-        <div class="project-body">
-          <div class="meta"><span class="ar">مكتب منشآت خالدة للاستشارات الهندسية، مكة المكرمة</span><span class="en">Munshaat Khalda Engineering Consultancies Office, Makkah</span></div>
-          <h3><span class="ar">عمارات سكنية 10 أدوار</span><span class="en">10-Storey Residential Buildings</span></h3>
-          <p class="ar">مساحة البناء 1,200 م². تصميم وفق SBC بما يحقق متطلبات بلدي وشركات التأمين والتفتيش، مع التحقق من فحوصات الزلازل والرياح.</p>
-          <p class="en">1,200 m² building area; designed to SBC, meeting Balady and insurance/inspection company requirements, with seismic and wind checks verified.</p>
-        </div>
-      </article>
-      <article class="card project-card">
-        <div class="project-visual" role="img" aria-label="صورة فلل سكنية">
-          <img class="project-image" src="images/projects/project-02.jpg" alt="فلل سكنية" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
-          <span class="project-visual-mark">HD</span>
-          <span class="project-visual-caption"><span class="ar">صورة المشروع 02 – ستضاف لاحقًا</span><span class="en">Project image 02 – coming soon</span></span>
-        </div>
-        <div class="project-body">
-          <div class="meta"><span class="ar">مكتب منشآت خالدة للاستشارات الهندسية</span><span class="en">Munshaat Khalda Engineering Consultancies Office</span></div>
-          <h3><span class="ar">فلل سكنية</span><span class="en">Residential Villas</span></h3>
-          <p class="ar">تشمل فللًا بدورين بدروم وحمامات سباحة وخزانات مياه.</p>
-          <p class="en">Including villas with two basements, swimming pools and water tanks.</p>
-        </div>
-      </article>
-      <article class="card project-card">
-        <div class="project-visual" role="img" aria-label="صورة مركز ناصر الطبي">
-          <img class="project-image" src="images/projects/project-03.jpg" alt="مركز ناصر الطبي" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
-          <span class="project-visual-mark">HD</span>
-          <span class="project-visual-caption"><span class="ar">صورة المشروع 03 – ستضاف لاحقًا</span><span class="en">Project image 03 – coming soon</span></span>
-        </div>
-        <div class="project-body">
-          <div class="meta"><span class="ar">مصر – ECG</span><span class="en">Egypt – ECG</span></div>
-          <h3><span class="ar">مركز ناصر الطبي</span><span class="en">Nasser Medical Center</span></h3>
-          <p class="ar">مستشفى على قطعة 1,500 م² بدور بدروم ودور انتظار وخمسة أدوار لغرف العمليات ومناطق الفحص وغرف المرضى.</p>
-          <p class="en">Hospital on a 1,500 m² plot with a basement, a parking floor, and five floors of operating rooms, examination areas and patient rooms.</p>
-        </div>
-      </article>
-      <article class="card project-card">
+<article class="card project-card">
         <div class="sandra-gallery" aria-label="معرض صور مول ساندرا – برج العرب">
           <div class="project-visual"><img class="project-image" src="IMG-20261109-WA0004.jpg" alt="مول ساندرا – برج العرب، صورة 1" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
           <div class="project-visual"><img class="project-image" src="IMG-20261109-WA0005.jpg" alt="مول ساندرا – برج العرب، صورة 2" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
@@ -735,8 +701,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
           <p class="en">Commercial mall project with a total area of 4,200 m².</p>
         </div>
       </article>
-      
-      <article class="card project-card">
+<article class="card project-card">
         <div class="mall-gallery" aria-label="معرض صور المول التجاري بمدينة العاشر من رمضان – 6 صور">
           <div class="project-visual"><img class="project-image" src="Screenshot_٢٠٢٦١١٠٩_١٤١٠١٢_Chrome.jpg" alt="مول تجاري بالعاشر من رمضان – صورة 1" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
           <div class="project-visual"><img class="project-image" src="Screenshot_٢٠٢٦١١٠٩_١٤١٠٢٩_Chrome.jpg" alt="مول تجاري بالعاشر من رمضان – صورة 2" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
@@ -750,6 +715,45 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
           <h3><span class="ar">مول تجاري – العاشر من رمضان</span><span class="en">Commercial Mall – 10th of Ramadan City</span></h3>
           <p class="ar">مجمع تجاري متكامل بمدينة العاشر من رمضان، بمساحة إجمالية 10,000 م².</p>
           <p class="en">Integrated commercial complex in 10th of Ramadan City, with a total area of 10,000 m².</p>
+        </div>
+      </article>
+<article class="card project-card">
+        <div class="project-visual" role="img" aria-label="صورة عمارات سكنية 10 أدوار">
+          <img class="project-image" src="images/projects/project-01.jpg" alt="عمارات سكنية 10 أدوار" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+          <span class="project-visual-mark">HD</span>
+          <span class="project-visual-caption"><span class="ar">صورة المشروع 01 – ستضاف لاحقًا</span><span class="en">Project image 01 – coming soon</span></span>
+        </div>
+        <div class="project-body">
+          <div class="meta"><span class="ar">مكتب منشآت خالدة للاستشارات الهندسية، مكة المكرمة</span><span class="en">Munshaat Khalda Engineering Consultancies Office, Makkah</span></div>
+          <h3><span class="ar">عمارات سكنية 10 أدوار</span><span class="en">10-Storey Residential Buildings</span></h3>
+          <p class="ar">مساحة البناء 1,200 م². تصميم وفق SBC بما يحقق متطلبات بلدي وشركات التأمين والتفتيش، مع التحقق من فحوصات الزلازل والرياح.</p>
+          <p class="en">1,200 m² building area; designed to SBC, meeting Balady and insurance/inspection company requirements, with seismic and wind checks verified.</p>
+        </div>
+      </article>
+<article class="card project-card">
+        <div class="project-visual" role="img" aria-label="صورة فلل سكنية">
+          <img class="project-image" src="images/projects/project-02.jpg" alt="فلل سكنية" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+          <span class="project-visual-mark">HD</span>
+          <span class="project-visual-caption"><span class="ar">صورة المشروع 02 – ستضاف لاحقًا</span><span class="en">Project image 02 – coming soon</span></span>
+        </div>
+        <div class="project-body">
+          <div class="meta"><span class="ar">مكتب منشآت خالدة للاستشارات الهندسية</span><span class="en">Munshaat Khalda Engineering Consultancies Office</span></div>
+          <h3><span class="ar">فلل سكنية</span><span class="en">Residential Villas</span></h3>
+          <p class="ar">تشمل فللًا بدورين بدروم وحمامات سباحة وخزانات مياه.</p>
+          <p class="en">Including villas with two basements, swimming pools and water tanks.</p>
+        </div>
+      </article>
+<article class="card project-card">
+        <div class="project-visual" role="img" aria-label="صورة مركز ناصر الطبي">
+          <img class="project-image" src="images/projects/project-03.jpg" alt="مركز ناصر الطبي" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+          <span class="project-visual-mark">HD</span>
+          <span class="project-visual-caption"><span class="ar">صورة المشروع 03 – ستضاف لاحقًا</span><span class="en">Project image 03 – coming soon</span></span>
+        </div>
+        <div class="project-body">
+          <div class="meta"><span class="ar">مصر – ECG</span><span class="en">Egypt – ECG</span></div>
+          <h3><span class="ar">مركز ناصر الطبي</span><span class="en">Nasser Medical Center</span></h3>
+          <p class="ar">مستشفى على قطعة 1,500 م² بدور بدروم ودور انتظار وخمسة أدوار لغرف العمليات ومناطق الفحص وغرف المرضى.</p>
+          <p class="en">Hospital on a 1,500 m² plot with a basement, a parking floor, and five floors of operating rooms, examination areas and patient rooms.</p>
         </div>
       </article>
     </div>
