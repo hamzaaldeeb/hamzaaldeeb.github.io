@@ -196,6 +196,11 @@ ul.tl li ul{list-style:disc}
 /* Project portfolio cards and future image slots */
 .projects-intro{margin:-8px 0 22px;color:var(--mute)}
 .projects-grid{align-items:stretch}
+.school-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;background:var(--line)}
+.school-gallery .project-visual{min-height:118px;background:#fff}
+.school-gallery .project-visual:first-child{grid-column:1/-1;min-height:220px}
+.school-gallery .project-image{object-fit:contain;background:#fff}
+@media(max-width:560px){.school-gallery .project-visual{min-height:105px}.school-gallery .project-visual:first-child{min-height:190px}}
 .project-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
 .project-visual{position:relative;min-height:172px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#142344,#0d172c 55%,#26365c);border-bottom:1px solid var(--line);isolation:isolate}
 .project-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
@@ -627,6 +632,28 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     <p class="projects-intro ar">نماذج من مشروعات شاركت في أعمالها الهندسية. سيتم إضافة صور اللوحات والنماذج والتفاصيل تباعًا، مع مراعاة سرية بيانات العملاء.</p>
     <p class="projects-intro en">A selection of projects I have contributed to. Drawing, model and project-detail images will be added progressively while respecting client confidentiality.</p>
     <div class="grid projects-grid">
+      <article class="card project-card">
+        <div class="school-gallery" aria-label="معرض صور مدرسة العلمين">
+          <div class="project-visual" role="img" aria-label="مدرسة العلمين – منظور إنشائي أول">
+            <img class="project-image" src="IMG-20261109-WA0002.jpg" alt="مدرسة العلمين – منظور إنشائي أول" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+            <span class="project-visual-mark">HD</span><span class="project-visual-caption">مدرسة العلمين – منظور 1</span>
+          </div>
+          <div class="project-visual" role="img" aria-label="مدرسة العلمين – منظور إنشائي ثانٍ">
+            <img class="project-image" src="IMG-20261109-WA0003.jpg" alt="مدرسة العلمين – منظور إنشائي ثانٍ" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+            <span class="project-visual-mark">HD</span><span class="project-visual-caption">منظور 2</span>
+          </div>
+          <div class="project-visual" role="img" aria-label="مدرسة العلمين – منظور إنشائي ثالث">
+            <img class="project-image" src="IMG-20261109-WA0001.jpg" alt="مدرسة العلمين – منظور إنشائي ثالث" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+            <span class="project-visual-mark">HD</span><span class="project-visual-caption">منظور 3</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="meta"><span class="ar">مشروع تعليمي – نموذج إنشائي ثلاثي الأبعاد</span><span class="en">Educational project – 3D structural model</span></div>
+          <h3><span class="ar">مدرسة العلمين</span><span class="en">Al Alamein School</span></h3>
+          <p class="ar">عرض للنموذج الإنشائي ثلاثي الأبعاد من ثلاث زوايا، يوضح توزيع الأعمدة والكمرات والبلاطات والعناصر الإنشائية بالمبنى.</p>
+          <p class="en">Three views of the 3D structural model, showing the layout of columns, beams, slabs and the building’s structural elements.</p>
+        </div>
+      </article>
       <article class="card project-card">
         <div class="project-visual" role="img" aria-label="صورة عمارات سكنية 10 أدوار">
           <img class="project-image" src="images/projects/project-01.jpg" alt="عمارات سكنية 10 أدوار" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
