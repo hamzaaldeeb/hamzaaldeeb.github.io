@@ -202,8 +202,8 @@ ul.tl li ul{list-style:disc}
 .school-gallery .project-image{object-fit:contain;background:#fff}
 @media(max-width:560px){.school-gallery .project-visual{min-height:105px}.school-gallery .project-visual:first-child{min-height:190px}}
 .project-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
-.project-visual{position:relative;min-height:172px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#142344,#0d172c 55%,#26365c);border-bottom:1px solid var(--line);isolation:isolate}
-.project-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+.project-visual{position:relative;min-height:0;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;border-bottom:1px solid var(--line);isolation:isolate}
+.project-image{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#fff;z-index:0}
 .project-visual-mark,.project-visual-caption{z-index:1}
 .project-visual.has-image::before,.project-visual.has-image::after{display:none}
 .project-visual.has-image .project-visual-mark,.project-visual.has-image .project-visual-caption{display:none}
@@ -393,12 +393,12 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 }
 
 
-/* Project image galleries */
-.mall-gallery,.sandra-gallery,.tower-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;background:var(--line)}
-.mall-gallery .project-visual,.sandra-gallery .project-visual,.tower-gallery .project-visual{min-height:0;aspect-ratio:4/3;background:#fff}
-.mall-gallery .project-image,.tower-gallery .project-image{object-fit:contain;width:100%;height:100%;background:#fff}
-.sandra-gallery .project-image{object-fit:contain;width:100%;height:100%;background:#fff}
-.tower-gallery .project-visual:first-child{grid-column:1/-1;aspect-ratio:16/9}
+/* Consistent image galleries across all projects */
+.mall-gallery,.sandra-gallery,.tower-gallery,.school-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;background:var(--line)}
+.mall-gallery .project-visual,.sandra-gallery .project-visual,.tower-gallery .project-visual,.school-gallery .project-visual{min-height:0;aspect-ratio:4/3;background:#fff}
+.mall-gallery .project-visual:first-child,.tower-gallery .project-visual:first-child,.school-gallery .project-visual:first-child{grid-column:1/-1;aspect-ratio:16/9}
+.mall-gallery .project-image,.sandra-gallery .project-image,.tower-gallery .project-image,.school-gallery .project-image{object-fit:contain;width:100%;height:100%;background:#fff}
+@media(max-width:560px){.mall-gallery .project-visual:first-child,.tower-gallery .project-visual:first-child,.school-gallery .project-visual:first-child{aspect-ratio:16/10}}
 </style>
 </head>
 <body data-lang="ar">
@@ -741,9 +741,10 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
           <p class="en">Project views and images of the tower.</p>
         </div>
       </article><article class="card project-card">
-        <div class="project-visual" role="img" aria-label="صور مول تجاري بمدينة العاشر من رمضان ستضاف لاحقًا">
-          <span class="project-visual-mark">HD</span>
-          <span class="project-visual-caption"><span class="ar">صور المشروع ستضاف لاحقًا</span><span class="en">Project images coming soon</span></span>
+        <div class="mall-gallery" aria-label="معرض صور المول التجاري بمدينة العاشر من رمضان">
+          <div class="project-visual"><img class="project-image" src="IMG-20261110-WA0004.jpg" alt="مول تجاري بالعاشر من رمضان – صورة 1" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
+          <div class="project-visual"><img class="project-image" src="IMG-20261110-WA0005.jpg" alt="مول تجاري بالعاشر من رمضان – صورة 2" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
+          <div class="project-visual"><img class="project-image" src="IMG-20261110-WA0006.jpg" alt="مول تجاري بالعاشر من رمضان – صورة 3" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
         </div>
         <div class="project-body">
           <div class="meta"><span class="ar">مدينة العاشر من رمضان – BK Group</span><span class="en">10th of Ramadan City – BK Group</span></div>
