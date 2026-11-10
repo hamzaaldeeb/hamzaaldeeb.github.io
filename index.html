@@ -392,6 +392,11 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   .reviews-score>strong{font-size:2.5rem}
 }
 
+
+/* Four equal-sized images for Sandra Mall */
+.mall-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;background:var(--line)}
+.mall-gallery .project-visual{min-height:0;aspect-ratio:4/3;background:#fff}
+.mall-gallery .project-image{object-fit:cover;width:100%;height:100%}
 </style>
 </head>
 <body data-lang="ar">
@@ -655,24 +660,6 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         </div>
       </article>
       <article class="card project-card">
-        <div class="school-gallery" aria-label="معرض صور المشروع المعماري للمسجد">
-          <div class="project-visual" role="img" aria-label="المسجد – واجهة معمارية ثلاثية الأبعاد 1">
-            <img class="project-image" src="IMG-20261109-WA0004.jpg" alt="المسجد – واجهة معمارية ثلاثية الأبعاد 1" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
-            <span class="project-visual-mark">HD</span><span class="project-visual-caption">المسجد – واجهة 1</span>
-          </div>
-          <div class="project-visual" role="img" aria-label="المسجد – منظور معماري ثلاثي الأبعاد 2">
-            <img class="project-image" src="IMG-20261109-WA0005.jpg" alt="المسجد – منظور معماري ثلاثي الأبعاد 2" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
-            <span class="project-visual-mark">HD</span><span class="project-visual-caption">منظور 2</span>
-          </div>
-          <div class="project-visual" role="img" aria-label="المسجد – منظور معماري ثلاثي الأبعاد 3">
-            <img class="project-image" src="IMG-20261109-WA0006.jpg" alt="المسجد – منظور معماري ثلاثي الأبعاد 3" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
-            <span class="project-visual-mark">HD</span><span class="project-visual-caption">منظور 3</span>
-          </div>
-          <div class="project-visual" role="img" aria-label="المسجد – منظور معماري ثلاثي الأبعاد 4">
-            <img class="project-image" src="IMG-20261109-WA0007.jpg" alt="المسجد – منظور معماري ثلاثي الأبعاد 4" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
-            <span class="project-visual-mark">HD</span><span class="project-visual-caption">منظور 4</span>
-          </div>
-        </div>
         <div class="project-body">
           <div class="meta"><span class="ar">تصميم معماري – واجهات ومناظير ثلاثية الأبعاد</span><span class="en">Architectural design – 3D elevations and visualizations</span></div>
           <h3><span class="ar">مشروع مسجد</span><span class="en">Mosque Project</span></h3>
@@ -720,16 +707,17 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         </div>
       </article>
       <article class="card project-card">
-        <div class="project-visual" role="img" aria-label="صورة إكسبو مول وEHZM مول">
-          <img class="project-image" src="images/projects/project-04.jpg" alt="إكسبو مول وEHZM مول" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
-          <span class="project-visual-mark">HD</span>
-          <span class="project-visual-caption"><span class="ar">صورة المشروع 04 – ستضاف لاحقًا</span><span class="en">Project image 04 – coming soon</span></span>
+        <div class="mall-gallery" aria-label="معرض صور مول ساندرا – برج العرب">
+          <div class="project-visual"><img class="project-image" src="IMG-20261109-WA0004.jpg" alt="مول ساندرا – برج العرب، صورة 1" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
+          <div class="project-visual"><img class="project-image" src="IMG-20261109-WA0005.jpg" alt="مول ساندرا – برج العرب، صورة 2" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
+          <div class="project-visual"><img class="project-image" src="IMG-20261109-WA0006.jpg" alt="مول ساندرا – برج العرب، صورة 3" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
+          <div class="project-visual"><img class="project-image" src="IMG-20261109-WA0007.jpg" alt="مول ساندرا – برج العرب، صورة 4" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
         </div>
         <div class="project-body">
-          <div class="meta"><span class="ar">الإسكندرية – ECG</span><span class="en">Alexandria – ECG</span></div>
-          <h3><span class="ar">إكسبو مول وEHZM مول</span><span class="en">Expo Mall and EHZM Mall</span></h3>
-          <p class="ar">مولات واسعة المسطح بها بدرومات ومستويات انتظار.</p>
-          <p class="en">Large-footprint malls incorporating basements and parking levels.</p>
+          <div class="meta"><span class="ar">برج العرب – الإسكندرية</span><span class="en">Borg El Arab – Alexandria</span></div>
+          <h3><span class="ar">مول ساندرا – برج العرب</span><span class="en">Sandra Mall – Borg El Arab</span></h3>
+          <p class="ar">مشروع مول تجاري بمساحة 4,200 م².</p>
+          <p class="en">Commercial mall project with a total area of 4,200 m².</p>
         </div>
       </article>
       <article class="card project-card">
