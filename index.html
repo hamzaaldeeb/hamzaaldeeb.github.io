@@ -199,11 +199,11 @@ ul.tl li ul{list-style:disc}
 .school-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;background:var(--line)}
 .school-gallery .project-visual{min-height:118px;background:#fff}
 .school-gallery .project-visual:first-child{grid-column:1/-1;min-height:220px}
-.school-gallery .project-image{object-fit:contain;background:#fff}
+.school-gallery .project-image{object-fit:cover;background:#fff}
 @media(max-width:560px){.school-gallery .project-visual{min-height:105px}.school-gallery .project-visual:first-child{min-height:190px}}
 .project-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
 .project-visual{position:relative;min-height:0;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;border-bottom:1px solid var(--line);isolation:isolate}
-.project-image{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#fff;z-index:0}
+.project-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;background:#fff;z-index:0}
 .project-visual-mark,.project-visual-caption{z-index:1}
 .project-visual.has-image::before,.project-visual.has-image::after{display:none}
 .project-visual.has-image .project-visual-mark,.project-visual.has-image .project-visual-caption{display:none}
