@@ -217,8 +217,6 @@ ul.tl li ul{list-style:disc}
 .project-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:16px 10px;background:rgba(3,8,18,.97);backdrop-filter:blur(7px);overflow:hidden;touch-action:none}
 .project-lightbox.open{display:flex}
 .project-lightbox-image{display:block;max-width:calc(100vw - 20px);max-height:calc(100dvh - 32px);width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,.5);user-select:none;-webkit-user-drag:none;transform:scale(1);transform-origin:center;transition:transform .12s ease;touch-action:none;cursor:zoom-in}
- .project-lightbox-zoom{position:fixed;bottom:14px;inset-inline-end:14px;z-index:4;display:flex;gap:7px}
- .project-lightbox-zoom button{width:42px;height:42px;border:1px solid rgba(255,255,255,.35);border-radius:10px;background:rgba(20,30,50,.92);color:#fff;font-size:1.35rem;cursor:pointer}
 .project-lightbox-close{position:fixed;top:12px;inset-inline-end:14px;z-index:3;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--ink);font-size:1.8rem;cursor:pointer}
 .project-lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);z-index:3;width:28px;height:28px;border:1px solid rgba(255,255,255,.22);border-radius:8px;background:rgba(20,30,50,.42);color:#fff;font-size:1.1rem;opacity:.55;cursor:pointer}
 .project-lightbox-prev{top:12%;left:50%;transform:translateX(-50%)}
@@ -1225,16 +1223,16 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   projectLightbox.setAttribute('role','dialog');
   projectLightbox.setAttribute('aria-modal','true');
   projectLightbox.setAttribute('aria-label','معاينة صور المشروع');
-  projectLightbox.innerHTML='<button class="project-lightbox-close" type="button" aria-label="إغلاق الصور">×</button><button class="project-lightbox-nav project-lightbox-prev" type="button" aria-label="الصورة السابقة">↑</button><img class="project-lightbox-image" alt=""><button class="project-lightbox-nav project-lightbox-next" type="button" aria-label="الصورة التالية">↓</button><div class="project-lightbox-count" aria-live="polite"></div><div class="project-lightbox-zoom"><button type="button" class="zoom-out" aria-label="تصغير">−</button><button type="button" class="zoom-reset" aria-label="الحجم الأصلي">↺</button><button type="button" class="zoom-in" aria-label="تكبير">+</button></div>';
+  projectLightbox.innerHTML='<button class="project-lightbox-close" type="button" aria-label="إغلاق الصور">×</button><button class="project-lightbox-nav project-lightbox-prev" type="button" aria-label="الصورة السابقة">↑</button><img class="project-lightbox-image" alt=""><button class="project-lightbox-nav project-lightbox-next" type="button" aria-label="الصورة التالية">↓</button><div class="project-lightbox-count" aria-live="polite"></div>';
   document.body.appendChild(projectLightbox);
   var lightboxImage=projectLightbox.querySelector('.project-lightbox-image');
   var lightboxClose=projectLightbox.querySelector('.project-lightbox-close');
   var lightboxPrev=projectLightbox.querySelector('.project-lightbox-prev');
   var lightboxNext=projectLightbox.querySelector('.project-lightbox-next');
   var lightboxCount=projectLightbox.querySelector('.project-lightbox-count');
-  var zoomInButton=projectLightbox.querySelector('.zoom-in');
-  var zoomOutButton=projectLightbox.querySelector('.zoom-out');
-  var zoomResetButton=projectLightbox.querySelector('.zoom-reset');
+  
+  
+  
   var imageZoom=1,pinchStartDistance=0,pinchStartZoom=1,wasPinching=false,panX=0,panY=0,panStartX=0,panStartY=0,panOriginX=0,panOriginY=0;
   function setImageZoom(value){imageZoom=Math.max(1,Math.min(4,value));if(imageZoom===1){panX=0;panY=0;}lightboxImage.style.transform='translate3d('+panX+'px,'+panY+'px,0) scale('+imageZoom+')';lightboxImage.style.cursor=imageZoom>1?'grab':'zoom-in';}
   var currentProjectImages=[];
@@ -1299,9 +1297,9 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   });
   lightboxPrev.addEventListener('click',function(){stepProjectImage(-1);});
   lightboxNext.addEventListener('click',function(){stepProjectImage(1);});
-  zoomInButton.addEventListener('click',function(){setImageZoom(imageZoom+.5);});
-  zoomOutButton.addEventListener('click',function(){setImageZoom(imageZoom-.5);});
-  zoomResetButton.addEventListener('click',function(){setImageZoom(1);});
+  
+  
+  
   lightboxImage.addEventListener('dblclick',function(){setImageZoom(imageZoom>1?1:2);});
   lightboxImage.addEventListener('wheel',function(event){event.preventDefault();setImageZoom(imageZoom+(event.deltaY<0?.2:-.2));},{passive:false});
   projectLightbox.addEventListener('touchstart',function(event){
