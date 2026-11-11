@@ -412,6 +412,19 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 .mall-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 .mall-gallery .project-visual,
 .mall-gallery .project-visual:first-child{grid-column:auto!important;aspect-ratio:4/3!important;min-height:0!important}
+
+/* Refined professional hero identity */
+.hero{padding:72px 0 64px}
+.hero .wrap{gap:clamp(30px,5vw,64px)}
+.avatar{width:270px;height:270px;border:3px solid rgba(245,165,36,.65);box-shadow:0 0 0 9px rgba(245,165,36,.08),0 22px 58px rgba(0,0,0,.48)}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;color:var(--acc);font-size:.9rem;font-weight:800;letter-spacing:.08em;margin-bottom:9px}
+.hero-text h1{font-size:clamp(2.35rem,6vw,3.65rem);font-weight:850;letter-spacing:-.035em}
+.hero-text .role{font-size:clamp(1.05rem,2.5vw,1.28rem);line-height:1.7}
+.hero-text .sub{font-size:1.02rem;line-height:2;max-width:610px}
+.action-row-project .hero-contact-btn{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 14px;border:1px solid #278c67;border-radius:10px;background:rgba(39,140,103,.14);color:#a9f0d2;text-decoration:none;font-weight:700;text-align:center;transition:.2s}
+.action-row-project .hero-contact-btn:hover{background:#278c67;color:#fff;transform:translateY(-2px)}
+@media(max-width:820px){.hero{padding:42px 0 44px}.avatar{width:230px;height:230px}.hero-text{text-align:center}.hero-text .sub{margin-inline:auto}.hero-actions{margin-inline:auto;width:100%}}
+@media(max-width:480px){.avatar{width:205px;height:205px}.hero-kicker{font-size:.82rem}.action-row-project{grid-template-columns:1fr}}
 </style>
 </head>
 <body data-lang="ar">
@@ -453,7 +466,8 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
       <div class="badge"><span class="ar">📍 مكة المكرمة، المملكة العربية السعودية</span><span class="en">📍 Makkah, Saudi Arabia</span></div>
     </div>
     <div class="hero-text">
-      <h1><span class="ar">حمزة أبو الديب</span><span class="en">Hamza Al Deeb</span></h1>
+      <div class="hero-kicker"><span class="ar">الديب للتصميم الإنشائي</span><span class="en">AL DEEB · STRUCTURAL DESIGN</span></div>
+      <h1><span class="ar">م. حمزة الديب</span><span class="en">Eng. Hamza Al Deeb</span></h1>
       <div class="role"><span class="ar">مهندس تصميم إنشائي | متاح لفرص العمل والتعاون</span><span class="en">Structural Design Engineer | Open to Career Opportunities</span></div>
       <p class="sub">
         <span class="ar">التصميم والتحليل الإنشائي ثلاثي الأبعاد، وإعداد المخططات والمذكرات الحسابية، ومراجعة المشاريع الهندسية، وخدمات إصدار رخص البناء، والإشراف الهندسي على تنفيذ المشاريع السكنية والتجارية والطبية والدينية والصناعية، وفق الأكواد SBC وACI وECP.</span>
@@ -468,7 +482,8 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
           <a class="btn career-btn" href="https://drive.google.com/file/d/1gLiRjLgWxEJ61EYdB0jg1tDcft9mYwCz/view?usp=drivesdk" target="_blank" rel="noopener">📄 <span class="ar">السيرة الذاتية CV</span><span class="en">Download CV</span></a>
         </div>
         <div class="action-row action-row-project">
-          <a class="btn project-btn" href="#projects">▦ <span class="ar">استعرض المشاريع</span><span class="en">View Projects</span></a>
+          <a class="btn project-btn" href="#projects">▦ <span class="ar">استعرض مشاريعي</span><span class="en">View My Projects</span></a>
+          <a class="btn hero-contact-btn" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%83%D9%85%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85%20%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9." target="_blank" rel="noopener">💬 <span class="ar">تواصل معي واتساب</span><span class="en">Contact on WhatsApp</span></a>
         </div>
         <div class="availability-row">
           <a class="availability-badge" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D9%86%D8%AD%D9%86%20%D9%85%D9%83%D8%AA%D8%A8%20%D9%87%D9%86%D8%AF%D8%B3%D9%8A%20%D9%88%D9%86%D8%AD%D8%AA%D8%A7%D8%AC%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D9%84%D9%84%D8%A7%D9%86%D8%B6%D9%85%D8%A7%D9%85%20%D9%84%D9%81%D8%B1%D9%8A%D9%82%D9%86%D8%A7%D8%8C%20%D9%88%D9%86%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%83%D9%85%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D9%81%D8%B1%D8%B5%D8%A9%20%D8%A7%D9%84%D8%B9%D9%85%D9%84." target="_blank" rel="noopener"><span class="ar">✓ متاح للتوظيف</span><span class="en">✓ Available for Hire</span></a>
