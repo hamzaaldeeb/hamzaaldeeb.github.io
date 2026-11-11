@@ -217,7 +217,9 @@ ul.tl li ul{list-style:disc}
 .school-gallery .project-visual:first-child{grid-column:1/-1;min-height:220px}
 .school-gallery .project-image{object-fit:cover;background:#fff}
 @media(max-width:560px){.school-gallery .project-visual{min-height:105px}.school-gallery .project-visual:first-child{min-height:190px}}
-/* Medical gallery intentionally inherits the exact school-gallery sizing */
+/* Medical gallery: show every photo in full, preserving its original proportions */
+#projects .medical-gallery .project-visual{aspect-ratio:auto!important;min-height:0!important;height:auto!important;overflow:visible!important;background:#fff!important}
+#projects .medical-gallery .project-image{position:static!important;display:block!important;width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;object-position:center!important;padding:0!important}
 .project-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
 .project-visual{position:relative;min-height:0;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;border-bottom:1px solid var(--line);isolation:isolate}
 .project-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;background:#fff;z-index:0}
