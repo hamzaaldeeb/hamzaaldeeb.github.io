@@ -89,13 +89,19 @@ button.lang:hover{background:var(--acc);color:#111}
 .hero{background:radial-gradient(1000px 420px at 80% -10%,#1b2b5a 0%,transparent 60%),var(--bg);padding:64px 0 56px}
 .hero .wrap{display:flex;align-items:center;gap:44px;flex-wrap:wrap}
 .hero-text{flex:1 1 380px}
-.avatar{flex:0 0 auto;width:250px;height:250px;border-radius:50%;background:var(--card);display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:3.4rem;color:var(--acc);font-weight:700;box-shadow:0 0 0 6px rgba(245,165,36,.10),0 18px 50px rgba(0,0,0,.45);margin-inline:auto}
+.avatar{flex:0 0 auto;width:250px;height:250px;border-radius:50%;background:var(--card);display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:3.4rem;color:var(--acc);font-weight:700;box-shadow:0 0 0 6px rgba(245,165,36,.10),0 18px 50px rgba(0,0,0,.45);margin-inline:auto;animation:avatarGoldGlow 2.8s ease-in-out infinite}
 .avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .avatar-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;flex:0 0 auto;margin-inline:auto}
 .office-location-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 16px;border:1px solid var(--acc);border-radius:999px;background:rgba(245,165,36,.10);color:var(--acc2);text-decoration:none;font-weight:700;text-align:center;transition:.2s}
 .office-location-btn:hover{background:var(--acc);color:#141414;transform:translateY(-2px)}
+.office-pin{position:relative;display:inline-block;font-size:1.18em;line-height:1;animation:officePinBounce 1.25s ease-in-out infinite;transform-origin:bottom center}
+.office-pin i{position:absolute;left:50%;bottom:-7px;width:6px;height:6px;border-radius:50%;background:#ff3434;box-shadow:0 0 5px 2px rgba(255,52,52,.65);transform:translateX(-50%);animation:officePinDot 1.25s ease-in-out infinite}
 .makkah-service-link{color:var(--acc2);font-size:.9rem;font-weight:700;text-decoration:none;text-align:center}.makkah-service-link:hover{text-decoration:underline}
 @media(max-width:820px){.avatar-wrap{order:-1;width:100%}}
+@keyframes avatarGoldGlow{0%,100%{box-shadow:0 0 0 5px rgba(245,165,36,.18),0 0 10px 2px rgba(255,190,70,.22),0 18px 50px rgba(0,0,0,.45)}50%{box-shadow:0 0 0 7px rgba(255,198,80,.48),0 0 25px 9px rgba(245,165,36,.55),0 18px 50px rgba(0,0,0,.45)}}
+@keyframes officePinBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes officePinDot{0%,100%{opacity:.35;transform:translateX(-50%) scale(.8);box-shadow:0 0 3px 1px rgba(255,52,52,.35)}50%{opacity:1;transform:translateX(-50%) scale(1.25);box-shadow:0 0 8px 4px rgba(255,52,52,.75)}}
+@media(prefers-reduced-motion:reduce){.avatar,.office-pin,.office-pin i{animation:none!important}}
 .badge{display:inline-block;color:var(--acc2);border:1px solid var(--line);background:var(--bg2);padding:2px 14px;border-radius:20px;font-size:.85rem;margin-bottom:16px}
 h1{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.2;margin-bottom:8px}
 .role{color:var(--acc2);font-size:1.2rem;font-weight:600;margin-bottom:10px}
@@ -612,7 +618,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
       <span id="initials" style="display:none"><span class="ar">ح</span><span class="en">HA</span></span>
       </div>
       <a class="office-location-btn" href="https://maps.app.goo.gl/vW6CFYRzxsvvN25M6?g_st=ac" target="_blank" rel="noopener">
-        📍 <span class="ar">موقع المكتب الهندسي</span><span class="en">Engineering Office Location</span>
+        <span class="office-pin" aria-hidden="true">📍<i></i></span> <span class="ar">موقع المكتب الهندسي</span><span class="en">Engineering Office Location</span>
       </a>
       <a class="makkah-service-link" href="/makkah.html"><span class="ar">تعرف على الخدمات الهندسية في مكة ←</span><span class="en">Engineering services in Makkah →</span></a>
       <div class="badge"><span class="ar">📍 مكة المكرمة، المملكة العربية السعودية</span><span class="en">📍 Makkah, Saudi Arabia</span></div>
@@ -1250,15 +1256,21 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     homepageSections.push(section);
     function toggleSection(){
       var open=toggle.getAttribute('aria-expanded')!=='true';
-      if(open){
-        openOnlySection(section);
-        // Start every newly opened section at its heading, not the previous scroll position.
-        window.setTimeout(function(){
-          section.scrollIntoView({behavior:'smooth',block:'start'});
-        },80);
-      }else{
+      if(!open){
         setSectionOpen(section,false);
+        return;
       }
+      // Close the previous panel first, then align the new heading after layout and scroll anchoring settle.
+      openOnlySection(section);
+      var stickyHeader=document.querySelector('header.top');
+      var headerOffset=stickyHeader ? stickyHeader.getBoundingClientRect().height : 0;
+      window.requestAnimationFrame(function(){
+        window.requestAnimationFrame(function(){
+          var headingTop=heading.getBoundingClientRect().top+window.pageYOffset;
+          var targetTop=Math.max(0,headingTop-headerOffset-14);
+          window.scrollTo({top:targetTop,behavior:'smooth'});
+        });
+      });
     }
     toggle.addEventListener('click',function(event){
       event.stopPropagation();
