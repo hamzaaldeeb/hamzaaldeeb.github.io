@@ -1366,7 +1366,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         ['المدينة',data.get('city')],
         ['نوع المشروع',data.get('type')],
         ['عدد الأدوار',data.get('floors')],
-        ['المساحة التقريبية',data.get('area')+' م²'],
+        ['المساحة التقريبية',data.get('area') ? data.get('area')+' م²' : ''],
         ['التفاصيل',data.get('details')]
       ];
       var lines=fields.filter(function(item){return item[1] && String(item[1]).trim() && item[1]!==' م²';}).map(function(item){return item[0]+': '+String(item[1]).trim();});
