@@ -217,11 +217,14 @@ ul.tl li ul{list-style:disc}
 .school-gallery .project-visual:first-child{grid-column:1/-1;min-height:220px}
 .school-gallery .project-image{object-fit:cover;background:#fff}
 @media(max-width:560px){.school-gallery .project-visual{min-height:105px}.school-gallery .project-visual:first-child{min-height:190px}}
-/* Medical projects: slightly more compact gallery, with edge-to-edge cropped photos */
-.medical-gallery .project-visual{min-height:100px}
-.medical-gallery .project-visual:first-child{min-height:180px}
-.medical-gallery .project-image{object-fit:cover!important;object-position:center!important;padding:0!important;background:transparent!important;transform:scale(1.06)}
-@media(max-width:560px){.medical-gallery .project-visual{min-height:92px}.medical-gallery .project-visual:first-child{min-height:155px}}
+/* Medical projects: compact fixed-height gallery, edge-to-edge images */
+.medical-gallery .project-visual{height:88px!important;min-height:0!important;aspect-ratio:auto!important}
+.medical-gallery .project-visual:first-child{height:145px!important;min-height:0!important;aspect-ratio:auto!important}
+.medical-gallery .project-image{object-fit:cover!important;object-position:center!important;padding:0!important;background:transparent!important;transform:scale(1.12)}
+@media(max-width:560px){
+  .medical-gallery .project-visual{height:76px!important}
+  .medical-gallery .project-visual:first-child{height:122px!important}
+}
 .project-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
 .project-visual{position:relative;min-height:0;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;border-bottom:1px solid var(--line);isolation:isolate}
 .project-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;background:#fff;z-index:0}
@@ -881,9 +884,9 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
       </article>
 <article class="card project-card">
         <div class="school-gallery medical-gallery" aria-label="معرض صور المشروعات الطبية: مستشفى الناصر الطبي ومركز دراز الطبي – برج العرب">
-          <div class="project-visual"><img class="project-image" src="IMG-20261111-WA0020.jpg" alt="مشروعات طبية – مستشفى الناصر الطبي ومركز دراز الطبي، صورة 2" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
-          <div class="project-visual"><img class="project-image" src="IMG-20261111-WA0019.jpg" alt="مشروعات طبية – مستشفى الناصر الطبي ومركز دراز الطبي، صورة 1" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
           <div class="project-visual"><img class="project-image" src="IMG-20261111-WA0021.jpg" alt="مشروعات طبية – مستشفى الناصر الطبي ومركز دراز الطبي، صورة 3" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
+          <div class="project-visual"><img class="project-image" src="IMG-20261111-WA0019.jpg" alt="مشروعات طبية – مستشفى الناصر الطبي ومركز دراز الطبي، صورة 1" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
+          <div class="project-visual"><img class="project-image" src="IMG-20261111-WA0020.jpg" alt="مشروعات طبية – مستشفى الناصر الطبي ومركز دراز الطبي، صورة 2" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
         </div>
         <div class="project-body">
           <div class="meta"><span class="ar">مشروعات طبية – مستشفى ومركز طبي | ECG | برج العرب – الإسكندرية</span><span class="en">Healthcare projects – Hospital &amp; Medical Center | ECG | Borg El Arab, Alexandria</span></div>
