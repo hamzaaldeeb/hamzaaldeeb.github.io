@@ -208,12 +208,17 @@ ul.tl li ul{list-style:disc}
 .project-visual.has-image::before,.project-visual.has-image::after{display:none}
 .project-visual.has-image .project-visual-mark,.project-visual.has-image .project-visual-caption{display:none}
 .project-visual.has-image{cursor:zoom-in}
-.project-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(3,8,18,.94);backdrop-filter:blur(7px)}
+/* Keep Sandra Mall plans fully visible without cropping */
+#projects .sandra-gallery .project-image{object-fit:contain!important;background:#fff!important;padding:5px!important}
+#projects .sandra-gallery .project-visual{background:#fff!important}
+/* Project lightbox: swipe/scroll vertically through every photo in the same project */
+.project-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:stretch;justify-content:center;padding:0 12px 18px;background:rgba(3,8,18,.97);backdrop-filter:blur(7px);overflow-y:auto;-webkit-overflow-scrolling:touch}
 .project-lightbox.open{display:flex}
-.project-lightbox img{display:block;max-width:min(1100px,94vw);max-height:82vh;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 18px 60px rgba(0,0,0,.5)}
-.project-lightbox-close{position:absolute;top:16px;inset-inline-end:18px;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--ink);font-size:1.8rem;cursor:pointer}
-.project-lightbox-caption{position:absolute;bottom:14px;inset-inline:55px;text-align:center;color:var(--ink);font-size:.9rem}
-@media(max-width:560px){.project-lightbox{padding:12px}.project-lightbox img{max-width:96vw;max-height:78vh}.project-lightbox-caption{font-size:.78rem;bottom:10px}}
+.project-lightbox-gallery{width:100%;display:flex;flex-direction:column;align-items:center;gap:18px;padding:76px 0 30px}
+.project-lightbox-gallery img{display:block;max-width:min(1100px,94vw);width:auto;height:auto;max-height:none;object-fit:contain;border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,.5);flex:0 0 auto}
+.project-lightbox-close{position:fixed;top:12px;inset-inline-end:14px;z-index:2;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--ink);font-size:1.8rem;cursor:pointer}
+.project-lightbox-caption{position:fixed;top:0;inset-inline:64px;z-index:2;text-align:center;color:var(--ink);font-size:.95rem;padding:18px 8px;background:rgba(3,8,18,.94)}
+@media(max-width:560px){.project-lightbox{padding:0 8px 14px}.project-lightbox-gallery{gap:12px;padding-top:70px}.project-lightbox-gallery img{max-width:96vw}.project-lightbox-caption{font-size:.82rem;padding:17px 4px}}
 
 .project-visual::before,.project-visual::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.25;background-image:linear-gradient(rgba(245,165,36,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(245,165,36,.22) 1px,transparent 1px);background-size:24px 24px}
 .project-visual::after{inset:18px;border:1px dashed rgba(245,165,36,.55);background:none}
@@ -1208,27 +1213,40 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   projectLightbox.setAttribute('role','dialog');
   projectLightbox.setAttribute('aria-modal','true');
   projectLightbox.setAttribute('aria-label','معاينة صورة المشروع');
-  projectLightbox.innerHTML='<button class="project-lightbox-close" type="button" aria-label="إغلاق الصورة">×</button><img alt=""><div class="project-lightbox-caption"></div>';
+  projectLightbox.innerHTML='<button class="project-lightbox-close" type="button" aria-label="إغلاق الصور">×</button><div class="project-lightbox-caption"></div><div class="project-lightbox-gallery"></div>';
   document.body.appendChild(projectLightbox);
-  var lightboxImage=projectLightbox.querySelector('img');
+  var lightboxGallery=projectLightbox.querySelector('.project-lightbox-gallery');
   var lightboxCaption=projectLightbox.querySelector('.project-lightbox-caption');
   var lightboxClose=projectLightbox.querySelector('.project-lightbox-close');
   var lastProjectTrigger=null;
   function closeProjectLightbox(){
     projectLightbox.classList.remove('open');
-    lightboxImage.removeAttribute('src');
+    lightboxGallery.innerHTML='';
+    document.body.style.overflow='';
     if(lastProjectTrigger) lastProjectTrigger.focus();
   }
   document.querySelectorAll('.project-visual').forEach(function(slot){
     slot.addEventListener('click',function(){
       var image=slot.querySelector('.project-image');
-      if(!image || image.hidden || !image.complete || !image.naturalWidth) return;
+      if(!image || image.hidden || !image.src) return;
+      var card=slot.closest('.project-card');
+      if(!card) return;
       lastProjectTrigger=slot;
-      lightboxImage.src=image.currentSrc || image.src;
-      lightboxImage.alt=image.alt || 'صورة مشروع';
-      var title=slot.parentElement.querySelector('.project-body h3');
-      lightboxCaption.textContent=title ? title.textContent.trim() : image.alt;
+      lightboxGallery.innerHTML='';
+      card.querySelectorAll('.project-visual .project-image').forEach(function(projectImage){
+        if(projectImage.hidden || !projectImage.src) return;
+        var fullImage=document.createElement('img');
+        fullImage.src=projectImage.currentSrc || projectImage.src;
+        fullImage.alt=projectImage.alt || 'صورة مشروع';
+        fullImage.loading='eager';
+        fullImage.decoding='async';
+        lightboxGallery.appendChild(fullImage);
+      });
+      var title=card.querySelector('.project-body h3');
+      lightboxCaption.textContent=(title ? title.textContent.trim() : image.alt)+' — مرّر لأسفل لمشاهدة باقي الصور';
+      projectLightbox.scrollTop=0;
       projectLightbox.classList.add('open');
+      document.body.style.overflow='hidden';
       lightboxClose.focus();
     });
   });
