@@ -520,6 +520,33 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 
 .project-tools{font-size:.84rem!important;color:var(--mute)!important;margin-top:10px!important;padding-top:9px;border-top:1px solid var(--line)}
 .project-tools strong{color:var(--acc2)}
+
+/* Homepage closing directory: services, coverage and engineering articles */
+.site-directory{padding:54px 0 58px;background:linear-gradient(180deg,var(--bg),var(--card) 52%,var(--bg));border-top:1px solid var(--line)}
+.site-directory .wrap{max-width:1180px}
+.site-directory-head{text-align:center;max-width:760px;margin:0 auto 28px}
+.site-directory-head h2{margin:0 0 10px;font-size:clamp(1.55rem,3vw,2.15rem)}
+.site-directory-head p{color:var(--mute);margin:0}
+.site-directory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.directory-panel{min-width:0;padding:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);display:flex;flex-direction:column}
+.directory-panel h3{font-size:1.15rem;margin:0 0 8px}
+.directory-panel>p{color:var(--mute);font-size:.92rem;margin:0 0 16px}
+.directory-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--acc) 16%,transparent);color:var(--acc);font-size:1.25rem;margin-bottom:13px}
+.directory-service-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 18px}
+.directory-service-list span,.directory-city-list a{padding:8px 10px;border:1px solid var(--line);border-radius:9px;font-size:.84rem;color:var(--text);text-decoration:none}
+.directory-city-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 18px}
+.directory-city-list a{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.directory-city-list a:hover,.directory-service-list span:hover{border-color:var(--acc)}
+.directory-articles{display:grid;gap:10px;margin:0 0 18px}
+.directory-article{display:block;padding:11px 12px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--text);transition:border-color .2s,transform .2s}
+.directory-article:hover{border-color:var(--acc);transform:translateY(-2px)}
+.directory-article small{display:block;color:var(--acc);font-size:.76rem;margin-bottom:3px}
+.directory-article strong{display:block;font-size:.88rem;line-height:1.65}
+.directory-panel .directory-link{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border-radius:10px;background:var(--acc);color:#171717;text-decoration:none;font-weight:700}
+.directory-panel .directory-link.secondary{background:transparent;color:var(--acc);border:1px solid var(--acc)}
+.directory-footnote{font-size:.8rem!important;line-height:1.7;margin-top:12px!important}
+@media(max-width:850px){.site-directory-grid{grid-template-columns:1fr 1fr}.directory-panel:last-child{grid-column:1/-1}}
+@media(max-width:580px){.site-directory{padding:38px 0}.site-directory-grid{grid-template-columns:1fr}.directory-panel:last-child{grid-column:auto}.directory-panel{padding:17px}.directory-city-list{grid-template-columns:repeat(2,minmax(0,1fr))}.site-directory-head{text-align:right;margin-bottom:20px}}
 </style>
 </head>
 <body data-lang="ar">
@@ -1038,6 +1065,60 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 </section>
 
 
+
+
+<!-- Closing homepage directory: services, coverage and latest engineering articles -->
+<div class="site-directory" id="site-directory">
+  <div class="wrap">
+    <div class="site-directory-head">
+      <div class="meta"><span class="ar">الديب للتصميم الإنشائي</span><span class="en">EL DEEB STRUCTURAL DESIGN</span></div>
+      <h2><span class="ar">خدماتنا · نطاق التغطية · المكتبة الهندسية</span><span class="en">Services · Coverage · Engineering Library</span></h2>
+      <p><span class="ar">كل ما تحتاجه للتعرّف على خدمات التصميم الإنشائي، والمدن التي نستقبل منها المشروعات، وأحدث المقالات الهندسية في مكان واحد.</span><span class="en">Explore our structural engineering services, project coverage across Saudi cities and the latest technical articles in one place.</span></p>
+    </div>
+    <div class="site-directory-grid">
+      <article class="directory-panel">
+        <div class="directory-icon" aria-hidden="true">⌂</div>
+        <h3><span class="ar">الخدمات الهندسية</span><span class="en">Engineering Services</span></h3>
+        <p><span class="ar">حلول هندسية تبدأ من دراسة المشروع والتصميم، وتمتد إلى المراجعة واللوحات وحصر الكميات والمتابعة الفنية.</span><span class="en">Engineering support from project assessment and design to review, drawings, quantity takeoff and technical follow-up.</span></p>
+        <div class="directory-service-list">
+          <span class="ar">التصميم والتحليل الإنشائي</span><span class="en">Structural Design</span>
+          <span class="ar">تصميم الأساسات</span><span class="en">Foundation Design</span>
+          <span class="ar">مراجعة النماذج واللوحات</span><span class="en">Model &amp; Drawing Review</span>
+          <span class="ar">المذكرات الحسابية</span><span class="en">Calculation Reports</span>
+          <span class="ar">حصر الكميات والحديد</span><span class="en">Quantity Takeoff</span>
+          <span class="ar">الدعم الفني والموقعي</span><span class="en">Technical &amp; Site Support</span>
+        </div>
+        <a class="directory-link" href="#services"><span class="ar">استعرض الخدمات بالتفصيل</span><span class="en">Explore all services</span> ←</a>
+      </article>
+      <article class="directory-panel">
+        <div class="directory-icon" aria-hidden="true">⌖</div>
+        <h3><span class="ar">المدن ونطاق التغطية</span><span class="en">Cities &amp; Service Coverage</span></h3>
+        <p><span class="ar">نستقبل استفسارات المشروعات من مختلف مناطق المملكة، مع تنسيق آلية العمل عن بُعد أو حسب طبيعة المشروع.</span><span class="en">Project inquiries are welcome from across Saudi Arabia, with remote coordination or project-based arrangements.</span></p>
+        <div class="directory-city-list">
+          <a href="/makkah.html"><span class="ar">مكة المكرمة</span><span class="en">Makkah</span><span>←</span></a>
+          <a href="/jeddah.html"><span class="ar">جدة</span><span class="en">Jeddah</span><span>←</span></a>
+          <a href="/taif.html"><span class="ar">الطائف</span><span class="en">Taif</span><span>←</span></a>
+          <a href="/riyadh.html"><span class="ar">الرياض</span><span class="en">Riyadh</span><span>←</span></a>
+          <a href="/madinah.html"><span class="ar">المدينة المنورة</span><span class="en">Madinah</span><span>←</span></a>
+          <a href="/dammam.html"><span class="ar">الدمام</span><span class="en">Dammam</span><span>←</span></a>
+        </div>
+        <p class="directory-footnote"><span class="ar">بالإضافة إلى 20 مدينة أخرى ضمن نطاق استقبال الاستفسارات. التغطية لا تعني وجود فرع محلي في كل مدينة.</span><span class="en">Plus 20 other cities. Coverage does not imply a physical local office in every city.</span></p>
+        <a class="directory-link secondary" href="/cities.html"><span class="ar">عرض جميع المدن الـ26</span><span class="en">View all 26 cities</span> ←</a>
+      </article>
+      <article class="directory-panel">
+        <div class="directory-icon" aria-hidden="true">▤</div>
+        <h3><span class="ar">المقالات والمكتبة الهندسية</span><span class="en">Articles &amp; Engineering Library</span></h3>
+        <p><span class="ar">محتوى فني مبسط ومنظم عن التربة والأساسات والعناصر الخرسانية والأكواد، مع توضيح المراجع وحدود استخدامها.</span><span class="en">Practical articles on geotechnical engineering, foundations, concrete members and design codes, with clear references.</span></p>
+        <div class="directory-articles">
+          <a class="directory-article" href="/foundations-types.html"><small><span class="ar">اختيار نظام التأسيس</span><span class="en">FOUNDATIONS</span></small><strong><span class="ar">أنواع الأساسات: القواعد واللبشات والخوازيق</span><span class="en">Foundation types: footings, rafts and piles</span></strong></a>
+          <a class="directory-article" href="/ground-beams.html"><small><span class="ar">العناصر الأرضية</span><span class="en">GROUND BEAMS</span></small><strong><span class="ar">الكمرات الأرضية والميدات والسملات</span><span class="en">Ground beams, tie beams and grade beams</span></strong></a>
+          <a class="directory-article" href="/soil-investigation.html"><small><span class="ar">دراسة الموقع والتربة</span><span class="en">GEOTECHNICAL</span></small><strong><span class="ar">ميكانيكا التربة وتقرير الجسات</span><span class="en">Soil mechanics and borehole reports</span></strong></a>
+        </div>
+        <a class="directory-link" href="/articles.html"><span class="ar">تصفح المكتبة الهندسية</span><span class="en">Browse the engineering library</span> ←</a>
+      </article>
+    </div>
+  </div>
+</div>
 
 <div class="service-modal" id="serviceModal" aria-hidden="true">
   <div class="service-dialog" role="dialog" aria-modal="true" aria-labelledby="serviceDialogTitle">
