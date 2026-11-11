@@ -285,7 +285,7 @@ footer{padding:30px 0;color:var(--mute);text-align:center;font-size:.85rem;borde
 section{padding:22px 0}
 section .wrap>h2{margin:0;min-height:42px;justify-content:space-between;cursor:default;gap:10px}
 section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
-.section-toggle{flex:0 0 28px;width:28px;height:28px;display:inline-grid;place-items:center;margin-inline-start:auto;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--acc);font-size:15px;line-height:1;cursor:pointer;transition:transform .18s,border-color .18s}
+.section-accordion-heading{cursor:pointer;user-select:none}.section-accordion-heading:focus-visible{outline:2px solid var(--acc);outline-offset:5px;border-radius:6px}.section-toggle{flex:0 0 28px;width:28px;height:28px;display:inline-grid;place-items:center;margin-inline-start:auto;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--acc);font-size:15px;line-height:1;cursor:pointer;transition:transform .18s,border-color .18s}
 .section-toggle:hover{border-color:var(--acc)}
 .section-toggle[aria-expanded="true"]{transform:rotate(180deg)}
 .section-content{display:block;width:100%;min-width:0;padding-top:18px;overflow:visible}
@@ -1210,7 +1210,22 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   });
 
 
-  // Build compact, independently expandable section panels.
+  // Build a single-open accordion for the homepage sections.
+  var homepageSections=[];
+  function setSectionOpen(section,open){
+    var panel=section.querySelector(':scope > .wrap > .section-content');
+    var heading=section.querySelector(':scope > .wrap > h2');
+    var toggle=heading && heading.querySelector('.section-toggle');
+    if(!panel || !toggle) return;
+    panel.hidden=!open;
+    toggle.setAttribute('aria-expanded',String(open));
+    toggle.setAttribute('aria-label',open?'إغلاق القسم':'فتح القسم');
+  }
+  function openOnlySection(activeSection){
+    homepageSections.forEach(function(section){
+      setSectionOpen(section,section===activeSection);
+    });
+  }
   document.querySelectorAll('main section').forEach(function(section,index){
     var wrap=section.querySelector(':scope > .wrap');
     var heading=wrap && wrap.querySelector(':scope > h2');
@@ -1226,6 +1241,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     }
     heading.insertAdjacentElement('afterend',panel);
     panel.hidden=true;
+    heading.classList.add('section-accordion-heading');
     var toggle=document.createElement('button');
     toggle.type='button';
     toggle.className='section-toggle';
@@ -1234,18 +1250,35 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     toggle.setAttribute('aria-label','فتح القسم');
     toggle.textContent='⌄';
     heading.appendChild(toggle);
-    toggle.addEventListener('click',function(){
+    homepageSections.push(section);
+    function toggleSection(){
       var open=toggle.getAttribute('aria-expanded')!=='true';
-      toggle.setAttribute('aria-expanded',String(open));
-      panel.hidden=!open;
-      toggle.setAttribute('aria-label',open?'إغلاق القسم':'فتح القسم');
+      if(open) openOnlySection(section);
+      else setSectionOpen(section,false);
       if(open && section.id==='reviews'){
         window.setTimeout(function(){section.scrollIntoView({behavior:'smooth',block:'start'});},60);
+      }
+    }
+    toggle.addEventListener('click',function(event){
+      event.stopPropagation();
+      toggleSection();
+    });
+    heading.addEventListener('click',function(event){
+      if(event.target.closest('a,button')) return;
+      toggleSection();
+    });
+    heading.setAttribute('tabindex','0');
+    heading.setAttribute('role','button');
+    heading.setAttribute('aria-controls',panel.id);
+    heading.addEventListener('keydown',function(event){
+      if(event.key==='Enter' || event.key===' '){
+        event.preventDefault();
+        toggleSection();
       }
     });
   });
 
-  // Expand collapsed sections automatically when a visitor follows an in-page link.
+  // In-page links open their target section and close any other open section.
   document.addEventListener('click',function(event){
     var link=event.target.closest('a[href^="#"]');
     if(!link) return;
@@ -1256,11 +1289,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     if(!section) return;
     var panel=section.querySelector(':scope > .wrap > .section-content');
     var toggle=section.querySelector(':scope > .wrap > h2 > .section-toggle');
-    if(panel && toggle && panel.hidden){
-      panel.hidden=false;
-      toggle.setAttribute('aria-expanded','true');
-      toggle.setAttribute('aria-label','إغلاق القسم');
-    }
+    if(panel && toggle) openOnlySection(section);
   });
 
   // Engineering service chooser: open the selector first, then WhatsApp only after a service is selected.
