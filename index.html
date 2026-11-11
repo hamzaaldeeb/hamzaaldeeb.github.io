@@ -214,7 +214,9 @@ ul.tl li ul{list-style:disc}
 /* Single-image project viewer with next/previous and touch swipe */
 .project-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:58px 54px 28px;background:rgba(3,8,18,.97);backdrop-filter:blur(7px);overflow:hidden;touch-action:pan-y}
 .project-lightbox.open{display:flex}
-.project-lightbox-image{display:block;max-width:100%;max-height:calc(100dvh - 92px);width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,.5);user-select:none;-webkit-user-drag:none}
+.project-lightbox-image{display:block;max-width:100%;max-height:calc(100dvh - 120px);width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,.5);user-select:none;-webkit-user-drag:none;transform:scale(1);transform-origin:center;transition:transform .12s ease;touch-action:none;cursor:zoom-in}
+ .project-lightbox-zoom{position:fixed;bottom:14px;inset-inline-end:14px;z-index:4;display:flex;gap:7px}
+ .project-lightbox-zoom button{width:42px;height:42px;border:1px solid rgba(255,255,255,.35);border-radius:10px;background:rgba(20,30,50,.92);color:#fff;font-size:1.35rem;cursor:pointer}
 .project-lightbox-close{position:fixed;top:12px;inset-inline-end:14px;z-index:3;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--ink);font-size:1.8rem;cursor:pointer}
 .project-lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:54px;border:1px solid rgba(255,255,255,.3);border-radius:12px;background:rgba(20,30,50,.82);color:#fff;font-size:2rem;cursor:pointer}
 .project-lightbox-prev{inset-inline-start:10px}
@@ -1215,7 +1217,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   projectLightbox.setAttribute('role','dialog');
   projectLightbox.setAttribute('aria-modal','true');
   projectLightbox.setAttribute('aria-label','معاينة صور المشروع');
-  projectLightbox.innerHTML='<button class="project-lightbox-close" type="button" aria-label="إغلاق الصور">×</button><button class="project-lightbox-nav project-lightbox-prev" type="button" aria-label="الصورة السابقة">‹</button><img class="project-lightbox-image" alt=""><button class="project-lightbox-nav project-lightbox-next" type="button" aria-label="الصورة التالية">›</button><div class="project-lightbox-count" aria-live="polite"></div>';
+  projectLightbox.innerHTML='<button class="project-lightbox-close" type="button" aria-label="إغلاق الصور">×</button><button class="project-lightbox-nav project-lightbox-prev" type="button" aria-label="الصورة السابقة">‹</button><img class="project-lightbox-image" alt=""><button class="project-lightbox-nav project-lightbox-next" type="button" aria-label="الصورة التالية">›</button><div class="project-lightbox-count" aria-live="polite"></div><div class="project-lightbox-zoom"><button type="button" class="zoom-out" aria-label="تصغير">−</button><button type="button" class="zoom-reset" aria-label="الحجم الأصلي">↺</button><button type="button" class="zoom-in" aria-label="تكبير">+</button></div>';
   document.body.appendChild(projectLightbox);
   var lightboxImage=projectLightbox.querySelector('.project-lightbox-image');
   var lightboxClose=projectLightbox.querySelector('.project-lightbox-close');
