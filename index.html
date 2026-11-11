@@ -1077,7 +1077,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
       </div>
       <form id="projectInquiry" class="inquiry-form">
         <label><span class="ar">الاسم</span><span class="en">Name</span><input name="name" autocomplete="name" required maxlength="80" placeholder="الاسم / Name"></label>
-        <label><span class="ar">المدينة</span><span class="en">City</span><input name="city" autocomplete="address-level2" maxlength="80" placeholder="مكة المكرمة"></label>
+        <label><span class="ar">المدينة</span><span class="en">City</span><input name="city" autocomplete="address-level2" maxlength="80" value="مكة المكرمة"></label>
         <label><span class="ar">نوع المشروع</span><span class="en">Project type</span>
           <select name="type" required>
             <option value="">اختر نوع المشروع</option>
@@ -1123,7 +1123,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   <div class="service-dialog" role="dialog" aria-modal="true" aria-labelledby="serviceDialogTitle">
     <div class="service-dialog-head">
       <div><h2 id="serviceDialogTitle"><span class="ar">اختار الخدمة المطلوبة</span><span class="en">Choose a service</span></h2>
-      <p><span class="ar">اختار الخدمة، وهيتفتح واتساب برسالة خاصة بيها.</span><span class="en">Choose a service to open WhatsApp with a message about it.</span></p></div>
+      <p><span class="ar">اختار الخدمة المطلوبة لمشروعك في مكة المكرمة، وهيتفتح واتساب برسالة جاهزة.</span><span class="en">Choose the service you need for your Makkah project to open a ready WhatsApp message.</span></p></div>
       <button class="service-close" id="serviceClose" type="button" aria-label="إغلاق">×</button>
     </div>
     <div class="service-options" id="service-options">
@@ -1315,7 +1315,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
       if(event.target===serviceModal) closeServiceModal();
     });
     function sendServiceRequest(service){
-      var message='السلام عليكم، أرغب في طلب خدمة: '+service+'. برجاء التواصل معي لمعرفة التفاصيل.';
+      var message='السلام عليكم، أرغب في طلب خدمة: '+service+' لمشروع في مكة المكرمة. برجاء التواصل معي لمعرفة التفاصيل.';
       window.open('https://wa.me/966561565066?text='+encodeURIComponent(message),'_blank','noopener');
       closeServiceModal();
     }
