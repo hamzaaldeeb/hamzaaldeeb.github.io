@@ -471,6 +471,12 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 #projects .mall-gallery{grid-template-columns:repeat(3,minmax(0,1fr))!important}
 #projects .mall-gallery .project-visual,#projects .mall-gallery .project-visual:first-child{grid-column:auto!important;aspect-ratio:1/1!important}
 #projects .sandra-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* Compact tower gallery: three equal thumbnails, no oversized first image */
+#projects .tower-gallery{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:5px!important}
+#projects .tower-gallery .project-visual,
+#projects .tower-gallery .project-visual:first-child{grid-column:auto!important;aspect-ratio:1/1!important;min-height:0!important;height:auto!important;background:#fff!important}
+#projects .tower-gallery .project-image{object-fit:contain!important;background:#fff!important;padding:5px!important}
+
 #projects .project-body{padding:20px 22px;gap:4px}
 #projects .project-body .meta{
   display:inline-flex;align-self:flex-start;max-width:100%;width:max-content;
@@ -1229,8 +1235,8 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   var zoomInButton=projectLightbox.querySelector('.zoom-in');
   var zoomOutButton=projectLightbox.querySelector('.zoom-out');
   var zoomResetButton=projectLightbox.querySelector('.zoom-reset');
-  var imageZoom=1,pinchStartDistance=0,pinchStartZoom=1,wasPinching=false;
-  function setImageZoom(value){imageZoom=Math.max(1,Math.min(4,value));lightboxImage.style.transform='scale('+imageZoom+')';lightboxImage.style.cursor=imageZoom>1?'zoom-out':'zoom-in';}
+  var imageZoom=1,pinchStartDistance=0,pinchStartZoom=1,wasPinching=false,panX=0,panY=0,panStartX=0,panStartY=0,panOriginX=0,panOriginY=0;
+  function setImageZoom(value){imageZoom=Math.max(1,Math.min(4,value));if(imageZoom===1){panX=0;panY=0;}lightboxImage.style.transform='translate3d('+panX+'px,'+panY+'px,0) scale('+imageZoom+')';lightboxImage.style.cursor=imageZoom>1?'grab':'zoom-in';}
   var currentProjectImages=[];
   var currentProjectIndex=0;
   var lastProjectTrigger=null;
@@ -1301,10 +1307,11 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   projectLightbox.addEventListener('touchstart',function(event){
     wasPinching=event.touches.length>1;
     if(event.touches.length===2){pinchStartDistance=Math.hypot(event.touches[0].clientX-event.touches[1].clientX,event.touches[0].clientY-event.touches[1].clientY);pinchStartZoom=imageZoom;}
-    else if(event.touches.length===1){touchStartX=event.touches[0].clientX;}
+    else if(event.touches.length===1){touchStartX=event.touches[0].clientX;panStartX=event.touches[0].clientX;panStartY=event.touches[0].clientY;panOriginX=panX;panOriginY=panY;}
   },{passive:true});
   projectLightbox.addEventListener('touchmove',function(event){
     if(event.touches.length===2 && pinchStartDistance){event.preventDefault();var distance=Math.hypot(event.touches[0].clientX-event.touches[1].clientX,event.touches[0].clientY-event.touches[1].clientY);setImageZoom(pinchStartZoom*(distance/pinchStartDistance));}
+    else if(event.touches.length===1 && imageZoom>1){event.preventDefault();panX=panOriginX+(event.touches[0].clientX-panStartX);panY=panOriginY+(event.touches[0].clientY-panStartY);lightboxImage.style.transform='translate3d('+panX+'px,'+panY+'px,0) scale('+imageZoom+')';}
   },{passive:false});
   projectLightbox.addEventListener('touchend',function(event){
     if(!projectLightbox.classList.contains('open')) return;
