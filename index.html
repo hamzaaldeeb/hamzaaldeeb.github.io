@@ -565,7 +565,6 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 .directory-arrow{font-size:1.05rem;color:var(--acc);font-weight:800;flex:0 0 auto;transition:transform .18s}
 .directory-panel:hover .directory-arrow,.directory-article:hover .directory-arrow{transform:translateX(-3px)}
 .directory-panel-articles{display:block;padding:10px}
-.directory-panel-trigger{width:100%;font:inherit;text-align:start;cursor:pointer;background:transparent}.directory-panel-trigger[aria-expanded="true"] .directory-arrow{transform:rotate(180deg)}.directory-articles[hidden]{display:none!important}
 .directory-panel-heading{display:flex;align-items:center;gap:10px;padding:2px 3px 9px;text-decoration:none;color:var(--text);border-bottom:1px solid var(--line)}
 .directory-panel-heading .directory-copy strong{font-size:.91rem}
 .directory-articles{display:grid;gap:6px;padding-top:8px}
@@ -1104,19 +1103,14 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     </div>
     <div class="site-directory-grid">
       <div class="directory-panel directory-panel-articles">
-        <button class="directory-panel-heading directory-panel-trigger" id="directoryArticlesToggle" type="button" aria-expanded="false" aria-controls="directoryArticlesList">
+        <a class="directory-panel-heading" href="/articles.html">
           <span class="directory-icon" aria-hidden="true">▤</span>
           <span class="directory-copy">
             <strong><span class="ar">المقالات الهندسية</span><span class="en">Engineering Articles</span></strong>
-            <small><span class="ar">اضغط لعرض المقالات المتاحة</span><span class="en">Tap to show available articles</span></small>
+            <small><span class="ar">مقالات التصميم الإنشائي والأكواد والأساسات</span><span class="en">Structural design, codes and foundation guides</span></small>
           </span>
-          <span class="directory-arrow" aria-hidden="true">⌄</span>
-        </button>
-        <div class="directory-articles" id="directoryArticlesList" hidden>
-          <a class="directory-article" href="/foundations-types.html"><span><small><span class="ar">الأساسات</span><span class="en">FOUNDATIONS</span></small><strong><span class="ar">أنواع الأساسات واختيار النظام المناسب</span><span class="en">Foundation types and system selection</span></strong></span><span class="directory-arrow" aria-hidden="true">←</span></a>
-          <a class="directory-article" href="/ground-beams.html"><span><small><span class="ar">الكمرات الأرضية</span><span class="en">GROUND BEAMS</span></small><strong><span class="ar">الميدات والسملات والشدادات</span><span class="en">Ground beams and tie beams</span></strong></span><span class="directory-arrow" aria-hidden="true">←</span></a>
-          <a class="directory-article" href="/soil-investigation.html"><span><small><span class="ar">ميكانيكا التربة</span><span class="en">GEOTECHNICAL</span></small><strong><span class="ar">تقرير الجسات واختبارات التربة</span><span class="en">Soil investigation and borehole reports</span></strong></span><span class="directory-arrow" aria-hidden="true">←</span></a>
-        </div>
+          <span class="directory-arrow" aria-hidden="true">←</span>
+        </a>
       </div>
     </div>
 
@@ -1292,17 +1286,6 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     var toggle=section.querySelector(':scope > .wrap > h2 > .section-toggle');
     if(panel && toggle) openOnlySection(section);
   });
-
-  // Expand/collapse the engineering article list while keeping every article link available.
-  var directoryArticlesToggle=document.getElementById('directoryArticlesToggle');
-  var directoryArticlesList=document.getElementById('directoryArticlesList');
-  if(directoryArticlesToggle && directoryArticlesList){
-    directoryArticlesToggle.addEventListener('click',function(){
-      var expanded=directoryArticlesToggle.getAttribute('aria-expanded')!=='true';
-      directoryArticlesToggle.setAttribute('aria-expanded',String(expanded));
-      directoryArticlesList.hidden=!expanded;
-    });
-  }
 
   // Engineering service chooser: open the selector first, then WhatsApp only after a service is selected.
   var serviceModal=document.getElementById('serviceModal');
