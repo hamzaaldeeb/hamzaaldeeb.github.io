@@ -565,7 +565,8 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 .site-directory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;align-items:stretch}
 .directory-panel{min-width:0;padding:13px 14px;border:1px solid var(--line);border-radius:13px;background:var(--card);display:flex;align-items:center;gap:11px;color:var(--text);text-decoration:none;transition:border-color .18s,transform .18s,background .18s}
 .directory-panel-main{min-height:82px}
-.directory-panel:hover,.directory-panel:focus-visible,.directory-panel-heading:hover,.directory-article:hover{border-color:var(--acc);transform:translateY(-2px);outline:none}
+.directory-panel:hover,.directory-panel-heading:hover,.directory-article:hover{border-color:var(--acc);transform:translateY(-2px)}
+.directory-panel:focus-visible,.directory-panel-heading:focus-visible,.directory-article:focus-visible{outline:3px solid var(--acc2);outline-offset:3px}
 .directory-icon{width:35px;height:35px;flex:0 0 35px;border-radius:10px;display:grid;place-items:center;background:color-mix(in srgb,var(--acc) 15%,transparent);color:var(--acc);font-size:1.05rem;margin:0}
 .directory-copy{min-width:0;flex:1;display:flex;flex-direction:column;gap:3px}
 .directory-copy strong{font-size:.94rem;line-height:1.5}
