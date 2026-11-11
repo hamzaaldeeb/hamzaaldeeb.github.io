@@ -471,11 +471,11 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 #projects .mall-gallery{grid-template-columns:repeat(3,minmax(0,1fr))!important}
 #projects .mall-gallery .project-visual,#projects .mall-gallery .project-visual:first-child{grid-column:auto!important;aspect-ratio:1/1!important}
 #projects .sandra-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
-/* Compact tower gallery: three equal thumbnails, no oversized first image */
-#projects .tower-gallery{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:5px!important}
+/* Tower gallery: slightly larger, taller portrait thumbnails */
+#projects .tower-gallery{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important}
 #projects .tower-gallery .project-visual,
-#projects .tower-gallery .project-visual:first-child{grid-column:auto!important;aspect-ratio:1/1!important;min-height:0!important;height:auto!important;background:#fff!important}
-#projects .tower-gallery .project-image{object-fit:contain!important;background:#fff!important;padding:5px!important}
+#projects .tower-gallery .project-visual:first-child{grid-column:auto!important;aspect-ratio:4/5!important;min-height:0!important;height:auto!important;background:#fff!important}
+#projects .tower-gallery .project-image{object-fit:contain!important;object-position:center!important;background:#fff!important;padding:2px!important}
 
 #projects .project-body{padding:20px 22px;gap:4px}
 #projects .project-body .meta{
