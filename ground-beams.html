@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الكمرات الأرضية والميدات والسملات: الفرق والتصميم والتسليح | م. حمزة أبو الديب</title>
+<meta name="description" content="دليل هندسي عملي لفهم الكمرات الأرضية والميدات والسملات والشدادات، والفرق بينها، وتحديد مسار الأحمال ونمذجة التربة وتصميم العزم والقص والتفاصيل التنفيذية وفق الأكواد المعتمدة.">
+<meta name="keywords" content="الكمرات الأرضية, الميدات, السملات, الشدادات, grade beams, tie beams, strap beams, تصميم الكمرات, تسليح الميدات, ETABS, SAFE, SBC 304, ACI 318, ECP 203">
+<meta name="author" content="م. حمزة أبو الديب">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://hamzaaldeeb.github.io/ground-beams.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="الكمرات الأرضية والميدات والسملات: الفرق والتصميم والتسليح">
+<meta property="og:description" content="كيف تميّز بين الميدة والسمل والشداد والكمرة الأرضية؟ شرح مسار الأحمال والنمذجة والتصميم والتفاصيل التنفيذية.">
+<meta property="og:url" content="https://hamzaaldeeb.github.io/ground-beams.html">
+<meta property="og:site_name" content="الديب للتصميم الإنشائي">
+<meta property="og:locale" content="ar_AR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="الكمرات الأرضية والميدات والسملات | م. حمزة أبو الديب">
+<meta name="twitter:description" content="شرح هندسي عملي للفرق بين الميدات والسملات والشدادات والكمرات الأرضية وتصميمها.">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Article",
+ "headline":"الكمرات الأرضية والميدات والسملات: الفرق والتصميم والتسليح",
+ "description":"دليل هندسي عملي للتمييز بين الكمرات الأرضية والميدات والسملات والشدادات، وفهم مسار الأحمال والنمذجة والتصميم والتفاصيل التنفيذية.",
+ "author":{"@type":"Person","name":"م. حمزة أبو الديب"},
+ "publisher":{"@type":"Person","name":"م. حمزة أبو الديب"},
+ "datePublished":"2026-11-11",
+ "dateModified":"2026-11-11",
+ "inLanguage":"ar",
+ "mainEntityOfPage":{"@type":"WebPage","@id":"https://hamzaaldeeb.github.io/ground-beams.html"},
+ "about":["الكمرات الأرضية","الميدات","السملات","الشدادات","التصميم الإنشائي"]
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://hamzaaldeeb.github.io/"},
+{"@type":"ListItem","position":2,"name":"المكتبة الهندسية","item":"https://hamzaaldeeb.github.io/articles.html"},
+{"@type":"ListItem","position":3,"name":"الكمرات الأرضية والميدات والسملات","item":"https://hamzaaldeeb.github.io/ground-beams.html"}
+]}
+</script>
+<style>
+:root{--bg:#0b1220;--panel:#131d36;--ink:#eaf0fb;--muted:#bdc9dd;--gold:#f5b544;--line:#2b3b60;--blue:#79b8ee}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#0b1220,#101a30 45%,#0b1220);color:var(--ink);font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.95}.top{position:sticky;top:0;z-index:5;background:#101a30ed;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}.bar{max-width:980px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand,.navlink{color:var(--ink);text-decoration:none;font-weight:bold}.navlink{color:var(--gold)}main{max-width:900px;margin:auto;padding:24px 20px 55px}.hero,.panel,.toc,.note,.diagram{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin:18px 0}.kicker,.meta{color:var(--gold);font-size:.92rem}.hero h1{font-size:clamp(1.65rem,4vw,2.35rem);line-height:1.55;margin:8px 0 12px}.lead{font-size:1.08rem;color:#d9e4f5}.byline,.caption,.small{font-size:.88rem;color:var(--muted)}h2{font-size:1.45rem;color:#ffd27c;margin-top:32px}h3{font-size:1.12rem;color:#f2d69e}p,li{color:var(--muted)}a{color:var(--blue)}.toc ol{columns:2;column-gap:28px;padding-right:22px}.toc li{break-inside:avoid;margin:5px 0}.toc a{text-decoration:none}.diagram{padding:12px}.diagram svg{display:block;width:100%;height:auto}.caption{text-align:center;padding:8px}.note{border-right:4px solid var(--gold);background:#172541}.warning{border-right-color:#e5a64b}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:18px 0}table{width:100%;border-collapse:collapse;min-width:620px}th,td{padding:12px;text-align:right;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#1b2a49;color:#ffda91}td{color:var(--muted)}tr:last-child td{border-bottom:0}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.tag{font-size:.83rem;color:#dce8fa;border:1px solid var(--line);border-radius:30px;padding:4px 10px}.cta{display:block;text-align:center;padding:15px;border-radius:12px;background:#155b43;color:white;text-decoration:none;font-weight:bold;margin:20px 0}.refs li{margin:8px 0}.footer{border-top:1px solid var(--line);padding-top:18px;margin-top:35px;color:var(--muted)}@media(max-width:600px){main{padding:14px 13px 38px}.hero,.panel,.toc,.note{padding:16px;border-radius:13px}.toc ol{columns:1}.bar{padding:10px 13px}.hero h1{font-size:1.55rem}h2{font-size:1.28rem}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="bar"><a class="brand" href="/">الديب للتصميم الإنشائي | م. حمزة أبو الديب</a><a class="navlink" href="/articles.html">المكتبة الهندسية ←</a></div></header>
+<main>
+<header class="hero">
+<div class="kicker">المقال الثالث في سلسلة المحتوى الهندسي · تصميم وتنفيذ العناصر الخرسانية</div>
+<h1>الكمرات الأرضية والميدات والسملات: الفرق بينها وطريقة التصميم والتسليح</h1>
+<p class="lead">مصطلحات الميدات والسملات والشدادات والكمرات الأرضية بتتقال أحيانًا كأنها شيء واحد، لكن وظيفة العنصر ومسار الحمل وطريقة تمثيله في النموذج الإنشائي ممكن تختلف تمامًا. في المقال ده هنربط الاسم بالوظيفة، وبعدها نمشي في خطوات التحليل والتصميم والتفاصيل والتنفيذ.</p>
+<div class="byline">إعداد: م. حمزة أبو الديب – مهندس تصميم إنشائي | 11 نوفمبر 2026</div>
+</header>
+<nav class="toc" aria-label="محتويات المقال"><strong>محتويات المقال</strong><ol>
+<li><a href="#definition">ما هي الكمرة الأرضية؟</a></li><li><a href="#difference">الفرق بين الميدة والسمل والشداد</a></li><li><a href="#loadpath">مسار الأحمال ووظيفة العنصر</a></li><li><a href="#model">النمذجة الإنشائية</a></li><li><a href="#design">خطوات التصميم</a></li><li><a href="#detailing">التسليح والتفاصيل</a></li><li><a href="#execution">اعتبارات التنفيذ</a></li><li><a href="#mistakes">أخطاء شائعة</a></li><li><a href="#codes">مراجع الأكواد</a></li><li><a href="#faq">أسئلة متكررة</a></li></ol></nav>
+<section id="definition">
+<h2>1. ما هي الكمرة الأرضية؟</h2>
+<p>الكمرة الأرضية (Ground Beam أو Grade Beam) عنصر خرساني أفقي يقع عند منسوب قريب من سطح الأرض أو أسفل منسوب الدور الأرضي. قد يربط بين القواعد أو الميدات أو الأعمدة، وقد يحمل حائطًا أو جزءًا من الواجهة أو ينقل أحمالًا إلى نقاط ارتكاز محددة. الاسم وحده لا يحدد طريقة التصميم؛ الذي يحكم هو وظيفة العنصر ونظام ارتكازه وما إذا كانت التربة مشاركة فعلًا في حمله.</p>
+<p>في الاستخدام المحلي قد تُستعمل كلمات «ميدة» و«سمل» بمعانٍ متداخلة من مشروع لآخر. لذلك لازم الرسومات والمواصفات تحدد وظيفة العنصر، وأبعاده، ومنسوب تأسيسه، وطريقة ارتكازه، والأحمال الواقعة عليه بدل الاعتماد على الاسم فقط.</p>
+<figure class="diagram"><svg viewBox="0 0 900 390" role="img" aria-labelledby="gbt gbdesc" xmlns="http://www.w3.org/2000/svg"><title id="gbt">رسم تخطيطي لكمرة أرضية رابطة بين قاعدتين</title><desc id="gbdesc">عمودان فوق قاعدتين منفصلتين بينهما كمرة أرضية، مع توضيح حائط محمول على الكمرة ومنسوب الأرض.</desc><rect width="900" height="390" rx="12" fill="#f1f4f8"/><path d="M35 230H865" stroke="#806d55" stroke-width="5" stroke-dasharray="12 7"/><rect x="110" y="265" width="190" height="75" fill="#aebbd0" stroke="#35445c" stroke-width="4"/><rect x="600" y="265" width="190" height="75" fill="#aebbd0" stroke="#35445c" stroke-width="4"/><rect x="180" y="90" width="55" height="175" fill="#9caec5" stroke="#35445c" stroke-width="4"/><rect x="670" y="90" width="55" height="175" fill="#9caec5" stroke="#35445c" stroke-width="4"/><rect x="205" y="185" width="490" height="58" fill="#d8a34d" stroke="#704d1c" stroke-width="4"/><rect x="250" y="145" width="400" height="40" fill="#d9c5a1" stroke="#806d55" stroke-width="3"/><g fill="#182438" font-family="Tahoma,Arial" font-size="22"><text x="70" y="365">قاعدة منفصلة</text><text x="590" y="365">قاعدة منفصلة</text><text x="395" y="222">كمرة أرضية / ميدة</text><text x="405" y="135">حائط (إذا كان محمولًا عليها)</text><text x="40" y="215">منسوب الأرض</text><text x="130" y="70">عمود</text><text x="650" y="70">عمود</text></g><path d="M150 78L185 95M750 78L715 95" stroke="#182438" stroke-width="2"/></svg><div class="caption">رسم مفاهيمي لتوضيح أحد الاستخدامات؛ لا يمثل تفصيلة تنفيذية أو أبعادًا تصميمية.</div></figure>
+</section>
+<section id="difference">
+<h2>2. الفرق بين الميدة والسمل والشداد والكمرة الرابطة</h2>
+<p>التمييز التالي وظيفي وتعليمي، لأن المصطلحات قد تختلف بين المكاتب والمواصفات المحلية:</p>
+<div class="table-wrap"><table><thead><tr><th>العنصر</th><th>الوظيفة الشائعة</th><th>نقطة التصميم المهمة</th></tr></thead><tbody>
+<tr><td>الميدة / الكمرة الأرضية</td><td>حمل حائط أو واجهة، أو ربط قواعد، أو نقل أحمال بين نقاط ارتكاز.</td><td>تحديد هل هي محمولة على التربة أم معلقة بين القواعد، وتحديد الأحمال الفعلية.</td></tr>
+<tr><td>السمل / الكمرة الرابطة</td><td>ربط القواعد أو رقاب الأعمدة لتقليل الحركة النسبية وتحقيق الترابط المطلوب.</td><td>قد يتعرض لقوى محورية وعزوم؛ لا يُفترض أنه عنصر شد فقط دون تحليل.</td></tr>
+<tr><td>الشداد / Strap Beam</td><td>ربط قاعدة طرفية بقاعدة داخلية أو بقاعدة أخرى لمعالجة اللامركزية أو اتزان القواعد.</td><td>يُصمم وفق قوى الشد والضغط والعزم الناتجة عن نظام القواعد، مع التحقق من طريقة نقل القوى.</td></tr>
+<tr><td>Grade Beam</td><td>كمرة عند منسوب الأرض تحمل حوائط أو تنقل أحمالًا إلى خوازيق أو قواعد أو ركائز.</td><td>قد تكون غير مرتكزة على التربة؛ لا تُحسب مقاومة التربة لها دون تفصيل إنشائي وجيوتقني واضح.</td></tr>
+</tbody></table></div>
+<div class="note"><strong>قاعدة مهمة:</strong> لا تختار التسليح من اسم العنصر أو من جدول نمطي. ابدأ من وظيفة العنصر، الأحمال، المساند، التربة، والاشتراطات الزلزالية للمشروع.</div>
+</section>
+<section id="loadpath">
+<h2>3. مسار الأحمال: العنصر شايل إيه وبيسلّم الحمل لمين؟</h2>
+<ul>
+<li><strong>حائط فوق الميدة:</strong> وزن الحائط والتشطيبات وأي أحمال إضافية تنتقل إلى الكمرة ثم إلى القواعد أو الركائز حسب نظامها.</li>
+<li><strong>ربط القواعد:</strong> قد ينقل العنصر قوى محورية وقوى قص وعزوم ناتجة عن حركة القواعد أو متطلبات النظام الإنشائي.</li>
+<li><strong>شداد بين قاعدتين:</strong> يعيد توزيع تأثير اللامركزية بين القواعد؛ لا بد من تحليل القاعدة والشداد كنظام متكامل.</li>
+<li><strong>كمرة على خوازيق:</strong> تنقل الأحمال إلى رؤوس الخوازيق، ويجب تمثيل نقاط الارتكاز والصلابة بما يناسب التصميم.</li>
+</ul>
+<p>قبل التحليل، ارسم مسار الحمل في مقطع بسيط: الحمل يبدأ من الحائط أو العمود، يمر بالكمرة، ثم يصل إلى التربة أو القاعدة أو الخازوق. لو مش قادر تحدد المسار بوضوح، فغالبًا فرضيات النموذج محتاجة مراجعة.</p>
+</section>
+<section id="model">
+<h2>4. النمذجة الإنشائية: هل الكمرة مرتكزة على التربة أم معلقة؟</h2>
+<p>دي من أهم القرارات. يوجد نموذجان مختلفان لا يصح الخلط بينهما:</p>
+<h3>أ) كمرة معلقة بين قواعد أو ركائز</h3>
+<p>تُحلل كعنصر مرتكز على القواعد أو الأعمدة أو الخوازيق المحددة في النموذج. لا تضف رد فعل تربة أسفلها لمجرد أنها مدفونة؛ لو التصميم يفترض وجود فراغ أو مادة قابلة للانضغاط أسفلها، يجب أن يعكس النموذج هذا الافتراض.</p>
+<h3>ب) كمرة ملامسة للتربة ومصممة للاستفادة من رد فعلها</h3>
+<p>لازم يكون تلامس التربة وقدرتها على تقديم رد فعل موثقين في تقرير التربة وتفاصيل التنفيذ. عند الحاجة، يتم تمثيل الدعم بتفاعل تربة مناسب أو نموذج إنشائي معتمد، مع مراعاة احتمال فقدان التلامس والهبوط وتفاوت صلابة التربة. لا تستخدم معامل رد فعل افتراضيًا من غير أساس جيوتقني.</p>
+<p>في برامج التحليل مثل ETABS أو SAFE، اختَر طريقة التمثيل بعد تحديد النظام الحقيقي. راجع أطوال البحور، مناسيب العقد، قيود الاتصال، الأحمال الخطية للحائط، وزن الكمرة الذاتي، واتجاهات المحاور. وتأكد أن ردود الأفعال متزنة مع الأحمال المدخلة.</p>
+<div class="note warning"><strong>تحذير نمذجة:</strong> إدخال تربة كمسند مستمر أسفل كمرة مفترض أنها معلقة قد يقلل العزوم والقوى بصورة غير واقعية. والعكس، إهمال دعم تربة موثق قد يضخم القوى. الفرضية لازم تطابق التفصيلة الفعلية.</div>
+</section>
+<section id="design">
+<h2>5. خطوات التصميم الإنشائي</h2>
+<ol>
+<li><strong>تحديد الوظيفة والنظام:</strong> ميدة حاملة لحائط، سمل رابط، شداد، أم كمرة على خوازيق؟ حدد المساند والاتصالات ومنسوب الكمرة.</li>
+<li><strong>حصر الأحمال:</strong> الوزن الذاتي، وزن الحوائط والتشطيبات، أحمال الواجهة، الأحمال المركزة، وأي أحمال تشغيل أو تربة أو مياه تنطبق على الحالة.</li>
+<li><strong>تكوين حالات وتركيبات التحميل:</strong> استخدم تراكيب الأحمال المطلوبة في الكود المعتمد للمشروع، مع فصل حالات الخدمة عن حالات المقاومة حيث يلزم.</li>
+<li><strong>التحليل:</strong> استخرج العزوم الموجبة والسالبة، قوى القص، القوى المحورية، والالتواء إن كان موجودًا بسبب لا مركزية الأحمال أو شكل الاتصال.</li>
+<li><strong>تصميم القطاع:</strong> تحقق من مقاومة الانحناء والقص والالتواء والقوى المحورية والتفاعل بينها وفق حالة العنصر والكود المعتمد.</li>
+<li><strong>الخدمة والتشوهات:</strong> راجع الترخيم والتشققات والهبوط النسبي وتأثيرها على الحوائط والتشطيبات والعناصر المتصلة.</li>
+<li><strong>التفاصيل:</strong> صمم أطوال التماسك والتثبيت والوصلات والكانات ومناطق الاتصال مع القواعد والأعمدة، وتحقق من قابلية التنفيذ.</li>
+<li><strong>مراجعة الاتزان:</strong> قارن مجموع الأحمال بردود الأفعال، وتأكد من عدم وجود أحمال أو مساند مكررة أو مفقودة.</li>
+</ol>
+<p>في حالة الشداد، يجب أن يشمل التحليل تأثير اللامركزية وطريقة نقل القوى بين القاعدة والشداد. وفي حالة السمل الزلزالي، تُراجع متطلبات ربط الأساسات والقوى الزلزالية وفق النظام والكود المعتمد؛ لا تفترض أن كل سمل يحتاج نفس التسليح أو نفس القوة المحورية.</p>
+</section>
+<section id="detailing">
+<h2>6. التسليح والتفاصيل الإنشائية</h2>
+<ul>
+<li><strong>التسليح الطولي:</strong> يُحدد من غلاف العزوم والقوى المحورية ومتطلبات الحد الأدنى والتفاصيل الكودية، مع توفير استمرارية مناسبة عند المساند.</li>
+<li><strong>الكانات:</strong> تُحدد من القص ومتطلبات الحصر والتفاصيل، مع تكثيفها حيث تفرض الحسابات أو الكود ذلك، خصوصًا قرب المساند ومناطق الاتصال.</li>
+<li><strong>التثبيت داخل القواعد:</strong> راجع طول التماسك والخطاف أو وسيلة التثبيت المعتمدة، وازدحام الحديد وإمكانية صب الخرسانة ودمكها.</li>
+<li><strong>الوصلات:</strong> تجنب تجميع جميع الوصلات في مقطع واحد، وحدد أماكنها وأطوالها طبقًا للكود وقطر السيخ والإجهاد وظروف الصب.</li>
+<li><strong>الغطاء الخرساني:</strong> اختَره طبقًا لظروف التعرض وملامسة التربة وطريقة الصب ومتطلبات الكود، وليس برقم ثابت لكل المشروعات.</li>
+<li><strong>الاستمرارية:</strong> لا تقطع أسياخ الشد أو الضغط عند وجه العمود أو القاعدة دون توفير التثبيت والتفاصيل اللازمة.</li>
+</ul>
+<div class="note"><strong>تنبيه:</strong> لا توجد أبعاد أو أقطار أو مسافات كانات تصلح لكل الميدات. أي جدول تسليح جاهز لا يغني عن التحليل والتحقق من الكود والرسومات المعتمدة.</div>
+</section>
+<section id="execution">
+<h2>7. اعتبارات التنفيذ والاستلام</h2>
+<ol>
+<li>مراجعة المحاور والمناسيب وأبعاد القطاع قبل تركيب الشدة.</li>
+<li>التأكد من تجهيز سطح القواعد ومناطق الاتصال طبقًا لتفاصيل المشروع.</li>
+<li>مراجعة عدد وأقطار الأسياخ ومواقعها والغطاء والكانات وأطوال التثبيت والوصلات.</li>
+<li>التأكد من عدم تعارض التسليح مع مواسير الخدمات أو فتحات التمديدات دون اعتماد تعديل إنشائي.</li>
+<li>فحص الشدة والدعامات ومنع تسرب عجينة الأسمنت، والتأكد من إمكانية وصول الهزاز.</li>
+<li>مراجعة رتبة الخرسانة واختبارات الاستلام والمعالجة وفق مواصفات المشروع.</li>
+<li>تنفيذ الردم على طبقات وبالدمك المطلوب بعد السماح بذلك، مع حماية العنصر من الأحمال المبكرة.</li>
+</ol>
+</section>
+<section id="mistakes">
+<h2>8. أخطاء شائعة لازم تتجنبها</h2>
+<ul>
+<li>اعتبار كل ميدة كمرة بسيطة بين قاعدتين دون مراجعة الاستمرارية أو صلابة الاتصال.</li>
+<li>اعتبار الكمرة مرتكزة على التربة في الحسابات بينما التنفيذ يترك فراغًا أسفلها، أو العكس.</li>
+<li>نسيان وزن الحائط أو التشطيبات أو حمل الواجهة.</li>
+<li>تصميم الشداد بمعزل عن القواعد واللامركزية التي أنشأته.</li>
+<li>استخدام كانات أو أطوال تثبيت نمطية دون استخراج القوى والتحقق من التفاصيل.</li>
+<li>إهمال الهبوط التفاضلي وتأثيره على الحوائط والتشطيبات.</li>
+<li>عدم مراجعة ردود الأفعال واتزان النموذج بعد التحليل.</li>
+</ul>
+</section>
+<section id="codes">
+<h2>9. مراجع الأكواد التي يرجع إليها المصمم</h2>
+<p>اختَر الإصدار المعتمد تعاقديًا ورسميًا للمشروع، ولا تخلط معاملات أو تفاصيل من إصدارات مختلفة:</p>
+<ul class="refs">
+<li><strong>السعودية:</strong> كود البناء السعودي SBC 304 للأعمال الخرسانية، مع SBC 301 للأحمال والقوى، وبقية أجزاء الكود ذات الصلة بنظام المبنى والأساسات.</li>
+<li><strong>الأمريكي:</strong> ACI 318-19 أو الإصدار المعتمد بالمشروع؛ يُراجع فصل الكمرات وفصل الأساسات ومتطلبات الزلازل عند انطباقها، إلى جانب ASCE 7 للأحمال عند اعتماده.</li>
+<li><strong>المصري:</strong> ECP 203 لتصميم وتنفيذ المنشآت الخرسانية، مع ECP 201 للأحمال والقوى والإصدار المعتمد للمشروع.</li>
+</ul>
+<p>الإشارات السابقة لتحديد نطاق المراجعة وليست إحالة إلى بند رقمي بعينه. لم أذكر أرقام بنود أو صفحات غير متحقق منها؛ يجب الرجوع إلى النسخة الرسمية المعتمدة قبل اعتماد أي حسابات أو رسومات تنفيذية.</p>
+</section>
+<section id="faq">
+<h2>10. أسئلة متكررة</h2>
+<h3>هل الميدة لازم تكون ملامسة للتربة؟</h3><p>مش بالضرورة. ممكن تكون معلقة بين القواعد، أو مصممة لتستفيد من دعم التربة. التفصيلة الإنشائية وتقرير التربة وطريقة التنفيذ هي اللي تحدد.</p>
+<h3>هل السمل يتحمل حائط؟</h3><p>ممكن في بعض المشروعات، لكن لا بد من إدخال حمل الحائط في التحليل وتصميم العنصر والاتصالات على أساسه. وظيفة الربط وحدها لا تعني أنه مصمم لحمل حائط.</p>
+<h3>هل الشداد هو نفسه السمل؟</h3><p>لا. الشداد غالبًا يعالج لا مركزية أو اتزان قاعدة ويربطها بقاعدة أخرى، بينما السمل يُستخدم غالبًا للربط. قد تتشابه الأشكال، لكن مسار القوى ووظيفة التصميم مختلفان.</p>
+<h3>هل أقدر أصمم الميدات من ETABS مباشرة؟</h3><p>يمكن تحليلها ضمن نموذج مناسب، لكن لازم تتحقق من تمثيل المساند والأحمال والاتصالات، ثم تراجع التصميم والتفاصيل وردود الأفعال بصورة مستقلة.</p>
+</section>
+<div class="tags"><span class="tag">الكمرات الأرضية</span><span class="tag">الميدات والسملات</span><span class="tag">الشدادات</span><span class="tag">التصميم الإنشائي</span><span class="tag">ETABS</span><span class="tag">SBC 304</span><span class="tag">ACI 318</span><span class="tag">ECP 203</span></div>
+<p>للاطلاع على الموضوعات المرتبطة: <a href="/soil-investigation.html">ميكانيكا التربة وتقرير الجسات</a>، و<a href="/planted-rebar.html">الأعمدة المزروعة والتثبيت الكيميائي</a>، ثم <a href="/articles.html">المكتبة الهندسية الكاملة</a>.</p>
+<a class="cta" href="https://wa.me/966561565066?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D9%85%D9%8A%D8%AF%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D9%83%D9%85%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A3%D8%B1%D8%B6%D9%8A%D8%A9">للاستفسار الهندسي والتواصل عبر واتساب</a>
+<footer class="footer"><p>إعداد: م. حمزة أبو الديب – الديب للتصميم الإنشائي.</p><p class="small">محتوى تعليمي عام لا يغني عن التصميم والمراجعة الهندسية للمشروع الفعلي، ولا عن الرجوع إلى الكود والمواصفات المعتمدة.</p><a href="/articles.html">العودة إلى المكتبة الهندسية</a></footer>
+</main>
+</body></html>
