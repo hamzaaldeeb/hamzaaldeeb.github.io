@@ -1250,10 +1250,14 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     homepageSections.push(section);
     function toggleSection(){
       var open=toggle.getAttribute('aria-expanded')!=='true';
-      if(open) openOnlySection(section);
-      else setSectionOpen(section,false);
-      if(open && section.id==='reviews'){
-        window.setTimeout(function(){section.scrollIntoView({behavior:'smooth',block:'start'});},60);
+      if(open){
+        openOnlySection(section);
+        // Start every newly opened section at its heading, not the previous scroll position.
+        window.setTimeout(function(){
+          section.scrollIntoView({behavior:'smooth',block:'start'});
+        },80);
+      }else{
+        setSectionOpen(section,false);
       }
     }
     toggle.addEventListener('click',function(event){
