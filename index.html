@@ -1226,6 +1226,11 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   var lightboxPrev=projectLightbox.querySelector('.project-lightbox-prev');
   var lightboxNext=projectLightbox.querySelector('.project-lightbox-next');
   var lightboxCount=projectLightbox.querySelector('.project-lightbox-count');
+  var zoomInButton=projectLightbox.querySelector('.zoom-in');
+  var zoomOutButton=projectLightbox.querySelector('.zoom-out');
+  var zoomResetButton=projectLightbox.querySelector('.zoom-reset');
+  var imageZoom=1,pinchStartDistance=0,pinchStartZoom=1,wasPinching=false;
+  function setImageZoom(value){imageZoom=Math.max(1,Math.min(4,value));lightboxImage.style.transform='scale('+imageZoom+')';lightboxImage.style.cursor=imageZoom>1?'zoom-out':'zoom-in';}
   var currentProjectImages=[];
   var currentProjectIndex=0;
   var lastProjectTrigger=null;
@@ -1236,6 +1241,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     var item=currentProjectImages[currentProjectIndex];
     lightboxImage.src=item.src;
     lightboxImage.alt=item.alt;
+    setImageZoom(1);
     lightboxCount.textContent=(currentProjectIndex+1)+' / '+currentProjectImages.length;
     var multiple=currentProjectImages.length>1;
     lightboxPrev.hidden=!multiple;
@@ -1287,13 +1293,25 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   });
   lightboxPrev.addEventListener('click',function(){stepProjectImage(-1);});
   lightboxNext.addEventListener('click',function(){stepProjectImage(1);});
+  zoomInButton.addEventListener('click',function(){setImageZoom(imageZoom+.5);});
+  zoomOutButton.addEventListener('click',function(){setImageZoom(imageZoom-.5);});
+  zoomResetButton.addEventListener('click',function(){setImageZoom(1);});
+  lightboxImage.addEventListener('dblclick',function(){setImageZoom(imageZoom>1?1:2);});
+  lightboxImage.addEventListener('wheel',function(event){event.preventDefault();setImageZoom(imageZoom+(event.deltaY<0?.2:-.2));},{passive:false});
   projectLightbox.addEventListener('touchstart',function(event){
-    if(event.touches.length===1) touchStartX=event.touches[0].clientX;
+    wasPinching=event.touches.length>1;
+    if(event.touches.length===2){pinchStartDistance=Math.hypot(event.touches[0].clientX-event.touches[1].clientX,event.touches[0].clientY-event.touches[1].clientY);pinchStartZoom=imageZoom;}
+    else if(event.touches.length===1){touchStartX=event.touches[0].clientX;}
   },{passive:true});
+  projectLightbox.addEventListener('touchmove',function(event){
+    if(event.touches.length===2 && pinchStartDistance){event.preventDefault();var distance=Math.hypot(event.touches[0].clientX-event.touches[1].clientX,event.touches[0].clientY-event.touches[1].clientY);setImageZoom(pinchStartZoom*(distance/pinchStartDistance));}
+  },{passive:false});
   projectLightbox.addEventListener('touchend',function(event){
-    if(!projectLightbox.classList.contains('open')||!event.changedTouches.length) return;
+    if(!projectLightbox.classList.contains('open')) return;
+    if(wasPinching){if(event.touches.length===0){wasPinching=false;pinchStartDistance=0;}return;}
+    if(!event.changedTouches.length) return;
     var delta=event.changedTouches[0].clientX-touchStartX;
-    if(Math.abs(delta)>45) stepProjectImage(delta<0?1:-1);
+    if(imageZoom===1 && Math.abs(delta)>55) stepProjectImage(delta<0?1:-1);
   },{passive:true});
   lightboxClose.addEventListener('click',closeProjectLightbox);
   projectLightbox.addEventListener('click',function(event){
