@@ -262,6 +262,18 @@ ul.tl li ul{list-style:disc}
 .projects-footnote{font-size:.82rem;color:var(--mute);margin:18px 0 0}
 @media(max-width:560px){.project-visual{min-height:145px}.project-body{padding:17px}}
  
+/* Compact multi-project category and villa gallery */
+.project-category-heading{grid-column:1/-1;margin:8px 0 2px;padding:0 2px}
+.project-category-heading h3{margin:0 0 4px;color:var(--acc2);font-size:1.12rem}
+.project-category-heading p{margin:0;color:var(--mute);font-size:.84rem}
+.villa-project-card{cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s}
+.villa-project-card:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.villa-project-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;background:var(--line)}
+.villa-project-gallery .project-visual{aspect-ratio:4/3;min-height:0;background:#fff}
+.villa-project-gallery .project-image{object-fit:contain;background:#fff;padding:3px}
+.villa-project-gallery .project-visual.has-image .project-image{transform:none}
+@media(max-width:560px){.villa-project-gallery .project-visual{aspect-ratio:1/1}.project-category-heading h3{font-size:1.02rem}}
+
 /* Project inquiry form */
 .inquiry-panel{margin-top:24px;padding:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
 .inquiry-heading h3{font-size:1.15rem;margin-bottom:5px;color:var(--acc2)}
@@ -929,19 +941,25 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
           <p class="project-tools en"><strong>Software:</strong> AutoCAD, ETABS, SAFE and Microsoft Office.</p>
         </div>
       </article>
-<article class="card project-card">
-        <div class="project-visual" role="img" aria-label="صورة فلل سكنية">
-          <img class="project-image" src="images/projects/project-02.jpg" alt="فلل سكنية" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
-          <span class="project-visual-mark">HD</span>
-          <span class="project-visual-caption"><span class="ar">صورة المشروع 02 – ستضاف لاحقًا</span><span class="en">Project image 02 – coming soon</span></span>
+<div class="project-category-heading">
+        <h3><span class="ar">الفلل السكنية</span><span class="en">Residential Villas</span></h3>
+        <p><span class="ar">مشاريع شركة منشآت خالدة – مكة المكرمة</span><span class="en">Munshaat Khalda Projects – Makkah</span></p>
+      </div>
+      <article class="card project-card villa-project-card" data-open-gallery tabindex="0" role="button" aria-label="فتح صور فيلا سكنية – أرضي وأول وملحقات، مكة المكرمة">
+        <div class="villa-project-gallery" aria-label="صور مشروع فيلا سكنية – مكة المكرمة">
+          <div class="project-visual" role="img" aria-label="فيلا سكنية – الصورة الأولى">
+            <img class="project-image" src="IMG-20261112-WA0035.jpg" alt="فيلا سكنية – أرضي وأول وملحقات – مكة المكرمة، الصورة الأولى" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+          </div>
+          <div class="project-visual" role="img" aria-label="فيلا سكنية – الصورة الثانية">
+            <img class="project-image" src="IMG-20261112-WA0036.jpg" alt="فيلا سكنية – أرضي وأول وملحقات – مكة المكرمة، الصورة الثانية" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+          </div>
+          <div class="project-visual" role="img" aria-label="فيلا سكنية – الصورة الثالثة">
+            <img class="project-image" src="IMG-20261112-WA0037.jpg" alt="فيلا سكنية – أرضي وأول وملحقات – مكة المكرمة، الصورة الثالثة" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+          </div>
         </div>
         <div class="project-body">
-          <div class="meta"><span class="ar">مبنى سكني خاص – فلل | منشآت خالدة</span><span class="en">Private residential buildings – Villas | Munshaat Khalda</span></div>
-          <h3><span class="ar">فلل سكنية</span><span class="en">Residential Villas</span></h3>
-          <p class="ar">مشروعات فلل سكنية خاصة، تشمل فللًا ببدرومين، إلى جانب حمامات سباحة وخزانات مياه.</p>
-          <p class="en">Private residential villa projects, including villas with two basement levels, swimming pools and water tanks.</p>
-          <p class="project-tools ar"><strong>البرامج المستخدمة:</strong> AutoCAD، ETABS، SAFE، Microsoft Office.</p>
-          <p class="project-tools en"><strong>Software:</strong> AutoCAD, ETABS, SAFE and Microsoft Office.</p>
+          <div class="meta"><span class="ar">منشآت خالدة – مكة المكرمة</span><span class="en">Munshaat Khalda – Makkah</span></div>
+          <h3><span class="ar">فيلا سكنية – أرضي وأول وملحقات</span><span class="en">Residential Villa – Ground, First &amp; Annex Floors</span></h3>
         </div>
       </article>
 <article class="card project-card">
@@ -1425,6 +1443,22 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
     if(projectLightbox.classList.contains('open')) closeProjectLightbox(true);
   });
   function stepProjectImage(direction){showProjectImage(currentProjectIndex+direction);}
+  /* Allow opening the whole villa project card, not only its thumbnails */
+  document.querySelectorAll('.project-card[data-open-gallery]').forEach(function(card){
+    card.addEventListener('click',function(event){
+      if(event.target.closest('.project-visual')) return;
+      var firstImageSlot=card.querySelector('.project-visual');
+      if(firstImageSlot) firstImageSlot.click();
+    });
+    card.addEventListener('keydown',function(event){
+      if((event.key==='Enter'||event.key===' ') && event.target===card){
+        event.preventDefault();
+        var firstImageSlot=card.querySelector('.project-visual');
+        if(firstImageSlot) firstImageSlot.click();
+      }
+    });
+  });
+
   document.querySelectorAll('.project-visual').forEach(function(slot){
     slot.addEventListener('click',function(){
       var image=slot.querySelector('.project-image');
