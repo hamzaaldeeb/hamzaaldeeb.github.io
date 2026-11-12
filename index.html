@@ -781,6 +781,47 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   }
 }
 
+
+
+/* Desktop: enlarge the 11-unit building and healthcare project galleries. */
+@media (min-width: 701px) {
+  #projects .projects-grid > .project-card:has(.parking-villa-gallery),
+  #projects .projects-grid > .project-card:has(.medical-gallery) {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+  }
+
+  #projects .projects-grid > .project-card:has(.parking-villa-gallery) .parking-villa-gallery {
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+  #projects .projects-grid > .project-card:has(.parking-villa-gallery) .parking-villa-gallery .project-visual:first-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 5;
+  }
+  #projects .projects-grid > .project-card:has(.parking-villa-gallery) .parking-villa-gallery .project-visual:not(:first-child) {
+    aspect-ratio: 4 / 3;
+  }
+
+  #projects .projects-grid > .project-card:has(.medical-gallery) .medical-gallery {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+  #projects .projects-grid > .project-card:has(.medical-gallery) .medical-gallery .project-visual,
+  #projects .projects-grid > .project-card:has(.medical-gallery) .medical-gallery .project-visual:first-child {
+    grid-column: auto;
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  #projects .medical-gallery .project-visual { aspect-ratio: 4 / 3; }
+}
+
 </style>
 <!-- Pages deployment retry: 2026-11-11 -->
 </head>
