@@ -759,6 +759,28 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   }
 }
 
+
+
+/* Desktop villa portfolio: give villa galleries the full card width
+   so each project photo is comfortably readable. */
+@media (min-width: 701px) {
+  #projects .projects-grid > .villa-project-card:not(.building-6-card):not(:has(.parking-villa-gallery)) {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+  #projects .projects-grid > .villa-project-card:not(.building-6-card):not(:has(.parking-villa-gallery)) .villa-project-gallery {
+    width: 100%;
+    gap: 6px;
+  }
+  #projects .projects-grid > .villa-project-card:not(.building-6-card):not(:has(.parking-villa-gallery)) .villa-project-gallery .project-visual {
+    aspect-ratio: 4 / 3;
+    min-width: 0;
+  }
+  #projects .projects-grid > .villa-project-card:not(.building-6-card):not(:has(.parking-villa-gallery)) .project-body {
+    padding: 22px 24px 24px;
+  }
+}
+
 </style>
 <!-- Pages deployment retry: 2026-11-11 -->
 </head>
