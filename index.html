@@ -700,6 +700,18 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   #projects .building-6-card .project-body{padding:12px 14px 16px!important}
 }
 
+
+/* 11-unit residential building: one wide image above four images */
+#projects .parking-villa-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+#projects .parking-villa-gallery .project-visual{aspect-ratio:4/3;min-height:0}
+#projects .parking-villa-gallery .project-visual:first-child{grid-column:1/-1;aspect-ratio:16/5}
+#projects .parking-villa-gallery .project-visual:first-child .project-image{object-fit:contain;padding:2px}
+#projects .parking-villa-gallery .project-visual:not(:first-child) .project-image{object-fit:contain;padding:2px}
+@media(max-width:560px){
+ #projects .parking-villa-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+ #projects .parking-villa-gallery .project-visual:first-child{grid-column:1/-1;aspect-ratio:16/7}
+ #projects .parking-villa-gallery .project-visual:not(:first-child){aspect-ratio:4/3}
+}
 </style>
 <!-- Pages deployment retry: 2026-11-11 -->
 </head>
@@ -1067,7 +1079,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         </div>
       </article>
 <article class="card project-card villa-project-card villa-four-card" data-open-gallery tabindex="0" role="button" aria-label="فتح صور عمارة سكنية – ١١ وحدة سكنية، مكة المكرمة">
-        <div class="villa-project-gallery villa-four-gallery" aria-label="معرض صور عمارة سكنية – ١١ وحدة سكنية">
+        <div class="villa-project-gallery villa-four-gallery parking-villa-gallery" aria-label="معرض صور عمارة سكنية – ١١ وحدة سكنية">
           <div class="project-visual" role="img" aria-label="عمارة سكنية – الصورة 1">
             <img class="project-image" src="IMG-20261112-WA0052.jpg" alt="عمارة سكنية تضم ١١ وحدة – مكة المكرمة، الصورة 1" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
           </div>
