@@ -705,7 +705,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 #projects .parking-villa-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
 #projects .parking-villa-gallery .project-visual{aspect-ratio:4/3;min-height:0}
 #projects .parking-villa-gallery .project-visual:first-child{grid-column:1/-1;aspect-ratio:16/5}
-#projects .parking-villa-gallery .project-visual:first-child .project-image{object-fit:contain;padding:2px}
+#projects .parking-villa-gallery .project-visual:first-child .project-image{position:absolute!important;inset:4% auto auto 4%!important;width:92%!important;height:92%!important;object-fit:contain!important;object-position:center!important;padding:0!important;transform:none!important;background:#fff!important}
 #projects .parking-villa-gallery .project-visual:not(:first-child) .project-image{object-fit:contain;padding:2px}
 @media(max-width:560px){
  #projects .parking-villa-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
