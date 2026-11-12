@@ -822,6 +822,88 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   #projects .medical-gallery .project-visual { aspect-ratio: 4 / 3; }
 }
 
+
+
+/* Unified desktop portfolio: every project uses one full-width card
+   and a consistent, responsive image gallery. Mobile layout is unchanged. */
+@media (min-width: 701px) {
+  #projects .projects-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 26px !important;
+  }
+
+  #projects .projects-grid > .project-card {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+  }
+
+  #projects .projects-grid > .project-card > .school-gallery,
+  #projects .projects-grid > .project-card > .sandra-gallery,
+  #projects .projects-grid > .project-card > .mall-gallery,
+  #projects .projects-grid > .project-card > .tower-gallery,
+  #projects .projects-grid > .project-card > .villa-project-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    align-items: stretch !important;
+    background: transparent !important;
+  }
+
+  #projects .projects-grid > .project-card .project-visual,
+  #projects .projects-grid > .project-card .project-visual:first-child,
+  #projects .projects-grid > .project-card .project-visual:not(:first-child) {
+    grid-column: auto !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 4 / 3 !important;
+    overflow: hidden !important;
+    background: #fff !important;
+    border-radius: 7px;
+  }
+
+  #projects .projects-grid > .project-card .project-image {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    padding: 4px !important;
+    background: #fff !important;
+    transform: none !important;
+  }
+
+  #projects .projects-grid > .project-card .project-body {
+    width: 100%;
+    padding: 22px 26px 25px !important;
+    gap: 7px;
+  }
+
+  #projects .projects-grid > .project-card .project-body h3 {
+    font-size: 1.25rem;
+    line-height: 1.55;
+  }
+
+  #projects .projects-grid > .project-card .project-body p {
+    font-size: .98rem;
+    line-height: 1.9;
+  }
+
+  #projects .projects-grid > .project-card .project-body .meta {
+    font-size: .84rem;
+  }
+}
+
 </style>
 <!-- Pages deployment retry: 2026-11-11 -->
 </head>
