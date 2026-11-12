@@ -280,6 +280,15 @@ ul.tl li ul{list-style:disc}
 @media(max-width:560px){.villa-project-gallery .project-visual{aspect-ratio:1/1}.project-category-heading h3{font-size:1.02rem}}
 
 
+/* Four-photo gallery for the Al Awali villa */
+#projects .villa-four-gallery{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+#projects .villa-four-gallery .project-visual{aspect-ratio:4/3;min-height:0}
+#projects .villa-four-gallery .project-image{object-fit:contain;padding:2px}
+@media(max-width:560px){
+ #projects .villa-four-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+ #projects .villa-four-gallery .project-visual{aspect-ratio:4/3}
+}
+
 /* Full-width residential building galleries */
 #projects .projects-grid>.building-8-card,
 #projects .projects-grid>.building-6-card{grid-column:1/-1;width:100%;max-width:none}
@@ -1078,6 +1087,30 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
           <h3><span class="ar">فيلا سكنية – أرضي وأول وملحقات</span><span class="en">Residential Villa – Ground, First &amp; Annex Floors</span></h3>
           <p class="ar">فيلا سكنية مكوّنة من دور أرضي وأول وملحقات، ضمن مشروعات منشآت خالدة بمكة المكرمة.</p>
           <p class="en">A residential villa with ground, first and annex floors, part of Munshaat Khalda’s projects in Makkah.</p>
+        </div>
+      </article>
+      <article class="card project-card villa-project-card villa-four-card" data-open-gallery tabindex="0" role="button" aria-label="فتح صور فيلا سكنية بالعوالي – مكة المكرمة">
+        <div class="villa-project-gallery villa-four-gallery" aria-label="صور مشروع الفيلا السكنية بالعوالي – مكة المكرمة">
+          <div class="project-visual" role="img" aria-label="فيلا العوالي – الصورة الأولى">
+            <img class="project-image" src="IMG-20261112-WA0039.jpg" alt="فيلا سكنية بالعوالي – مكة المكرمة، الصورة الأولى" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+          </div>
+          <div class="project-visual" role="img" aria-label="فيلا العوالي – الصورة الثانية">
+            <img class="project-image" src="IMG-20261112-WA0040.jpg" alt="فيلا سكنية بالعوالي – مكة المكرمة، الصورة الثانية" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+          </div>
+          <div class="project-visual" role="img" aria-label="فيلا العوالي – الصورة الثالثة">
+            <img class="project-image" src="IMG-20261112-WA0041.jpg" alt="فيلا سكنية بالعوالي – مكة المكرمة، الصورة الثالثة" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+          </div>
+          <div class="project-visual" role="img" aria-label="فيلا العوالي – الصورة الرابعة">
+            <img class="project-image" src="IMG-20261112-WA0042.jpg" alt="فيلا سكنية بالعوالي – مكة المكرمة، الصورة الرابعة" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="meta"><span class="ar">منشآت خالدة – العوالي، مكة المكرمة</span><span class="en">Munshaat Khalda – Al Awali, Makkah</span></div>
+          <h3><span class="ar">فيلا سكنية – العوالي، مكة المكرمة</span><span class="en">Residential Villa – Al Awali, Makkah</span></h3>
+          <p class="ar">فيلا سكنية تتكون من بدرومين تحت الأرض، ودور أرضي، ودور أول، ومبيتات بالدور العلوي، وتضم ٤ حمامات سباحة بسقف البدروم الأول.</p>
+          <p class="ar"><strong>أبرز الأعمال الإنشائية:</strong> التصميم الإنشائي الآمن والاقتصادي، دراسة أحمال التربة حتى عمق ٩ أمتار أسفل منسوب الصفر، معالجة فروق المناسيب، استخدام نظام الهولو بلوك، وتفاصيل الأعمدة المزروعة، مع دراسة أحمال وتفاصيل حمامات السباحة.</p>
+          <p class="en">A residential villa comprising two underground basement levels, a ground floor, a first floor and an upper Mabitāt level, with four swimming pools located at the first basement roof level.</p>
+          <p class="en"><strong>Key structural scope:</strong> Safe and economical structural design; evaluation of soil loads down to 9 m below the ±0.00 level; level-difference detailing; hollow-block system; planted-column detailing; and structural design of the swimming pools and their load effects.</p>
         </div>
       </article>
 <article class="card project-card">
