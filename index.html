@@ -239,7 +239,12 @@ ul.tl li ul{list-style:disc}
 /* Keep Sandra Mall plans fully visible without cropping */
 #projects .sandra-gallery .project-image{object-fit:contain!important;background:#fff!important;padding:5px!important}
 #projects .sandra-gallery .project-visual{background:#fff!important}
- #projects .tower-gallery .project-image{object-fit:contain!important;background:#fff!important;padding:7px!important}
+ #projects /* Compact three-photo strip for the 8-storey building card */
+#projects .tower-gallery{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:3px!important;align-items:stretch!important;background:#fff!important}
+#projects .tower-gallery .project-visual{aspect-ratio:4/3!important;min-height:0!important;height:auto!important;width:100%!important;overflow:hidden!important;background:#fff!important}
+#projects .tower-gallery .project-image{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;padding:2px!important;background:#fff!important}
+@media(max-width:560px){#projects .tower-gallery{gap:2px!important}#projects .tower-gallery .project-visual{aspect-ratio:1/1!important}}
+.tower-gallery .project-image{object-fit:contain!important;background:#fff!important;padding:7px!important}
  #projects .tower-gallery .project-visual{background:#fff!important}
 /* Single-image project viewer with next/previous and touch swipe */
 .project-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:16px 10px;background:rgba(3,8,18,.97);backdrop-filter:blur(7px);overflow:hidden;touch-action:none}
