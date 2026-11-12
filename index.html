@@ -279,6 +279,23 @@ ul.tl li ul{list-style:disc}
 .villa-project-gallery .project-visual.has-image .project-image{transform:none}
 @media(max-width:560px){.villa-project-gallery .project-visual{aspect-ratio:1/1}.project-category-heading h3{font-size:1.02rem}}
 
+
+/* Full-width residential building galleries */
+#projects .projects-grid>.building-8-card,
+#projects .projects-grid>.building-6-card{grid-column:1/-1;width:100%;max-width:none}
+#projects .building-8-card .tower-gallery{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;width:100%;background:transparent!important}
+#projects .building-8-card .tower-gallery .project-visual{position:relative!important;aspect-ratio:4/3!important;height:auto!important;min-height:0!important;width:100%!important;overflow:hidden!important;background:#fff!important}
+#projects .building-8-card .tower-gallery .project-image{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;padding:4px!important;background:#fff!important}
+#projects .building-6-card .six-floor-gallery{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;width:100%;background:transparent!important}
+#projects .building-6-card .six-floor-gallery .project-visual{position:relative!important;aspect-ratio:3/2!important;height:auto!important;min-height:0!important;width:100%!important;overflow:hidden!important;background:#fff!important}
+#projects .building-6-card .six-floor-gallery .project-image{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;padding:4px!important;background:#fff!important}
+@media(max-width:560px){
+ #projects .building-8-card .tower-gallery{gap:3px!important}
+ #projects .building-8-card .tower-gallery .project-visual{aspect-ratio:1/1!important}
+ #projects .building-6-card .six-floor-gallery{gap:4px!important}
+ #projects .building-6-card .six-floor-gallery .project-visual{aspect-ratio:4/3!important}
+}
+
 /* Project inquiry form */
 .inquiry-panel{margin-top:24px;padding:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
 .inquiry-heading h3{font-size:1.15rem;margin-bottom:5px;color:var(--acc2)}
@@ -935,7 +952,7 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
         <h3><span class="ar">العمارات السكنية</span><span class="en">Residential Buildings</span></h3>
         <p><span class="ar">مشاريع شركة منشآت خالدة – مكة المكرمة</span><span class="en">Munshaat Khalda Projects – Makkah</span></p>
       </div>
-<article class="card project-card">
+<article class="card project-card building-8-card">
         <div class="tower-gallery" aria-label="معرض صور عمارة ٨ أدوار – 3 صور">
           <div class="project-visual"><img class="project-image" src="IMG-20261111-WA0002.jpg" alt="عمارة ٨ أدوار – صورة 1" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
           <div class="project-visual"><img class="project-image" src="IMG-20261111-WA0001.jpg" alt="عمارة ٨ أدوار – صورة 2" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true"></div>
@@ -950,18 +967,18 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
           <p class="project-tools en"><strong>Software:</strong> AutoCAD, ETABS, SAFE and Microsoft Office.</p>
         </div>
       </article>
-      <article class="card project-card villa-project-card" data-open-gallery tabindex="0" role="button" aria-label="فتح صور عمارة سكنية – بدروم وأرضي وثلاثة أدوار متكررة، مكة المكرمة">
-        <div class="villa-project-gallery" aria-label="صور عمارة سكنية – بدروم وأرضي وثلاثة أدوار متكررة – مكة المكرمة">
+      <article class="card project-card villa-project-card building-6-card" data-open-gallery tabindex="0" role="button" aria-label="فتح صور عمارة سكنية – ٦ أدوار، مكة المكرمة">
+        <div class="villa-project-gallery six-floor-gallery" aria-label="صورتا عمارة سكنية – ٦ أدوار – مكة المكرمة">
           <div class="project-visual" role="img" aria-label="عمارة سكنية – الصورة الأولى">
-            <img class="project-image" src="IMG-20261112-WA0034.jpg" alt="عمارة سكنية – بدروم وأرضي وثلاثة أدوار متكررة – مكة المكرمة، الصورة الأولى" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+            <img class="project-image" src="IMG-20261112-WA0034.jpg" alt="عمارة سكنية – ٦ أدوار – مكة المكرمة، الصورة الأولى" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
           </div>
           <div class="project-visual" role="img" aria-label="عمارة سكنية – الصورة الثانية">
-            <img class="project-image" src="IMG-20261112-WA0033.jpg" alt="عمارة سكنية – بدروم وأرضي وثلاثة أدوار متكررة – مكة المكرمة، الصورة الثانية" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
+            <img class="project-image" src="IMG-20261112-WA0033.jpg" alt="عمارة سكنية – ٦ أدوار – مكة المكرمة، الصورة الثانية" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-image')" onerror="this.hidden=true">
           </div>
         </div>
         <div class="project-body">
           <div class="meta"><span class="ar">منشآت خالدة – مكة المكرمة</span><span class="en">Munshaat Khalda – Makkah</span></div>
-          <h3><span class="ar">عمارة سكنية – بدروم وأرضي و3 أدوار متكررة</span><span class="en">Residential Building – Basement, Ground &amp; 3 Typical Floors</span></h3>
+          <h3><span class="ar">عمارة سكنية – ٦ أدوار</span><span class="en">6-Storey Residential Building</span></h3>
         </div>
       </article>
 <div class="project-category-heading">
