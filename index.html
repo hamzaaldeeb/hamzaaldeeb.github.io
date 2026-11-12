@@ -617,6 +617,80 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 .directory-footnote{font-size:.72rem!important;line-height:1.6;color:var(--mute);text-align:center;margin:10px 0 0!important}
 @media(max-width:820px){.site-directory-grid{grid-template-columns:1fr 1fr}.directory-panel-articles{grid-column:auto}.directory-panel-main{min-height:74px}}
 @media(max-width:560px){.site-directory{padding:20px 0 24px}.site-directory-grid{grid-template-columns:1fr;gap:8px}.directory-panel-articles{grid-column:auto}.directory-panel-main{min-height:66px;padding:10px 12px}.directory-icon{width:32px;height:32px;flex-basis:32px}.directory-copy strong{font-size:.9rem}.directory-copy small{font-size:.72rem}.directory-article{padding:7px 8px}.directory-article strong{font-size:.76rem}}
+
+/* Final sizing override: larger, equal, full-width residential building photos */
+#projects .projects-grid>.building-8-card,
+#projects .projects-grid>.building-6-card{
+  grid-column:1/-1!important;
+  width:100%!important;
+  max-width:none!important;
+  padding:0!important;
+}
+#projects .building-8-card .tower-gallery{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:4px!important;
+  width:100%!important;
+  margin:0!important;
+  background:transparent!important;
+}
+#projects .building-8-card .tower-gallery .project-visual,
+#projects .building-8-card .tower-gallery .project-visual:first-child{
+  grid-column:auto!important;
+  width:100%!important;
+  aspect-ratio:1/1!important;
+  min-height:0!important;
+  height:auto!important;
+  overflow:hidden!important;
+  background:#fff!important;
+}
+#projects .building-8-card .tower-gallery .project-image{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:0!important;
+  background:#fff!important;
+}
+#projects .building-6-card .six-floor-gallery{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:6px!important;
+  width:100%!important;
+  margin:0!important;
+  background:transparent!important;
+}
+#projects .building-6-card .six-floor-gallery .project-visual{
+  width:100%!important;
+  aspect-ratio:4/3!important;
+  min-height:0!important;
+  height:auto!important;
+  overflow:hidden!important;
+  background:#fff!important;
+}
+#projects .building-6-card .six-floor-gallery .project-image{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:0!important;
+  background:#fff!important;
+}
+#projects .building-8-card .project-body,
+#projects .building-6-card .project-body{padding:16px 22px 20px!important}
+@media(max-width:560px){
+  #projects .building-8-card .tower-gallery{gap:2px!important}
+  #projects .building-8-card .tower-gallery .project-visual{aspect-ratio:1/1!important}
+  #projects .building-6-card .six-floor-gallery{gap:3px!important}
+  #projects .building-6-card .six-floor-gallery .project-visual{aspect-ratio:4/3!important}
+  #projects .building-8-card .project-body,
+  #projects .building-6-card .project-body{padding:12px 14px 16px!important}
+}
+
 </style>
 <!-- Pages deployment retry: 2026-11-11 -->
 </head>
