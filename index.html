@@ -712,6 +712,53 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
  #projects .parking-villa-gallery .project-visual:first-child{grid-column:1/-1;aspect-ratio:16/7}
  #projects .parking-villa-gallery .project-visual:not(:first-child){aspect-ratio:4/3}
 }
+
+
+/* Desktop portfolio refinement: wider canvas, balanced cards and readable details.
+   Mobile rules above remain unchanged. */
+@media (min-width: 701px) {
+  #projects > .wrap {
+    max-width: 1240px;
+  }
+  #projects .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+  }
+  #projects .project-card {
+    min-width: 0;
+    height: 100%;
+  }
+  #projects .project-body {
+    padding: 22px 24px 24px;
+  }
+  #projects .project-body h3 {
+    font-size: 1.24rem;
+    line-height: 1.55;
+  }
+  #projects .project-body p {
+    font-size: .98rem;
+    line-height: 1.9;
+  }
+  #projects .project-body .meta {
+    font-size: .84rem;
+    padding: 4px 12px;
+  }
+  #projects .project-tools {
+    font-size: .9rem !important;
+    line-height: 1.8;
+  }
+}
+@media (min-width: 1320px) {
+  #projects > .wrap {
+    max-width: 1360px;
+  }
+  #projects .projects-grid {
+    column-gap: 28px;
+    row-gap: 28px;
+  }
+}
+
 </style>
 <!-- Pages deployment retry: 2026-11-11 -->
 </head>
