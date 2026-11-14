@@ -148,16 +148,22 @@ table{width:100%;border-collapse:collapse;min-width:650px}th,td{padding:12px;tex
 <h2>4. التحليل الإنشائي واستخراج العزوم والقص</h2>
 <p>بعد تحديد نظام الاستناد والأحمال، يتم تحليل الكمرة يدويًا أو ضمن نموذج إنشائي مناسب. في الكمرة البسيطة تحت حمل موزع منتظم، تكون العلاقات التقليدية مفيدة لفهم السلوك، لكن الكمرات المستمرة والتحميل غير المنتظم والأحمال المركزة والاتصالات المرنة تحتاج تحليلًا يعكس الحالة الفعلية.</p>
 <figure class="diagram" role="group" aria-label="مخططات مفاهيمية لكمرة بسيطة تحت حمل موزع منتظم">
-<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam2t beam2d" xmlns="http://www.w3.org/2000/svg">
-<title id="beam2t">العزم والقص تحت حمل موزع</title><desc id="beam2d">مخططات مفاهيمية لكمرة بسيطة تحت حمل موزع منتظم. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
-<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
-<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">العزم والقص تحت حمل موزع</text>
-<path d="M110 100H790" stroke="#52677d" stroke-width="7"/><path d="M130 70V98 M220 70V98 M310 70V98 M400 70V98 M490 70V98 M580 70V98 M670 70V98 M760 70V98" stroke="#c65a50" stroke-width="3"/>
-<path d="M130 70L124 82M130 70L136 82 M220 70L214 82M220 70L226 82 M310 70L304 82M310 70L316 82 M400 70L394 82M400 70L406 82 M490 70L484 82M490 70L496 82 M580 70L574 82M580 70L586 82 M670 70L664 82M670 70L676 82 M760 70L754 82M760 70L766 82" stroke="#c65a50" stroke-width="3" fill="none"/>
-<path d="M110 112L95 135H125Z M790 112L775 135H805Z" fill="#d8b36b" stroke="#52677d" stroke-width="2"/>
-<path d="M120 180L450 240L780 180" stroke="#3579b7" stroke-width="4" fill="none"/><path d="M120 270 Q450 150 780 270" stroke="#c65a50" stroke-width="4" fill="none"/>
-<path d="M120 160V245 M780 160V245" stroke="#52677d" stroke-width="2" stroke-dasharray="5 5"/>
-<text x="450" y="164" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">القص: يتغير خطيًا في هذا المثال</text><text x="450" y="292" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">العزم: منحنى قطع مكافئ في هذا المثال</text>
+<svg viewBox="0 0 900 330" role="img" aria-labelledby="beam2t beam2d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam2t">مخططا القص والعزم لكمرة بسيطة تحت حمل موزع</title><desc id="beam2d">مخطط القص خط مستقيم هابط من موجب عند الركيزة اليسرى إلى سالب عند اليمنى ويعبر الصفر بمنتصف البحر. مخطط العزم قطع مكافئ موجب يبلغ أقصاه بمنتصف البحر. رسم تعليمي غير مقياسي.</desc>
+<rect x="10" y="10" width="880" height="310" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">القص والعزم لكمرة بسيطة تحت حمل موزع منتظم</text>
+<path d="M110 90H790" stroke="#52677d" stroke-width="7"/>
+<g stroke="#c65a50" stroke-width="3"><path d="M150 55V86 M250 55V86 M350 55V86 M450 55V86 M550 55V86 M650 55V86 M750 55V86"/><path d="M150 55L144 67M150 55L156 67 M250 55L244 67M250 55L256 67 M350 55L344 67M350 55L356 67 M450 55L444 67M450 55L456 67 M550 55L544 67M550 55L556 67 M650 55L644 67M650 55L656 67 M750 55L744 67M750 55L756 67"/></g>
+<path d="M110 102L95 125H125Z M790 102L775 125H805Z" fill="#d8b36b" stroke="#52677d" stroke-width="2"/>
+<text x="450" y="145" text-anchor="middle" font-family="Tahoma,Arial" font-size="18" fill="#17324d">مخطط القص V</text>
+<path d="M150 175H750" stroke="#9aa9b8" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M150 145L750 205" stroke="#3579b7" stroke-width="5" fill="none"/>
+<path d="M150 135V215 M750 135V215" stroke="#52677d" stroke-width="2" stroke-dasharray="4 5"/>
+<text x="450" y="235" text-anchor="middle" font-family="Tahoma,Arial" font-size="16" fill="#17324d">V يتناقص خطيًا ويعبر الصفر عند منتصف البحر</text>
+<text x="450" y="265" text-anchor="middle" font-family="Tahoma,Arial" font-size="18" fill="#17324d">مخطط العزم M</text>
+<path d="M150 280H750" stroke="#9aa9b8" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M150 280Q450 318 750 280" stroke="#c65a50" stroke-width="5" fill="none"/>
+<text x="450" y="309" text-anchor="middle" font-family="Tahoma,Arial" font-size="15" fill="#17324d">عزم موجب (ترخيم) وأقصى قيمة بمنتصف البحر</text>
 </svg><figcaption>شكل نوعي لتوزيع القص والعزم في كمرة بسيطة؛ الإشارات والقيم تتبع التحميل والاتفاقية المستخدمة. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
 <h3>مثال مبسط لاستخراج القوى</h3>
 <p>افترض كمرة بسيطة الارتكاز بطول <strong>6.0 m</strong>، وحمل موزع مصعد معلوم <strong>40 kN/m</strong> شاملًا الأحمال التي قرر المصمم إدخالها في هذا المثال. لا يشمل المثال كمرة مستمرة أو حملًا مركزًا أو التواءً أو تحليلًا زلزاليًا.</p>
@@ -173,14 +179,23 @@ table{width:100%;border-collapse:collapse;min-width:650px}th,td{padding:12px;tex
 <h2>5. تصميم الانحناء والتسليح الطولي</h2>
 <p>الانحناء ينتج عنه منطقة ضغط في الخرسانة ومنطقة شد يتحملها حديد التسليح في العناصر المسلحة التقليدية. عند تصميم المقطع نحدد مقاومته الاسمية أو التصميمية وفق الكود، ونقارنها بالعزم المطلوب لكل تركيب حاكم، مع مراعاة شروط المطيلية والتسليح الأدنى والأقصى والتفاصيل.</p>
 <figure class="diagram" role="group" aria-label="منطقة الضغط في الخرسانة وحديد الشد والعمق الفعال">
-<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam3t beam3d" xmlns="http://www.w3.org/2000/svg">
-<title id="beam3t">مقطع الكمرة ومبدأ مقاومة الانحناء</title><desc id="beam3d">منطقة الضغط في الخرسانة وحديد الشد والعمق الفعال. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
-<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<svg viewBox="0 0 900 330" role="img" aria-labelledby="beam3t beam3d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam3t">مقطع كمرة خرسانية تحت عزم موجب</title><desc id="beam3d">يوضح منطقة الضغط أعلى القطاع وعمق كتلة الضغط a ومحور التعادل c وحديد الشد أسفل القطاع والعمق الفعال d المقاس من وجه الضغط إلى مركز حديد الشد. رسم تعليمي غير مقياسي.</desc>
+<rect x="10" y="10" width="880" height="310" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
 <text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">مقطع الكمرة ومبدأ مقاومة الانحناء</text>
-<rect x="335" y="82" width="230" height="150" fill="#d8e0e8" stroke="#52677d" stroke-width="4"/><rect x="335" y="82" width="230" height="42" fill="#8bb4d6" stroke="#52677d" stroke-width="2"/>
-<path d="M335 124H565" stroke="#b8893c" stroke-width="3" stroke-dasharray="8 5"/><circle cx="380" cy="208" r="9" fill="#c65a50"/><circle cx="425" cy="208" r="9" fill="#c65a50"/><circle cx="470" cy="208" r="9" fill="#c65a50"/><circle cx="515" cy="208" r="9" fill="#c65a50"/>
-<path d="M605 82V208 M596 82H614 M596 208H614" stroke="#17324d" stroke-width="2"/><text x="640" y="150" font-family="Tahoma,Arial" font-size="18" fill="#17324d">d</text>
-<path d="M290 82H325 M290 124H325" stroke="#c65a50" stroke-width="3"/><text x="250" y="105" font-family="Tahoma,Arial" font-size="16" fill="#17324d" text-anchor="middle">ضغط</text><text x="450" y="265" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">حديد الشد</text>
+<rect x="335" y="82" width="230" height="165" fill="#d8e0e8" stroke="#52677d" stroke-width="4"/>
+<rect x="335" y="82" width="230" height="38" fill="#8bb4d6" stroke="#52677d" stroke-width="2"/>
+<path d="M325 120H575" stroke="#b8893c" stroke-width="3" stroke-dasharray="7 5"/>
+<path d="M325 150H575" stroke="#3579b7" stroke-width="3" stroke-dasharray="5 5"/>
+<circle cx="380" cy="220" r="9" fill="#c65a50"/><circle cx="425" cy="220" r="9" fill="#c65a50"/><circle cx="470" cy="220" r="9" fill="#c65a50"/><circle cx="515" cy="220" r="9" fill="#c65a50"/>
+<path d="M605 82V220 M596 82H614 M596 220H614" stroke="#17324d" stroke-width="2"/><text x="625" y="155" font-family="Tahoma,Arial" font-size="17" fill="#17324d">d</text>
+<path d="M295 82V120 M287 82H303 M287 120H303" stroke="#b8893c" stroke-width="2"/><text x="265" y="106" font-family="Tahoma,Arial" font-size="16" fill="#17324d" text-anchor="middle">a</text>
+<path d="M295 82V150 M287 82H303 M287 150H303" stroke="#3579b7" stroke-width="2"/><text x="250" y="145" font-family="Tahoma,Arial" font-size="16" fill="#17324d" text-anchor="middle">c</text>
+<text x="450" y="72" font-family="Tahoma,Arial" font-size="16" fill="#17324d" text-anchor="middle">وجه الضغط</text>
+<text x="650" y="110" font-family="Tahoma,Arial" font-size="15" fill="#17324d">كتلة الضغط a</text>
+<text x="650" y="155" font-family="Tahoma,Arial" font-size="15" fill="#17324d">محور التعادل c</text>
+<text x="450" y="278" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">حديد الشد أسفل القطاع</text>
+<text x="450" y="302" font-family="Tahoma,Arial" font-size="14" fill="#52677d" text-anchor="middle">a و c ليسا قيمة واحدة؛ d إلى مركز حديد الشد</text>
 </svg><figcaption>مخطط مفاهيمي لمقطع مستطيل في الانحناء؛ موضع محور التعادل والكتلة الضاغطة يتغيران مع حالة التحميل. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
 <h3>خطوات تصميم الانحناء</h3>
 <ol>
@@ -313,15 +328,18 @@ table{width:100%;border-collapse:collapse;min-width:650px}th,td{padding:12px;tex
 <section id="detail">
 <h2>10. تفاصيل التسليح والاتصالات</h2>
 <figure class="diagram" role="group" aria-label="حديد موجب بمنتصف البحر وحديد سالب قرب الركائز في كمرة مستمرة">
-<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam9t beam9d" xmlns="http://www.w3.org/2000/svg">
-<title id="beam9t">توزيع الحديد العلوي والسفلي</title><desc id="beam9d">حديد موجب بمنتصف البحر وحديد سالب قرب الركائز في كمرة مستمرة. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
-<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
-<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">توزيع الحديد العلوي والسفلي</text>
-<path d="M150 165H750" stroke="#52677d" stroke-width="18" stroke-linecap="round"/>
-<rect x="160" y="165" width="20" height="90" fill="#b8893c"/><rect x="440" y="165" width="20" height="90" fill="#b8893c"/><rect x="720" y="165" width="20" height="90" fill="#b8893c"/>
-<path d="M180 145H720" stroke="#3579b7" stroke-width="5"/><path d="M185 145V100H340 M560 100H715V145" stroke="#c65a50" stroke-width="6" fill="none"/>
-<path d="M185 195H715" stroke="#b8893c" stroke-width="6"/>
-<text x="450" y="75" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">حديد علوي فوق المساند بحسب العزم السالب</text><text x="450" y="286" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">حديد سفلي في مناطق العزم الموجب بحسب التحليل</text>
+<svg viewBox="0 0 900 330" role="img" aria-labelledby="beam9t beam9d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam9t">توزيع حديد التسليح في كمرة مستمرة من بحرين</title><desc id="beam9d">كمرة مستمرة على ثلاثة مساند: حديد علوي إضافي فوق المسند الداخلي لمقاومة العزم السالب، وحديد سفلي في منطقتي منتصف البحرين لمقاومة العزم الموجب. أطوال التثبيت والقطع تحكمها الحسابات والكود والرسومات، والرسم غير مقياسي.</desc>
+<rect x="10" y="10" width="880" height="310" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">توزيع الحديد العلوي والسفلي في كمرة مستمرة</text>
+<path d="M145 165H755" stroke="#52677d" stroke-width="18" stroke-linecap="round"/>
+<g fill="#d8b36b" stroke="#52677d" stroke-width="2"><path d="M170 177L150 207H190Z"/><path d="M450 177L430 207H470Z"/><path d="M730 177L710 207H750Z"/></g>
+<path d="M365 142H535" stroke="#c65a50" stroke-width="7" stroke-linecap="round"/>
+<path d="M220 192H385 M515 192H680" stroke="#3579b7" stroke-width="7" stroke-linecap="round"/>
+<path d="M450 132V105" stroke="#c65a50" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="450" y="82" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">حديد علوي فوق المسند الداخلي (عزم سالب)</text>
+<text x="450" y="250" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">حديد سفلي في مناطق العزم الموجب بكل بحر</text>
+<text x="450" y="286" font-family="Tahoma,Arial" font-size="14" fill="#52677d" text-anchor="middle">رسم تخطيطي فقط؛ أطوال الامتداد والقطع والتثبيت تُصمم ولا تُستنتج من الرسم</text>
 </svg><figcaption>توزيع مفاهيمي للحديد في كمرة مستمرة؛ أطوال الامتداد والتثبيت تُحسب ولا تُرسم بالتقدير. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
 <h3>الحديد الطولي وامتداد الأسياخ</h3>
 <ul>
