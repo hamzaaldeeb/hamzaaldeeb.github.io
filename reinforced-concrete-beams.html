@@ -110,15 +110,33 @@ table{width:100%;border-collapse:collapse;min-width:650px}th,td{padding:12px;tex
 <tr><td>اتجاه الحمل</td><td>حمل موزع، أحمال مركزة، أحمال غير متماثلة، أو تحميل من جانب واحد</td><td>غلاف القوى، القص الموضعي، الالتواء، التحميل خارج المستوى.</td></tr>
 </tbody></table></div>
 <figure class="diagram" role="group" aria-label="مقارنة بين كمرة بسيطة وكابولية ومستمرة">
-<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam1t beam1d" xmlns="http://www.w3.org/2000/svg">
-<title id="beam1t">أنواع الكمرات بحسب الاستناد</title><desc id="beam1d">مقارنة بين كمرة بسيطة وكابولية ومستمرة. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
-<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
-<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">أنواع الكمرات بحسب الاستناد</text>
-<g stroke="#34445e" stroke-width="5" fill="none" stroke-linecap="round"><path d="M90 132H330"/><path d="M390 132H630"/><path d="M680 132H820"/><path d="M90 132L90 190M330 132L330 190M390 132L390 190M630 132L630 190M680 132L680 190M820 132L820 190" stroke="#9aa9b8" stroke-width="2"/></g>
-<g fill="#d8b36b" stroke="#52677d" stroke-width="3"><path d="M90 190L75 215H105Z"/><path d="M330 190L315 215H345Z"/><path d="M390 190L375 215H405Z"/><path d="M630 190L615 215H645Z"/><path d="M680 190L665 215H695Z"/><path d="M820 190L805 215H835Z"/></g>
-<path d="M410 132V70" stroke="#c65a50" stroke-width="4"/><path d="M400 82L410 68L420 82" stroke="#c65a50" stroke-width="4" fill="none"/>
-<path d="M720 132V75 M710 87L720 73L730 87" stroke="#c65a50" stroke-width="4" fill="none"/>
-<g fill="#17324d" font-family="Tahoma,Arial" font-size="17" text-anchor="middle"><text x="210" y="255">بسيطة الارتكاز</text><text x="510" y="255">مستمرة</text><text x="750" y="255">كابولية</text></g>
+<svg viewBox="0 0 900 440" role="img" aria-labelledby="beam1t beam1d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam1t">الكمرة البسيطة والمستمرة والكابولية مع المساند والتشوه التقريبي</title>
+<desc id="beam1d">ثلاثة أنظمة منفصلة: كمرة بسيطة الارتكاز على مفصل يسارًا وبكرة يمينًا؛ كمرة مستمرة من بحرين على ثلاثة مساند منها مسند داخلي؛ وكمرة كابولية مثبتة تثبيتًا كاملاً عند الحائط من اليسار وحرة عند اليمين. الأسهم تمثل أحمالًا رأسية لأسفل والخطوط المتقطعة تمثل أشكال التشوه النوعية غير المقياسية.</desc>
+<defs><pattern id="beamHatch" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 9L9 0" stroke="#718096" stroke-width="1.5"/></pattern><marker id="beamArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#c65a50"/></marker></defs>
+<rect x="10" y="10" width="880" height="420" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="22" font-weight="700" fill="#17324d" direction="rtl">أنواع الكمرات بحسب الاستناد</text>
+<g font-family="Tahoma,Arial,sans-serif" fill="#17324d" font-size="18" font-weight="700" text-anchor="end"><text x="855" y="104">1) بسيطة الارتكاز</text><text x="855" y="235">2) مستمرة (بحران)</text><text x="855" y="365">3) كابولية</text></g>
+<!-- Simply supported: pin + roller -->
+<path d="M160 112H740" stroke="#34445e" stroke-width="8" stroke-linecap="round"/>
+<path d="M160 120L140 150H180Z" fill="#d8b36b" stroke="#52677d" stroke-width="2.5"/>
+<path d="M740 120L720 147H760Z" fill="#d8b36b" stroke="#52677d" stroke-width="2.5"/><circle cx="730" cy="154" r="5" fill="#52677d"/><circle cx="750" cy="154" r="5" fill="#52677d"/>
+<path d="M160 66V102 M280 66V102 M400 66V102 M520 66V102 M640 66V102 M740 66V102" stroke="#c65a50" stroke-width="3" marker-end="url(#beamArrow)"/>
+<path d="M160 113Q450 155 740 113" fill="none" stroke="#3579b7" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="450" y="178" text-anchor="middle" font-family="Tahoma,Arial" font-size="14" fill="#52677d">مفصل يسارًا + بكرة يمينًا؛ هبوط تقريبي لأسفل</text>
+<!-- Continuous two-span beam: three supports -->
+<path d="M160 245H740" stroke="#34445e" stroke-width="8" stroke-linecap="round"/>
+<path d="M160 253L140 281H180Z M450 253L430 281H470Z M740 253L720 280H760Z" fill="#d8b36b" stroke="#52677d" stroke-width="2.5"/>
+<circle cx="730" cy="287" r="5" fill="#52677d"/><circle cx="750" cy="287" r="5" fill="#52677d"/>
+<path d="M160 204V235 M260 204V235 M360 204V235 M460 204V235 M560 204V235 M660 204V235 M740 204V235" stroke="#c65a50" stroke-width="3" marker-end="url(#beamArrow)"/>
+<path d="M160 246Q300 283 450 246Q600 283 740 246" fill="none" stroke="#3579b7" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="450" y="310" text-anchor="middle" font-family="Tahoma,Arial" font-size="14" fill="#52677d">ثلاثة مساند لبحرين؛ يوجد مسند داخلي وتتغير إشارة العزم على طوله</text>
+<!-- Cantilever: fixed wall left, free right -->
+<rect x="140" y="375" width="22" height="48" fill="url(#beamHatch)" stroke="#52677d" stroke-width="2"/>
+<path d="M162 383H740" stroke="#34445e" stroke-width="8" stroke-linecap="round"/>
+<path d="M740 327V370" stroke="#c65a50" stroke-width="3" marker-end="url(#beamArrow)"/>
+<path d="M162 384Q440 425 740 384" fill="none" stroke="#3579b7" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="450" y="418" text-anchor="middle" font-family="Tahoma,Arial" font-size="14" fill="#52677d">تثبيت كامل عند الحائط يسارًا؛ الطرف الأيمن حر</text>
 </svg><figcaption>أشكال استناد شائعة؛ لا يحدد الرسم وحده درجة التثبيت الفعلية. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
 <h3>الفرق بين الكمرة الرئيسية والثانوية</h3>
 <p>التسمية مرتبطة بوظيفة نقل الحمل وليست بمجرد عرض القطاع. الكمرة الثانوية تنقل رد فعلها إلى الرئيسية، والرئيسية تنقل الأحمال إلى الأعمدة أو الحوائط. عند نقطة اتصال الثانوية بالرئيسية يجب إدخال رد الفعل كمؤثر مركز أو تمثيل الاتصال بطريقة صحيحة، وفحص القص الموضعي والالتواء والتحميل على الجذع. لا يكفي توزيع حمل الثانوية على طول الرئيسية تلقائيًا دون مبرر تحليلي.</p>
@@ -148,22 +166,22 @@ table{width:100%;border-collapse:collapse;min-width:650px}th,td{padding:12px;tex
 <h2>4. التحليل الإنشائي واستخراج العزوم والقص</h2>
 <p>بعد تحديد نظام الاستناد والأحمال، يتم تحليل الكمرة يدويًا أو ضمن نموذج إنشائي مناسب. في الكمرة البسيطة تحت حمل موزع منتظم، تكون العلاقات التقليدية مفيدة لفهم السلوك، لكن الكمرات المستمرة والتحميل غير المنتظم والأحمال المركزة والاتصالات المرنة تحتاج تحليلًا يعكس الحالة الفعلية.</p>
 <figure class="diagram" role="group" aria-label="مخططات مفاهيمية لكمرة بسيطة تحت حمل موزع منتظم">
-<svg viewBox="0 0 900 330" role="img" aria-labelledby="beam2t beam2d" xmlns="http://www.w3.org/2000/svg">
-<title id="beam2t">مخططا القص والعزم لكمرة بسيطة تحت حمل موزع</title><desc id="beam2d">مخطط القص خط مستقيم هابط من موجب عند الركيزة اليسرى إلى سالب عند اليمنى ويعبر الصفر بمنتصف البحر. مخطط العزم قطع مكافئ موجب يبلغ أقصاه بمنتصف البحر. رسم تعليمي غير مقياسي.</desc>
-<rect x="10" y="10" width="880" height="310" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<svg viewBox="0 0 900 350" role="img" aria-labelledby="beam2t beam2d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam2t">مخططا القص والعزم لكمرة بسيطة تحت حمل موزع</title><desc id="beam2d">مخطط القص خط مستقيم هابط من موجب عند الركيزة اليسرى إلى سالب عند اليمنى ويعبر الصفر بمنتصف البحر. مخطط العزم قطع مكافئ موجب مرسوم فوق محور الصفر ويبلغ أقصاه بمنتصف البحر. رسم تعليمي غير مقياسي.</desc>
+<rect x="10" y="10" width="880" height="330" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
 <text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">القص والعزم لكمرة بسيطة تحت حمل موزع منتظم</text>
-<path d="M110 90H790" stroke="#52677d" stroke-width="7"/>
-<g stroke="#c65a50" stroke-width="3"><path d="M150 55V86 M250 55V86 M350 55V86 M450 55V86 M550 55V86 M650 55V86 M750 55V86"/><path d="M150 55L144 67M150 55L156 67 M250 55L244 67M250 55L256 67 M350 55L344 67M350 55L356 67 M450 55L444 67M450 55L456 67 M550 55L544 67M550 55L556 67 M650 55L644 67M650 55L656 67 M750 55L744 67M750 55L756 67"/></g>
-<path d="M110 102L95 125H125Z M790 102L775 125H805Z" fill="#d8b36b" stroke="#52677d" stroke-width="2"/>
-<text x="450" y="145" text-anchor="middle" font-family="Tahoma,Arial" font-size="18" fill="#17324d">مخطط القص V</text>
-<path d="M150 175H750" stroke="#9aa9b8" stroke-width="2" stroke-dasharray="6 5"/>
-<path d="M150 145L750 205" stroke="#3579b7" stroke-width="5" fill="none"/>
-<path d="M150 135V215 M750 135V215" stroke="#52677d" stroke-width="2" stroke-dasharray="4 5"/>
-<text x="450" y="235" text-anchor="middle" font-family="Tahoma,Arial" font-size="16" fill="#17324d">V يتناقص خطيًا ويعبر الصفر عند منتصف البحر</text>
-<text x="450" y="265" text-anchor="middle" font-family="Tahoma,Arial" font-size="18" fill="#17324d">مخطط العزم M</text>
-<path d="M150 280H750" stroke="#9aa9b8" stroke-width="2" stroke-dasharray="6 5"/>
-<path d="M150 280Q450 318 750 280" stroke="#c65a50" stroke-width="5" fill="none"/>
-<text x="450" y="309" text-anchor="middle" font-family="Tahoma,Arial" font-size="15" fill="#17324d">عزم موجب (ترخيم) وأقصى قيمة بمنتصف البحر</text>
+<path d="M110 86H790" stroke="#52677d" stroke-width="7"/>
+<g stroke="#c65a50" stroke-width="3"><path d="M150 52V82 M250 52V82 M350 52V82 M450 52V82 M550 52V82 M650 52V82 M750 52V82"/><path d="M150 52L144 64M150 52L156 64 M250 52L244 64M250 52L256 64 M350 52L344 64M350 52L356 64 M450 52L444 64M450 52L456 64 M550 52L544 64M550 52L556 64 M650 52L644 64M650 52L656 64 M750 52L744 64M750 52L756 64"/></g>
+<path d="M110 98L95 121H125Z M790 98L775 121H805Z" fill="#d8b36b" stroke="#52677d" stroke-width="2"/>
+<text x="450" y="143" text-anchor="middle" font-family="Tahoma,Arial" font-size="18" fill="#17324d">مخطط القص V</text>
+<path d="M150 170H750" stroke="#9aa9b8" stroke-width="2"/>
+<path d="M150 140L750 200" stroke="#3579b7" stroke-width="5" fill="none"/>
+<path d="M150 130V210 M750 130V210" stroke="#52677d" stroke-width="2" stroke-dasharray="4 5"/>
+<text x="450" y="225" text-anchor="middle" font-family="Tahoma,Arial" font-size="15" fill="#17324d">V يتناقص خطيًا ويعبر الصفر عند منتصف البحر</text>
+<text x="450" y="258" text-anchor="middle" font-family="Tahoma,Arial" font-size="18" fill="#17324d">مخطط العزم M</text>
+<path d="M150 310H750" stroke="#9aa9b8" stroke-width="2"/>
+<path d="M150 310Q450 210 750 310" stroke="#c65a50" stroke-width="5" fill="none"/>
+<text x="450" y="292" text-anchor="middle" font-family="Tahoma,Arial" font-size="15" fill="#17324d">عزم موجب (ترخيم) — أقصى قيمة بمنتصف البحر</text>
 </svg><figcaption>شكل نوعي لتوزيع القص والعزم في كمرة بسيطة؛ الإشارات والقيم تتبع التحميل والاتفاقية المستخدمة. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
 <h3>مثال مبسط لاستخراج القوى</h3>
 <p>افترض كمرة بسيطة الارتكاز بطول <strong>6.0 m</strong>، وحمل موزع مصعد معلوم <strong>40 kN/m</strong> شاملًا الأحمال التي قرر المصمم إدخالها في هذا المثال. لا يشمل المثال كمرة مستمرة أو حملًا مركزًا أو التواءً أو تحليلًا زلزاليًا.</p>
