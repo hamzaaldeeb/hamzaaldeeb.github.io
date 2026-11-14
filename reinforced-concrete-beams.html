@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تصميم الكمرات الخرسانية المسلحة: الانحناء والقص والالتواء والتفاصيل | م. حمزة أبو الديب</title>
+<meta name="description" content="دليل تصميم الكمرات الخرسانية المسلحة: استخراج الأحمال والعزوم والقص والالتواء، تسليح الشد والضغط والكانات، الكمرات T والعميقة والكابولية، الترخيم والتفاصيل ومراجعة ETABS.">
+<meta name="keywords" content="تصميم الكمرات الخرسانية, تسليح الكمرات, تصميم الكمرة الخرسانية, العزم والقص والالتواء, كمرات T, كمرات L, الكمرات العميقة, الكمرات الكابولية, كانات الكمرات, ترخيم الكمرات, ETABS beams, SBC 304, ACI 318, ECP 203">
+<meta name="author" content="م. حمزة أبو الديب – مهندس تصميم إنشائي">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://hamzaaldeeb.github.io/reinforced-concrete-beams.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="تصميم الكمرات الخرسانية المسلحة: الانحناء والقص والالتواء والتفاصيل">
+<meta property="og:description" content="مرجع عملي لتصميم وتسليح الكمرات الخرسانية بكل أنواعها، من استخراج القوى إلى تفاصيل التسليح والـ ETABS ومراجعة الأكواد.">
+<meta property="og:url" content="https://hamzaaldeeb.github.io/reinforced-concrete-beams.html">
+<meta property="og:site_name" content="الديب للتصميم الإنشائي">
+<meta property="og:locale" content="ar_AR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="تصميم الكمرات الخرسانية المسلحة | م. حمزة أبو الديب">
+<meta name="twitter:description" content="الانحناء والقص والالتواء، تسليح الكمرات وتفاصيلها ومراجعة ETABS.">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Article",
+ "headline":"تصميم الكمرات الخرسانية المسلحة: الانحناء والقص والالتواء والتفاصيل",
+ "description":"دليل هندسي تطبيقي لتصميم الكمرات الخرسانية المسلحة من الأحمال والتحليل إلى مقاومة الانحناء والقص والالتواء والخدمة والتفاصيل.",
+ "inLanguage":"ar",
+ "datePublished":"2026-11-14",
+ "dateModified":"2026-11-14",
+ "author":{"@type":"Person","name":"م. حمزة أبو الديب – مهندس تصميم إنشائي","url":"https://hamzaaldeeb.github.io/"},
+ "publisher":{"@type":"Organization","name":"الديب للتصميم الإنشائي","url":"https://hamzaaldeeb.github.io/"},
+ "mainEntityOfPage":{"@type":"WebPage","@id":"https://hamzaaldeeb.github.io/reinforced-concrete-beams.html"},
+ "articleSection":"التصميم الإنشائي والخرسانة المسلحة",
+ "keywords":["تصميم الكمرات الخرسانية","تسليح الكمرات","الانحناء","القص","الالتواء","الكمرات العميقة","ETABS","SBC 304","ACI 318","ECP 203"]
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://hamzaaldeeb.github.io/"},
+{"@type":"ListItem","position":2,"name":"المكتبة الهندسية","item":"https://hamzaaldeeb.github.io/articles.html"},
+{"@type":"ListItem","position":3,"name":"تصميم الكمرات الخرسانية المسلحة","item":"https://hamzaaldeeb.github.io/reinforced-concrete-beams.html"}]}
+</script>
+<style>
+:root{--bg:#0b1220;--panel:#131d36;--ink:#eaf0fb;--muted:#b8c5dc;--gold:#f5a524;--line:#26365b}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:linear-gradient(180deg,#0b1220,#101a30 45%,#0b1220);color:var(--ink);font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.95}
+a{color:#ffd27c}.top{position:sticky;top:0;z-index:5;background:#101a30ed;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.bar{max-width:980px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand,.navlink{color:var(--ink);text-decoration:none;font-weight:bold}.navlink{color:var(--gold)}
+main{max-width:940px;margin:auto;padding:24px 20px 60px}
+.hero,.toc,.note,.diagram,.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin:18px 0}
+.kicker,.meta{color:var(--gold);font-size:.92rem;font-weight:bold}.hero h1{font-size:clamp(1.65rem,4vw,2.45rem);line-height:1.55;margin:8px 0 12px}
+.lead{font-size:1.08rem;color:#d9e4f5}.byline,.caption,.small{font-size:.88rem;color:var(--muted)}
+h2{font-size:1.45rem;color:#ffd27c;margin:34px 0 10px}h3{font-size:1.12rem;color:#f2d69e;margin-top:22px}
+p,li{color:var(--muted)}li{margin:6px 0}.toc ol{columns:2;column-gap:28px;padding-right:24px}.toc li{break-inside:avoid}.toc a{text-decoration:none}
+.diagram{padding:12px;overflow:hidden}.diagram svg{display:block;width:100%;height:auto;max-width:100%}.diagram figcaption{font-size:.88rem;color:var(--muted);padding:8px 7px;text-align:center}.diagram figcaption span{color:#ffd27c}
+.note{border-right:4px solid var(--gold);background:#172541}.warning{border-right-color:#e5a64b}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:18px 0}
+table{width:100%;border-collapse:collapse;min-width:650px}th,td{padding:12px;text-align:right;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#1b2a49;color:#ffda91}td{color:var(--muted)}
+.formula{direction:ltr;text-align:center;background:#101a30;border:1px solid var(--line);border-radius:10px;padding:12px;color:#f6d28b;font-family:Georgia,serif;font-size:1.05rem;overflow-x:auto}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.tag{font-size:.83rem;color:#dce8fa;border:1px solid var(--line);border-radius:30px;padding:4px 10px}
+.cta{display:block;text-align:center;padding:15px;border-radius:12px;background:#155b43;color:white;text-decoration:none;font-weight:bold;margin:22px 0}
+.refs li{margin:10px 0}.footer{border-top:1px solid var(--line);padding-top:20px;margin-top:35px}
+@media(max-width:620px){main{padding:16px 14px 45px}.hero,.toc,.note,.panel{padding:16px}.toc ol{columns:1}.diagram{padding:7px}.table-wrap{font-size:.9rem}}
+</style>
+</head>
+<body>
+<header class="top"><div class="bar"><a class="brand" href="/">الديب للتصميم الإنشائي | م. حمزة أبو الديب</a><a class="navlink" href="/articles.html">المكتبة الهندسية ←</a></div></header>
+<main>
+<article>
+<header class="hero">
+<div class="kicker">الحلقة الثامنة من السلسلة الهندسية · تصميم الخرسانة المسلحة</div>
+<h1>تصميم الكمرات الخرسانية المسلحة: من استخراج الأحمال إلى الانحناء والقص والالتواء والتفاصيل</h1>
+<p class="lead">الكمرة مش مجرد قطاع مستطيل بنحسب له حديد سفلي وكانات. لازم نفهم الأول الأحمال اللي بتنقلها البلاطة أو الحوائط، وطريقة استناد الكمرة واستمراريتها، وبعدها نستخرج العزوم والقص والالتواء ونراجع المقاومة والترخيم والتشققات والتفاصيل عند الأعمدة والكمرات المتقاطعة. الدليل ده بيجمع خطوات التصميم وحالات الكمرات الشائعة، مع توضيح الفرق بين مراجع ECP وSBC وACI بدل خلط أرقامها.</p>
+<div class="byline">إعداد: م. حمزة أبو الديب – مهندس تصميم إنشائي | الديب للتصميم الإنشائي | تاريخ النشر: 14 نوفمبر 2026 | آخر تحديث: 14 نوفمبر 2026</div>
+</header>
+
+<nav class="toc" aria-label="محتويات المقال"><strong>محتويات المقال</strong><ol>
+<li><a href="#role">وظيفة الكمرة ومسار الأحمال</a></li><li><a href="#types">أنواع الكمرات وتصنيفها</a></li><li><a href="#inputs">البيانات والأحمال المطلوبة</a></li><li><a href="#analysis">التحليل واستخراج القوى</a></li><li><a href="#flexure">تصميم الانحناء والتسليح الطولي</a></li><li><a href="#shear">تصميم القص والكانات</a></li><li><a href="#torsion">الالتواء وتفاعله مع القص</a></li><li><a href="#special">الكمرات الخاصة والقطاعات T والعميقة</a></li><li><a href="#service">الترخيم والتشققات والخدمة</a></li><li><a href="#detail">تفاصيل التسليح والاتصالات</a></li><li><a href="#etabs">مراجعة الكمرات على ETABS</a></li><li><a href="#execution">التنفيذ والاستلام</a></li><li><a href="#mistakes">أخطاء شائعة</a></li><li><a href="#codes">مراجع الأكواد والإصدارات</a></li><li><a href="#faq">أسئلة متكررة</a></li>
+</ol></nav>
+
+<section id="role">
+<h2>1. وظيفة الكمرة ومسار انتقال الأحمال</h2>
+<p>الكمرة عنصر إنشائي أفقي أو مائل ينقل الأحمال إلى الأعمدة أو الحوائط أو الكمرات الرئيسية أو عناصر ارتكاز أخرى. وقد تستقبل أحمالًا موزعة من البلاطة، أو حمل حائط، أو أحمالًا مركزة من كمرة ثانوية أو معدة أو عمود منقول. لذلك يبدأ التصميم بتحديد مصدر الحمل ومساره قبل اختيار القطاع.</p>
+<p>مسار الحمل المعتاد في سقف خرسانة مسلحة يكون: البلاطة ← الكمرة الثانوية أو الرئيسية ← العمود أو الحائط ← الأساس. لكن في بعض الأنظمة قد تعمل البلاطة والكمرة كقطاع مركب، أو تنتقل ردود أفعال كمرات ثانوية إلى كمرة تحويل، أو تتولد عزوم التواء بسبب اللامركزية. كل مسار مختلف يغيّر القوى والتفاصيل المطلوبة.</p>
+<figure class="diagram" role="group" aria-label="كمرة تنقل أحمال البلاطة إلى الأعمدة ثم الأساسات">
+<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam0t beam0d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam0t">مسار الأحمال خلال الكمرة</title><desc id="beam0d">كمرة تنقل أحمال البلاطة إلى الأعمدة ثم الأساسات. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
+<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">مسار الأحمال خلال الكمرة</text>
+<rect x="180" y="112" width="540" height="22" rx="4" fill="#8eabc4" stroke="#52677d" stroke-width="3"/>
+<rect x="245" y="134" width="34" height="108" fill="#c7d1dc" stroke="#52677d" stroke-width="3"/><rect x="621" y="134" width="34" height="108" fill="#c7d1dc" stroke="#52677d" stroke-width="3"/>
+<path d="M450 62V106 M440 96L450 108L460 96 M320 62V106 M310 96L320 108L330 96 M580 62V106 M570 96L580 108L590 96" stroke="#c65a50" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M262 246V270 M638 246V270" stroke="#b8893c" stroke-width="5"/><path d="M220 270H300 M596 270H676" stroke="#52677d" stroke-width="4"/>
+<text x="450" y="88" text-anchor="middle" font-family="Tahoma,Arial" font-size="17" fill="#17324d">أحمال البلاطة والحوائط</text>
+<text x="450" y="286" text-anchor="middle" font-family="Tahoma,Arial" font-size="17" fill="#17324d">الكمرات ← الأعمدة ← الأساسات</text>
+</svg><figcaption>انتقال الحمل من البلاطة إلى الكمرة ثم العمود والأساس. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
+<div class="note"><strong>قاعدة التصميم:</strong> لا تصمم الكمرة على حمل البلاطة فقط وتنسى الحائط أو رد فعل الكمرة الثانوية أو وزنها الذاتي أو الأحمال المركزة. أي حمل لا يدخل النموذج أو الحسابات لن يظهر في التسليح مهما كان برنامج التصميم دقيقًا.</div>
+</section>
+
+<section id="types">
+<h2>2. أنواع الكمرات وتصنيفها قبل التصميم</h2>
+<p>الكمرة الواحدة ممكن تنتمي لأكثر من تصنيف في نفس الوقت؛ مثلًا كمرة طرفية مستمرة ذات قطاع T ومعرضة لالتواء ناتج عن حمل البلاطة من جانب واحد. التصنيف يساعدنا نعرف التحليلات والفحوصات والتفاصيل الإضافية المطلوبة.</p>
+<div class="table-wrap"><table><thead><tr><th>أساس التصنيف</th><th>الأنواع الشائعة</th><th>أثره على التصميم</th></tr></thead><tbody>
+<tr><td>طريقة الاستناد</td><td>بسيطة، مستمرة، كابولية، أو ذات بروزات</td><td>توزيع العزم الموجب والسالب، القص، التثبيت، وردود الأفعال.</td></tr>
+<tr><td>شكل القطاع</td><td>مستطيل، T، L، قطاع متدرج أو متغير العمق</td><td>العرض الفعال، موضع منطقة الضغط، مقاومة الانحناء والقص والتفاصيل.</td></tr>
+<tr><td>وظيفة الكمرة</td><td>رئيسية، ثانوية، طرفية، ربط، تحويل، كمرة حافة أو كمرة رافدة</td><td>مصادر الأحمال، ردود الأفعال المركزة، اللامركزية، ومتطلبات نقل الحمل.</td></tr>
+<tr><td>السلوك الهندسي</td><td>كمرة عادية، عميقة، قصيرة/ممتلئة، أو عنصر ضمن إطار مقاوم للعزوم</td><td>قد يلزم نموذج الضاغط والشداد بدل فرض توزيع الانفعالات الخطي المعتاد، أو تفاصيل زلزالية خاصة.</td></tr>
+<tr><td>طريقة التصنيع</td><td>مصبوبة بالموقع، مسبقة الصب، مركبة من صبتين أو أكثر، أو سابقة الإجهاد</td><td>مراحل التنفيذ، نقل القص الأفقي، مناطق الوصل، الإجهاد المسبق، والرفع والتركيب.</td></tr>
+<tr><td>اتجاه الحمل</td><td>حمل موزع، أحمال مركزة، أحمال غير متماثلة، أو تحميل من جانب واحد</td><td>غلاف القوى، القص الموضعي، الالتواء، التحميل خارج المستوى.</td></tr>
+</tbody></table></div>
+<figure class="diagram" role="group" aria-label="مقارنة بين كمرة بسيطة وكابولية ومستمرة">
+<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam1t beam1d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam1t">أنواع الكمرات بحسب الاستناد</title><desc id="beam1d">مقارنة بين كمرة بسيطة وكابولية ومستمرة. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
+<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">أنواع الكمرات بحسب الاستناد</text>
+<g stroke="#34445e" stroke-width="5" fill="none" stroke-linecap="round"><path d="M90 132H330"/><path d="M390 132H630"/><path d="M680 132H820"/><path d="M90 132L90 190M330 132L330 190M390 132L390 190M630 132L630 190M680 132L680 190M820 132L820 190" stroke="#9aa9b8" stroke-width="2"/></g>
+<g fill="#d8b36b" stroke="#52677d" stroke-width="3"><path d="M90 190L75 215H105Z"/><path d="M330 190L315 215H345Z"/><path d="M390 190L375 215H405Z"/><path d="M630 190L615 215H645Z"/><path d="M680 190L665 215H695Z"/><path d="M820 190L805 215H835Z"/></g>
+<path d="M410 132V70" stroke="#c65a50" stroke-width="4"/><path d="M400 82L410 68L420 82" stroke="#c65a50" stroke-width="4" fill="none"/>
+<path d="M720 132V75 M710 87L720 73L730 87" stroke="#c65a50" stroke-width="4" fill="none"/>
+<g fill="#17324d" font-family="Tahoma,Arial" font-size="17" text-anchor="middle"><text x="210" y="255">بسيطة الارتكاز</text><text x="510" y="255">مستمرة</text><text x="750" y="255">كابولية</text></g>
+</svg><figcaption>أشكال استناد شائعة؛ لا يحدد الرسم وحده درجة التثبيت الفعلية. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
+<h3>الفرق بين الكمرة الرئيسية والثانوية</h3>
+<p>التسمية مرتبطة بوظيفة نقل الحمل وليست بمجرد عرض القطاع. الكمرة الثانوية تنقل رد فعلها إلى الرئيسية، والرئيسية تنقل الأحمال إلى الأعمدة أو الحوائط. عند نقطة اتصال الثانوية بالرئيسية يجب إدخال رد الفعل كمؤثر مركز أو تمثيل الاتصال بطريقة صحيحة، وفحص القص الموضعي والالتواء والتحميل على الجذع. لا يكفي توزيع حمل الثانوية على طول الرئيسية تلقائيًا دون مبرر تحليلي.</p>
+<h3>الفرق بين الكمرة الأرضية والميدة والشداد</h3>
+<p>دي موضوعات اتغطت في الحلقة الثالثة، لكن لازم نميزها: الكمرة الأرضية قد تكون معلقة أو مستندة جزئيًا أو كليًا على التربة حسب التفصيلة، والميدة غالبًا تربط القواعد أو تحمل حائطًا إذا صُممت لذلك، والشداد ينقل قوى مرتبطة بلامركزية أو اتزان قواعد. شكل القطاع قد يتشابه، لكن شروط الارتكاز ومسار الحمل مش واحدة.</p>
+</section>
+
+<section id="inputs">
+<h2>3. البيانات والأحمال المطلوبة قبل التحليل</h2>
+<ul>
+<li>المخططات المعمارية والإنشائية، شبكة المحاور، البحور، المناسيب، سمك البلاطة، وأماكن الفتحات.</li>
+<li>مقاطع الكمرات والأعمدة والحوائط واتجاهات القطاعات المحلية، وأبعاد المساند وعرضها.</li>
+<li>مقاومة الخرسانة وإجهاد خضوع حديد التسليح ونوعه، والغطاء وظروف التعرض والحريق.</li>
+<li>الأحمال الميتة: وزن البلاطة والكمرة، طبقات التشطيب، الحوائط، الواجهات، الأسقف المعلقة والخدمات.</li>
+<li>الأحمال الحية وأحمال الاستخدام والمعدات والخزانات وأي حمل مركز أو متحرك.</li>
+<li>أحمال الرياح والزلازل والتركيبات الحاكمة طبقًا للكود المعتمد، عند كون الكمرة جزءًا من النظام المقاوم أو متأثرة بتلك الأفعال.</li>
+<li>متطلبات الترخيم والتشققات والاهتزاز، وحساسية القواطيع والواجهات والتشطيبات للتشوه.</li>
+<li>طريقة الصب وتسلسل التنفيذ ومواقع فواصل الصب والشدات والدعامات المؤقتة.</li>
+</ul>
+<h3>حصر حمل البلاطة على الكمرة</h3>
+<p>لو البلاطة تنقل حملها للكمرة، لازم تحدد عرض التحميل أو طريقة توزيع الحمل طبقًا لنظام البلاطة. في البلاطات ذات الاتجاه الواحد قد ينتقل الحمل إلى كمرتين متوازيتين، أما البلاطات ذات الاتجاهين فتوزيع الحمل يعتمد على هندسة اللوح والارتكازات والصلابة. لا تستخدم قاعدة تقسيم مساحة ثابتة دون التأكد من صلاحيتها للنظام.</p>
+<p>أحمال الحوائط لا تُحسب من الارتفاع فقط؛ يلزم وزن وحدة المساحة أو الحجم، السمك، نوع المباني، اللياسة والتشطيبات، الفتحات، وطريقة الارتكاز. إذا كان الحائط فوق البلاطة وليس فوق الكمرة مباشرة، فقد ينتقل الحمل بطريقة مختلفة عن الحمل الخطي المباشر.</p>
+<div class="note warning"><strong>تنبيه:</strong> افصل بين أحمال الخدمة المستخدمة في فحوصات الخدمة، والأحمال المصعدة المستخدمة في المقاومة. معاملات وتركيبات الأحمال تُؤخذ من كود الأحمال المعتمد للمشروع؛ لا تنقل تركيبة من مشروع آخر أو من إصدار مختلف.</div>
+</section>
+
+<section id="analysis">
+<h2>4. التحليل الإنشائي واستخراج العزوم والقص</h2>
+<p>بعد تحديد نظام الاستناد والأحمال، يتم تحليل الكمرة يدويًا أو ضمن نموذج إنشائي مناسب. في الكمرة البسيطة تحت حمل موزع منتظم، تكون العلاقات التقليدية مفيدة لفهم السلوك، لكن الكمرات المستمرة والتحميل غير المنتظم والأحمال المركزة والاتصالات المرنة تحتاج تحليلًا يعكس الحالة الفعلية.</p>
+<figure class="diagram" role="group" aria-label="مخططات مفاهيمية لكمرة بسيطة تحت حمل موزع منتظم">
+<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam2t beam2d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam2t">العزم والقص تحت حمل موزع</title><desc id="beam2d">مخططات مفاهيمية لكمرة بسيطة تحت حمل موزع منتظم. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
+<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">العزم والقص تحت حمل موزع</text>
+<path d="M110 100H790" stroke="#52677d" stroke-width="7"/><path d="M130 70V98 M220 70V98 M310 70V98 M400 70V98 M490 70V98 M580 70V98 M670 70V98 M760 70V98" stroke="#c65a50" stroke-width="3"/>
+<path d="M130 70L124 82M130 70L136 82 M220 70L214 82M220 70L226 82 M310 70L304 82M310 70L316 82 M400 70L394 82M400 70L406 82 M490 70L484 82M490 70L496 82 M580 70L574 82M580 70L586 82 M670 70L664 82M670 70L676 82 M760 70L754 82M760 70L766 82" stroke="#c65a50" stroke-width="3" fill="none"/>
+<path d="M110 112L95 135H125Z M790 112L775 135H805Z" fill="#d8b36b" stroke="#52677d" stroke-width="2"/>
+<path d="M120 180L450 240L780 180" stroke="#3579b7" stroke-width="4" fill="none"/><path d="M120 270 Q450 150 780 270" stroke="#c65a50" stroke-width="4" fill="none"/>
+<path d="M120 160V245 M780 160V245" stroke="#52677d" stroke-width="2" stroke-dasharray="5 5"/>
+<text x="450" y="164" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">القص: يتغير خطيًا في هذا المثال</text><text x="450" y="292" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">العزم: منحنى قطع مكافئ في هذا المثال</text>
+</svg><figcaption>شكل نوعي لتوزيع القص والعزم في كمرة بسيطة؛ الإشارات والقيم تتبع التحميل والاتفاقية المستخدمة. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
+<h3>مثال مبسط لاستخراج القوى</h3>
+<p>افترض كمرة بسيطة الارتكاز بطول <strong>6.0 m</strong>، وحمل موزع مصعد معلوم <strong>40 kN/m</strong> شاملًا الأحمال التي قرر المصمم إدخالها في هذا المثال. لا يشمل المثال كمرة مستمرة أو حملًا مركزًا أو التواءً أو تحليلًا زلزاليًا.</p>
+<div class="formula">M<sub>u,max</sub> = w<sub>u</sub>L² / 8 = 40 × 6² / 8 = 180 kN·m</div>
+<div class="formula">V<sub>u,max</sub> = w<sub>u</sub>L / 2 = 40 × 6 / 2 = 120 kN</div>
+<p>إذن نبدأ مراجعة مقطع الكمرة على عزم تصميمي 180 kN·m وقص تصميمي 120 kN في هذا النموذج المبسط. المثال يوضح استخراج القوى فقط؛ لا يمثل تصميمًا نهائيًا للتسليح ولا يحدد معامل مقاومة أو حدًا كوديًا.</p>
+<h3>الكمرات المستمرة والتحميل المتبادل</h3>
+<p>في الكمرة المستمرة تظهر عزوم موجبة في مناطق من البحور وعزوم سالبة فوق المساند، وقد يتغير الغلاف عند تغيير مواضع الأحمال الحية أو اختلاف البحور والصلابة. لازم تُراجع كل التركيبات الحاكمة، ولا تكتفي بحالة تحميل واحدة إذا كان توزيع الحمل الحي قد يغيّر العزوم السالبة والموجبة.</p>
+<p>كذلك يجب التحقق من ردود الأفعال والاتزان، ومقارنة شكل التشوه بالمخططات المتوقعة. إذا ظهر عزم أو قص غير منطقي، راجع اتجاهات المحاور المحلية، والـ releases، والـ offsets، والـ rigid zones، وطريقة تمثيل البلاطة والاتصال بالكمرات والأعمدة.</p>
+</section>
+
+<section id="flexure">
+<h2>5. تصميم الانحناء والتسليح الطولي</h2>
+<p>الانحناء ينتج عنه منطقة ضغط في الخرسانة ومنطقة شد يتحملها حديد التسليح في العناصر المسلحة التقليدية. عند تصميم المقطع نحدد مقاومته الاسمية أو التصميمية وفق الكود، ونقارنها بالعزم المطلوب لكل تركيب حاكم، مع مراعاة شروط المطيلية والتسليح الأدنى والأقصى والتفاصيل.</p>
+<figure class="diagram" role="group" aria-label="منطقة الضغط في الخرسانة وحديد الشد والعمق الفعال">
+<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam3t beam3d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam3t">مقطع الكمرة ومبدأ مقاومة الانحناء</title><desc id="beam3d">منطقة الضغط في الخرسانة وحديد الشد والعمق الفعال. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
+<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">مقطع الكمرة ومبدأ مقاومة الانحناء</text>
+<rect x="335" y="82" width="230" height="150" fill="#d8e0e8" stroke="#52677d" stroke-width="4"/><rect x="335" y="82" width="230" height="42" fill="#8bb4d6" stroke="#52677d" stroke-width="2"/>
+<path d="M335 124H565" stroke="#b8893c" stroke-width="3" stroke-dasharray="8 5"/><circle cx="380" cy="208" r="9" fill="#c65a50"/><circle cx="425" cy="208" r="9" fill="#c65a50"/><circle cx="470" cy="208" r="9" fill="#c65a50"/><circle cx="515" cy="208" r="9" fill="#c65a50"/>
+<path d="M605 82V208 M596 82H614 M596 208H614" stroke="#17324d" stroke-width="2"/><text x="640" y="150" font-family="Tahoma,Arial" font-size="18" fill="#17324d">d</text>
+<path d="M290 82H325 M290 124H325" stroke="#c65a50" stroke-width="3"/><text x="250" y="105" font-family="Tahoma,Arial" font-size="16" fill="#17324d" text-anchor="middle">ضغط</text><text x="450" y="265" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">حديد الشد</text>
+</svg><figcaption>مخطط مفاهيمي لمقطع مستطيل في الانحناء؛ موضع محور التعادل والكتلة الضاغطة يتغيران مع حالة التحميل. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
+<h3>خطوات تصميم الانحناء</h3>
+<ol>
+<li>حدد العزم الموجب والسالب الحاكم من غلاف العزوم، مع اتجاه الشد الفعلي عند كل مقطع.</li>
+<li>حدد عرض الكمرة وعمقها الكلي والعمق الفعال بعد احتساب الغطاء والكانة وقطر الحديد ومكان طبقات التسليح.</li>
+<li>حدد مقاومة الخرسانة وحديد التسليح طبقًا لمستندات المشروع والكود المعتمد.</li>
+<li>احسب مقاومة المقطع باستخدام فرضيات الكود المختار، وشروط الاتزان وتوافق الانفعالات وكتلة الضغط المعتمدة فيه.</li>
+<li>استخرج مساحة التسليح المطلوبة، ثم تحقق من الحد الأدنى والحد الأعلى وحدود الانفعال والليونة إن كانت مطلوبة.</li>
+<li>اختر عدد وأقطار الأسياخ مع مراعاة المسافات الصافية والغطاء وإمكانية الصب والدمك.</li>
+<li>راجع طول التثبيت وامتداد الأسياخ واستمرارها عند المساند ومواضع القطع والوصلات.</li>
+</ol>
+<h3>حديد الشد وحديد الضغط</h3>
+<p>قد يكون التسليح في طبقة واحدة كافيًا لبعض المقاطع، وقد نحتاج حديد ضغط أو أكثر من طبقة عند زيادة العزم أو محدودية العمق أو متطلبات التحكم في التشوه. لكن إضافة حديد ضغط ليست حلًا تلقائيًا لكل كمرة؛ يجب أن يدخل في حساب المقاومة وأن يكون مثبتًا ومدعومًا جانبيًا بالتفاصيل المطلوبة.</p>
+<h3>العزم الموجب والسالب</h3>
+<p>في كمرة بسيطة تحت حمل رأسي تقليدي يكون الشد غالبًا أسفل منتصف البحر، بينما في الكمرة المستمرة يظهر الشد أعلى المقطع فوق المساند بسبب العزم السالب. لا تعتمد على قاعدة "الحديد السفلي في البحر والعلوي عند الركيزة" دون قراءة مخطط العزم الفعلي، خاصة في الكوابيل والبحور غير المتساوية والتحميل غير المتماثل.</p>
+<div class="note"><strong>ملاحظة مهمة:</strong> المعادلات والكتل الضاغطة ومعاملات المقاومة وحدود الانفعال تختلف بين ECP وSBC وACI والإصدارات المختلفة. لا تستخدم معادلة تصميم من مرجع ثم معاملات أو حدود تسليح من مرجع آخر.</div>
+</section>
+
+<section id="shear">
+<h2>6. تصميم القص والكانات</h2>
+<p>قوة القص تؤدي إلى إجهادات رئيسية وشروخ مائلة، خصوصًا قرب المساند أو عند نقاط الأحمال المركزة. مقاومة القص تعتمد على مساهمة الخرسانة والتسليح العرضي وآلية انتقال القوى داخل العنصر، ويجب فحصها عند القطاعات الحرجة التي يحددها الكود وليس عند موضع عشوائي من مخطط ETABS.</p>
+<figure class="diagram" role="group" aria-label="شروخ قص قطرية ودور الكانات في عبور مسار الشد">
+<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam5t beam5d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam5t">القص والكانات في الكمرة</title><desc id="beam5d">شروخ قص قطرية ودور الكانات في عبور مسار الشد. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
+<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">القص والكانات في الكمرة</text>
+<rect x="170" y="104" width="560" height="130" rx="6" fill="#d8e0e8" stroke="#52677d" stroke-width="4"/>
+<path d="M190 125L710 125 M190 215L710 215" stroke="#b8893c" stroke-width="5"/>
+<path d="M230 112V226Q230 238 242 238H258Q270 238 270 226V112 M320 112V226Q320 238 332 238H348Q360 238 360 226V112 M410 112V226Q410 238 422 238H438Q450 238 450 226V112 M500 112V226Q500 238 512 238H528Q540 238 540 226V112 M590 112V226Q590 238 602 238H618Q630 238 630 226V112" fill="none" stroke="#3579b7" stroke-width="4"/>
+<path d="M300 225L405 120" stroke="#c65a50" stroke-width="5" stroke-dasharray="8 6"/><text x="450" y="280" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">الكانات تعبر الشروخ القطرية وفق التصميم</text>
+</svg><figcaption>رسم مفاهيمي يوضح الكانات والشروخ القطرية، ولا يحدد قطرًا أو مسافة تنفيذية. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
+<h3>خطوات مراجعة القص</h3>
+<ul>
+<li>استخرج القص التصميمي من كل تركيبة حاكمة وحدد القطاع الحرج بالنسبة لوجه الركيزة ومكان رد الفعل والأحمال المركزة وفق الكود.</li>
+<li>تحقق من مساهمة الخرسانة في مقاومة القص بالطريقة التي يحددها الكود وإصدار المعادلات المعتمد.</li>
+<li>حدد مقدار مساهمة الكانات المطلوبة بعد مراعاة معامل المقاومة أو الأمان المناسب للكود.</li>
+<li>راجع الحد الأدنى للتسليح العرضي وحدود المسافات والحد الأقصى لمقاومة القطاع.</li>
+<li>تحقق من قطر الكانة وعدد أفرعها وخطافها وتثبيتها وإحاطتها بأسياخ الشد والضغط حسب متطلبات التفصيل.</li>
+<li>راجع مناطق التقاء الكمرات والأعمدة والكوابيل والأحمال المركزة، لأنها قد تحتاج فحوصات أو تفاصيل خاصة.</li>
+</ul>
+<p>زيادة عدد الكانات في منطقة القص لا تعالج دائمًا كل مشكلة؛ فقد يكون عرض الجذع أو العمق غير كافٍ، أو يكون مسار الحمل غير مناسب، أو توجد فتحة قريبة من المساند تقطع مسار القوى. في هذه الحالات قد يلزم تعديل القطاع أو إعادة ترتيب النظام أو تصميم منطقة اضطراب بطريقة مناسبة.</p>
+</section>
+
+<section id="torsion">
+<h2>7. الالتواء وعلاقته بالقص والانحناء</h2>
+<p>الالتواء يظهر عندما يكون خط تأثير الحمل أو رد الفعل لا يمر بمركز مقاومة الكمرة، أو عندما تنقل الكمرة حمل بلاطة أو كمرة ثانوية من جانب واحد، أو تعمل ككمرة حافة. وقد يكون الالتواء مطلوبًا لتحقيق الاتزان، أو ناتجًا عن توافق التشوهات بين عناصر متصلة.</p>
+<figure class="diagram" role="group" aria-label="كانة مغلقة وأسياخ طولية موزعة حول محيط المقطع">
+<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam6t beam6d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam6t">تسليح مقاومة الالتواء</title><desc id="beam6d">كانة مغلقة وأسياخ طولية موزعة حول محيط المقطع. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
+<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">تسليح مقاومة الالتواء</text>
+<rect x="320" y="82" width="260" height="160" rx="4" fill="#d8e0e8" stroke="#52677d" stroke-width="3"/>
+<rect x="350" y="108" width="200" height="108" rx="4" fill="none" stroke="#3579b7" stroke-width="7"/>
+<circle cx="365" cy="123" r="8" fill="#c65a50"/><circle cx="535" cy="123" r="8" fill="#c65a50"/><circle cx="365" cy="201" r="8" fill="#c65a50"/><circle cx="535" cy="201" r="8" fill="#c65a50"/>
+<path d="M285 165C285 85 615 85 615 165C615 245 285 245 285 165Z" fill="none" stroke="#b8893c" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="450" y="276" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">كانة مغلقة + حديد طولي محيطي</text>
+</svg><figcaption>تصور عام لتسليح الالتواء؛ يجب تطبيق معادلات التفاعل والتفاصيل الخاصة بالكود. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
+<h3>التعامل مع الالتواء</h3>
+<ol>
+<li>حدد مصدر الالتواء وهل هو ضروري لاتزان النظام أم ناتج عن توافق الصلابة والتشوه.</li>
+<li>راجع ما إذا كان الكود يسمح بإعادة توزيع أو تخفيض الالتواء التوافقي بعد التشقق، وتحت أي شروط؛ لا تفترض جواز إهماله.</li>
+<li>افحص التفاعل بين القص والالتواء والانحناء عند المقطع، ولا تصمم كل تأثير منفصلًا ثم تتجاهل اجتماعها.</li>
+<li>عند الحاجة إلى تسليح الالتواء، راجع الكانات المغلقة والحديد الطولي المحيطي وتثبيت الأركان واستمرارية التسليح.</li>
+<li>راجع مناطق نقل الالتواء عند الأعمدة والكمرات المتقاطعة والعقد، لأن التفصيلة قد تحكم المقاومة حتى لو كانت مساحة التسليح الحسابية كافية.</li>
+</ol>
+<p>الكانة المفتوحة أو عدم توزيع الحديد الطولي حول محيط المقطع قد لا يحقق آلية مقاومة الالتواء المطلوبة. كما أن تكبير قيمة الالتواء في البرنامج لا يعني تلقائيًا وجود خطأ؛ قد يكون انعكاسًا لحمل حقيقي أو لفرضية صلابة أو اتصال تحتاج مراجعة.</p>
+</section>
+
+<section id="special">
+<h2>8. الكمرات الخاصة والقطاعات غير التقليدية</h2>
+<h3>8.1 الكمرات ذات القطاعات T وL</h3>
+<p>تعمل شفة البلاطة مع جذع الكمرة في مقاومة الضغط عندما تكون الصبة والاتصال والتفاصيل تسمح بعملهما كوحدة مركبة. العرض الفعال للشفة يحدده الكود وفق البحر والمسافات والسمك وظروف الاستناد؛ لا يصح اعتبار كامل عرض البلاطة شفة فعالة بشكل تلقائي. وعند العزم السالب قد تكون الشفة العلوية في الشد، فيختلف نموذج الضغط عن حالة العزم الموجب.</p>
+<figure class="diagram" role="group" aria-label="اشتراك جزء من البلاطة مع جذع الكمرة عندما تتحقق شروط العمل المركب">
+<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam4t beam4d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam4t">الكمرة ذات الشفة T</title><desc id="beam4d">اشتراك جزء من البلاطة مع جذع الكمرة عندما تتحقق شروط العمل المركب. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
+<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">الكمرة ذات الشفة T</text>
+<path d="M260 92H640V142H490V242H410V142H260Z" fill="#d8e0e8" stroke="#52677d" stroke-width="4"/>
+<rect x="260" y="92" width="380" height="50" fill="#8bb4d6" stroke="#52677d" stroke-width="3"/>
+<path d="M260 72H640 M260 64V80 M640 64V80" stroke="#b8893c" stroke-width="3"/><text x="450" y="60" font-family="Tahoma,Arial" font-size="16" fill="#17324d" text-anchor="middle">العرض الفعال يحدده الكود</text>
+<path d="M450 145V220" stroke="#c65a50" stroke-width="4" stroke-dasharray="7 5"/><text x="450" y="278" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">شفة البلاطة + جذع الكمرة</text>
+</svg><figcaption>قطاع T مفاهيمي؛ العرض الفعال لا يساوي تلقائيًا عرض البلاطة بالكامل. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
+<h3>8.2 الكمرات العميقة ومناطق اضطراب القوى</h3>
+<p>عندما يكون العمق كبيرًا مقارنة بالبحر أو يكون الحمل قريبًا من الركيزة، قد لا يكون توزيع الانفعالات الخطي ونظرية المقاطع المعتادة مناسبين في كامل المنطقة. هنا قد نستخدم نموذج الضاغط والشداد (Strut-and-Tie Model) لتتبع مسار الضغط داخل الخرسانة والشد في التسليح، مع تصميم العقد والضواغط والشدادات وتثبيت الحديد.</p>
+<figure class="diagram" role="group" aria-label="نموذج ضاغط وشداد بين الحمل ومناطق الارتكاز">
+<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam7t beam7d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam7t">الكمرة العميقة ومسار الضغط والشد</title><desc id="beam7d">نموذج ضاغط وشداد بين الحمل ومناطق الارتكاز. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
+<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">الكمرة العميقة ومسار الضغط والشد</text>
+<rect x="190" y="92" width="520" height="150" fill="#d8e0e8" stroke="#52677d" stroke-width="4"/>
+<rect x="215" y="242" width="70" height="22" fill="#b8893c"/><rect x="615" y="242" width="70" height="22" fill="#b8893c"/>
+<path d="M450 60V92" stroke="#c65a50" stroke-width="5"/><path d="M438 78L450 94L462 78" stroke="#c65a50" stroke-width="4" fill="none"/>
+<path d="M450 108L250 230 M450 108L650 230" stroke="#3579b7" stroke-width="8" fill="none"/><path d="M250 230H650" stroke="#c65a50" stroke-width="6"/>
+<circle cx="450" cy="108" r="13" fill="#b8893c"/><circle cx="250" cy="230" r="13" fill="#b8893c"/><circle cx="650" cy="230" r="13" fill="#b8893c"/>
+<text x="450" y="286" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">Strut-and-Tie: ضاغط قطري وشداد سفلي</text>
+</svg><figcaption>مخطط ضاغط وشداد تعليمي لمناطق اضطراب القوى؛ لا يغني عن تصميم العقد والضواغط والشدادات. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
+<h3>8.3 الكمرات الكابولية</h3>
+<p>في الكابولي يكون العزم السالب غالبًا هو المؤثر الأساسي عند منطقة التثبيت، لذلك يكون حديد الشد الرئيسي أعلى القطاع قرب الركيزة، ويجب تطويره داخل الجزء المثبت بطول كافٍ. راجع أيضًا الترخيم والدوران والاهتزاز والتأثير على الواجهة أو العناصر المرتبطة بالطرف الحر.</p>
+<h3>8.4 كمرات التحويل والكمرات المحملة بأعمدة</h3>
+<p>كمرة التحويل تستقبل أحمالًا مركزة كبيرة من أعمدة أو حوائط تنتهي عندها. يلزم مراجعة الانحناء والقص والالتواء والتحميل الموضعي والتشوهات طويلة الأجل ومراحل التنفيذ والدعامات المؤقتة. قد تكون مناطق التحميل والارتكاز مناطق اضطراب تستدعي نموذج ضاغط وشداد أو تحليلًا أكثر تفصيلًا، ولا يكفي التعامل معها ككمرة عادية بحمل موزع.</p>
+<h3>8.5 كمرات الإطارات المقاومة للزلازل</h3>
+<p>إذا كانت الكمرة جزءًا من إطار مقاوم للعزوم، فالتفاصيل الزلزالية قد تحكم تصميمها: مناطق المفاصل اللدنة، مقاومة القص المرتبطة بمقاومة الانحناء المتوقعة، تكثيف التسليح العرضي، أماكن الوصلات، وتفاصيل اتصال الكمرة بالعمود. تصنيف النظام الزلزالي ومتطلبات المطيلية يجب أن يأتي من الكود المعتمد وتصميم النظام ككل.</p>
+<h3>8.6 الفتحات في جسد الكمرة</h3>
+<p>الفتحات الأفقية أو الرأسية قد تقطع مسار القص أو تضغط على مناطق محددة وتسبب تركيز إجهادات. لا يتم حفر فتحة في كمرة قائمة أو تعديل فتحة مرسومة دون مراجعة المصمم. يجب تحديد أبعاد الفتحة وموقعها بالنسبة للمساند والأحمال، ثم تصميم التسليح الإضافي أو نموذج انتقال القوى المناسب.</p>
+</section>
+
+<section id="service">
+<h2>9. الترخيم والتشققات ومتطلبات الخدمة</h2>
+<p>تحقيق المقاومة وحده لا يكفي. قد تكون الكمرة آمنة ضد الانهيار لكنها تسبب تشققات في الحوائط أو تلف تشطيبات أو تجمع مياه أو إحساسًا مزعجًا بالاهتزاز بسبب الترخيم أو الدوران. لذلك تراجع حالات الخدمة بأحمالها ومعاييرها الخاصة.</p>
+<figure class="diagram" role="group" aria-label="مقارنة شكلية بين الوضع الأصلي وشكل التشوه تحت الخدمة">
+<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam8t beam8d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam8t">الترخيم اللحظي وطويل الأجل</title><desc id="beam8d">مقارنة شكلية بين الوضع الأصلي وشكل التشوه تحت الخدمة. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
+<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">الترخيم اللحظي وطويل الأجل</text>
+<path d="M150 125H750" stroke="#52677d" stroke-width="5"/><path d="M150 125Q450 225 750 125" stroke="#c65a50" stroke-width="5" fill="none"/>
+<path d="M150 125V180 M750 125V180" stroke="#b8893c" stroke-width="4"/><path d="M140 180H160 M740 180H760" stroke="#52677d" stroke-width="4"/>
+<path d="M450 130V215" stroke="#3579b7" stroke-width="3" stroke-dasharray="7 5"/><text x="485" y="190" font-family="Tahoma,Arial" font-size="18" fill="#17324d">ترخيم</text>
+<text x="450" y="270" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">شكل التشوه يتأثر بالتشقق والزحف والانكماش</text>
+</svg><figcaption>رسم مفاهيمي للترخيم، دون مقياس أو حد قبول رقمي. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
+<ul>
+<li><strong>الترخيم اللحظي:</strong> يتأثر بالصلابة غير المتشققة أو المتشققة، والبحر، والتحميل، ومقدار التسليح.</li>
+<li><strong>الترخيم طويل الأجل:</strong> يدخل فيه تأثير الزحف والانكماش واستمرار الأحمال وخصائص الخرسانة وظروف المعالجة.</li>
+<li><strong>عرض الشروخ:</strong> يتأثر بإجهاد الحديد وتوزيعه والغطاء والمسافات وظروف التعرض وطبيعة التحميل.</li>
+<li><strong>الاهتزاز:</strong> قد يكون مهمًا في البحور الطويلة أو المساحات الحساسة للاهتزاز والمعدات والاستخدامات الخاصة.</li>
+<li><strong>التوافق مع العناصر غير الإنشائية:</strong> راجع حساسية القواطيع والواجهات والزجاج والكسوات للترخيم والدوران النسبي.</li>
+</ul>
+<p>لا تستخدم نسبة البحر إلى العمق كبديل دائم لحساب الترخيم؛ هذه الحدود مرتبطة بشروط كودية محددة ونوع الاستناد والمواد والتسليح. وإذا كانت الكمرة خارج نطاق تلك الشروط أو مرتبطة بعناصر حساسة، فيجب حساب التشوهات والتحقق من الحدود المطبقة على المشروع.</p>
+</section>
+
+<section id="detail">
+<h2>10. تفاصيل التسليح والاتصالات</h2>
+<figure class="diagram" role="group" aria-label="حديد موجب بمنتصف البحر وحديد سالب قرب الركائز في كمرة مستمرة">
+<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam9t beam9d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam9t">توزيع الحديد العلوي والسفلي</title><desc id="beam9d">حديد موجب بمنتصف البحر وحديد سالب قرب الركائز في كمرة مستمرة. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
+<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">توزيع الحديد العلوي والسفلي</text>
+<path d="M150 165H750" stroke="#52677d" stroke-width="18" stroke-linecap="round"/>
+<rect x="160" y="165" width="20" height="90" fill="#b8893c"/><rect x="440" y="165" width="20" height="90" fill="#b8893c"/><rect x="720" y="165" width="20" height="90" fill="#b8893c"/>
+<path d="M180 145H720" stroke="#3579b7" stroke-width="5"/><path d="M185 145V100H340 M560 100H715V145" stroke="#c65a50" stroke-width="6" fill="none"/>
+<path d="M185 195H715" stroke="#b8893c" stroke-width="6"/>
+<text x="450" y="75" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">حديد علوي فوق المساند بحسب العزم السالب</text><text x="450" y="286" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">حديد سفلي في مناطق العزم الموجب بحسب التحليل</text>
+</svg><figcaption>توزيع مفاهيمي للحديد في كمرة مستمرة؛ أطوال الامتداد والتثبيت تُحسب ولا تُرسم بالتقدير. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
+<h3>الحديد الطولي وامتداد الأسياخ</h3>
+<ul>
+<li>استمرارية حديد الشد والضغط تتحدد من غلاف العزوم ومتطلبات التثبيت، وليس من شكل رسمة نمطية.</li>
+<li>لا توقف سيخًا عند نقطة انعدام العزم النظري مباشرة؛ يلزم امتداد وتثبيت وفق الكود ومراعاة القص ومناطق التشقق.</li>
+<li>توزيع الحديد في أكثر من طبقة يحتاج مراجعة العمق الفعال لكل طبقة والمسافات الصافية وإمكانية مرور الخرسانة.</li>
+<li>راجع أطوال التثبيت والخطافات والوصلات طبقًا لقطر السيخ ودرجة الحديد والخرسانة والغطاء والحبس وظروف الصب.</li>
+<li>تجنب تجميع جميع الوصلات في مقطع واحد، ولا تضعها في مناطق حرجة زلزاليًا أو مناطق إجهادات عالية إلا إذا سمح الكود وصُممت التفصيلة لذلك.</li>
+</ul>
+<h3>الكانات والروابط العرضية</h3>
+<p>الكانات تقاوم القص وتساعد في حبس الخرسانة ودعم أسياخ الضغط وتثبيت القفص. عند وجود التواء يجب التحقق من متطلبات الكانات المغلقة والتسليح الطولي المحيطي. وفي الإطارات الزلزالية يجب تنفيذ الخطافات والتكثيف ومناطق الحصر حسب تفاصيل النظام المعتمد.</p>
+<h3>عقدة الكمرة والعمود</h3>
+<p>منطقة العقدة ليست مجرد تقاطع محورين. راجع قص العقدة، وتثبيت أسياخ الكمرة، واستمرارية حديد العمود، وازدحام الكانات، وتداخل الأسياخ مع تسليح البلاطة. في الإطارات الزلزالية قد تكون العقدة هي المنطقة الحاكمة، ويجب أن تتوافق تفاصيل الكمرة والعمود والعقدة مع متطلبات النظام معًا.</p>
+<h3>الكمرات الثانوية المتصلة بالرئيسية</h3>
+<p>عند اتصال كمرة ثانوية بجانب كمرة رئيسية، راجع رد الفعل المركز، والقص المحلي، والالتواء الناتج عن اللامركزية، وطريقة تعليق أو تثبيت حديد الثانوية. قد تتطلب الحالة تسليح تعليق أو تفاصيل نقل قوى خاصة حسب موقع الاتصال ومسار الحمل.</p>
+</section>
+
+<section id="etabs">
+<h2>11. مراجعة تصميم الكمرات على ETABS</h2>
+<figure class="diagram" role="group" aria-label="من النموذج إلى القوى ثم التصميم والتفاصيل والمراجعة المستقلة">
+<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam10t beam10d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam10t">مسار مراجعة الكمرة على ETABS</title><desc id="beam10d">من النموذج إلى القوى ثم التصميم والتفاصيل والمراجعة المستقلة. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
+<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">مسار مراجعة الكمرة على ETABS</text>
+<g font-family="Tahoma,Arial" font-size="17" text-anchor="middle"><rect x="70" y="112" width="155" height="80" rx="12" fill="#dbe7f1" stroke="#52677d" stroke-width="3"/><rect x="270" y="112" width="155" height="80" rx="12" fill="#dbe7f1" stroke="#52677d" stroke-width="3"/><rect x="470" y="112" width="155" height="80" rx="12" fill="#dbe7f1" stroke="#52677d" stroke-width="3"/><rect x="670" y="112" width="155" height="80" rx="12" fill="#dbe7f1" stroke="#52677d" stroke-width="3"/><text x="147" y="145" fill="#17324d">النموذج</text><text x="147" y="170" fill="#17324d">والأحمال</text><text x="347" y="145" fill="#17324d">القوى</text><text x="347" y="170" fill="#17324d">والغلاف</text><text x="547" y="145" fill="#17324d">التصميم</text><text x="547" y="170" fill="#17324d">والتسليح</text><text x="747" y="145" fill="#17324d">مراجعة</text><text x="747" y="170" fill="#17324d">مستقلة</text></g>
+<path d="M225 152H265 M425 152H465 M625 152H665" stroke="#c65a50" stroke-width="5"/><path d="M255 142L267 152L255 162 M455 142L467 152L455 162 M655 142L667 152L655 162" stroke="#c65a50" stroke-width="4" fill="none"/>
+<text x="450" y="260" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">لا تعتمد على تقرير البرنامج دون فحص المدخلات والمخرجات</text>
+</svg><figcaption>مخطط سير عمل للمراجعة وليس لقطة شاشة فعلية من البرنامج. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
+<ol>
+<li>راجع وحدات النموذج، خصائص الخرسانة والحديد، أبعاد القطاعات، واتجاهات المحاور المحلية.</li>
+<li>تأكد من تمثيل البلاطات والكمرات الثانوية والحوائط والأحمال الخطية والمركزة ووزن العناصر الذاتية دون تكرار.</li>
+<li>راجع تراكيب الأحمال وإعدادات الكود وإصدار البرنامج، وافصل بين حالات المقاومة والخدمة.</li>
+<li>شغّل التحليل وافحص التشوهات والاتزان وردود الأفعال واستمرارية العناصر والـ releases والـ offsets.</li>
+<li>استخرج مخططات العزم والقص والالتواء، وراجع القيم والإشارات عند المساند والبحور ومناطق الاتصال.</li>
+<li>راجع تصميم الانحناء والقص والالتواء لكل تركيبة حاكمة، ولا تعتمد على نسبة الاستغلال وحدها دون فهم سببها.</li>
+<li>افحص الترخيم والتشققات أو مؤشرات الخدمة بطريقة تتوافق مع متطلبات الكود، ولا تعتبر نتائج المقاومة دليلًا على نجاح الخدمة.</li>
+<li>قارن نتائج البرنامج بحساب يدوي مبسط أو نموذج مستقل للعناصر الحرجة، وراجع التسليح التفصيلي في الرسومات.</li>
+</ol>
+<div class="note"><strong>مهم في ETABS:</strong> تصميم البرنامج لا يغني عن مراجعة الأحمال واتجاهات المحاور وشروط الاستناد وتفاصيل التثبيت. قد ينجح تصميم الكمرة حسابيًا بينما تكون رسمة التسليح غير قابلة للتنفيذ أو لا تحقق متطلبات العقدة والالتواء.</div>
+</section>
+
+<section id="execution">
+<h2>12. التنفيذ والاستلام قبل الصب</h2>
+<figure class="diagram" role="group" aria-label="مطابقة القطاع والغطاء والكانات والوصلات ومسار الخدمات">
+<svg viewBox="0 0 900 310" role="img" aria-labelledby="beam11t beam11d" xmlns="http://www.w3.org/2000/svg">
+<title id="beam11t">فحص تسليح الكمرة قبل الصب</title><desc id="beam11d">مطابقة القطاع والغطاء والكانات والوصلات ومسار الخدمات. رسم تعليمي مفاهيمي وليس تفصيلة تنفيذية معتمدة.</desc>
+<rect x="10" y="10" width="880" height="290" rx="18" fill="#f3f6f9" stroke="#c8d3dd" stroke-width="2"/>
+<text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">فحص تسليح الكمرة قبل الصب</text>
+<rect x="230" y="85" width="440" height="155" rx="8" fill="#d8e0e8" stroke="#52677d" stroke-width="4"/>
+<rect x="260" y="110" width="380" height="105" rx="5" fill="none" stroke="#3579b7" stroke-width="5"/>
+<path d="M280 125H620 M280 200H620" stroke="#c65a50" stroke-width="6"/><path d="M300 115V210 M370 115V210 M440 115V210 M510 115V210 M580 115V210" stroke="#b8893c" stroke-width="4"/>
+<path d="M190 85H220 M680 85H710 M190 240H220 M680 240H710" stroke="#17324d" stroke-width="3"/><text x="450" y="278" font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle">استلام قبل الصب طبقًا للرسومات المعتمدة</text>
+</svg><figcaption>مخطط استلام مفاهيمي؛ يجب مطابقة كل الأبعاد والتفاصيل مع اللوحات والمواصفات المعتمدة. <span>— رسم أصلي تعليمي من إعداد م. حمزة أبو الديب</span></figcaption></figure>
+<ul>
+<li>مطابقة المحاور والمناسيب وطول البحر وموقع الكمرة وأبعاد القطاع مع اللوحات المعتمدة.</li>
+<li>فحص الشدة والدعامات والاتزان والهبوط المتوقع أثناء الصب، خاصة في الكمرات العميقة وكمرات التحويل.</li>
+<li>مطابقة عدد وأقطار الحديد العلوي والسفلي والحديد الإضافي وعدد الطبقات ومواقعها.</li>
+<li>مراجعة الكانات: القطر، عدد الأفرع، المسافات، الخطافات، مناطق التكثيف، والكانات المغلقة عند الالتواء.</li>
+<li>التحقق من أطوال التثبيت والامتداد والوصلات ومواقعها، ومن عدم تعارضها مع حديد الأعمدة أو الكمرات المتقاطعة.</li>
+<li>التأكد من الغطاء الخرساني باستخدام البسكوت أو المباعدات المناسبة وعدم ملامسة الحديد للشدة.</li>
+<li>مراجعة الفتحات والسليفات ومواسير الخدمات والـ inserts وعدم قطع التسليح دون اعتماد.</li>
+<li>التأكد من نظافة الشدة والتسليح، وإمكانية دخول الخرسانة والهزاز إلى المناطق المزدحمة.</li>
+<li>مراجعة خطة الصب وفواصل الصب والمعالجة ونتائج اختبارات الخرسانة وفق مواصفات المشروع.</li>
+<li>توثيق الاستلام بالصور ومحضر الفحص قبل الصب وبعد فك الشدة عند الحاجة.</li>
+</ul>
+</section>
+
+<section id="mistakes">
+<h2>13. أخطاء شائعة في تصميم وتسليح الكمرات</h2>
+<ul>
+<li>إهمال حمل الحائط أو رد فعل كمرة ثانوية أو وزن الكمرة نفسها.</li>
+<li>استخدام نموذج استناد بسيط لكمرة مستمرة أو كابولية دون تمثيل التثبيت الحقيقي.</li>
+<li>تصميم الانحناء فقط وإهمال القص أو الالتواء أو التفاعل بينها.</li>
+<li>اعتبار عرض البلاطة بالكامل شفة فعالة لكمرة T دون شروط الكود.</li>
+<li>استخدام حدود ترخيم أو نسب تسليح من إصدار كود مختلف.</li>
+<li>قطع الحديد أو تقليل امتداده عند نقطة نظرية دون فحص طول التثبيت والقص.</li>
+<li>تجميع الوصلات في مقطع واحد أو وضعها داخل منطقة حرجة.</li>
+<li>فتح ثقوب أو مجاري خدمات في الجذع دون مراجعة إنشائية.</li>
+<li>تجاهل مراحل التنفيذ والدعامات المؤقتة في الكمرات العميقة أو المحولة.</li>
+<li>اعتماد نتائج ETABS دون مراجعة الاتزان وردود الأفعال واتجاهات المحاور المحلية.</li>
+</ul>
+</section>
+
+<section id="codes">
+<h2>14. مراجع الأكواد والإصدارات وحدود التحقق</h2>
+<p>المراجع التالية ليست متطابقة في الترقيم أو الفرضيات أو معاملات المقاومة. يجب أن يكون لكل مشروع كود أساس محدد في مستنداته، وأن تُستخدم منظومة الأحمال والتحليل والخرسانة والتفاصيل المتوافقة معه.</p>
+<div class="panel">
+<h3>أولًا: كود البناء السعودي SBC 304-2024</h3>
+<p>الموقع الرسمي يعرض منظومة كود البناء 2024 ويُدرج SBC 304 باعتباره كود المنشآت الخرسانية. <a href="https://sbc.gov.sa/ar/BC/Pages/BuildingCode/BC.aspx?year=2024" target="_blank" rel="noopener">صفحة كود البناء السعودي 2024 الرسمية</a>.</p>
+<p>في مواد فنية منشورة على موقع SBC تظهر إحالات مرتبطة بالكمرات إلى الأقسام 9.4.4 (القوى/العزوم المطلوبة للالتواء)، 9.5.4 (مقاومة الالتواء)، 9.6.1 (التسليح الأدنى للانحناء)، 9.6.3 (التسليح الأدنى للقص)، 9.6.4 (التسليح الأدنى للالتواء)، و9.7 (تفاصيل التسليح)، مع إحالات إلى 22.3 للانحناء و22.5 للقص و22.7 للالتواء. <a href="https://sbc.gov.sa/ar/BC/Lists/SBCTechnicalEvidence/Attachments/195/Saudi%20Ministry%20of%20Islamic%20Affairs%2C%20Dawah%20and%20Guidance-Construction%20Requirements.pdf" target="_blank" rel="noopener">الدليل الفني المنشور على موقع SBC</a>.</p>
+<p>تنبيه توثيقي: الدليل الفني المشار إليه لا يصرّح في النص المتاح بإصدار SBC 304 الذي ينقل عنه، كما لم أتمكن من التحقق من نسخة النص الكامل وفهرس الصفحات الخاصين بـSBC 304-2024 في هذه المراجعة. لذلك أوردت أرقام الأقسام بوصفها إحالات ظاهرة في دليل SBC الرسمي، ولم أنسب إليها صفحات من نسخة 2024 أو أفترض تطابقها مع إصدار سابق. يلزم مراجعة النسخة الرسمية 2024 المعتمدة للمشروع قبل استخدام أي قيمة أو تفصيلة.</p>
+</div>
+<div class="panel">
+<h3>ثانيًا: ACI CODE-318-25</h3>
+<p>فهرس ACI الرسمي يحدد Chapter 9—Beams من الصفحة 141 إلى 164؛ ويشمل 9.3 حدود التصميم (ص 142)، 9.4 المقاومة المطلوبة (ص 144)، 9.5 المقاومة التصميمية (ص 147)، 9.6 حدود التسليح (ص 149)، 9.7 تفاصيل التسليح (ص 152)، و9.9 الكمرات العميقة (ص 164). كما يحدد Chapter 22: Sectional Strength، ومنها 22.3 مقاومة الانحناء (ص 439)، 22.5 مقاومة القص أحادي الاتجاه (ص 441)، و22.7 مقاومة الالتواء (ص 459)، وChapter 24: Serviceability، القسم 24.2 للترخيم (ص 497)، وChapter 25 لتفاصيل التسليح ابتداءً من ص 509.</p>
+<p><a href="https://www.concrete.org/store/productdetail?ItemID=318U25&Language=English&Units=US_Units" target="_blank" rel="noopener">صفحة ACI الرسمية وفهرس ACI CODE-318-25</a>. هذه الإحالات تخص إصدار 2025 تحديدًا، ولا تعني أن هذا الإصدار هو المعتمد تلقائيًا في كل مشروع أو دولة.</p>
+</div>
+<div class="panel">
+<h3>ثالثًا: الكود المصري ECP 203-2018</h3>
+<p>النسخة الرسمية المنشورة على موقع المركز القومي لبحوث الإسكان والبناء تعرف نفسها بأنها ECP 203-2018، التحديث الرابع، نسخة مخصصة للطلبة. في الباب الرابع: تصميم الانحناء ضمن 4-2-1 (يبدأ من ص 4-4)، والقص في الكمرات ضمن 4-2-2-1 (يبدأ من ص 16-4 وتمتد متطلباته عبر الصفحات التالية)، والالتواء ضمن 4-2-4 (يبدأ من ص 42-4)، والتماسك والتثبيت والوصلات ضمن 4-2-5 (يبدأ من ص 49-4). أما حالات الخدمة والترخيم والتشقق فتظهر ضمن 4-3-1 من ص 59-4، وحدود الترخيم للكمرات والبلاطات ضمن 4-3-1-4 في ص 61-4، ونسبة البحر إلى العمق ضمن 4-3-1-5 في ص 63-4.</p>
+<p><a href="https://www.hbrc.edu.eg/images/HBRC/OLDCODE/H/H6.pdf" target="_blank" rel="noopener">نسخة ECP 203-2018 المنشورة على موقع HBRC</a>. لم أضع أرقامًا من نسخة ECP 203-2020 لأن نسخة رسمية كاملة قابلة للتحقق من بنود الكمرات وصفحاتها لم تكن متاحة في هذه المراجعة. إذا كانت مستندات المشروع تحدد إصدارًا أحدث، فيجب الرجوع إليه بدل نقل أرقام 2018.</p>
+</div>
+<div class="note warning"><strong>حدود المراجعة:</strong> المقال مرجع تعليمي يشرح منهج التصميم ويربط القارئ بمصادر رسمية. لا يمثل مراجعة كودية كاملة لمشروع بعينه، ولا يغني عن قراءة النص الكامل للكود وإصداره المعتمد، أو مراجعة الأحمال والمواد والتفاصيل من مهندس مسؤول.</div>
+</section>
+
+<section id="faq">
+<h2>15. أسئلة متكررة عن تصميم الكمرات</h2>
+<h3>هل أقدر أصمم الكمرة من العزم فقط؟</h3><p>لا. لازم تراجع الانحناء والقص والالتواء عند انطباقه، وحدود التسليح والتفاصيل، والترخيم والتشققات، والاتصالات ومناطق الاضطراب.</p>
+<h3>هل الكمرة T أقوى دائمًا من الكمرة المستطيلة؟</h3><p>مش بالضرورة. الاستفادة من الشفة مرتبطة باتجاه العزم والاتصال الفعلي والعرض الفعال وشروط الكود. عند العزم السالب قد لا تكون الشفة العلوية في الضغط أصلًا.</p>
+<h3>هل ممكن أزود الحديد بدل ما أكبر القطاع؟</h3><p>ممكن في بعض الحالات، لكن زيادة الحديد قد تسبب ازدحامًا أو تقلل المطيلية أو تصعّب الصب، ولا تعالج دائمًا القص أو الترخيم أو الالتواء. قارن البدائل بعد مراجعة جميع حالات المقاومة والخدمة والتنفيذ.</p>
+<h3>ليه بيظهر التواء كبير على الكمرة الطرفية في ETABS؟</h3><p>قد يكون بسبب تحميل البلاطة من جانب واحد أو اتصال كمرة ثانوية أو لا مركزية أو صلابة النموذج. راجع مسار الحمل والـ offsets والقيود والمحاور، وحدد هل الالتواء مطلوب للاتزان أم توافقيًا قبل اتخاذ قرار بشأنه.</p>
+<h3>هل أقدر أفتح فتحة في كمرة قائمة لتمرير الخدمات؟</h3><p>لا يتم ذلك دون موافقة وتصميم إنشائي. الفتحة قد تقطع مسار القص وتسبب تركيز إجهادات، ويجب تقييم موقعها وأبعادها وتسليحها وأثرها على المقاومة والخدمة.</p>
+<h3>هل أستخدم نفس معاملات ACI في SBC أو ECP؟</h3><p>لا. استخدم كل كود كوحدة متكاملة بإصداره المعتمد. لا تخلط معاملات الأحمال أو المقاومة أو حدود التسليح أو تفاصيل التثبيت بين الأكواد.</p>
+</section>
+
+<div class="tags">
+<span class="tag">تصميم الكمرات الخرسانية</span><span class="tag">تسليح الكمرات</span><span class="tag">العزم والقص والالتواء</span><span class="tag">كمرات T وL</span><span class="tag">الكمرات العميقة</span><span class="tag">الكمرات الكابولية</span><span class="tag">ترخيم الكمرات</span><span class="tag">ETABS</span><span class="tag">SBC 304</span><span class="tag">ACI 318</span><span class="tag">ECP 203</span>
+</div>
+<p>للموضوعات المرتبطة في السلسلة: <a href="/reinforcing-steel-bars.html">حديد التسليح والوصلات والتثبيت</a>، <a href="/concrete-materials.html">مواد البناء والخرسانة واختباراتها</a>، <a href="/ground-beams.html">الميدات والسملات والشدادات</a>، <a href="/rc-column-design.html">تصميم الأعمدة الخرسانية</a>، و<a href="/structural-codes-comparison.html">مقارنة الأكواد المصرية والسعودية والأمريكية</a>. الحلقة التالية في ترتيب السلسلة هي البلاطات وأنظمتها والقص الثاقب والهبوط.</p>
+<a class="cta" href="https://wa.me/966561565066?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D9%83%D9%85%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D9%8A%D8%A9">للاستفسار عن تصميم الكمرات ومراجعة النماذج الإنشائية عبر واتساب</a>
+<footer class="footer"><p>إعداد: م. حمزة أبو الديب – مهندس تصميم إنشائي | الديب للتصميم الإنشائي.</p><p class="small">محتوى تعليمي عام لا يغني عن التصميم والمراجعة الهندسية المعتمدة للمشروع الفعلي، ولا عن الرجوع إلى الكود والمواصفات المعتمدة.</p><a href="/articles.html">العودة إلى المكتبة الهندسية</a></footer>
+</article>
+</main>
+</body></html>
