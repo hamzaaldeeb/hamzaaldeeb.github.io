@@ -58,7 +58,7 @@ main{padding-top:32px;padding-bottom:60px}.hero,.panel{background:var(--panel);b
 <p>الأعمدة عناصر رأسية تنقل الأحمال من الكمرات والبلاطات والأدوار العليا إلى القواعد أو اللبشة أو العناصر الحاملة أسفلها. وفي المنشآت المقاومة للأحمال الجانبية قد تشارك الأعمدة مع الكمرات أو الحوائط الخرسانية في مقاومة الرياح والزلازل، حسب النظام الإنشائي وتوزيع الصلابة.</p>
 <p>قبل بدء التصميم لازم نحدد: هل العمود جزء من إطار مقاوم للعزوم؟ هل المبنى يحتوي على حوائط قص؟ هل توجد لا مركزية أو كوابيل أو أحمال جانبية مؤثرة؟ وهل العمود مستمر أم يوجد تغيير في القطاع أو انقطاع في الأدوار؟ الإجابات دي بتأثر على القوى وطول عدم التقييد وطريقة التحليل والتفاصيل.</p>
 
-<h2>2. البيانات المطلوبة قبل التصميم</h2>
+<h2>2. البيانات المطلوبة قبل التصميم</h2><figure class="diagram article-illustration" role="group" aria-label="مسار الأحمال إلى العمود"><svg viewBox="0 0 900 310" role="img" aria-labelledby="vcolumn0t vcolumn0d" xmlns="http://www.w3.org/2000/svg"><title id="vcolumn0t">مسار الأحمال إلى العمود</title><desc id="vcolumn0d">أحمال الأدوار تنتقل عبر العناصر الرأسية؛ رسم هندسي تعليمي توضيحي.</desc><rect x="12" y="12" width="876" height="286" rx="18" fill="#f2f6f9" stroke="#c8d3dd" stroke-width="2"/><text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">مسار الأحمال إلى العمود</text><rect x="390" y="55" width="120" height="50" rx="8" fill="#7fa8c8" stroke="#52677d" stroke-width="3"/><rect x="410" y="105" width="80" height="120" rx="8" fill="#d6dce2" stroke="#52677d" stroke-width="3"/><rect x="375" y="225" width="150" height="35" rx="8" fill="#c9b28b" stroke="#52677d" stroke-width="3"/><path d="M450 20 L450 55" fill="none" stroke="#c65a50" stroke-width="5"  stroke-linecap="round"/><text x="450" y="285" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="18" font-weight="600" fill="#17324d" direction="rtl">انتقال أحمال الأدوار للأساسات</text></svg><figcaption>أحمال الأدوار تنتقل عبر العناصر الرأسية <span>— إعداد: م. حمزة أبو الديب</span></figcaption></figure>
 <ul>
 <li>الأبعاد المعمارية والإنشائية وموقع العمود بالنسبة للمحاور والعناصر المتصلة.</li>
 <li>عدد الأدوار وارتفاع كل دور وأطوال البحور ونظام البلاطات والكمرات.</li>
@@ -69,7 +69,7 @@ main{padding-top:32px;padding-bottom:60px}.hero,.panel{background:var(--panel);b
 </ul>
 <div class="callout"><strong>قاعدة مهمة:</strong> لا تبدأ من نسبة تسليح محفوظة أو قطاع متكرر دون مراجعة الأحمال والارتفاعات والنظام الإنشائي. القطاع الاقتصادي هو الذي يحقق المقاومة والاستقرار وقابلية التنفيذ معًا.</div>
 
-<h2>3. استخراج القوى من ETABS بطريقة صحيحة</h2>
+<h2>3. استخراج القوى من ETABS بطريقة صحيحة</h2><figure class="diagram article-illustration" role="group" aria-label="القوى الداخلية"><svg viewBox="0 0 900 310" role="img" aria-labelledby="vcolumn1t vcolumn1d" xmlns="http://www.w3.org/2000/svg"><title id="vcolumn1t">القوى الداخلية</title><desc id="vcolumn1d">قوة محورية وعزوم حول المحاور؛ رسم هندسي تعليمي توضيحي.</desc><rect x="12" y="12" width="876" height="286" rx="18" fill="#f2f6f9" stroke="#c8d3dd" stroke-width="2"/><text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">القوى الداخلية</text><rect x="365" y="90" width="170" height="150" rx="8" fill="#d6dce2" stroke="#52677d" stroke-width="3"/><path d="M450 45 L450 90" fill="none" stroke="#c65a50" stroke-width="5"  stroke-linecap="round"/><path d="M450 240 L450 275" fill="none" stroke="#c65a50" stroke-width="5"  stroke-linecap="round"/><path d="M330 165 L365 165" fill="none" stroke="#b8893c" stroke-width="5"  stroke-linecap="round"/><path d="M535 165 L570 165" fill="none" stroke="#b8893c" stroke-width="5"  stroke-linecap="round"/><text x="450" y="285" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="18" font-weight="600" fill="#17324d" direction="rtl">قوة محورية وعزوم حول المحاور</text></svg><figcaption>قوة محورية وعزوم حول المحاور <span>— إعداد: م. حمزة أبو الديب</span></figcaption></figure>
 <p>بعد بناء النموذج الإنشائي ومراجعته، نستخرج لكل عمود القوى الداخلية من تراكيب الأحمال الحاكمة. أهم القيم التي نحتاجها عادةً هي الحمل المحوري والعزوم حول المحورين والقص، مع مراعاة إشارات المحاور المحلية واتجاهات القطاع.</p>
 <ul>
 <li>راجع تعريف المحاور المحلية للعمود، وتأكد أن العزم حول المحور 2 والمحور 3 مفهوم بالنسبة لاتجاهات القطاع الفعلية.</li>
@@ -122,7 +122,13 @@ main{padding-top:32px;padding-bottom:60px}.hero,.panel{background:var(--panel);b
 </tbody></table></div>
 <p>لا تختار التسليح على أساس أن نسبة معينة مناسبة لكل الأعمدة. قد يكون العمود محكومًا بالعزم أو النحافة أو الحد الأدنى للتسليح أو متطلبات التفصيل، وقد يكون الحل الأفضل تعديل القطاع بدل زيادة الحديد فقط.</p>
 
-<h2>8. تصميم الكانات والتفاصيل التنفيذية</h2>
+<h2>8. تصميم الكانات والتفاصيل التنفيذية</h2><figure class="diagram article-illustration" role="group" aria-label="التسليح الطولي"><svg viewBox="0 0 900 310" role="img" aria-labelledby="vcolumn5t vcolumn5d" xmlns="http://www.w3.org/2000/svg">
+<title id="vcolumn5t">الأسياخ الطولية في العمود</title><desc id="vcolumn5d">منظر طولي لأسياخ التسليح الرئيسية ممتدة رأسيًا داخل العمود، دون إظهار الكانات في هذا الرسم حتى لا تختلط وظيفة التسليح الطولي بوظيفة الحبس العرضي.</desc>
+<rect x="12" y="12" width="876" height="286" rx="18" fill="#f2f6f9" stroke="#c8d3dd" stroke-width="2"/><text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">الأسياخ الطولية في العمود</text>
+<rect x="330" y="75" width="240" height="170" fill="#d6dce2" stroke="#52677d" stroke-width="3"/>
+<g stroke="#c65a50" stroke-width="9" stroke-linecap="round"><path d="M370 85V235 M420 85V235 M480 85V235 M530 85V235"/></g>
+<path d="M300 85H325 M300 235H325" stroke="#17324d" stroke-width="2"/><text x="450" y="275" text-anchor="middle" font-family="Tahoma,Arial" font-size="16" fill="#17324d">تستمر الأسياخ أو تُوصل وفق أطوال التثبيت والوصلات المصممة</text>
+</svg><figcaption>عدد الأسياخ ومساحتها ومواقعها <span>— إعداد: م. حمزة أبو الديب</span></figcaption></figure>
 <p>الكانات لا تقتصر وظيفتها على تثبيت الأسياخ الطولية؛ فهي توفر الحبس للخرسانة وتقاوم متطلبات القص وتدعم الأسياخ ضد الانبعاج الموضعي، وتكتسب أهمية خاصة في مناطق المفاصل والعناصر المعرضة لأحمال زلزالية.</p>
 <ul>
 <li>حدد قطر الكانة وتباعدها وعدد الأرجل طبقًا للقص والحبس والاشتراطات التفصيلية للكود.</li>
@@ -279,7 +285,32 @@ main{padding-top:32px;padding-bottom:60px}.hero,.panel{background:var(--panel);b
 <div class="callout"><strong>تنبيه مهم:</strong> لا يصح اعتبار كل سيخ مزروع «مرساة كيميائية» أو استخدام طول ثابت مثل 10ϕ أو 15ϕ دون تصميم. طريقة التصميم تعتمد على وظيفة السيخ، وتأهيل المنتج، والكود المعتمد، وحالة الخرسانة والتفصيلة.</div>
 
 <h3>2. تصور توضيحي للتفصيلة</h3>
-
+<figure class="diagram">
+<svg viewBox="0 0 900 500" role="img" aria-labelledby="svgtitle svgdesc" xmlns="http://www.w3.org/2000/svg">
+<title id="svgtitle">رسم توضيحي مفاهيمي لسيخ تسليح مزروع في خرسانة قائمة</title>
+<desc id="svgdesc">كتلة خرسانية قائمة باللون الرمادي، ثقب محفور داخلها يحتوي على مادة تثبيت، وسيخ تسليح رأسي ممتد إلى عمود جديد فوق سطح الخرسانة.</desc>
+<defs><pattern id="concrete" width="28" height="28" patternUnits="userSpaceOnUse"><rect width="28" height="28" fill="#cbd2dc"/><circle cx="6" cy="8" r="2" fill="#9aa5b4"/><circle cx="21" cy="18" r="2.5" fill="#aab3bf"/></pattern></defs>
+<rect x="90" y="260" width="720" height="170" rx="8" fill="url(#concrete)" stroke="#566273" stroke-width="4"/>
+<rect x="340" y="75" width="220" height="185" rx="5" fill="#dce3eb" stroke="#657386" stroke-width="4"/>
+<rect x="430" y="185" width="40" height="195" fill="#e9a23b" opacity=".8"/>
+<rect x="438" y="140" width="24" height="245" rx="7" fill="#465a78" stroke="#25344c" stroke-width="3"/>
+<rect x="424" y="270" width="52" height="105" rx="8" fill="#d98d35" opacity=".55"/>
+<path d="M438 140 L438 385 M462 140 L462 385" stroke="#25344c" stroke-width="2"/>
+<g font-family="Tahoma,Arial" font-size="22" fill="#172235">
+<text x="450" y="52" text-anchor="middle" font-weight="bold">عمود جديد</text>
+<text x="450" y="465" text-anchor="middle" font-weight="bold">الخرسانة القائمة</text>
+<text x="610" y="180">سيخ التسليح المزروع</text>
+<path d="M590 185 L472 205" stroke="#172235" stroke-width="2" fill="none"/>
+<text x="610" y="315">مادة التثبيت</text>
+<path d="M590 320 L478 320" stroke="#172235" stroke-width="2" fill="none"/>
+<text x="120" y="225">سطح الخرسانة</text>
+<path d="M250 230 L330 260" stroke="#172235" stroke-width="2" fill="none"/>
+<text x="120" y="390">عمق التثبيت الفعال</text>
+<path d="M300 385 L420 350" stroke="#172235" stroke-width="2" fill="none"/>
+</g>
+</svg>
+<figcaption class="caption">رسم مفاهيمي تعليمي فقط، وليس تفصيلة تنفيذية أو أبعادًا معتمدة. الأقطار والأطوال والغطاء والتباعد تُحدد بالحسابات وبحسب نظام المنتج المعتمد.</figcaption>
+</figure>
 
 <h3>3. ما الذي يجب تحديده قبل التصميم؟</h3>
 <ol>
@@ -290,7 +321,15 @@ main{padding-top:32px;padding-bottom:60px}.hero,.panel{background:var(--panel);b
 <li><strong>ظروف الخدمة والتنفيذ:</strong> خرسانة متشققة أو غير متشققة، رطوبة الثقب، درجة الحرارة، الحريق، التعرض الكيميائي، الأحمال المستمرة، ومتطلبات الفحص.</li>
 </ol>
 
-<h3>4. كيف يتم التصميم بصورة صحيحة؟</h3>
+<h3>4. كيف يتم التصميم بصورة صحيحة؟</h3><figure class="diagram article-illustration" role="group" aria-label="قطر الثقب والسيخ"><svg viewBox="0 0 900 330" role="img" aria-labelledby="vanchor2t vanchor2d" xmlns="http://www.w3.org/2000/svg">
+<title id="vanchor2t">الفرق بين قطر سيخ التسليح وقطر ثقب التثبيت الكيميائي</title><desc id="vanchor2d">قطاع تخطيطي لسيخ داخل ثقب أكبر منه في خرسانة قائمة، مع طبقة مادة تثبيت في الفراغ الحلقي. قطر الثقب وطريقة التنفيذ يحددهما نظام التثبيت المعتمد وتعليمات المصنع.</desc>
+<rect x="12" y="12" width="876" height="306" rx="18" fill="#f2f6f9" stroke="#c8d3dd" stroke-width="2"/><text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">قطر الثقب أكبر من قطر السيخ وفق نظام التثبيت</text>
+<rect x="250" y="90" width="400" height="160" rx="8" fill="#c9d2da" stroke="#52677d" stroke-width="3"/>
+<rect x="410" y="90" width="80" height="160" fill="#d98d35" opacity=".65"/><rect x="435" y="90" width="30" height="160" fill="#b8893c" stroke="#52677d" stroke-width="2"/>
+<path d="M410 75V58H490V75" stroke="#c65a50" stroke-width="2.5" fill="none"/><path d="M435 88V72H465V88" stroke="#3579b7" stroke-width="2.5" fill="none"/>
+<g font-family="Tahoma,Arial" font-size="16" fill="#17324d"><text x="450" y="285" text-anchor="middle">سيخ التسليح داخل الثقب</text><text x="550" y="65">قطر الثقب</text><path d="M535 70L490 90" stroke="#c65a50" stroke-width="2" fill="none"/><text x="260" y="285">مادة التثبيت في الفراغ الحلقي</text><path d="M360 278L420 205" stroke="#17324d" stroke-width="2" fill="none"/></g>
+<text x="450" y="310" text-anchor="middle" font-family="Tahoma,Arial" font-size="13" fill="#52677d">لا تعتمد قطرًا موحدًا؛ راجع اعتماد المنتج وتعليمات المصنع</text>
+</svg><figcaption>مطابقة القطر مع نظام التثبيت <span>— إعداد: م. حمزة أبو الديب</span></figcaption></figure>
 <p>لا توجد قيمة واحدة لطول الزراعة تصلح لكل الحالات. على المصمم اختيار مسار تصميم يتفق مع تصنيف الاستخدام في تقرير تقييم المنتج والكود الحاكم:</p>
 
 <figure class="diagram article-illustration" role="group" aria-label="تحديد عمق الثقب"><svg viewBox="0 0 900 310" role="img" aria-labelledby="vanchor1t vanchor1d" xmlns="http://www.w3.org/2000/svg"><title id="vanchor1t">تحديد عمق الثقب</title><desc id="vanchor1d">العمق وفق التصميم والنظام المعتمد؛ رسم هندسي تعليمي توضيحي.</desc><rect x="12" y="12" width="876" height="286" rx="18" fill="#f2f6f9" stroke="#c8d3dd" stroke-width="2"/><text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">تحديد عمق الثقب</text><rect x="300" y="95" width="300" height="150" rx="8" fill="#c9d2da" stroke="#52677d" stroke-width="3"/><path d="M450 65 L450 210" fill="none" stroke="#b8893c" stroke-width="12"  stroke-linecap="round"/><circle cx="450" cy="65" r="9" fill="#c65a50" stroke="#17324d" stroke-width="2"/><text x="450" y="270" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="18" font-weight="600" fill="#17324d" direction="rtl">عمق الثقب حسب التصميم</text></svg><figcaption>العمق وفق التصميم والنظام المعتمد <span>— إعداد: م. حمزة أبو الديب</span></figcaption></figure>
@@ -393,7 +432,7 @@ main{padding-top:32px;padding-bottom:60px}.hero,.panel{background:var(--panel);b
 <p>لا يُنصح بذلك. يجب تحديد مواقع التسليح القائم قبل الحفر لتجنب قطع الأسياخ أو الكانات، ثم اعتماد أي تعديل في مواقع الثقوب هندسيًا.</p>
 
 
-\n<h2>17. المراجع والكودات</h2>
+\n<h2>17. المراجع والكودات</h2><figure class="diagram article-illustration" role="group" aria-label="مرجع الكود السعودي"><svg viewBox="0 0 900 310" role="img" aria-labelledby="vcolumn9t vcolumn9d" xmlns="http://www.w3.org/2000/svg"><title id="vcolumn9t">مرجع الكود السعودي</title><desc id="vcolumn9d">SBC 301 للأحمال وSBC 304 للخرسانة – راجع النص الرسمي؛ رسم هندسي تعليمي توضيحي.</desc><rect x="12" y="12" width="876" height="286" rx="18" fill="#f2f6f9" stroke="#c8d3dd" stroke-width="2"/><text x="450" y="42" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="21" font-weight="700" fill="#17324d" direction="rtl">مرجع الكود السعودي</text><rect x="320" y="75" width="260" height="175" rx="14" fill="#fff" stroke="#b8893c" stroke-width="3"/><text x="450" y="120" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="25" font-weight="600" fill="#17324d" direction="rtl">SBC 301 / 304</text><text x="450" y="158" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="20" font-weight="600" fill="#17324d" direction="rtl">أحمال + خرسانة</text><text x="450" y="218" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="15" font-weight="600" fill="#17324d" direction="rtl">مرجع التصميم</text></svg><figcaption>SBC 301 للأحمال وSBC 304 للخرسانة – راجع النص الرسمي <span>— إعداد: م. حمزة أبو الديب</span> · <a href="https://sbc.gov.sa/ar/BC/Pages/BuildingCode/BC.aspx?year=2024" target="_blank" rel="noopener">الرجوع إلى المصدر الرسمي للكود السعودي</a></figcaption></figure>
 <p>يجب الرجوع إلى الإصدار المعتمد تعاقديًا ورسميًا للمشروع، لأن متطلبات تصميم الأعمدة وتفاصيلها قد تختلف بين الإصدارات والأنظمة الإنشائية.</p>
 <ul class="refs">
 <li><a href="https://www.concrete.org/store.aspx" target="_blank" rel="noopener">American Concrete Institute (ACI)</a> – ACI 318 بالإصدار المعتمد للمشروع؛ راجع فصل الأعمدة، ومتطلبات المنشآت المقاومة للزلازل، وتفاصيل التسليح، وفصل المراسي عند استخدام التثبيت اللاحق.</li>
