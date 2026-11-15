@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تصميم السلالم والحوائط الساندة والخزانات واللبشات | م. حمزة أبو الديب</title>
+<meta name="description" content="دليل هندسي لتصميم السلالم الخرسانية والحوائط الساندة والخزانات واللبشات: الأحمال وضغط التربة والمياه والثبات والقص والتسليح والعزل والزلازل ومراجع SBC وACI وECP.">
+<meta name="keywords" content="تصميم السلالم الخرسانية, تصميم السلم الخرساني, stair slab design, waist slab, الحوائط الساندة, retaining wall design, ضغط التربة, active earth pressure, at rest pressure, الخزانات الخرسانية, تصميم خزان مياه, water tank design, ACI 350, ACI 350.3, waterproofing, waterstop, اللبشة المسلحة, raft foundation, uplift, القص والانحناء, SBC 303, SBC 304, ECP 203">
+<meta name="author" content="م. حمزة أبو الديب – مهندس تصميم إنشائي">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://hamzaaldeeb.github.io/stairs-retaining-walls-tanks.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="تصميم السلالم والحوائط الساندة والخزانات واللبشات">
+<meta property="og:description" content="شرح تطبيقي لمسار الأحمال وفحوصات السلالم والحوائط الساندة والخزانات واللبشات، مع رسومات أصلية ومراجع أكواد موثقة.">
+<meta property="og:url" content="https://hamzaaldeeb.github.io/stairs-retaining-walls-tanks.html">
+<meta property="og:site_name" content="الديب للتصميم الإنشائي">
+<meta property="og:locale" content="ar_AR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="السلالم والحوائط الساندة والخزانات | م. حمزة أبو الديب">
+<meta name="twitter:description" content="دليل تصميم إنشائي للعناصر الخاصة مع الأحمال وفحوصات المقاومة والخدمة والتفاصيل.">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Article",
+ "headline":"تصميم السلالم والحوائط الساندة والخزانات واللبشات: الأحمال والتحليل والتفاصيل",
+ "description":"دليل تعليمي تطبيقي لتصميم السلالم الخرسانية والحوائط الساندة والخزانات واللبشات والعناصر الخاصة، مع فصل متطلبات الأحمال والتربة والخرسانة والتحكم في الشروخ.",
+ "inLanguage":"ar",
+ "datePublished":"2026-11-15",
+ "dateModified":"2026-11-15",
+ "author":{"@type":"Person","name":"م. حمزة أبو الديب – مهندس تصميم إنشائي","url":"https://hamzaaldeeb.github.io/"},
+ "publisher":{"@type":"Organization","name":"الديب للتصميم الإنشائي","url":"https://hamzaaldeeb.github.io/"},
+ "mainEntityOfPage":{"@type":"WebPage","@id":"https://hamzaaldeeb.github.io/stairs-retaining-walls-tanks.html"},
+ "articleSection":"العناصر الإنشائية الخاصة",
+ "keywords":["تصميم السلالم الخرسانية","الحوائط الساندة","ضغط التربة","الخزانات الخرسانية","ACI 350","ACI 350.3","اللبشة المسلحة","SBC 303","SBC 304","ECP 203"]
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://hamzaaldeeb.github.io/"},
+ {"@type":"ListItem","position":2,"name":"المكتبة الهندسية","item":"https://hamzaaldeeb.github.io/articles.html"},
+ {"@type":"ListItem","position":3,"name":"السلالم والحوائط الساندة والخزانات واللبشات","item":"https://hamzaaldeeb.github.io/stairs-retaining-walls-tanks.html"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+ {"@type":"Question","name":"هل يتم تصميم السلم كبلاطة مائلة أم ككمرة؟","acceptedAnswer":{"@type":"Answer","text":"يعتمد ذلك على نظام الاستناد ومسار الحمل. السلم ذو البلاطة المائلة المستندة على كمرات أو حوائط جانبية يمكن تحليله كشريحة بلاطة باتجاه البحر، بينما السلالم ذات الكمرات الحاملة أو الدرجات الكابولية أو الأنظمة المطوية تحتاج نموذجًا يناسب سلوكها الفعلي."}},
+ {"@type":"Question","name":"متى أستخدم ضغط التربة النشط ومتى أستخدم ضغط السكون؟","acceptedAnswer":{"@type":"Answer","text":"الضغط النشط يتطلب حركة كافية للحائط لتعبئة حالة الضغط النشط. الحوائط المقيدة مثل كثير من حوائط البدرومات قد لا تتحرك بالقدر الكافي، لذلك يجب تحديد حالة الضغط من قيود الحركة وتسلسل التنفيذ وتقرير التربة، ولا يجوز افتراض Ka تلقائيًا."}},
+ {"@type":"Question","name":"هل العزل المائي يغني عن Waterstop في فواصل الخزان؟","acceptedAnswer":{"@type":"Answer","text":"لا. العزل الخارجي ونظام الـ Waterstop ومعالجة الفواصل عناصر متكاملة ولكل منها وظيفة. يجب تصميم الفاصل وتفصيله وتنفيذه واختباره بما يناسب نوع المنشأ وحركة الفاصل وضغط المياه."}},
+ {"@type":"Question","name":"هل يكفي ACI 318 لتصميم خزان مياه خرساني؟","acceptedAnswer":{"@type":"Answer","text":"لا ينبغي الاكتفاء به وحده. خزانات المياه والمنشآت الحابسة للسوائل تحتاج متطلبات خاصة للمتانة والتحكم في الشروخ والإحكام والفواصل، ويُرجع عند اعتماد النظام الأمريكي إلى ACI 350 والمرجع الزلزالي المكمل ACI 350.3 عند انطباقه، مع مراعاة الكود المحلي."}},
+ {"@type":"Question","name":"ما أهم حالات التحميل التي يجب فحصها للخزان؟","acceptedAnswer":{"@type":"Answer","text":"تشمل الحالات المناسبة للمشروع الخزان ممتلئًا وفارغًا وجزئي الامتلاء، ومنسوب المياه الجوفية المرتفع والمنخفض، والطفو، والأحمال على السقف، والانكماش والحرارة والهبوط التفاضلي والزلازل أثناء التشغيل والصيانة."}}
+]}
+</script>
+<style>
+:root{--bg:#0b1220;--panel:#131d36;--ink:#eaf0fb;--muted:#b8c5dc;--gold:#f5a524;--line:#26365b;--blue:#8eabc4}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:linear-gradient(180deg,#0b1220,#101a30 45%,#0b1220);color:var(--ink);font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.95}
+a{color:#ffd27c}.top{position:sticky;top:0;z-index:5;background:#101a30ed;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.bar{max-width:980px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand,.navlink{color:var(--ink);text-decoration:none;font-weight:bold}.navlink{color:var(--gold)}
+main{max-width:960px;margin:auto;padding:24px 20px 60px}
+.hero,.toc,.note,.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin:18px 0}
+.kicker,.meta{color:var(--gold);font-size:.92rem;font-weight:bold}.hero h1{font-size:clamp(1.65rem,4vw,2.45rem);line-height:1.55;margin:8px 0 12px}
+.lead{font-size:1.08rem;color:#d9e4f5}.byline,.caption,.small{font-size:.88rem;color:var(--muted)}
+h2{font-size:1.45rem;color:#ffd27c;margin:34px 0 10px}h3{font-size:1.12rem;color:#f2d69e;margin-top:22px}
+p,li{color:var(--muted)}li{margin:6px 0}.toc ol{columns:2;column-gap:28px;padding-right:24px}.toc li{break-inside:avoid}.toc a{text-decoration:none}
+.diagram{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px;overflow:hidden;margin:20px 0}.diagram svg{display:block;width:100%;height:auto;max-width:100%}.diagram figcaption{font-size:.88rem;color:var(--muted);padding:8px 7px;text-align:center}.diagram figcaption span{color:#ffd27c}
+.note{border-right:4px solid var(--gold);background:#172541}.warning{border-right-color:#e5a64b;background:#2a251b}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:18px 0}
+table{width:100%;border-collapse:collapse;min-width:650px}th,td{padding:12px;text-align:right;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#1b2a49;color:#ffda91}td{color:var(--muted)}
+.formula{direction:ltr;text-align:center;background:#101a30;border:1px solid var(--line);border-radius:10px;padding:12px;color:#f6d28b;font-family:Georgia,serif;font-size:1.05rem;overflow-x:auto}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.tag{font-size:.83rem;color:#dce8fa;border:1px solid var(--line);border-radius:30px;padding:4px 10px}
+.cta{display:block;text-align:center;padding:15px;border-radius:12px;background:#155b43;color:white;text-decoration:none;font-weight:bold;margin:22px 0}
+.refs li{margin:10px 0}.footer{border-top:1px solid var(--line);padding-top:20px;margin-top:35px}.related{display:flex;gap:12px;flex-wrap:wrap}.related a{display:inline-block;padding:8px 12px;border:1px solid var(--line);border-radius:9px;text-decoration:none}
+@media(max-width:620px){main{padding:16px 14px 45px}.hero,.toc,.note,.panel{padding:16px}.toc ol{columns:1}.diagram{padding:7px}.table-wrap{font-size:.9rem}}
+</style>
+</head>
+<body>
+<header class="top"><div class="bar"><a class="brand" href="/">الديب للتصميم الإنشائي | م. حمزة أبو الديب</a><a class="navlink" href="/articles.html">المكتبة الهندسية ←</a></div></header>
+<main><article>
+<header class="hero">
+<div class="kicker">الحلقة العاشرة من السلسلة الهندسية · العناصر الإنشائية الخاصة</div>
+<h1>تصميم السلالم والحوائط الساندة والخزانات واللبشات: الأحمال والتحليل والتفاصيل</h1>
+<p class="lead">السلم والحيطة الساندة والخزان واللبشة مش عناصر عادية نقدر نختصرها في قطاع وتسليح وخلاص. كل عنصر له مسار أحمال وظروف تشغيل مختلفة: السلم بيتأثر بطريقة الاستناد وشكل البلاطة، الحائط الساند بيتأثر بحركة التربة والمياه والردم، والخزان لازم يحقق المقاومة والتحكم في الشروخ والإحكام، واللبشة قد تتعرض لضغط تربة أو طفو من المياه الجوفية. المقال ده بيجمع طريقة التفكير وخطوات المراجعة، مع فصل واضح بين متطلبات التربة والأحمال والخرسانة.</p>
+<div class="byline">إعداد: م. حمزة أبو الديب – مهندس تصميم إنشائي | الديب للتصميم الإنشائي | تاريخ النشر: 15 نوفمبر 2026 | آخر تحديث: 15 نوفمبر 2026</div>
+</header>
+<div class="note"><strong>نطاق المقال:</strong> شرح تعليمي ومراجعة منهجية للعناصر الخاصة، وليس مذكرة حسابية لمشروع بعينه. أي أبعاد أو تسليح أو قيم ضغط أو معاملات يجب استخراجها من بيانات المشروع وتقرير التربة والكود المعتمد، ولا تُنقل من الرسومات التوضيحية باعتبارها تفاصيل تنفيذية.</div>
+<nav class="toc" aria-label="محتويات المقال"><strong>محتويات المقال</strong><ol>
+<li><a href="#stairs">السلالم الخرسانية</a></li>
+<li><a href="#stair-loads">الأحمال ونموذج السلم</a></li>
+<li><a href="#retaining">أنواع الحوائط الساندة</a></li>
+<li><a href="#earth-pressure">ضغط التربة والمياه</a></li>
+<li><a href="#stability">ثبات الحائط وتصميم قطاعاته</a></li>
+<li><a href="#basement">حوائط البدرومات</a></li>
+<li><a href="#tanks">الخزانات الخرسانية</a></li>
+<li><a href="#tank-loads">حالات تحميل الخزانات</a></li>
+<li><a href="#seismic-tank">التأثير الزلزالي وحركة المياه</a></li>
+<li><a href="#raft">اللبشات والطفو والعناصر الخاصة</a></li>
+<li><a href="#joints">الفواصل والعزل وWaterstop</a></li>
+<li><a href="#example">مثال حسابي توضيحي</a></li>
+<li><a href="#workflow">خطوات التصميم والمراجعة</a></li>
+<li><a href="#codes">مراجع الأكواد وحدود التحقق</a></li>
+<li><a href="#mistakes">أخطاء شائعة</a></li>
+<li><a href="#faq">أسئلة متكررة</a></li>
+</ol></nav>
+
+<section id="stairs">
+<h2>1. السلالم الخرسانية: حدد النظام قبل حساب الحديد</h2>
+<p>أول خطوة في تصميم السلم هي تحديد العنصر الذي يحمل الدرجات فعلًا. ممكن يكون عندك بلاطة مائلة (Waist Slab) حاملة في اتجاه البحر، أو كمرات جانبية تحمل الدرجات، أو درجات كابولية مثبتة في حائط، أو نظام مطوي يعمل كلوح/كمرة مطوية. اختلاف النظام يغيّر توزيع العزوم وردود الأفعال والتفاصيل عند البسطات.</p>
+<p>في السلم الشائع ذي البلاطة المائلة، يتم تحليل شريحة بعرض وحدة أو العرض التصميمي المناسب بين خطوط الاستناد. لازم نعرف هل البسطة مستمرة مع القلبة؟ هل الارتكاز على كمرات عند الطرفين أم على حائط جانبي؟ هل يوجد كمرة بسطة؟ وهل السلم متصل بإطار المبنى بطريقة تنقل إليه قوى أفقية أو تقيّد الحركة؟</p>
+<figure class="diagram"><svg viewBox="0 0 900 310" role="img" aria-labelledby="st1t st1d"><title id="st1t">قطاع سلم خرساني بقلبة مائلة وبسطة</title><desc id="st1d">قطاع جانبي لسلم خرساني يوضح درجات فوق بلاطة مائلة وبسطة أفقية، مع كمرات أو حوائط عند مناطق الاستناد وأسهم حمل رأسي توضيحية.</desc><rect x="10" y="10" width="880" height="290" rx="16" fill="#f3f6f9"/><path d="M115 245H230V220H270V195H310V170H350V145H390V120H430V95H520V115H440L390 145L350 170L310 195L270 220L230 245Z" fill="#8eabc4" stroke="#52677d" stroke-width="3"/><path d="M115 245L440 95H520" fill="none" stroke="#52677d" stroke-width="5"/><rect x="105" y="245" width="30" height="42" fill="#c7d1dc" stroke="#52677d" stroke-width="2"/><rect x="510" y="115" width="28" height="172" fill="#c7d1dc" stroke="#52677d" stroke-width="2"/><g stroke="#c65a50" stroke-width="4" fill="none"><path d="M245 50V92M325 50V132M405 50V92M490 50V75"/><path d="M237 82L245 96L253 82M317 122L325 136L333 122M397 82L405 96L413 82M482 65L490 79L498 65"/></g><g font-family="Tahoma,Arial" font-size="17" fill="#17324d"><text x="300" y="35">أحمال رأسية على القلبة</text><text x="320" y="270">بلاطة مائلة حاملة</text><text x="565" y="135">بسطة</text><text x="90" y="225">مسند</text></g></svg><figcaption>الشكل (1): سلم بقلبة مائلة وبسطة؛ شكل الاستناد الفعلي هو الذي يحكم النموذج. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<h3>أنظمة شائعة وملاحظات التصميم</h3>
+<div class="table-wrap"><table><thead><tr><th>النظام</th><th>طريقة العمل</th><th>ما يجب مراجعته</th></tr></thead><tbody>
+<tr><td>قلبة ببلاطة مائلة</td><td>تعمل غالبًا كبلاطة باتجاه البحر بين مساندها</td><td>العزم الموجب والسالب، القص، الترخيم، وتثبيت الحديد عند البسطات</td></tr>
+<tr><td>سلم محمول على كمرات جانبية</td><td>قد تنقل الدرجات أو البلاطة أحمالها إلى الكمرات الجانبية</td><td>التواء الكمرات، ردود الأفعال، وتفاصيل اتصال الدرجات</td></tr>
+<tr><td>درجات كابولية</td><td>كل درجة أو مجموعة درجات مثبتة في حائط أو كمرة حاملة</td><td>العزم عند التثبيت، طول التثبيت، تشقق الحائط، وتسلسل التنفيذ</td></tr>
+<tr><td>سلم مطوي أو مكسّر</td><td>سطح إنشائي مستمر يتغير اتجاهه بين القلبة والبسطة</td><td>تحليل اللوح المطوي، قوى الغشاء والانحناء، والتفاصيل عند الكسرة</td></tr>
+</tbody></table></div>
+<figure class="diagram"><svg viewBox="0 0 900 280" role="img" aria-labelledby="st2t st2d"><title id="st2t">مقارنة نظم حمل السلالم</title><desc id="st2d">ثلاثة رسومات مبسطة توضح قلبة محمولة على مسندين، ودرجات كابولية مثبتة في حائط، وسلما مطويا مستمرا.</desc><rect x="10" y="10" width="880" height="260" rx="15" fill="#f3f6f9"/><g stroke="#52677d" stroke-width="3" fill="#8eabc4"><path d="M70 180L260 80L275 105L85 205Z"/><path d="M70 205V235H95V193M250 105V235H275V92"/><path d="M380 80V235H405V80" fill="#c7d1dc"/><path d="M405 105H475V120H405M405 140H500V155H405M405 175H525V190H405" fill="#8eabc4"/><path d="M625 190L700 150L755 150L815 105L830 130L760 175L705 175L635 215Z"/></g><g font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle"><text x="170" y="250">بلاطة مائلة</text><text x="455" y="250">درجات كابولية</text><text x="730" y="250">سلم مطوي</text></g></svg><figcaption>الشكل (2): ثلاثة أنظمة لا يصح استخدام نموذج واحد لها جميعًا. <span>رسم أصلي تعليمي</span></figcaption></figure>
+</section>
+
+<section id="stair-loads">
+<h2>2. أحمال السلم وحساب الحمل على القلبة</h2>
+<p>احسب الوزن الذاتي من الحجم الحقيقي للخرسانة، ولا تخلط بين سمك البلاطة المائل وسمكها المقاس رأسيًا. إذا كان سمك الـ Waist Slab هو <strong>t</strong> عموديًا على سطح البلاطة، وميل السلم بزاوية <strong>θ</strong> عن الأفقي، فإن مساحة السطح المائل لكل متر مربع من المسقط الأفقي تساوي تقريبًا 1/cosθ. وعند صب الدرجات الخرسانية المصمتة فوق البلاطة، يضاف وزنها وفق شكلها الفعلي.</p>
+<div class="formula">qD ≈ γc × t / cos(θ) + γc × r / 2 + qfinish</div>
+<p class="small">المعادلة تقريبية لكل متر مربع من المسقط الأفقي عندما تكون الدرجات خرسانة مصمتة مثلثة فوق بلاطة مائلة منتظمة، و<strong>r</strong> ارتفاع القائمة، و<strong>γc</strong> الوزن الحجمي للخرسانة، و<strong>qfinish</strong> حمل التشطيبات. إذا كان شكل الدرجات أو طبقات التشطيب مختلفًا، احسب الحجم الفعلي. لا تضف وزن الدرجات مرتين إذا كان النموذج الهندسي يتضمنها بالفعل.</p>
+<figure class="diagram"><svg viewBox="0 0 900 280" role="img" aria-labelledby="st3t st3d"><title id="st3t">هندسة القلبة المائلة وسمك البلاطة</title><desc id="st3d">رسم هندسي لقلبة سلم يوضح سمك البلاطة المقاس عموديًا على سطحها وزاوية الميل والقائمة والنائمة والمسقط الأفقي.</desc><rect x="10" y="10" width="880" height="260" rx="15" fill="#f3f6f9"/><path d="M150 220L620 75" stroke="#52677d" stroke-width="14" stroke-linecap="round"/><path d="M150 220L620 220L620 75" stroke="#9aa9b8" stroke-width="2" stroke-dasharray="7 6" fill="none"/><path d="M350 158L362 196" stroke="#c65a50" stroke-width="4"/><path d="M342 160L358 156M354 198L370 194" stroke="#c65a50" stroke-width="3"/><path d="M150 220L225 220L225 197" stroke="#3579b7" stroke-width="3" fill="none"/><path d="M225 220L225 197L300 197L300 174" stroke="#8eabc4" stroke-width="5" fill="none"/><path d="M300 197L300 174L375 174L375 151" stroke="#8eabc4" stroke-width="5" fill="none"/><g font-family="Tahoma,Arial" font-size="17" fill="#17324d"><text x="370" y="135">t عمودي على البلاطة</text><text x="245" y="242">النائمة</text><text x="205" y="188">القائمة r</text><text x="640" y="225">المسقط الأفقي</text><text x="180" y="70">زاوية الميل θ</text></g><path d="M150 220L245 220M150 220L240 190" stroke="#3579b7" stroke-width="3" fill="none"/></svg><figcaption>الشكل (3): سمك البلاطة يقاس عموديًا على سطحها، ويجب تحويل الأحمال إلى أساس المساحة الذي يستخدمه النموذج. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<p>بعد تحديد الحمل، راجع حمل الاستخدام طبقًا لوظيفة المبنى وتصنيف السلم في الكود المعتمد، وأحمال الدرابزين والحواجز عند انطباقها. لا تفترض أن حمل السلم الحي يساوي حمل الغرفة المجاورة. صمم القلبة والبسطة والكمرات الحاملة كلًّا وفق مسار حمله، وافحص الترخيم والتشققات والاهتزاز والهبوط التفاضلي بين السلم والإطار.</p>
+<div class="note"><strong>ملاحظة تنفيذية:</strong> اتصال السلم بالبسطات أو البلاطات قد ينقل عزومًا أو يقيد الانكماش والحركة. تفصيلة فصل السلم أو ربطه بالإطار قرار إنشائي ومعماري، وليست مجرد فاصل صب.</div>
+</section>
+
+<section id="retaining">
+<h2>3. الحوائط الساندة: اختيار نوع الحائط ومسار المقاومة</h2>
+<p>الحائط الساند يحجز تربة أو ردمًا أو مياهًا، ويجب أن ينقل القوى الأفقية إلى القاعدة أو المراسي أو العناصر الداعمة. النوع المناسب يتحدد من ارتفاع الردم، والمساحة المتاحة، ونوع التربة، والمياه الجوفية، والأحمال القريبة من الحافة، وقيود الحركة وتسلسل الحفر والتنفيذ.</p>
+<div class="table-wrap"><table><thead><tr><th>النوع</th><th>آلية المقاومة</th><th>استخدامات وملاحظات</th></tr></thead><tbody>
+<tr><td>حائط جاذبية</td><td>الوزن الذاتي ومقاومة القاعدة</td><td>مناسب عندما تتوفر مساحة ووزن كافيان؛ قد يكون خرسانة عادية أو حجرًا أو وحدات خاصة</td></tr>
+<tr><td>حائط كابولي مسلح</td><td>الساق والقاعدة تعمل ككابولي؛ وزن التربة فوق الكعب يساهم في الاتزان</td><td>شائع للارتفاعات المناسبة بعد فحص الثبات والتربة والقطاع</td></tr>
+<tr><td>حائط ذو دعامات خلفية Counterfort</td><td>الدعامات تربط الساق بالقاعدة وتقلل بحورها الفعالة</td><td>قد يكون اقتصاديًا للحوائط الأعلى، مع تعقيد أكبر في القوالب والتفاصيل</td></tr>
+<tr><td>حائط بدروم أو حائط محصور</td><td>قد يستند أعلى وأسفل أو على بلاطات الأدوار</td><td>الحركة محدودة غالبًا؛ لا يفترض الضغط النشط دون تحليل قيود الحركة</td></tr>
+<tr><td>حائط خوازيق أو Diaphragm Wall</td><td>مقاومة انحناء وتثبيت جانبي ومراسي أو دعامات مؤقتة/دائمة</td><td>يستخدم للحفر العميق والمواقع الضيقة، ويحتاج تحليل تربة-منشأ وتسلسل تنفيذ</td></tr>
+</tbody></table></div>
+<figure class="diagram"><svg viewBox="0 0 900 340" role="img" aria-labelledby="rw1t rw1d"><title id="rw1t">قطاع حائط ساند كابولي مع الساق والكعب والقدم والصرف</title><desc id="rw1d">حائط ساند كابولي من الخرسانة المسلحة، يوضح الساق والقاعدة والقدم والكعب والردم خلف الحائط وطبقة تصريف وأنبوب صرف، مع تسليح رأسي رئيسي توضيحي في وجه الشد ناحية الردم.</desc><rect x="10" y="10" width="880" height="320" rx="15" fill="#f3f6f9"/><path d="M490 75H820V260H490Z" fill="#e6d7b7" stroke="#a58d65" stroke-width="2"/><path d="M300 250H700V280H300Z" fill="#8eabc4" stroke="#52677d" stroke-width="3"/><path d="M465 85H500V250H465Z" fill="#8eabc4" stroke="#52677d" stroke-width="3"/><path d="M500 250H700V280H300V250H465" fill="#8eabc4" stroke="#52677d" stroke-width="3"/><path d="M500 250H700" stroke="#52677d" stroke-width="2"/><path d="M505 92V242" stroke="#c65a50" stroke-width="5" stroke-dasharray="9 5"/><path d="M515 100V242" stroke="#c65a50" stroke-width="2"/><rect x="515" y="90" width="22" height="155" fill="#b8d6c8" opacity=".9"/><path d="M526 230H670" stroke="#3579b7" stroke-width="5"/><circle cx="650" cy="230" r="9" fill="#3579b7"/><g stroke="#c65a50" stroke-width="3" fill="none"><path d="M820 115H520M820 165H520M820 215H520"/><path d="M532 107L518 115L532 123M532 157L518 165L532 173M532 207L518 215L532 223"/></g><g font-family="Tahoma,Arial" font-size="16" fill="#17324d"><text x="650" y="55">ردم خلف الحائط</text><text x="425" y="155">الساق</text><text x="385" y="295">القدم Toe</text><text x="620" y="295">الكعب Heel</text><text x="545" y="185">طبقة صرف</text><text x="690" y="220">ماسورة صرف</text><text x="280" y="65">وجه الشد ناحية الردم</text></g></svg><figcaption>الشكل (4): مكونات الحائط الكابولي؛ موضع التسليح المرسوم توضيحي ويتحدد من اتجاه العزم والتحليل. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<figure class="diagram"><svg viewBox="0 0 900 300" role="img" aria-labelledby="rw2t rw2d"><title id="rw2t">حائط ساند ذو دعامات خلفية Counterfort</title><desc id="rw2d">منظور مبسط لحائط ساند يوضح الساق والقاعدة وعدة دعامات مثلثة خلف الساق تربطها بالقاعدة وتقلل البحر الفعال للوح.</desc><rect x="10" y="10" width="880" height="280" rx="15" fill="#f3f6f9"/><path d="M180 70L180 225L730 225L730 70Z" fill="#e6d7b7" opacity=".7"/><path d="M230 65V220H690V65" fill="none" stroke="#52677d" stroke-width="16"/><path d="M230 220H690" stroke="#52677d" stroke-width="22"/><g fill="#8eabc4" stroke="#52677d" stroke-width="3"><path d="M260 215L390 215L260 85Z"/><path d="M420 215L550 215L420 85Z"/><path d="M580 215L680 215L580 85Z"/></g><g font-family="Tahoma,Arial" font-size="17" fill="#17324d"><text x="460" y="45" text-anchor="middle">الساق</text><text x="460" y="260" text-anchor="middle">القاعدة</text><text x="330" y="155">دعامات خلفية</text></g></svg><figcaption>الشكل (5): الدعامات الخلفية تقلل بحر الساق والقاعدة، لكنها لا تلغي فحوص الثبات العام. <span>رسم أصلي تعليمي</span></figcaption></figure>
+</section>
+
+<section id="earth-pressure">
+<h2>4. ضغط التربة والمياه: لا تختار Ka قبل فهم حركة الحائط</h2>
+<p>ضغط التربة الجانبي ليس قيمة واحدة ثابتة. يتغير مع حالة التربة وكثافتها واحتكاكها وميل الردم واحتكاك الحائط، ومع مقدار واتجاه حركة الحائط، ووجود مياه جوفية أو أحمال سطحية أو طبقات مختلفة.</p>
+<ul>
+<li><strong>الضغط النشط Active:</strong> يمكن استخدامه عندما تسمح منظومة الحائط بالحركة الكافية لتعبئة حالة الضغط النشط وفق فرضية التحليل.</li>
+<li><strong>ضغط السكون At-rest:</strong> قد يكون مناسبًا لحائط مقيد الحركة، مثل كثير من حوائط البدرومات المرتبطة ببلاطات صلبة.</li>
+<li><strong>الضغط السلبي Passive:</strong> لا يُعتمد عليه تلقائيًا؛ يلزم تحقق من قدرة التربة أمام الحائط واستمراريتها وإمكان بقائها وعدم إزالتها مستقبلًا، مع مراعاة اشتراطات الكود وتقرير التربة.</li>
+<li><strong>ضغط المياه:</strong> يضاف بصورة مستقلة عن ضغط حبيبات التربة. وجود مصرف لا يبرر إهمال ضغط المياه إلا إذا كان نظام الصرف مصممًا ومضمون الأداء ومقبولًا في أساس التصميم.</li>
+</ul>
+<p>في الحالة المبسطة لردم أفقي متجانس جاف عديم التماسك، وحائط يتحرك بما يكفي لتعبئة الضغط النشط، يمكن تمثيل ضغط التربة عند عمق z بالعلاقة:</p>
+<div class="formula">σh(z) = Ka × γ × z &nbsp;&nbsp; ; &nbsp;&nbsp; Pa = ½ × Ka × γ × H²</div>
+<p>ويضيف حمل سطحي منتظم q ضغطًا جانبيًا منتظمًا في هذا النموذج المبسط مقداره Ka×q، بينما ضغط المياه الساكن عند عمق h يساوي γw×h. هذه العلاقات لا تغطي الردم المائل أو التربة المتماسكة أو الطبقات المتعددة أو الزلازل أو احتكاك الحائط أو الحوائط المقيدة.</p>
+<figure class="diagram"><svg viewBox="0 0 900 320" role="img" aria-labelledby="rw3t rw3d"><title id="rw3t">مقارنة توزيعات ضغط التربة والحمل السطحي وضغط المياه</title><desc id="rw3d">ثلاثة مخططات ضغط جانبي مقابل العمق: توزيع مثلثي لضغط التربة النشط، وتوزيع مستطيل منتظم ناتج عن حمل سطحي، وتوزيع مثلثي مستقل لضغط المياه.</desc><rect x="10" y="10" width="880" height="300" rx="15" fill="#f3f6f9"/><g stroke="#52677d" stroke-width="2" fill="none"><path d="M120 65V245H300M390 65V245H570M660 65V245H840"/></g><path d="M120 65L120 245L260 245Z" fill="#f1c78c" stroke="#b8893c" stroke-width="3"/><path d="M390 65L510 65L510 245L390 245Z" fill="#b7cde0" stroke="#3579b7" stroke-width="3"/><path d="M660 65L660 245L800 245Z" fill="#9fd4e8" stroke="#2783a7" stroke-width="3"/><g font-family="Tahoma,Arial" font-size="16" fill="#17324d" text-anchor="middle"><text x="190" y="42">ضغط تربة مثلثي</text><text x="450" y="42">ضغط حمل سطحي منتظم</text><text x="730" y="42">ضغط مياه مثلثي</text><text x="190" y="278">Pa عند H/3</text><text x="450" y="278">Pq عند H/2</text><text x="730" y="278">Pw عند H/3</text></g></svg><figcaption>الشكل (6): يجب جمع التأثيرات على أساس كل حالة تحميل وبحسب منسوب المياه ونوع التربة. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<div class="note warning"><strong>تحذير مهم:</strong> الحائط الذي لا يستطيع الحركة قد يتعرض لضغط سكون أعلى من الضغط النشط. استخدام Ka لمجرد أنه يعطي قوة أقل خطأ في فرضية النموذج، وليس مجرد خطأ حسابي.</div>
+</section>
+
+<section id="stability">
+<h2>5. فحوص ثبات الحائط الساند وتصميم القطاع الخرساني</h2>
+<p>يجب فصل فحوص الثبات الجيوتكنيكي عن فحوص مقاومة الخرسانة. الحائط قد يكون قطاعه الخرساني قويًا ومع ذلك يفشل بالانزلاق أو الانقلاب أو عدم ملاءمة ضغط التأسيس أو عدم استقرار الكتلة الترابية ككل.</p>
+<div class="table-wrap"><table><thead><tr><th>الفحص</th><th>السؤال الهندسي</th><th>ملاحظات</th></tr></thead><tbody>
+<tr><td>الانزلاق Sliding</td><td>هل مقاومة القاعدة والحلول المعتمدة تكفي للقوى الأفقية؟</td><td>لا تعتمد على مقاومة سلبية أمام القدم دون تبرير جيوتكنيكي وتحقق من ظروف الموقع</td></tr>
+<tr><td>الانقلاب Overturning</td><td>هل محصلة القوى تقع في نطاق مقبول بالنسبة للقاعدة؟</td><td>احسب العزوم حول نقطة مرجعية واضحة، مع جميع الأحمال والمياه</td></tr>
+<tr><td>ضغط التأسيس</td><td>هل qmax وqmin ضمن حدود التربة وهل يوجد شد غير مسموح؟</td><td>التوزيع الخطي تقريب؛ يلزم نموذج مناسب عند فقد التلامس أو التربة غير الخطية</td></tr>
+<tr><td>الاستقرار العام Global Stability</td><td>هل يمكن أن تنزلق كتلة تربة تشمل الحائط والأساس؟</td><td>يحتاج تقييمًا جيوتكنيكيًا، خصوصًا قرب المنحدرات أو الحفريات</td></tr>
+<tr><td>الهبوط والطفو</td><td>هل الهبوط التفاضلي أو المياه الجوفية يهددان النظام؟</td><td>افحص حالات المياه المؤقتة والدائمة ومراحل الإنشاء</td></tr>
+<tr><td>مقاومة القطاع</td><td>هل الساق والقدم والكعب ومفتاح القص آمنة؟</td><td>انحناء وقص ومحاور مشتركة وتثبيت وتفاصيل تسليح ومتانة</td></tr>
+</tbody></table></div>
+<figure class="diagram"><svg viewBox="0 0 900 300" role="img" aria-labelledby="rw4t rw4d"><title id="rw4t">فحوص الانزلاق والانقلاب وضغط التأسيس لحائط ساند</title><desc id="rw4d">رسم لحائط ساند مع سهم أفقي للانزلاق وسهم دائري للانقلاب وتوزيع ضغط تربة أسفل القاعدة يتغير من qmin إلى qmax.</desc><rect x="10" y="10" width="880" height="280" rx="15" fill="#f3f6f9"/><path d="M310 85H350V220H650V250H270V220H310Z" fill="#8eabc4" stroke="#52677d" stroke-width="3"/><path d="M350 85H770V220H350Z" fill="#e6d7b7" opacity=".7"/><path d="M270 250H650" stroke="#52677d" stroke-width="4"/><path d="M650 250L650 275L270 275" stroke="#3579b7" stroke-width="3" fill="none"/><path d="M470 65H600M590 55L605 65L590 75" stroke="#c65a50" stroke-width="4" fill="none"/><path d="M260 170C210 155 210 105 260 90" stroke="#b8893c" stroke-width="4" fill="none"/><path d="M250 92L263 86L262 102" stroke="#b8893c" stroke-width="3" fill="none"/><path d="M290 250L290 230L360 230L360 250" fill="#9fd4e8" opacity=".8"/><path d="M300 250L350 250L650 250" stroke="#3579b7" stroke-width="3"/><g font-family="Tahoma,Arial" font-size="16" fill="#17324d"><text x="490" y="48">قوة أفقية</text><text x="145" y="110">انقلاب</text><text x="455" y="282">ضغط التربة أسفل القاعدة: qmin إلى qmax</text></g></svg><figcaption>الشكل (7): الثبات الخارجي وضغط التأسيس مستقلان عن فحوص الانحناء والقص في الخرسانة. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<p>بعد اجتياز فحوص الثبات، صمم الساق كعنصر رأسي حسب طريقة استناده، والكعب والقدم كبلاطات كابولية أو عناصر مستمرة وفق التربة والأحمال، ومفتاح القص إن وجد وفق آلية مقاومته. راجع التسليح الرئيسي في وجه الشد، والتسليح الأفقي للتوزيع والتحكم في الشروخ، وتثبيت أسياخ الساق داخل القاعدة، والغطاء والمتانة والتفاصيل عند الفواصل.</p>
+<p>في الحائط ذي الدعامات، تتغير طريقة عمل الساق والقاعدة وقد يصبح جزء من الساق لوحًا ثنائي الاتجاه بين الدعامات. لا تنقل تفصيلة الحائط الكابولي البسيط إلى حائط Counterfort دون تغيير نموذج التحليل.</p>
+</section>
+
+<section id="basement">
+<h2>6. حوائط البدرومات والحفر: ضغط التربة والمياه وتسلسل التنفيذ</h2>
+<p>حائط البدروم غالبًا مقيد ببلاطة السقف أو بلاطات الأدوار وباللبشة أو القاعدة، ولذلك قد يتصرف كعنصر مستمر أو مسند من أعلى وأسفل، وليس ككابولي حر. يجب تحديد هل البلاطات صُبت قبل الردم أم بعده، وهل توجد دعامات مؤقتة أو مراسي، وما مقدار الحركة المسموح بها.</p>
+<p>الأحمال تشمل ضغط التربة، وضغط المياه الجوفية، وأحمال المباني أو المركبات أو التخزين خلف الحائط، وتأثير معدات الدمك، وأحمال الحفر المجاورة. كما يجب فحص الحالة أثناء الحفر قبل اكتمال البلاطات؛ فقد تكون أكثر حرجًا من الحالة النهائية.</p>
+<figure class="diagram"><svg viewBox="0 0 900 320" role="img" aria-labelledby="rw5t rw5d"><title id="rw5t">حائط بدروم محصور بين بلاطة سقف ولبشة</title><desc id="rw5d">قطاع حائط بدروم رأسي يستند إلى بلاطة السقف أعلى وإلى اللبشة أسفل، مع ردم ومياه جوفية خارج الحائط وضغوط جانبية على امتداده.</desc><rect x="10" y="10" width="880" height="300" rx="15" fill="#f3f6f9"/><rect x="500" y="70" width="320" height="200" fill="#e6d7b7"/><rect x="360" y="60" width="34" height="205" fill="#8eabc4" stroke="#52677d" stroke-width="3"/><rect x="270" y="45" width="125" height="22" fill="#8eabc4" stroke="#52677d" stroke-width="3"/><rect x="270" y="265" width="300" height="24" fill="#8eabc4" stroke="#52677d" stroke-width="3"/><path d="M394 100H470M394 145H470M394 190H470" stroke="#c65a50" stroke-width="4"/><path d="M462 92L476 100L462 108M462 137L476 145L462 153M462 182L476 190L462 198" stroke="#c65a50" stroke-width="3" fill="none"/><path d="M500 80H820" stroke="#3579b7" stroke-width="3" stroke-dasharray="7 5"/><g font-family="Tahoma,Arial" font-size="16" fill="#17324d"><text x="325" y="35">بلاطة سقف</text><text x="420" y="245">حائط البدروم</text><text x="640" y="55">ردم ومياه جوفية</text><text x="425" y="305">لبشة / قاعدة</text></g></svg><figcaption>الشكل (8): الحائط المحصور يحتاج تمثيلًا لقيود البلاطات وتسلسل الحفر والردم. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<div class="note warning"><strong>لا تخلط بين:</strong> ضغط التربة الجاف أو الفعال، وضغط المياه الهيدروستاتيكي، وضغط السكون، وأحمال السطح. كل منها له مصدر وافتراضات مختلفة، ويجب أن تظهر بوضوح في حالات التحميل.</div>
+</section>
+
+<section id="tanks">
+<h2>7. الخزانات الخرسانية: المقاومة وحدها لا تكفي</h2>
+<p>الخزان منشأ وظيفته احتواء سائل، لذلك لا يكفي أن ينجح في مقاومة العزوم والقص فقط. يجب الاهتمام بالتحكم في الشروخ والنفاذية والمتانة والفواصل وجودة الخرسانة والمعالجة، لأن التسرب قد يسبب فقد المياه أو تلوثها أو تلف التربة والمنشآت المجاورة.</p>
+<p>الخزانات الأرضية قد تكون مستطيلة أو دائرية، فوق سطح الأرض أو مدفونة جزئيًا أو كليًا. أما الخزانات العلوية فتحتاج نظامًا حاملًا مختلفًا يأخذ في الاعتبار كتلة المياه وتفاعلها مع الخزان والبرج أو الأعمدة. لا تستخدم نموذج خزان أرضي لخزان مرتفع دون إعادة تعريف النظام الديناميكي.</p>
+<figure class="diagram"><svg viewBox="0 0 900 330" role="img" aria-labelledby="tk1t tk1d"><title id="tk1t">قطاع خزان مياه خرساني مستطيل</title><desc id="tk1d">قطاع خزان أرضي مستطيل يوضح بلاطة القاع والحوائط والسقف الاختياري ومنسوب المياه، مع عناصر خرسانية متصلة وفواصل محتملة عند نقاط الصب.</desc><rect x="10" y="10" width="880" height="310" rx="15" fill="#f3f6f9"/><path d="M240 75V250H660V75" fill="none" stroke="#52677d" stroke-width="18"/><path d="M240 250H660" stroke="#52677d" stroke-width="18"/><path d="M258 145H642V240H258Z" fill="#9fd4e8" opacity=".8"/><path d="M220 65H680" stroke="#52677d" stroke-width="10" stroke-dasharray="12 7"/><path d="M260 145H640" stroke="#2783a7" stroke-width="3" stroke-dasharray="7 5"/><g font-family="Tahoma,Arial" font-size="16" fill="#17324d"><text x="450" y="45" text-anchor="middle">سقف الخزان (إن وجد)</text><text x="450" y="190" text-anchor="middle">المياه المخزنة</text><text x="190" y="170">حائط</text><text x="700" y="170">حائط</text><text x="450" y="292" text-anchor="middle">بلاطة القاع</text><text x="650" y="130">منسوب التشغيل</text></g></svg><figcaption>الشكل (9): مكونات الخزان المستطيل؛ سمك الجدران والسقف والقاع والفواصل تحدد بالحساب والوظيفة. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<figure class="diagram"><svg viewBox="0 0 900 280" role="img" aria-labelledby="tk2t tk2d"><title id="tk2t">ضغط الماء على جدار الخزان</title><desc id="tk2d">جدار خزان رأسي يحجز ماء بارتفاع H، ويظهر ضغط هيدروستاتيكي صفرًا عند سطح الماء ويزداد خطيًا حتى القيمة العظمى عند القاع.</desc><rect x="10" y="10" width="880" height="260" rx="15" fill="#f3f6f9"/><path d="M250 55V230H470" stroke="#52677d" stroke-width="10" fill="none"/><path d="M260 75H440V225H260Z" fill="#9fd4e8" opacity=".75"/><path d="M250 75H440" stroke="#2783a7" stroke-width="3" stroke-dasharray="7 5"/><path d="M470 75L470 230L640 230Z" fill="#8dc9e0" stroke="#2783a7" stroke-width="3"/><path d="M485 100H530M485 145H575M485 190H615" stroke="#2783a7" stroke-width="3"/><path d="M522 92L535 100L522 108M567 137L580 145L567 153M607 182L620 190L607 198" stroke="#2783a7" stroke-width="3" fill="none"/><g font-family="Tahoma,Arial" font-size="16" fill="#17324d"><text x="350" y="48">سطح الماء</text><text x="650" y="225">ضغط أكبر عند القاع</text><text x="480" y="62">H</text></g></svg><figcaption>الشكل (10): الضغط الهيدروستاتيكي يزداد خطيًا مع العمق للماء الساكن. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<h3>ما الذي يجب أن يتضمنه نموذج الخزان؟</h3>
+<ul>
+<li>تحديد طريقة استناد الحوائط: مستمرة مع القاع والسقف، أو كابولية، أو مرتبطة بجدران متعامدة.</li>
+<li>تحليل الجدار كلوح رأسي أو أفقي أو ثنائي الاتجاه بحسب أبعاده ودعمه، وليس افتراض شريحة واحدة لكل الحالات.</li>
+<li>تحليل بلاطة القاع مع تفاعل التربة أو كعنصر على أساس مرن، ومراجعة الرفع والطفو عند ارتفاع المياه الجوفية.</li>
+<li>مراجعة سقف الخزان للأحمال الدائمة والحية والمعدات والفتحات، مع عدم إغفال أحمال الصيانة.</li>
+<li>فحص الشروخ والانكماش والحرارة والفواصل والعزل، مع متطلبات النظافة أو المواد الكيميائية حسب نوع السائل.</li>
+</ul>
+</section>
+
+<section id="tank-loads">
+<h2>8. حالات تحميل الخزان: الممتلئ والفارغ والمياه الجوفية</h2>
+<p>الخزان لا يُصمم على حالة واحدة. من الحالات التي يجب دراستها حسب المشروع: ممتلئ حتى منسوب التشغيل، ممتلئ حتى منسوب أقصى، فارغ مع ضغط تربة خارجي، فارغ مع مياه جوفية مرتفعة، جزئي الامتلاء، أثناء الاختبار الهيدروستاتيكي، أثناء الصيانة، وأثناء الزلزال في أوضاع تشغيل مختلفة.</p>
+<figure class="diagram"><svg viewBox="0 0 900 310" role="img" aria-labelledby="tk3t tk3d"><title id="tk3t">حالات تشغيل الخزان ومقاومة الطفو</title><desc id="tk3d">ثلاثة قطاعات لخزان ممتلئ وخزان فارغ مع ضغط تربة ومياه جوفية خارجية وخزان نصف ممتلئ، مع أسهم حمل المياه أو الرفع.</desc><rect x="10" y="10" width="880" height="290" rx="15" fill="#f3f6f9"/><g stroke="#52677d" stroke-width="7" fill="none"><path d="M90 85V225H290V85M350 85V225H550V85M610 85V225H810V85"/></g><path d="M100 130H280V218H100Z" fill="#9fd4e8"/><path d="M620 165H800V218H620Z" fill="#9fd4e8"/><path d="M350 85V225H550V85" stroke="#52677d" stroke-width="7"/><path d="M365 245H535" stroke="#3579b7" stroke-width="3"/><path d="M380 255V230M430 255V230M480 255V230M530 255V230" stroke="#3579b7" stroke-width="3"/><g font-family="Tahoma,Arial" font-size="16" fill="#17324d" text-anchor="middle"><text x="190" y="55">ممتلئ</text><text x="450" y="55">فارغ + مياه جوفية</text><text x="710" y="55">جزئي الامتلاء</text><text x="450" y="280">الطفو قد يحكم حالة الخزان الفارغ</text></g></svg><figcaption>الشكل (11): الحالات الحرجة قد تتبدل؛ الخزان الفارغ قد يكون أخطر من الممتلئ عند ارتفاع المياه الجوفية. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<p>في حالة الخزان المدفون، افحص الطفو باستخدام منسوب المياه الجوفية التصميمي المعتمد، مع مراعاة وزن المنشأ والأحمال الدائمة المسموح باحتسابها فقط، وأي مراسي أو خوازيق شد إن وجدت. لا تحتسب وزن الردم أو أحمالًا مؤقتة لا تضمن بقاءها. وفي حالة التشغيل، راجع تأثير تغير منسوب الماء وتغير درجات الحرارة والقيود التي تفرضها التربة أو المباني المجاورة.</p>
+<div class="note"><strong>مبدأ الإحكام:</strong> حدود التسرب المقبولة وطريقة الاختبار لا تُحدد من اجتهاد المصمم وحده؛ يجب الرجوع لمواصفات المالك والكود/المواصفة المعتمدة ونوع السائل وطريقة الاختبار. اختبار الإحكام لا يعوض عن التصميم الجيد للفواصل والتسليح والخرسانة.</div>
+</section>
+
+<section id="seismic-tank">
+<h2>9. الزلازل وحركة المياه داخل الخزان</h2>
+<p>عند تعرض الخزان للزلزال، لا تتحرك كتلة المياه كلها ككتلة صلبة واحدة. يوجد تأثير اندفاعي مرتبط بحركة الماء مع الخزان، وتأثير توافقي/تذبذبي مرتبط بحركة سطح الماء (Sloshing). لذلك قد تتولد قوى وقص وعزوم إضافية، كما يجب التحقق من ارتفاع الموجة والـ Freeboard حتى لا يحدث تجاوز للمياه أو اصطدام بالسقف.</p>
+<figure class="diagram"><svg viewBox="0 0 900 320" role="img" aria-labelledby="tk4t tk4d"><title id="tk4t">النموذج المفاهيمي للكتلة الاندفاعية والتوافقية في الخزان</title><desc id="tk4d">خزان مياه تحت تأثير زلزالي، يوضح كتلة اندفاعية قرب الجدار وكتلة توافقية قرب سطح الماء مع تموج السطح والحيز الحر أعلى منسوب التشغيل.</desc><rect x="10" y="10" width="880" height="300" rx="15" fill="#f3f6f9"/><path d="M240 65V260H660V65" fill="none" stroke="#52677d" stroke-width="12"/><path d="M255 130Q300 115 345 130T435 130T525 130T645 130V250H255Z" fill="#9fd4e8" opacity=".8"/><path d="M255 130Q300 115 345 130T435 130T525 130T645 130" fill="none" stroke="#2783a7" stroke-width="4"/><circle cx="310" cy="190" r="22" fill="#c65a50"/><circle cx="560" cy="122" r="22" fill="#b8893c"/><path d="M210 180H245M220 170L207 180L220 190" stroke="#17324d" stroke-width="4" fill="none"/><path d="M665 100H720" stroke="#3579b7" stroke-width="3" stroke-dasharray="6 5"/><g font-family="Tahoma,Arial" font-size="16" fill="#17324d"><text x="305" y="225" text-anchor="middle">كتلة اندفاعية</text><text x="560" y="88" text-anchor="middle">كتلة توافقية</text><text x="690" y="75">Freeboard</text><text x="450" y="285" text-anchor="middle">تأثير الزلزال واتجاه الحركة</text></g></svg><figcaption>الشكل (12): تمثيل مفاهيمي لتفاعل الماء والخزان؛ النموذج الفعلي ومعاملاته طبقًا للمرجع الزلزالي المعتمد. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<p>يجب تحديد منسوب التشغيل المعتاد وأقصى منسوب واحتمال كون الخزان أو إحدى حجراته فارغة وقت الزلزال. لا يكفي تطبيق قوة أفقية عامة على جدار الخزان بدل تحليل تأثير الماء. كما يجب فحص الوصلات والأنابيب والممرات والمعدات المتصلة بالخزان، لأن الحركة النسبية قد تفرض قوى إضافية عند نقاط الاتصال.</p>
+</section>
+
+<section id="raft">
+<h2>10. اللبشات والطفو والعناصر الخاصة</h2>
+<p>اللبشة قد تعمل كأساس عام للمبنى أو كقاعدة لخزان أو بدروم، وتحتاج تمثيلًا مناسبًا لتفاعلها مع التربة. عند وجود مياه جوفية، لا تراجع ضغط التربة فقط؛ افحص ضغط الرفع أسفل اللبشة، وتوزيع رد فعل التربة، واحتمال فقد التلامس، والهبوط التفاضلي، وتأثير صلابة المنشأ العلوي.</p>
+<figure class="diagram"><svg viewBox="0 0 900 300" role="img" aria-labelledby="rf1t rf1d"><title id="rf1t">لبشة خرسانية تحت تأثير رد فعل التربة وضغط الرفع</title><desc id="rf1d">قطاع لبشة مسلحة أسفل أعمدة، مع أحمال رأسية إلى أسفل ورد فعل التربة وضغط مياه جوفية إلى أعلى، لتوضيح ضرورة فحص التوازن والطفو وفقد التلامس.</desc><rect x="10" y="10" width="880" height="280" rx="15" fill="#f3f6f9"/><rect x="180" y="170" width="540" height="55" fill="#8eabc4" stroke="#52677d" stroke-width="3"/><rect x="300" y="70" width="42" height="100" fill="#8eabc4" stroke="#52677d" stroke-width="3"/><rect x="560" y="70" width="42" height="100" fill="#8eabc4" stroke="#52677d" stroke-width="3"/><path d="M200 190H700" stroke="#c65a50" stroke-width="4"/><g stroke="#c65a50" stroke-width="4" fill="none"><path d="M320 35V62M580 35V62M312 52L320 66L328 52M572 52L580 66L588 52"/></g><g stroke="#3579b7" stroke-width="4" fill="none"><path d="M240 270V232M350 270V232M460 270V232M570 270V232M680 270V232M232 244L240 228L248 244M342 244L350 228L358 244M452 244L460 228L468 244M562 244L570 228L578 244M672 244L680 228L688 244"/></g><g font-family="Tahoma,Arial" font-size="16" fill="#17324d" text-anchor="middle"><text x="450" y="30">أحمال المبنى لأسفل</text><text x="450" y="285">رد فعل التربة / ضغط الرفع لأعلى</text></g></svg><figcaption>الشكل (13): لا تسمح للتربة بحمل شد غير مبرر في نموذج اللبشة؛ افحص فقد التلامس والطفو وفق حالة المشروع. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<p>في نماذج SAFE أو غيره، راجع وحدات النوابض واتجاهها وصلابتها ومناسيبها، وهل النموذج يسمح بقوى شد في التربة أم يستخدم تلامسًا ضاغطًا فقط. تحقق من توزيع الضغط أسفل اللبشة والقص الثاقب والقص أحادي الاتجاه والانحناء والتشوهات، ولا تعتمد على ألوان خريطة النتائج قبل مراجعة القيم والوحدات والمقاطع الحرجة.</p>
+<p>من العناصر الخاصة الأخرى: قواعد الخوازيق (Pile Caps) التي قد تحتاج نموذج Strut-and-Tie، والكمرات العميقة والتحويلية، والحوائط ذات الدعامات أو المراسي، والأحواض والقنوات، والخزانات المرتفعة، والعناصر مسبقة الصب. لكل عنصر يجب اختيار نموذج يعكس آلية انتقال القوى بدل تطبيق معادلات عنصر عادي دون تحقق.</p>
+</section>
+
+<section id="joints">
+<h2>11. فواصل الصب والحركة والعزل المائي</h2>
+<p>الفاصل جزء من التصميم وليس مجرد خط في اللوحة. يجب التمييز بين فاصل صب (Construction Joint) وفاصل انكماش/تحكم (Contraction أو Crack-Inducing Joint) وفاصل حركة/تمدد (Movement أو Expansion Joint). اختيار النوع والمكان والتسليح المستمر أو المنقطع ووسيلة نقل القص والـ Waterstop يتوقف على وظيفة المنشأ وحركة الفاصل وضغط الماء.</p>
+<figure class="diagram"><svg viewBox="0 0 900 300" role="img" aria-labelledby="jt1t jt1d"><title id="jt1t">فاصل صب بين حائط الخزان وبلاطة القاع مع شريط مانع للمياه</title><desc id="jt1d">تفصيلة تخطيطية لفاصل صب عند اتصال حائط خزان بقاعدة خرسانية، توضح سطح فاصل محضرًا وشريط Waterstop مدفونًا في الخرسانة وحديدًا مستمرًا أو مثبتًا وفق التصميم.</desc><rect x="10" y="10" width="880" height="280" rx="15" fill="#f3f6f9"/><rect x="240" y="75" width="95" height="165" fill="#8eabc4" stroke="#52677d" stroke-width="3"/><rect x="240" y="240" width="430" height="35" fill="#8eabc4" stroke="#52677d" stroke-width="3"/><path d="M335 180H380V205H335" fill="none" stroke="#52677d" stroke-width="4"/><path d="M325 205Q350 190 375 205Q400 220 425 205" stroke="#b8893c" stroke-width="7" fill="none"/><path d="M290 100V230M315 100V230M260 255H640" stroke="#c65a50" stroke-width="4" stroke-dasharray="8 5"/><path d="M390 175L470 115" stroke="#17324d" stroke-width="2"/><g font-family="Tahoma,Arial" font-size="16" fill="#17324d"><text x="490" y="105">Waterstop</text><text x="510" y="230">قاعدة الخزان</text><text x="185" y="150">الحائط</text><text x="450" y="270">حديد التثبيت حسب التفصيلة المعتمدة</text></g></svg><figcaption>الشكل (14): Waterstop في فاصل صب؛ الشكل والأبعاد وطريقة التثبيت حسب نظام المنتج والمواصفة المعتمدة. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<ul>
+<li>حدد من البداية هل الفاصل يسمح بالحركة أم مطلوب نقل قوى خلاله.</li>
+<li>حدد مكان الفاصل بعيدًا عن مناطق الإجهادات الحرجة قدر الإمكان، وبما يتفق مع تسلسل الصب.</li>
+<li>جهز سطح فاصل الصب حسب المواصفة، ونظفه، وأزل اللبانيات والمواد الضعيفة قبل الصبة التالية.</li>
+<li>ثبت الـ Waterstop جيدًا حتى لا يتحرك أو يلتف أثناء الصب والدمك، وتحقق من استمرارية الوصلات والزوايا.</li>
+<li>نسق بين التسليح والـ Waterstop والأنابيب والـ Sleeves والفتحات؛ تزاحمها قد يسبب تعشيشًا أو يقطع مسار العزل.</li>
+<li>اعتمد خطة معالجة واختبار إحكام مناسبة، وسجل أي تسرب ومكانه قبل أعمال الإخفاء أو الردم.</li>
+</ul>
+</section>
+
+<section id="example">
+<h2>12. مثال حسابي توضيحي لضغط حائط ساند</h2>
+<p>نفترض حائطًا ارتفاع الردم خلفه <strong>H = 3.0 m</strong>، وتربة ردم متجانسة جافة وزنها الحجمي <strong>γ = 18 kN/m³</strong>، وزاوية احتكاك داخلي <strong>φ = 30°</strong>، وحملًا سطحيًا منتظمًا <strong>q = 10 kPa</strong>. نفترض فقط لأغراض المثال أن الردم أفقي، والتربة غير متماسكة، والحائط يسمح بحركة كافية لتعبئة الحالة النشطة، ولا توجد مياه جوفية أو زلازل أو طبقات أخرى.</p>
+<p>من علاقة Rankine المبسطة للردم الأفقي:</p>
+<div class="formula">Ka = tan²(45° − φ/2) = tan²(30°) ≈ 0.333</div>
+<p>محصلة ضغط التربة المثلثي لكل متر طولي من الحائط:</p>
+<div class="formula">Pa = ½ × 0.333 × 18 × 3² ≈ 27 kN/m</div>
+<p>ومحصلة ضغط الحمل السطحي المنتظم:</p>
+<div class="formula">Pq = 0.333 × 10 × 3 ≈ 10 kN/m</div>
+<p>إذًا مجموع المحصلتين الاسميتين في هذا المثال المبسط يساوي تقريبًا <strong>37 kN/m</strong>. عزم المحصلة حول قاعدة الساق قبل أي معاملات تحميل يساوي تقريبًا:</p>
+<div class="formula">Mbase ≈ 27 × (3/3) + 10 × (3/2) = 42 kN·m/m</div>
+<p>هذه نتيجة ضغط جانبي مبسطة فقط، وليست تصميمًا للحائط. لا تشمل ضغط المياه أو الزلازل أو ضغط الدمك أو تأثير ميل الردم أو احتكاك الحائط أو الاستقرار العام أو معاملات التحميل والمقاومة. لا تستخدم الرقم في مشروع فعلي دون إعادة بناء الحالة طبقًا لتقرير التربة والكود المعتمد.</p>
+</section>
+
+<section id="workflow">
+<h2>13. خطوات عملية لمراجعة التصميم قبل إصدار اللوحات</h2>
+<ol>
+<li><strong>اجمع المدخلات:</strong> المخططات المعمارية، المناسيب، الأبعاد، تقرير التربة، منسوب المياه الجوفية، وظيفة العنصر، ظروف التشغيل والصيانة.</li>
+<li><strong>حدد النظام:</strong> طريقة الاستناد، الاستمرارية، القيود، نوع الحائط أو الخزان، وطريقة نقل الحمل إلى العناصر المجاورة.</li>
+<li><strong>اكتب حالات التحميل:</strong> وزن ذاتي، تشطيبات، حي، ضغط تربة، حمل سطحي، ضغط ماء، طفو، انكماش وحرارة، زلازل، ومراحل التنفيذ عند اللزوم.</li>
+<li><strong>اختر نموذج التحليل:</strong> شريحة بلاطة أو إطار أو Shell أو نموذج تربة-منشأ أو نموذج ديناميكي للخزان، حسب طبيعة السلوك.</li>
+<li><strong>راجع الاتزان العام:</strong> الانزلاق والانقلاب والضغط أسفل القاعدة والطفو والاستقرار العام والهبوط.</li>
+<li><strong>صمم القطاعات:</strong> الانحناء والقص والقص الثاقب والضغط المحوري والالتواء عند انطباقه، مع نقل القوى عند العقد والفواصل.</li>
+<li><strong>راجع الخدمة والمتانة:</strong> الترخيم والتشققات والاهتزاز والنفاذية والتعرض البيئي والغطاء والمعالجة.</li>
+<li><strong>أصدر التفاصيل:</strong> أطوال التثبيت والوصلات والكانات والفواصل والـ Waterstop والفتحات والـ Sleeves ومناسيب الصب.</li>
+<li><strong>راجع التنفيذ:</strong> الشدة والدعائم وتسلسل الصب والردم والدمك والصرف والاختبارات وسجلات الاستلام.</li>
+</ol>
+<p>في برامج التحليل، لا تكتفِ بنجاح Run Analysis. راجع اتجاه المحاور المحلية، وقيود المساند، والوحدات، والأحمال المطبقة، وردود الأفعال، واتزان مجموع الأحمال، ومناسيب العناصر، والـ Mesh، وصلابة الاتصال، ونتائج الخدمة والمقاومة. البرنامج ينفذ النموذج الذي أدخلته، ولا يكتشف وحده أن فرضية التربة أو حالة المياه غير صحيحة.</p>
+</section>
+
+<section id="codes">
+<h2>14. مراجع الأكواد: ما الذي تم التحقق منه؟</h2>
+<p>المراجع التالية تم تحديدها من فهارس رسمية أو صفحات ناشر الكود المتاحة وقت إعداد المقال. تم ذكر أرقام الفصول والبنود والصفحات فقط عندما ظهرت في فهرس النسخة المحددة. لم تتوفر نسخة كاملة موثوقة من كل نصوص الأكواد في هذه المراجعة، لذلك لا ندعي أن المقال مراجعة بندية شاملة أو بديل عن قراءة النسخة المرخصة المعتمدة للمشروع.</p>
+<h3>أولًا: منظومة كود البناء السعودي – إصدار 2024</h3>
+<ul class="refs">
+<li><strong>SBC 201-2024:</strong> فهرس الكود العام يبين أقسام الأحمال والتركيبات؛ من المراجع ذات الصلة Section 1605 لتراكيب الأحمال، Section 1607 للأحمال الحية، Section 1610 لأحمال التربة والضغط الهيدروستاتيكي، وSection 1613 للأحمال الزلزالية. تُراجع النسخة المعتمدة كاملة قبل استخراج أي قيمة تصميمية.</li>
+<li><strong>SBC 303-2024 – كود التربة والأساسات:</strong> Chapter 5، Section 5.2 Retaining Walls، صفحة 33 حسب فهرس SBC 303-CC-2024؛ وChapter 6 Foundations، ومنها Section 6.2 Design for Capacity and Settlement صفحة 46، وSection 6.8 Concrete Foundations صفحة 51.</li>
+<li><strong>SBC 304-2024 – كود المنشآت الخرسانية:</strong> Chapter 7 One-Way Slabs صفحات 50–52، Chapter 8 Two-Way Slabs صفحات 57–65، Chapter 11 Walls صفحات 169–171، Chapter 13 Foundations صفحات 194–196، Chapter 24 Serviceability صفحات 306–307، وChapter 25 Reinforcement Details صفحات 313–319. تُستخدم هذه الأبواب بحسب النظام الإنشائي، ولا تعني أن الكود يخصص بندًا واحدًا مستقلًا لكل شكل من أشكال السلالم أو الخزانات.</li>
+<li><strong>SBC 301-2024:</strong> كود الأحمال والتصميم الإنشائي والزلازل والرياح ضمن منظومة 2024. يجب الرجوع إلى النسخة والملحقات المعتمدة للمشروع وعدم استعارة معاملات من إصدار سابق.</li>
+</ul>
+<h3>ثانيًا: المراجع الأمريكية</h3>
+<ul class="refs">
+<li><strong>ACI CODE-318-25:</strong> الإصدار الذي يعلنه المعهد الأمريكي للخرسانة حاليًا لمتطلبات تصميم وتفاصيل المنشآت الخرسانية العامة. يستخدم مع منظومة الأحمال المعتمدة للمشروع، ولا يغني وحده عن المرجع المتخصص للمنشآت الحابسة للسوائل.</li>
+<li><strong>ACI CODE-350-20 / ACI 350R-20:</strong> الكود المتخصص للمنشآت الخرسانية البيئية التي تنقل أو تخزن أو تعالج المياه والسوائل ومياه الصرف. فهرس الناشر يحدد Chapter 4 للمتانة (ص 67)، Chapter 7 للفواصل (ص 123)، Chapter 8 للتحليل والتصميم العام (ص 137)، Chapter 9 للمقاومة والخدمة (ص 147)، Chapter 15 للحوائط (ص 353)، Chapter 16 للقواعد (ص 361)، وChapter 21 للبلاطات الأرضية الحابسة للسوائل (ص 423).</li>
+<li><strong>ACI CODE-350.3-20:</strong> مرجع التحليل والتصميم الزلزالي للخزانات والمنشآت الخرسانية الحابسة للسوائل. النسخة المعاينة تحدد Chapter 1 Section 1.1 نطاق التطبيق وربطه بـ Chapter 13 من ACI 350-20؛ وChapter 3 لمعايير التحليل والتصميم، Chapter 4 للأحمال الزلزالية، Chapter 7 للـ Freeboard، Chapter 8 لضغوط التربة الزلزالية، وChapter 9 للنموذج الديناميكي. المعاينة الرسمية تحمل Errata حتى 9 يناير 2025.</li>
+<li><strong>ACI SPEC-350.1-22:</strong> مواصفة اختبار إحكام المنشآت الخرسانية البيئية، وتشمل اختبارات هيدروستاتيكية واختبارات بضغط/هواء بحسب طريقة الاختبار المعتمدة.</li>
+<li><strong>ASCE/SEI 7-22:</strong> مرجع عام للأحمال والمخاطر البيئية وتراكيب الأحمال عندما يكون هو الإصدار المعتمد. تنبيه: معاينة ACI 350.3-20 المتاحة تشير في تعليقها إلى ASCE/SEI 7-16 Section 12.8.1؛ لذلك لا يجوز افتراض التطابق أو استبدال إصدار مرجعي بآخر آليًا. يجب توحيد أساس التصميم الزلزالي ومراجعة التصويبات والملحقات.</li>
+</ul>
+<h3>ثالثًا: الكود المصري ECP</h3>
+<ul class="refs">
+<li><strong>ECP 203-2025:</strong> التحديث السادس للكود المصري لأسس تصميم وشروط تنفيذ المنشآت الخرسانية، وفق قرار وزير الإسكان رقم 894 لسنة 2025 المنشور في الوقائع المصرية، العدد 213 بتاريخ 24 سبتمبر 2025، ويبدأ العمل به بعد ستة أشهر من تاريخ النشر. لم تتوفر في هذه المراجعة نسخة رسمية كاملة يمكن التحقق منها بندًا وصفحةً؛ لذلك لم نضع أرقام بنود أو حدود تسليح أو قيم شروخ منسوبة إليه.</li>
+<li><strong>أحمال التربة والمياه والأساسات:</strong> يجب الرجوع إلى أجزاء منظومة ECP ذات الصلة وإصداراتها المعتمدة بالمشروع. لم يتم التحقق هنا من النص الكامل الحالي لكل جزء خاص بالأحمال والأساسات، ولذلك لا ننسب إليها أرقام مواد أو صفحات غير مؤكدة.</li>
+</ul>
+<div class="note warning"><strong>قاعدة لا تقبل الاختصار:</strong> SBC وACI وASCE وECP ليست نسخًا متطابقة. لا تخلط معاملات الأحمال أو المقاومة أو حدود الخدمة أو تفاصيل التسليح من منظومات مختلفة في نموذج واحد إلا إذا نص أساس التصميم المعتمد على ذلك بوضوح وتمت مراجعة التوافق.</div>
+</section>
+
+<section id="mistakes">
+<h2>15. أخطاء شائعة في السلالم والحوائط والخزانات</h2>
+<ul>
+<li>تصميم السلم على حمل المسقط الأفقي ثم إضافة وزن البلاطة المائلة مرة أخرى دون مراجعة أساس المساحة.</li>
+<li>إهمال التواء كمرة البسطة أو رد فعل القلبة أو عدم استمرارية التسليح عند التقاء القلبة بالبسطة.</li>
+<li>افتراض الضغط النشط لحائط بدروم مقيد الحركة دون دراسة القيود وتسلسل التنفيذ.</li>
+<li>إهمال ضغط المياه أو اعتبار فتحات الصرف ضمانًا دائمًا لعدم تجمع المياه.</li>
+<li>احتساب مقاومة سلبية أمام الحائط رغم احتمال إزالة التربة أو الحفر مستقبلًا.</li>
+<li>فحص الانقلاب والانزلاق فقط وإهمال الاستقرار العام والهبوط وضغط التأسيس.</li>
+<li>تصميم الخزان على حالة الامتلاء فقط وإهمال الخزان الفارغ مع منسوب مياه جوفية مرتفع.</li>
+<li>استخدام ACI 318 وحده لخزان يحتاج متطلبات إحكام ومتانة وتحكم في الشروخ.</li>
+<li>إهمال الـ Freeboard وحركة المياه الزلزالية أو قوى الأنابيب المتصلة بالخزان.</li>
+<li>رسم Waterstop دون تفصيلة تثبيت ووصلات وفحص تعارضه مع التسليح والـ Sleeves.</li>
+<li>السماح للتربة بحمل شد في نموذج اللبشة دون مبرر أو عدم فحص الرفع والطفو.</li>
+</ul>
+</section>
+
+<section id="faq">
+<h2>16. أسئلة متكررة</h2>
+<h3>هل يتم تصميم السلم كبلاطة مائلة أم ككمرة؟</h3>
+<p>يعتمد ذلك على النظام. البلاطة المائلة المستندة على كمرات أو حوائط جانبية قد تُحلل كشريحة بلاطة، أما السلالم ذات الكمرات الحاملة أو الدرجات الكابولية أو الأنظمة المطوية فتحتاج نموذجًا مختلفًا.</p>
+<h3>متى أستخدم ضغط التربة النشط ومتى أستخدم ضغط السكون؟</h3>
+<p>الضغط النشط يحتاج حركة كافية للحائط. الحائط المقيد مثل كثير من حوائط البدرومات قد لا يتحرك بما يكفي، لذلك يجب اختيار حالة الضغط وفق قيود الحركة وتقرير التربة وتسلسل التنفيذ.</p>
+<h3>هل العزل المائي يغني عن Waterstop؟</h3>
+<p>لا. العزل الخارجي والـ Waterstop ومعالجة الفواصل عناصر متكاملة، ولكل منها وظيفة. يجب تصميم الفاصل وتنفيذه واختباره وفق مواصفات المشروع.</p>
+<h3>هل يكفي ACI 318 لتصميم خزان مياه؟</h3>
+<p>لا ينبغي الاكتفاء به وحده؛ الخزانات تحتاج متطلبات متخصصة للمتانة والتحكم في الشروخ والإحكام والفواصل، ويُرجع في النظام الأمريكي إلى ACI 350 وACI 350.3 عند انطباقه، مع مراعاة الكود المحلي.</p>
+<h3>ما أهم حالات تحميل الخزان؟</h3>
+<p>الخزان ممتلئ وفارغ وجزئي الامتلاء، المياه الجوفية المرتفعة، الطفو، أحمال السقف، الانكماش والحرارة والهبوط التفاضلي والزلازل أثناء التشغيل والصيانة، بحسب طبيعة المشروع.</p>
+</section>
+
+<section class="footer">
+<h2>الخلاصة</h2>
+<p>الخطوة الأهم في العناصر الخاصة هي فهم آلية العمل قبل اختيار المعادلة أو البرنامج: السلم يتحدد بنظام الاستناد، والحائط الساند يتحدد بحركة التربة والمياه والقيود، والخزان يحتاج مقاومة وإحكامًا ومتانة، واللبشة تحتاج نموذجًا واقعيًا لتفاعل التربة والطفو. أي تصميم آمن يبدأ بمدخلات موثقة وفرضيات واضحة وفحوص مقاومة وخدمة وتنفيذ.</p>
+<div class="tags"><span class="tag">تصميم السلالم</span><span class="tag">الحوائط الساندة</span><span class="tag">ضغط التربة</span><span class="tag">الخزانات الخرسانية</span><span class="tag">ACI 350</span><span class="tag">SBC 303</span><span class="tag">SBC 304</span><span class="tag">ECP 203</span><span class="tag">اللبشات</span><span class="tag">Waterstop</span></div>
+<p><strong>الكلمات المفتاحية الرئيسية:</strong> تصميم السلالم الخرسانية، تصميم الحوائط الساندة، تصميم خزانات المياه الخرسانية، ضغط التربة، ACI 350.</p>
+<p><strong>الكلمات المفتاحية الثانوية والمرادفات:</strong> Stair Slab Design، Waist Slab، Retaining Wall، Active Earth Pressure، At-Rest Pressure، Hydrostatic Pressure، Water Tank Design، Liquid-Containing Structures، Sloshing، Freeboard، Uplift، Raft Foundation، Waterstop.</p>
+<a class="cta" href="https://wa.me/966561565066">للاستفسار عن خدمات التصميم والمراجعة الإنشائية – تواصل عبر واتساب</a>
+<div class="related"><a href="/reinforced-concrete-slabs.html">المقال السابق: تصميم البلاطات</a><a href="/foundations-types.html">أنواع الأساسات</a><a href="/soil-investigation.html">دراسة التربة والجسات</a><a href="/articles.html">العودة إلى المكتبة الهندسية</a></div>
+<p class="small">المقال التالي في السلسلة: التحليل الإنشائي والنمذجة على ETABS وSAFE وSAP2000، وسيضاف إلى المكتبة عند نشره.</p>
+<p class="small">إعداد ومراجعة المحتوى: م. حمزة أبو الديب – مهندس تصميم إنشائي | الديب للتصميم الإنشائي.<br>المقال تعليمي ولا يغني عن التصميم والمراجعة المعتمدة للمشروع الفعلي أو الرجوع إلى النسخ المرخصة والسارية من الأكواد والمواصفات.</p>
+</section>
+</article></main>
+</body></html>
