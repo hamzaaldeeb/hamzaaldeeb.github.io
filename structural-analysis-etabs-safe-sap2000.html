@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>التحليل الإنشائي والنمذجة باستخدام ETABS وSAFE وSAP2000 | م. حمزة أبو الديب</title>
+<meta name="description" content="دليل عملي للتحليل الإنشائي والنمذجة باستخدام ETABS وSAFE وSAP2000: بناء الموديل، العناصر والـDiaphragm والـMesh، الأحمال وحالات التحليل، الكتلة والزلازل وP-Delta، مراجعة النتائج ونقل الأحمال للأساسات.">
+<meta name="keywords" content="التحليل الإنشائي, نمذجة ETABS, شرح ETABS, SAFE, SAP2000, structural analysis, structural modeling, load pattern, load case, load combination, mass source, response spectrum, P-Delta, diaphragm, shell elements, finite element mesh, punching shear, soil springs, raft foundation">
+<meta name="author" content="م. حمزة أبو الديب – مهندس تصميم إنشائي">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://hamzaaldeeb.github.io/structural-analysis-etabs-safe-sap2000.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="التحليل الإنشائي والنمذجة باستخدام ETABS وSAFE وSAP2000">
+<meta property="og:description" content="من فهم المنشأ وبناء الموديل إلى التحليل ومراجعة النتائج وتصميم البلاطات والأساسات.">
+<meta property="og:url" content="https://hamzaaldeeb.github.io/structural-analysis-etabs-safe-sap2000.html">
+<meta property="og:site_name" content="الديب للتصميم الإنشائي">
+<meta property="og:locale" content="ar_AR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="التحليل الإنشائي باستخدام ETABS وSAFE وSAP2000">
+<meta name="twitter:description" content="دليل تطبيقي لبناء الموديل وتعريف الأحمال والتحليل ومراجعة النتائج.">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Article",
+ "headline":"التحليل الإنشائي والنمذجة باستخدام ETABS وSAFE وSAP2000: من بناء الموديل إلى مراجعة النتائج",
+ "description":"دليل تعليمي تطبيقي لاختيار برنامج التحليل، وبناء النموذج الإنشائي، وتعريف الخواص والأحمال وحالات التحليل والكتلة والزلازل، وفحص النتائج ونقل أحمال المبنى إلى تصميم البلاطات والأساسات.",
+ "inLanguage":"ar",
+ "datePublished":"2026-11-15",
+ "dateModified":"2026-11-15",
+ "author":{"@type":"Person","name":"م. حمزة أبو الديب – مهندس تصميم إنشائي","url":"https://hamzaaldeeb.github.io/"},
+ "publisher":{"@type":"Organization","name":"الديب للتصميم الإنشائي","url":"https://hamzaaldeeb.github.io/"},
+ "mainEntityOfPage":{"@type":"WebPage","@id":"https://hamzaaldeeb.github.io/structural-analysis-etabs-safe-sap2000.html"},
+ "articleSection":"التحليل الإنشائي والنمذجة الحاسوبية",
+ "keywords":["ETABS","SAFE","SAP2000","التحليل الإنشائي","النمذجة الإنشائية","Load Case","Mass Source","P-Delta","Response Spectrum"]
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://hamzaaldeeb.github.io/"},
+ {"@type":"ListItem","position":2,"name":"المكتبة الهندسية","item":"https://hamzaaldeeb.github.io/articles.html"},
+ {"@type":"ListItem","position":3,"name":"التحليل الإنشائي والنمذجة باستخدام ETABS وSAFE وSAP2000","item":"https://hamzaaldeeb.github.io/structural-analysis-etabs-safe-sap2000.html"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+ {"@type":"Question","name":"هل يكفي أن يكون تحليل ETABS انتهى بدون أخطاء؟","acceptedAnswer":{"@type":"Answer","text":"لا. انتهاء التحليل يعني أن البرنامج أكمل الحل العددي للحالات المطلوبة، لكنه لا يثبت صحة الهندسة أو الأحمال أو القيود أو الخواص أو تمثيل المنشأ. يجب مراجعة التحذيرات والاتزان والتشوهات وردود الأفعال والنتائج بصورة مستقلة."}},
+ {"@type":"Question","name":"ما الفرق بين Load Pattern وLoad Case وLoad Combination؟","acceptedAnswer":{"@type":"Answer","text":"Load Pattern هو تعريف نوع ومقدار توزيع الحمل، وLoad Case يحدد طريقة تطبيق الأحمال وحساب استجابة المنشأ، أما Load Combination فيجمع نتائج حالات التحليل طبقًا لقواعد الجمع المعتمدة للكود وحالة التصميم."}},
+ {"@type":"Question","name":"هل أستخدم Diaphragm Rigid لكل الأدوار؟","acceptedAnswer":{"@type":"Answer","text":"ليس تلقائيًا. اختيار Diaphragm Rigid أو Semi-Rigid أو Flexible يعتمد على صلابة البلاطة وفتحاتها وشكل الدور ومسار نقل القوى ومتطلبات الكود. يجب التأكد من أن فرضية الموديل تمثل السلوك الفعلي."}},
+ {"@type":"Question","name":"هل SAFE بديل عن ETABS؟","acceptedAnswer":{"@type":"Answer","text":"لا. ETABS مناسب بصورة خاصة لتحليل المباني متعددة الأدوار، بينما SAFE متخصص في تحليل وتصميم البلاطات والأساسات. يمكن استخدام البرنامجين بصورة متكاملة مع التحقق من الأحمال وردود الأفعال والوحدات وطريقة نقل البيانات."}},
+ {"@type":"Question","name":"هل أقبل تسليح البرنامج مباشرة؟","acceptedAnswer":{"@type":"Answer","text":"لا. يجب التحقق من الكود وإعداداته والقطاعات والغطاء والقطر والتفاصيل والحدود الدنيا والقص والقص الثاقب والترخيم والتشققات، وإجراء فحوصات يدوية أو مستقلة للحالات الحرجة قبل اعتماد اللوحات."}}
+]}
+</script>
+<style>
+:root{--bg:#0b1220;--panel:#131d36;--ink:#eaf0fb;--muted:#b8c5dc;--gold:#f5a524;--line:#26365b;--blue:#8eabc4}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:linear-gradient(180deg,#0b1220,#101a30 45%,#0b1220);color:var(--ink);font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.95}
+a{color:#ffd27c}.top{position:sticky;top:0;z-index:5;background:#101a30ed;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.bar{max-width:980px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand,.navlink{color:var(--ink);text-decoration:none;font-weight:bold}.navlink{color:var(--gold)}
+main{max-width:960px;margin:auto;padding:24px 20px 60px}
+.hero,.toc,.note,.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin:18px 0}
+.kicker,.meta{color:var(--gold);font-size:.92rem;font-weight:bold}.hero h1{font-size:clamp(1.65rem,4vw,2.45rem);line-height:1.55;margin:8px 0 12px}
+.lead{font-size:1.08rem;color:#d9e4f5}.byline,.caption,.small{font-size:.88rem;color:var(--muted)}
+h2{font-size:1.45rem;color:#ffd27c;margin:34px 0 10px}h3{font-size:1.12rem;color:#f2d69e;margin-top:22px}
+p,li{color:var(--muted)}li{margin:6px 0}.toc ol{columns:2;column-gap:28px;padding-right:24px}.toc li{break-inside:avoid}.toc a{text-decoration:none}
+.diagram{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px;overflow:hidden;margin:20px 0}.diagram svg{display:block;width:100%;height:auto;max-width:100%}.diagram figcaption{font-size:.88rem;color:var(--muted);padding:8px 7px;text-align:center}.diagram figcaption span{color:#ffd27c}
+.note{border-right:4px solid var(--gold);background:#172541}.warning{border-right-color:#e5a64b;background:#2a251b}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:18px 0}
+table{width:100%;border-collapse:collapse;min-width:650px}th,td{padding:12px;text-align:right;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#1b2a49;color:#ffda91}td{color:var(--muted)}
+.formula{direction:ltr;text-align:center;background:#101a30;border:1px solid var(--line);border-radius:10px;padding:12px;color:#f6d28b;font-family:Georgia,serif;font-size:1.02rem;overflow-x:auto}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.tag{font-size:.83rem;color:#dce8fa;border:1px solid var(--line);border-radius:30px;padding:4px 10px}
+.cta{display:block;text-align:center;padding:15px;border-radius:12px;background:#155b43;color:white;text-decoration:none;font-weight:bold;margin:22px 0}
+.refs li{margin:10px 0}.footer{border-top:1px solid var(--line);padding-top:20px;margin-top:35px}.related{display:flex;gap:12px;flex-wrap:wrap}.related a{display:inline-block;padding:8px 12px;border:1px solid var(--line);border-radius:9px;text-decoration:none}
+@media(max-width:620px){main{padding:16px 14px 45px}.hero,.toc,.note,.panel{padding:16px}.toc ol{columns:1}.diagram{padding:7px}.table-wrap{font-size:.9rem}}
+</style>
+</head>
+<body>
+<header class="top"><div class="bar"><a class="brand" href="/">الديب للتصميم الإنشائي | م. حمزة أبو الديب</a><a class="navlink" href="/articles.html">المكتبة الهندسية ←</a></div></header>
+<main><article>
+<header class="hero">
+<div class="kicker">الحلقة الحادية عشرة من السلسلة الهندسية · التحليل الإنشائي والنمذجة</div>
+<h1>التحليل الإنشائي والنمذجة باستخدام ETABS وSAFE وSAP2000: من بناء الموديل إلى مراجعة النتائج</h1>
+<p class="lead">البرنامج مش هو اللي بيصمم بدل المهندس؛ البرنامج بيحل النموذج اللي المهندس بناه. لو الأبعاد أو الخواص أو الأحمال أو القيود أو مسار نقل القوى غلط، ممكن تطلع نتائج رقمية منظمة لكنها لا تمثل المنشأ الحقيقي. في المقال ده هنمشي في دورة عمل واضحة: نفهم وظيفة كل برنامج، نجهز بيانات المشروع، نبني النموذج، نعرّف الأحمال وحالات التحليل، نراجع النتائج، وبعدها ننقل ما يلزم لتصميم البلاطات والأساسات.</p>
+<div class="byline">إعداد: م. حمزة أبو الديب – مهندس تصميم إنشائي | الديب للتصميم الإنشائي | تاريخ النشر: 15 نوفمبر 2026 | آخر تحديث: 15 نوفمبر 2026</div>
+</header>
+<div class="note"><strong>تنبيه مهني:</strong> الشرح تعليمي ومنهجي. أسماء القوائم والخصائص قد تختلف باختلاف إصدار البرنامج وترخيصه. لا توجد قيم ثابتة تصلح لكل المشروعات لمعاملات الصلابة أو الكتلة أو الزلازل أو تركيبات الأحمال. المرجع هو الكود المعتمد للمشروع، ومتطلبات الجهة المختصة، ودليل إصدار البرنامج المستخدم. لا تعتمد على نتيجة البرنامج دون مراجعة هندسية مستقلة.</div>
+<nav class="toc" aria-label="محتويات المقال"><strong>محتويات المقال</strong><ol>
+<li><a href="#scope">اختيار البرنامج المناسب</a></li>
+<li><a href="#before">بيانات المشروع قبل النمذجة</a></li>
+<li><a href="#units">الوحدات والمحاور والمناسيب</a></li>
+<li><a href="#idealization">فهم المنشأ ومسار الأحمال</a></li>
+<li><a href="#elements">العناصر والاتصال والمحاور المحلية</a></li>
+<li><a href="#mesh">الشبكة والـDiaphragm</a></li>
+<li><a href="#properties">الخامات والقطاعات ومعاملات الصلابة</a></li>
+<li><a href="#loads">الأحمال وأنماطها وحالات التحليل</a></li>
+<li><a href="#mass">مصدر الكتلة والتحليل الديناميكي</a></li>
+<li><a href="#pdelta">تحليل P-Delta</a></li>
+<li><a href="#foundations">تمثيل التربة والأساسات</a></li>
+<li><a href="#run">تشغيل التحليل واكتشاف المشكلات</a></li>
+<li><a href="#review">مراجعة النتائج والاتزان</a></li>
+<li><a href="#design">التصميم ومراجعة التسليح</a></li>
+<li><a href="#transfer">نقل النموذج من ETABS إلى SAFE</a></li>
+<li><a href="#sap">متى نستخدم SAP2000؟</a></li>
+<li><a href="#example">مسار مشروع تطبيقي</a></li>
+<li><a href="#mistakes">أخطاء شائعة</a></li>
+<li><a href="#checklist">قائمة مراجعة قبل الاعتماد</a></li>
+<li><a href="#refs">المراجع والأسئلة المتكررة</a></li>
+</ol></nav>
+
+<section id="scope">
+<h2>1. تختار ETABS ولا SAFE ولا SAP2000؟</h2>
+<p>البرامج الثلاثة من عائلة CSI، لكنها ليست بدائل متطابقة. اختيار البرنامج يبدأ من طبيعة المنشأ والسؤال الهندسي المطلوب، وليس من البرنامج الذي اعتدنا استخدامه فقط.</p>
+<div class="table-wrap"><table><thead><tr><th>البرنامج</th><th>الاستخدام الذي يناسبه غالبًا</th><th>أمثلة</th><th>ملاحظة مهمة</th></tr></thead><tbody>
+<tr><td><strong>ETABS</strong></td><td>تحليل وتصميم المباني متعددة الأدوار</td><td>عمارات سكنية، أبراج، مستشفيات ومبانٍ إدارية</td><td>مناسب لتنظيم الطوابق والنظام الجانبي والـDiaphragm، لكن لا يعفي من التحقق من العناصر الخاصة.</td></tr>
+<tr><td><strong>SAFE</strong></td><td>تحليل وتصميم البلاطات والأساسات الخرسانية</td><td>Flat Slab، اللبشات، القواعد، البلاطات المرتكزة على التربة</td><td>راجع افتراضات الدعم والتربة والـMesh والقص الثاقب والتحميل قبل اعتماد النتائج.</td></tr>
+<tr><td><strong>SAP2000</strong></td><td>تحليل عام لمنشآت وأنظمة إنشائية متنوعة</td><td>منشآت صناعية، خزانات، أبراج، إطارات خاصة ومنشآت غير تقليدية</td><td>مرن لأنواع كثيرة من النماذج؛ يحتاج من المصمم بناء النظام والتحميل وطرق التحقق بعناية.</td></tr>
+</tbody></table></div>
+<figure class="diagram"><svg viewBox="0 0 900 300" role="img" aria-labelledby="fig1t fig1d"><title id="fig1t">مجالات استخدام ETABS وSAFE وSAP2000</title><desc id="fig1d">رسم تعليمي يقسم المهام إلى تحليل مبنى متعدد الأدوار باستخدام ETABS، وتحليل البلاطات والأساسات باستخدام SAFE، وتحليل المنشآت والأنظمة العامة باستخدام SAP2000.</desc><rect x="10" y="10" width="880" height="280" rx="16" fill="#f3f6f9"/><g stroke="#52677d" stroke-width="3" fill="#8eabc4"><rect x="75" y="65" width="190" height="150" rx="8"/><path d="M95 100H245M95 140H245M95 180H245M135 65V215M185 65V215M235 65V215" fill="none"/><rect x="355" y="150" width="190" height="50" rx="4"/><path d="M375 150V115H525V150M390 200V225M510 200V225" fill="none"/><path d="M650 195L710 90L770 195M680 140H740M665 170H755" fill="none" stroke-width="7"/></g><g fill="#17324d" font-family="Tahoma,Arial" font-size="19" text-anchor="middle"><text x="170" y="250">ETABS</text><text x="450" y="250">SAFE</text><text x="710" y="250">SAP2000</text><text x="170" y="45" font-size="15">مباني متعددة الأدوار</text><text x="450" y="125" font-size="15">بلاطات وأساسات</text><text x="710" y="65" font-size="15">أنظمة عامة ومتنوعة</text></g></svg><figcaption>الشكل (1): توزيع عام للاستخدامات الشائعة، وليس حصرًا لقدرات أي برنامج. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<p>شركة CSI توضح أن ETABS طُوّر خصيصًا للمباني متعددة الأدوار، وأن SAFE مخصص لتحليل وتصميم البلاطات والأساسات، بينما SAP2000 برنامج عام لهياكل مدنية متنوعة. راجع وصف المنتجات الرسمي قبل اختيار البرنامج، ثم راجع دليل الإصدار الذي ستستخدمه. <a href="https://www.csiamerica.com/about" target="_blank" rel="noopener">وصف برامج CSI الرسمي</a>.</p>
+<div class="note"><strong>قاعدة عملية:</strong> مبنى خرسانة تقليدي متعدد الأدوار: ابدأ غالبًا بـETABS. تصميم اللبشة أو البلاطة المسطحة: استخدم SAFE عند ملاءمته. منشأ غير نمطي أو نظام خاص: قيّم SAP2000 أو برنامجًا متخصصًا آخر. وقد تحتاج أكثر من برنامج في المشروع الواحد، بشرط توحيد الفرضيات ومراجعة انتقال الأحمال.</div>
+</section>
+
+<section id="before">
+<h2>2. ملف البيانات الذي يجب تجهيزه قبل فتح البرنامج</h2>
+<p>النمذجة تبدأ من اللوحات والمواصفات وتقرير التربة، وليس من شاشة الرسم. اجمع نسخة من المعماري والإنشائي، المناسيب والقطاعات، أماكن الفتحات، مناسيب التأسيس، تقرير التربة، مواصفات المواد، متطلبات الحريق والمتانة، وأي أحمال تشغيل أو معدات أو خزانات.</p>
+<ul>
+<li><strong>الهندسة:</strong> المحاور، المسافات، ارتفاع كل دور، مناسيب البلاطات، سمك البلاطات، قطاعات الكمرات والأعمدة والحوائط، الفتحات، البروزات، والفواصل.</li>
+<li><strong>النظام الإنشائي:</strong> إطارات مقاومة للعزوم، حوائط قص، إطارات مدعمة، نظام مزدوج، أو نظام آخر يحدده التصميم والكود.</li>
+<li><strong>الخامات:</strong> مقاومة الخرسانة، خواص حديد التسليح، الوزن الحجمي، معامل المرونة، ونسب بواسون عند الحاجة.</li>
+<li><strong>الأحمال:</strong> الوزن الذاتي، التشطيبات، القواطع، الواجهات، الأحمال الحية، المعدات، الخزانات، والرياح والزلازل طبقًا لموقع المشروع.</li>
+<li><strong>التربة والأساسات:</strong> قدرة التحمل، الهبوط المتوقع، منسوب المياه الجوفية، معامل رد فعل التربة عند توافر أساس لتحديده، وبيانات الخوازيق إن وجدت.</li>
+<li><strong>أساس التصميم:</strong> اسم الكود وإصداره، فئة المخاطر، موقع المشروع، فئة الموقع الزلزالية، معاملات الرياح والزلازل، وحدود الانجراف والخدمة المعتمدة.</li>
+</ul>
+<figure class="diagram"><svg viewBox="0 0 900 320" role="img" aria-labelledby="fig2t fig2d"><title id="fig2t">مدخلات المشروع قبل النمذجة</title><desc id="fig2d">مخطط يربط اللوحات المعمارية والإنشائية وتقرير التربة والمواصفات والكود بمرحلة بناء النموذج التحليلي.</desc><rect x="10" y="10" width="880" height="300" rx="16" fill="#f3f6f9"/><g fill="#d9e4ef" stroke="#52677d" stroke-width="2"><rect x="55" y="48" width="180" height="60" rx="8"/><rect x="55" y="135" width="180" height="60" rx="8"/><rect x="55" y="222" width="180" height="60" rx="8"/><rect x="350" y="48" width="180" height="60" rx="8"/><rect x="350" y="135" width="180" height="60" rx="8"/><rect x="350" y="222" width="180" height="60" rx="8"/><rect x="650" y="110" width="190" height="100" rx="12" fill="#f5dba7"/></g><g stroke="#52677d" stroke-width="3" fill="none"><path d="M235 78H300V165H350M235 165H350M235 252H300V165M530 78H590V160H650M530 165H650M530 252H590V160"/></g><g font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle"><text x="145" y="85">اللوحات</text><text x="145" y="172">تقرير التربة</text><text x="145" y="259">المواصفات</text><text x="440" y="85">الأحمال</text><text x="440" y="172">الكود والإصدار</text><text x="440" y="259">الخامات والقطاعات</text><text x="745" y="153" font-size="20">نموذج</text><text x="745" y="180" font-size="20">تحليلي صحيح</text></g></svg><figcaption>الشكل (2): جودة المخرجات تبدأ من اكتمال مدخلات المشروع ومراجعتها. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<p>لو فيه تعارض بين المعماري والإنشائي، أو بين اللوحات وتقرير التربة، لا تحاول إخفاء التعارض داخل الموديل. سجله واطلب قرارًا هندسيًا واضحًا قبل اعتماد الفرضية. أي تعديل في المعماري مثل فتحة كبيرة أو إزاحة عمود قد يغير مسار الأحمال والنظام الجانبي بالكامل.</p>
+</section>
+
+<section id="units">
+<h2>3. الوحدات والمحاور والمناسيب: أخطاء صغيرة بنتائج كبيرة</h2>
+<p>اختيار وحدة العمل لا يغيّر المنشأ الحقيقي لكنه يغيّر تفسير الأرقام التي تدخلها. قبل تعريف أي مقطع أو حمل، حدد وحدة ثابتة للمشروع وراقب الوحدة الظاهرة في شريط البرنامج أو نافذة الإدخال. من الأنظمة الشائعة kN-m، ton-m، وN-mm؛ لا تخلط بينها دون تحويل واضح.</p>
+<div class="table-wrap"><table><thead><tr><th>البيان</th><th>مراجعة مطلوبة</th><th>مثال على خطأ محتمل</th></tr></thead><tbody>
+<tr><td>الأطوال</td><td>هل جميع الإحداثيات بالمتر أم المليمتر؟</td><td>إدخال 3000 على أنه 3000 m بدل 3000 mm.</td></tr>
+<tr><td>القوى</td><td>هل الحمل kN أم tonf أم kgf؟</td><td>اعتبار طن الكتلة مساويًا تلقائيًا لقوة 1 kN.</td></tr>
+<tr><td>الإجهادات</td><td>هل مقاومة الخرسانة والحديد بنفس وحدة الإجهاد؟</td><td>خلط MPa مع kg/cm² دون تحويل.</td></tr>
+<tr><td>المناسيب</td><td>هل Level الدور يمثل سطح البلاطة أم منسوبًا آخر؟</td><td>تكرار سمك البلاطة أو إدخال ارتفاع الدور الصافي كارتفاع طابق كامل.</td></tr>
+</tbody></table></div>
+<p>أنشئ Grid مطابقًا للمحاور المعتمدة، وStory Data تعكس المناسيب الحقيقية، وليس مجرد عدد أدوار متكرر افتراضي. راجع ارتفاعات البدروم والأرضي والأدوار المتكررة والسطح وغرف الخدمات. عند وجود منسوب متغير أو بلاطة انتقالية أو دور مزدوج الارتفاع، لا تجبره على قالب متكرر لا يمثله.</p>
+<figure class="diagram"><svg viewBox="0 0 900 285" role="img" aria-labelledby="fig3t fig3d"><title id="fig3t">محاور ومستويات مبنى في الموديل</title><desc id="fig3d">رسم منظور مبسط لمبنى من عدة طوابق مع محاور شبكة في الاتجاهين ومناسيب الطوابق موضحة على الجانب.</desc><rect x="10" y="10" width="880" height="265" rx="16" fill="#f3f6f9"/><g stroke="#52677d" stroke-width="3" fill="none"><path d="M220 225L500 225L650 165L370 165Z M220 180L500 180L650 120L370 120Z M220 135L500 135L650 75L370 75Z M220 90L500 90L650 30L370 30Z"/><path d="M220 225V90M360 225V30M500 225V90M650 165V30M220 225L370 165M220 180L370 120M220 135L370 75M220 90L370 30M500 225L650 165M500 180L650 120M500 135L650 75M500 90L650 30" /></g><g stroke="#b8893c" stroke-width="2" stroke-dasharray="5 4"><path d="M180 225H680M180 180H680M180 135H680M180 90H680"/></g><g fill="#17324d" font-family="Tahoma,Arial" font-size="16"><text x="690" y="228">Base</text><text x="690" y="183">Level 1</text><text x="690" y="138">Level 2</text><text x="690" y="93">Roof</text><text x="250" y="255">Grid X</text><text x="535" y="255">Grid Y</text></g></svg><figcaption>الشكل (3): مطابقة المحاور والمناسيب قبل رسم العناصر تقلل أخطاء الاتصال والأطوال. <span>رسم أصلي تعليمي</span></figcaption></figure>
+</section>
+
+<section id="idealization">
+<h2>4. افهم المنشأ قبل ما ترسمه: النظام ومسار الأحمال</h2>
+<p>النموذج التحليلي هو تبسيط محسوب للمنشأ الحقيقي. اسأل أولًا: البلاطة تنقل الحمل إلى كمرات أم مباشرة إلى أعمدة؟ الكمرات تحمل على أعمدة أم حوائط؟ الحوائط مرتبطة بالأساسات إزاي؟ هل فيه كمرات تحويل أو أعمدة منقولة؟ هل الإطار مقاوم للعزوم فعلًا أم أن الحوائط هي العنصر الجانبي الأساسي؟</p>
+<figure class="diagram"><svg viewBox="0 0 900 315" role="img" aria-labelledby="fig4t fig4d"><title id="fig4t">مسار انتقال الأحمال من البلاطة إلى التربة</title><desc id="fig4d">مقطع تعليمي لمبنى يوضح انتقال الحمل من البلاطة إلى الكمرات ثم الأعمدة فالأساس والتربة مع أسهم لأسفل.</desc><rect x="10" y="10" width="880" height="295" rx="16" fill="#f3f6f9"/><g fill="#8eabc4" stroke="#52677d" stroke-width="3"><rect x="170" y="80" width="510" height="18"/><rect x="170" y="155" width="510" height="18"/><rect x="170" y="230" width="510" height="18"/><rect x="230" y="98" width="24" height="132"/><rect x="595" y="98" width="24" height="132"/><rect x="190" y="248" width="120" height="24"/><rect x="545" y="248" width="120" height="24"/></g><g stroke="#c65a50" stroke-width="4" fill="none"><path d="M300 35V65M425 35V65M550 35V65M240 115V145M610 115V145M240 190V220M610 190V220M250 275V290M600 275V290"/><path d="M292 57L300 70L308 57M417 57L425 70L433 57M542 57L550 70L558 57M232 137L240 150L248 137M602 137L610 150L618 137"/></g><g font-family="Tahoma,Arial" font-size="17" fill="#17324d" text-anchor="middle"><text x="425" y="28">أحمال البلاطة</text><text x="425" y="145">كمرات</text><text x="425" y="220">أعمدة / حوائط</text><text x="425" y="293">الأساسات والتربة</text></g></svg><figcaption>الشكل (4): مسار حمل رأسي مبسط؛ المسار الحقيقي قد يختلف حسب النظام الإنشائي. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<p>لا تستخدم عنصرًا تحليليًا لأن اسمه قريب من العنصر التنفيذي فقط. الكمرة قد تمثل بـFrame، والحائط أو البلاطة بـArea/Shell حسب السلوك المطلوب، والرباط أو الوصلة قد يحتاج Spring أو Link أو Constraint. لا يعني رسم سطح واحد أن البرنامج فهم تلقائيًا اتصال كل الأجزاء أو توزيع الأحمال بالطريقة التي تقصدها.</p>
+<div class="note warning"><strong>اختبار ذهني قبل النمذجة:</strong> لو أزلت عنصرًا من الموديل، هل تعرف إلى أين ستذهب الأحمال التي كان يحملها؟ لو لم تستطع شرح مسار الحمل وردود الأفعال، فالنموذج لم يصبح جاهزًا للتحليل بعد.</div>
+</section>
+
+<section id="elements">
+<h2>5. العناصر والاتصال والمحاور المحلية</h2>
+<h3>أ. Frame Elements</h3>
+<p>تستخدم غالبًا لتمثيل الكمرات والأعمدة وبعض العناصر الخطية. تأكد من نقطة البداية والنهاية، واتجاه المحاور المحلية، وخصائص القطاع، ونوع الاتصال، وأي End Releases أو Partial Fixity. تحرير دوران أو إزاحة دون مبرر إنشائي قد يحول عضوًا مستمرًا إلى عضو غير مستقر أو يغيّر توزيع العزوم.</p>
+<h3>ب. Shell / Area Elements</h3>
+<p>تستخدم لتمثيل الحوائط والبلاطات والأسطح، مع اختيار الخاصية التي تمثل السلوك المطلوب. راجع سمك العنصر، ونوعه، واتجاه محاوره المحلية، وربطه بالعناصر الخطية. الـMesh يؤثر على توزيع القوى محليًا، لذلك راجع اتزان النتائج واستقرارها مع تحسين التقسيم عند الحاجة.</p>
+<h3>ج. الاتصال أهم من شكل الرسم</h3>
+<p>العناصر التي تبدو متلامسة على الشاشة قد لا تكون متصلة تحليليًا. راجع نقاط الالتقاء، تكرار العقد، فروق المناسيب الصغيرة، الـOffsets، الـInsertion Points، والـRigid Zones. اعرض Connectivity أو جدول الإحداثيات عند الشك، وتأكد أن نهايات الكمرات متصلة بعقد الأعمدة والحوائط كما تقصد.</p>
+<figure class="diagram"><svg viewBox="0 0 900 300" role="img" aria-labelledby="fig5t fig5d"><title id="fig5t">اتصال صحيح واتصال غير صحيح بين كمرة وعمود</title><desc id="fig5d">رسم جانبي يقارن اتصال كمرة بعقدة عمود بصورة صحيحة مع حالة يوجد بها فراغ صغير بين الكمرة والعمود يقطع الاتصال التحليلي.</desc><rect x="10" y="10" width="880" height="280" rx="16" fill="#f3f6f9"/><g stroke="#52677d" stroke-width="4" fill="#8eabc4"><rect x="175" y="65" width="45" height="180"/><rect x="220" y="105" width="220" height="30"/><rect x="560" y="65" width="45" height="180"/><rect x="620" y="105" width="220" height="30"/></g><g stroke="#c65a50" stroke-width="3" fill="none"><circle cx="220" cy="120" r="8"/><path d="M605 120H620"/></g><g fill="#17324d" font-family="Tahoma,Arial" font-size="18" text-anchor="middle"><text x="310" y="265">اتصال عند عقدة مشتركة</text><text x="700" y="265">فجوة: اتصال غير مضمون</text><text x="310" y="45">سليم بعد التحقق</text><text x="700" y="45">يحتاج إصلاح الربط</text></g></svg><figcaption>الشكل (5): التلامس البصري لا يثبت وجود اتصال تحليلي؛ افحص العقد والقيود. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<h3>د. المحاور المحلية Local Axes</h3>
+<p>المحاور المحلية للكمرة أو العمود أو الـShell تحدد اتجاهات القوى والعزوم والإجهادات التي يعرضها البرنامج. لا تفسر M2 أو M3 أو V2 أو V3 قبل عرض المحاور المحلية للعنصر. عند استيراد DXF أو رسم قطاع غير متماثل، راجع اتجاه القطاع بالنسبة للمحاور العامة والمحلية بدل افتراض أن اتجاهه صحيح.</p>
+<p>استخدم Releases فقط عند وجود مفصل أو تحرير فعلي. ولا تضع Releases على كل أطراف الكمرات تلقائيًا. كما أن تعديل طول منطقة صلبة أو إزاحة مركز القطاع يؤثر في طول العضو الفعال وصلابة العقدة؛ يجب أن يعكس التفصيل التنفيذي والفرضية التصميمية.</p>
+</section>
+
+<section id="mesh">
+<h2>6. الـMesh والـDiaphragm: إمتى يكون Rigid وإمتى Semi-Rigid؟</h2>
+<p>الـMesh يقسم السطح إلى عناصر أصغر للحل العددي. الهدف ليس جعل الشبكة صغيرة جدًا لمجرد زيادة عدد العناصر؛ الهدف الحصول على نتائج مستقرة ومناسبة للسلوك الذي ندرسه. ابدأ بتقسيم منطقي، ثم حسّن الشبكة عند الفتحات والأركان وتغير السمك ومناطق الأعمدة والحوائط ومناطق انتقال الأحمال.</p>
+<p>في SAFE توضح وثائق CSI أن البرنامج ينشئ شبكة العناصر المحدودة للبلاطات تلقائيًا من كائنات البلاطة، مع إمكان مراجعة خرائط النتائج والتحكم في عرضها. لكن ذلك لا يعني ترك كل إعداد دون مراجعة؛ يجب التأكد من أن التقسيم مناسب للهندسة والتدرج في النتائج. <a href="https://docs.csiamerica.com/help-files/safe/Getting_Started/General_Modeling_Process_and_Tips.htm" target="_blank" rel="noopener">إرشادات النمذجة العامة في SAFE</a>.</p>
+<figure class="diagram"><svg viewBox="0 0 900 300" role="img" aria-labelledby="fig6t fig6d"><title id="fig6t">تقسيم شبكة العناصر المحدودة للبلاطة</title><desc id="fig6d">مقارنة سطح بلاطة بشبكة عناصر كبيرة مع شبكة أدق حول عمود وفتحة، لتوضيح فكرة تحسين الشبكة محليًا.</desc><rect x="10" y="10" width="880" height="280" rx="16" fill="#f3f6f9"/><g fill="#dce6ef" stroke="#52677d" stroke-width="2"><rect x="65" y="60" width="320" height="165"/><rect x="515" y="60" width="320" height="165"/></g><g stroke="#52677d" stroke-width="1.5"><path d="M145 60V225M225 60V225M305 60V225M65 115H385M65 170H385"/><path d="M555 60V225M595 60V225M635 60V225M675 60V225M715 60V225M755 60V225M795 60V225M515 95H835M515 130H835M515 165H835M515 200H835"/></g><rect x="665" y="125" width="55" height="55" fill="#f3c88a" stroke="#a46d28" stroke-width="3"/><g font-family="Tahoma,Arial" fill="#17324d" text-anchor="middle" font-size="17"><text x="225" y="255">شبكة عامة</text><text x="675" y="255">تحسين محلي حول منطقة حرجة</text></g></svg><figcaption>الشكل (6): تحسين الشبكة يكون وفق شكل العنصر ومناطق تغير الإجهاد، مع اختبار تقارب النتائج. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<h3>الـDiaphragm</h3>
+<p>الـDiaphragm يمثل سلوك البلاطة في مستواها في نقل القوى الأفقية إلى النظام المقاوم. قد يكون Rigid أو Semi-Rigid أو Flexible وفق طبيعة البلاطة وفتحاتها وصلابتها وتوزيع العناصر الرأسية. لا تختَر Rigid لمجرد أنه الإعداد الشائع؛ فالدور ذو فتحات كبيرة أو شكل غير منتظم أو انتقالات في الصلابة قد يحتاج تمثيلًا أكثر واقعية.</p>
+<p>في ETABS، توضح مساعدة CSI أن تعريف الـDiaphragm على Shell أفقي يفرض قيدًا على العقد الواقعة على السطح، بما فيها العقد التي تنشأ من الـAutomatic Meshing، وأن تعيين الـDiaphragm بهذا الأسلوب يخص الأسطح الأفقية ولا يطبق على الحوائط الرأسية. <a href="https://docs.csiamerica.com/help-files/etabs/Menus/Assign/Shell/Diaphragms_Shells.htm" target="_blank" rel="noopener">مرجع Diaphragms – Shells من CSI</a>.</p>
+<figure class="diagram"><svg viewBox="0 0 900 295" role="img" aria-labelledby="fig7t fig7d"><title id="fig7t">سلوك Diaphragm الصلب وشبه الصلب</title><desc id="fig7d">مقارنة بلاطة ممثلة كجسم صلب يتحرك كوحدة واحدة مع بلاطة ممثلة بعناصر سطحية تسمح بتوزيع تشوهات داخل مستوى البلاطة.</desc><rect x="10" y="10" width="880" height="275" rx="16" fill="#f3f6f9"/><g stroke="#52677d" stroke-width="3"><rect x="80" y="75" width="300" height="125" fill="#c8d9e8"/><rect x="520" y="75" width="300" height="125" fill="#c8d9e8"/></g><g stroke="#52677d" stroke-width="2"><path d="M180 75V200M280 75V200M80 137H380M620 75V200M720 75V200M520 137H820"/></g><g stroke="#c65a50" stroke-width="4" fill="none"><path d="M110 45H340M330 35L345 45L330 55"/><path d="M550 45H780M770 35L785 45L770 55"/></g><g fill="#17324d" font-family="Tahoma,Arial" font-size="18" text-anchor="middle"><text x="230" y="235">Rigid: حركة جماعية مفترضة</text><text x="670" y="235">Semi-Rigid: تشوه داخل المستوى</text></g></svg><figcaption>الشكل (7): تمثيل مفاهيمي للفرق؛ القرار النهائي يعتمد على صلابة البلاطة وشكل الدور ومتطلبات الكود. <span>رسم أصلي تعليمي</span></figcaption></figure>
+</section>
+
+<section id="properties">
+<h2>7. الخامات والقطاعات ومعاملات الصلابة</h2>
+<p>عرف مادة الخرسانة والحديد من مواصفات المشروع، ثم عرف القطاعات وأسنِدها للعناصر الصحيحة. راجع الوزن الحجمي، معامل المرونة، مقاومة الضغط، مقاومة الخضوع، الأبعاد، السمك والغطاء. لا تعتمد على اسم القطاع فقط؛ افتح خصائصه وتأكد من القيم والوحدات.</p>
+<p>معاملات صلابة العناصر المتشققة (Stiffness Modifiers) تؤثر في الصلابة والتحليل وتوزيع القوى والانجراف والفترات الطبيعية. يجب تحديدها طبقًا للكود المعتمد ونوع التحليل والقطاع والهدف من النموذج. لا يوجد رقم واحد يصلح لكل العناصر أو لكل حالات المشروع. لا تخلط بين معاملات الصلابة المستخدمة في التحليل وبين معاملات المقاومة المستخدمة في تصميم القطاع.</p>
+<div class="note warning"><strong>تنبيه مهم:</strong> لا تضرب معاملات الصلابة في كل العناصر بقيمة واحدة دون سبب موثق، ولا تستخدم نموذجًا بمعاملات معدلة ثم تقرأ نتائج نموذج آخر دون تمييز. احتفظ بنسخة واضحة لكل نموذج تحليلي، واكتب سبب كل تعديل وتأثيره.</div>
+<p>راجع كذلك الـSelf Weight Multiplier: لو البرنامج يحسب الوزن الذاتي تلقائيًا من الكثافة والقطاعات، فإن إضافة وزن ذاتي يدوي لنفس العناصر قد يضاعف الحمل. يمكن أن يكون معامل الوزن الذاتي صفرًا لأنك ستدخل الحمل يدويًا في نماذج خاصة، لكن يجب أن يكون ذلك قرارًا موثقًا وليس تعديلًا عشوائيًا.</p>
+</section>
+
+<section id="loads">
+<h2>8. الأحمال: افصل Load Pattern عن Load Case وعن Load Combination</h2>
+<p>هذه من أهم النقاط التي تسبب أخطاء في الموديلات. المصطلحات الثلاثة مختلفة، ولا يغني واحد منها عن الآخر:</p>
+<div class="table-wrap"><table><thead><tr><th>المصطلح</th><th>وظيفته</th><th>سؤال المراجعة</th></tr></thead><tbody>
+<tr><td><strong>Load Pattern</strong></td><td>تعريف نوع الحمل وطريقة توزيعه ومعامل الوزن الذاتي عند انطباقه.</td><td>ما الحمل الذي أدخله؟ وعلى أي عناصر؟</td></tr>
+<tr><td><strong>Load Case</strong></td><td>تحديد كيفية تطبيق الأحمال وحساب استجابة المنشأ: خطي، ديناميكي، لاخطي، زمني وغيرها.</td><td>كيف سيحسب البرنامج استجابة النموذج لهذا الحمل؟</td></tr>
+<tr><td><strong>Load Combination</strong></td><td>جمع نتائج حالات التحليل بنسب محددة طبقًا لحالات التصميم والكود.</td><td>أي مجموعة نتائج أستخدم لفحص المقاومة أو الخدمة؟</td></tr>
+</tbody></table></div>
+<p>توثيق CSI ينص بوضوح على أن Load Pattern وحده لا ينتج استجابة إنشائية؛ لا بد من Load Case لتطبيق الحمل وحساب الاستجابة. كما أن تعريف حالات التحليل يتيح اختيار الطريقة التي سيحل بها البرنامج المنشأ. <a href="https://docs.csiamerica.com/help-files/sap/Menus/Define/Load_Cases/Define_Load_Cases.htm" target="_blank" rel="noopener">تعريف Load Cases في مساعدة CSI</a>.</p>
+<figure class="diagram"><svg viewBox="0 0 900 330" role="img" aria-labelledby="fig8t fig8d"><title id="fig8t">العلاقة بين Load Pattern وLoad Case وLoad Combination</title><desc id="fig8d">مخطط انسيابي يوضح أن أنماط الأحمال تدخل في حالات التحليل، ثم تُجمع نتائج الحالات في تركيبات أحمال للتصميم.</desc><rect x="10" y="10" width="880" height="310" rx="16" fill="#f3f6f9"/><g fill="#dce6ef" stroke="#52677d" stroke-width="2"><rect x="55" y="48" width="210" height="70" rx="10"/><rect x="55" y="175" width="210" height="70" rx="10"/><rect x="360" y="105" width="210" height="85" rx="10" fill="#f5dba7"/><rect x="665" y="105" width="185" height="85" rx="10" fill="#c9e3d6"/></g><g stroke="#52677d" stroke-width="3" fill="none"><path d="M265 83H310V145H360M265 210H310V145M570 148H665"/></g><g fill="#17324d" font-family="Tahoma,Arial" font-size="19" text-anchor="middle"><text x="160" y="88">Load Patterns</text><text x="160" y="215">Functions / Inputs</text><text x="465" y="140">Load Cases</text><text x="465" y="168" font-size="15">طريقة التحليل</text><text x="757" y="140">Combinations</text><text x="757" y="168" font-size="15">نتائج التصميم</text></g></svg><figcaption>الشكل (8): التسلسل المفاهيمي لتعريف الحمل ثم حساب الاستجابة ثم تجميع النتائج. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<h3>أنماط أحمال شائعة</h3>
+<ul>
+<li><strong>DEAD:</strong> وزن العناصر الذاتية والأحمال الدائمة الأخرى بحسب تنظيم النموذج.</li>
+<li><strong>SUPER DEAD / FLOOR FINISH:</strong> التشطيبات والطبقات الدائمة غير الممثلة في الوزن الذاتي للعناصر.</li>
+<li><strong>WALL:</strong> وزن القواطع والحوائط التي لا تمثلها عناصر إنشائية في الموديل، مع تحميلها على مسارها الصحيح.</li>
+<li><strong>LIVE:</strong> الحمل الحي طبقًا لاستخدام الفراغ والكود، مع تطبيق تخفيضاته فقط وفق شروط المرجع.</li>
+<li><strong>WIND / EQ:</strong> أحمال الرياح والزلازل بالطريقة المناسبة للموقع والنظام والكود.</li>
+<li><strong>OTHER:</strong> معدات أو خزانات أو ضغط تربة أو مياه أو أحمال تشغيلية خاصة.</li>
+</ul>
+<p>لا تكرر وزن الحوائط داخل أكثر من Pattern، ولا تضف وزن البلاطة في DEAD ثم تترك البرنامج يحسبه مرة أخرى. راجع مخطط الأحمال لكل دور، وحسابات وزن الحوائط والواجهات والخزانات، وتأكد أن اتجاه الحمل وطريقة نقله تتفق مع الوضع الحقيقي.</p>
+<h3>حالات التحليل والتركيبات</h3>
+<p>قد تحتاج حالات Static Linear، Modal، Response Spectrum، P-Delta، Nonlinear أو Time History بحسب طبيعة المشروع ومتطلبات الكود. لا تنشئ جميع أنواع الحالات لمجرد وجودها في البرنامج؛ أنشئ ما يتطلبه التحليل المعتمد. بعد ذلك عرّف تركيبات المقاومة والخدمة والزلازل والرياح وغيرها من الكود المحدد، مع مراعاة اتجاهات التحميل والإشارات والحالات المترافقة.</p>
+<div class="note"><strong>لا تنسخ تركيبات جاهزة من مشروع آخر.</strong> اختلاف إصدار الكود أو النظام أو فئة المخاطر أو حالات التحميل قد يغير التركيبات. راجع كل Combination مع نص الكود المعتمد ومذكرة الحسابات، ولا تخلط تراكيب تصميم المقاومة مع تراكيب الخدمة أو الترخيم.</div>
+</section>
+
+<section id="mass">
+<h2>9. مصدر الكتلة والتحليل الديناميكي والزلازل</h2>
+<p>في التحليل الزلزالي، مصدر الكتلة (Mass Source) من أهم المدخلات. هو الذي يحدد ما الكتل التي تدخل في الحساب الديناميكي، وقد يشمل الوزن الذاتي وبعض الأحمال الدائمة ونسبة من الحمل الحي وفق الكود والاستخدام. لا تفترض أن البرنامج أخذ كل ما تقصده تلقائيًا؛ افتح تعريف مصدر الكتلة وتأكد من الأنماط والمعاملات ومحتوى الكتلة وعدم تكرارها.</p>
+<figure class="diagram"><svg viewBox="0 0 900 315" role="img" aria-labelledby="fig9t fig9d"><title id="fig9t">تسلسل التحليل الديناميكي من مصدر الكتلة إلى طيف الاستجابة</title><desc id="fig9d">رسم يوضح انتقال البيانات من الأحمال والكتل إلى التحليل المودالي واستخراج الأشكال والفترات الطبيعية ثم استجابة الطيف.</desc><rect x="10" y="10" width="880" height="295" rx="16" fill="#f3f6f9"/><g fill="#dce6ef" stroke="#52677d" stroke-width="2"><rect x="40" y="105" width="170" height="85" rx="10"/><rect x="270" y="105" width="170" height="85" rx="10" fill="#f5dba7"/><rect x="500" y="105" width="170" height="85" rx="10"/><rect x="730" y="105" width="130" height="85" rx="10" fill="#c9e3d6"/></g><g stroke="#52677d" stroke-width="3" fill="none"><path d="M210 148H270M440 148H500M670 148H730"/></g><g fill="#17324d" font-family="Tahoma,Arial" font-size="17" text-anchor="middle"><text x="125" y="138">Mass Source</text><text x="125" y="165" font-size="14">مصدر الكتلة</text><text x="355" y="138">Modal Case</text><text x="355" y="165" font-size="14">الأشكال والفترات</text><text x="585" y="138">Response</text><text x="585" y="165" font-size="14">Spectrum</text><text x="795" y="138">Results</text><text x="795" y="165" font-size="14">القوى والإزاحات</text></g><path d="M125 85V60H795V85" stroke="#b8893c" stroke-width="2" fill="none" stroke-dasharray="6 5"/><text x="460" y="48" font-family="Tahoma,Arial" font-size="15" fill="#17324d" text-anchor="middle">مراجعة الاتزان والكتلة والمشاركة المودالية</text></svg><figcaption>الشكل (9): يجب مراجعة مصدر الكتلة قبل تفسير نتائج التحليل الديناميكي. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<p>بعد تشغيل Modal Analysis، راجع الفترات والأشكال الاهتزازية، واتجاه حركة كل Mode، ومشاركة الكتلة في الاتجاهات المطلوبة طبقًا للكود. تحقق من عدم وجود نمط محلي غير مقصود بسبب عنصر منفصل أو قيد مفقود. عدد المودات لا يختار عشوائيًا؛ المطلوب تحقيق متطلبات الكود والتحقق من كفاية المشاركة أو الطريقة البديلة المعتمدة.</p>
+<p>في Response Spectrum، راجع دالة الطيف ووحداتها ومقياسها ومصدرها، وطريقة جمع المودات واتجاهات التحليل واللامركزية العرضية ومتطلبات الجمع بين الاتجاهين ومعاملات التكبير أو إعادة التحجيم إن وجدت. لا تنسخ Scale Factor من ملف قديم دون إعادة حسابه للمشروع الحالي. يجب أن تتوافق معاملات التحليل مع إصدار الكود والزلازل المعتمد.</p>
+<div class="note warning"><strong>تنبيه:</strong> ظهور قيمة Base Shear أو Story Drift لا يعني وحده أن التحليل الزلزالي صحيح. يجب التحقق من مصدر الكتلة، وفئة الموقع، ومعاملات الطيف، وارتفاعات الطوابق، والنظام المقاوم، واللامركزية، وانتظام المنشأ، ومتطلبات الكود.</div>
+</section>
+
+<section id="pdelta">
+<h2>10. تحليل P-Delta: تأثير الرتبة الثانية</h2>
+<p>عند تحرك المنشأ جانبيًا تحت الأحمال، فإن الأحمال الرأسية الموجودة على المنشأ قد تولد عزومًا إضافية بسبب الإزاحة الجانبية. هذه هي الفكرة العامة لتأثير P-Delta. قد يكون التأثير محدودًا في منشأ منخفض وصلب، لكنه يصبح مهمًا في المنشآت النحيفة أو المرنة أو ذات الانجرافات الكبيرة.</p>
+<figure class="diagram"><svg viewBox="0 0 900 290" role="img" aria-labelledby="fig10t fig10d"><title id="fig10t">مقارنة تأثير الرتبة الأولى وتأثير P-Delta</title><desc id="fig10d">إطار مبنى قائم دون إزاحة مقارنة بإطار منحرف جانبيًا مع حمل رأسي يولد عزمًا إضافيًا نتيجة الإزاحة.</desc><rect x="10" y="10" width="880" height="270" rx="16" fill="#f3f6f9"/><g stroke="#52677d" stroke-width="6" fill="none"><path d="M130 225V65H340V225M130 120H340M130 175H340"/><path d="M550 225Q575 190 580 175Q585 135 595 115Q610 80 620 65M760 225V65M550 225H760M580 175H760M595 115H760"/></g><g stroke="#c65a50" stroke-width="4" fill="none"><path d="M235 25V55M235 45L225 58M235 45L245 58"/><path d="M665 25V55M665 45L655 58M665 45L675 58"/><path d="M525 135H570M560 125L573 135L560 145"/></g><g fill="#17324d" font-family="Tahoma,Arial" font-size="17" text-anchor="middle"><text x="235" y="255">الوضع غير المنحرف</text><text x="665" y="255">الإطار بعد الإزاحة</text><text x="450" y="35">الحمل الرأسي مع الإزاحة قد يضيف عزومًا</text></g></svg><figcaption>الشكل (10): تمثيل مبسط لفكرة العزم الإضافي الناتج عن الحمل الرأسي والإزاحة الجانبية. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<p>في النمذجة، حدد حالة التحليل التي تمثل تأثيرات الرتبة الثانية طبقًا لإعدادات البرنامج والكود، وتأكد من أن الأحمال الرأسية المؤثرة والاتجاهات والقيود ممثلة. لا تفترض أن تفعيل P-Delta في حالة واحدة يضيفه تلقائيًا لكل الحالات الأخرى أو لكل نتائج التصميم؛ راجع تسلسل التحليل والارتباط بين الحالات.</p>
+<p>إذا ظهرت فروق كبيرة بين نتائج التحليل الخطي والتحليل الذي يتضمن P-Delta، افحص سببها: صلابة النظام الجانبي، الانجراف، أطوال الأعمدة الفعالة، الشروخ، القيود، أو عدم استقرار النموذج. لا تحاول معالجة التحذير بزيادة المقاطع عشوائيًا قبل فهم مصدره.</p>
+</section>
+
+<section id="foundations">
+<h2>11. تمثيل التربة والأساسات والنوابض</h2>
+<p>في نموذج المبنى، قد تُمثل القاعدة كمسند ثابت لأغراض محددة، لكن هذا التبسيط لا يعني أن القاعدة أو التربة ثابتتان فعليًا. عند دراسة تفاعل التربة والمنشأ أو اللبشات، يجب تحديد نموذج الدعم من تقرير التربة وطريقة التحليل المعتمدة. قد تستخدم نوابض نقطية أو خطية أو مساحية، أو نموذجًا أكثر تفصيلًا بحسب الحاجة.</p>
+<figure class="diagram"><svg viewBox="0 0 900 300" role="img" aria-labelledby="fig11t fig11d"><title id="fig11t">تمثيل مرن للتربة أسفل اللبشة باستخدام نوابض</title><desc id="fig11d">قطاع مبنى فوق لبشة مع مجموعة نوابض مرنة تمثل دعم التربة، وأسهم توضح رد الفعل أسفل القاعدة.</desc><rect x="10" y="10" width="880" height="280" rx="16" fill="#f3f6f9"/><g stroke="#52677d" stroke-width="3" fill="#8eabc4"><rect x="210" y="170" width="480" height="35"/><rect x="310" y="55" width="35" height="115"/><rect x="555" y="55" width="35" height="115"/></g><g stroke="#3579b7" stroke-width="3" fill="none"><path d="M235 205V225L225 233L245 243L225 253L245 263L235 270M300 205V225L290 233L310 243L290 253L310 263L300 270M365 205V225L355 233L375 243L355 253L375 263L365 270M430 205V225L420 233L440 243L420 253L440 263L430 270M495 205V225L485 233L505 243L485 253L505 263L495 270M560 205V225L550 233L570 243L550 253L570 263L560 270M625 205V225L615 233L635 243L615 253L635 263L625 270"/></g><g fill="#17324d" font-family="Tahoma,Arial" font-size="18" text-anchor="middle"><text x="450" y="35">لبشة خرسانية</text><text x="450" y="285">نوابض / دعم التربة</text></g></svg><figcaption>الشكل (11): النموذج المرن للتربة يحتاج قيمة ووحدات ومنهجية متسقة مع تقرير التربة. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<p>راجع وحدات معامل رد فعل التربة وكيفية توزيعه على المساحة، وحدود صلاحية استخدامه، ومدى اعتماد الاستجابة على أبعاد القاعدة أو اللبشة. لا تخلط بين معامل رد الفعل وبين قدرة التحمل المسموح بها؛ فهما ليسا الكمية نفسها. وتأكد من اتجاه النوابض وأنها لا تسمح بشد في التربة إذا كان النموذج يفترض دعمًا ضاغطًا فقط، إلا إذا كان هناك عنصر شد أو تثبيت مصمم لذلك.</p>
+<p>في SAFE راجع Soil Subgrade Properties أو خواص النوابض المستخدمة، وكذلك تمثيل الأعمدة والحوائط كنقاط أو خطوط دعم، ومناسيبها وأبعادها. افحص ضغط التربة، وفقد التلامس إن كان ضمن النموذج، والطفو إن وجدت مياه جوفية، والقص الثاقب والقص أحادي الاتجاه والانحناء والهبوط. لا تعتمد على كون خريطة الضغط ملونة بصورة متدرجة دون قراءة قيمها ووحداتها.</p>
+</section>
+
+<section id="run">
+<h2>12. تشغيل التحليل: اقرأ التحذيرات قبل النتائج</h2>
+<p>قبل تشغيل التحليل، احفظ نسخة مستقلة من الملف، ثم افحص هندسة النموذج والاتصال والأحمال والخواص وحالات التحليل المطلوبة. بعد التشغيل، لا تتعامل مع عبارة Analysis Complete على أنها شهادة صحة. البرنامج أخبرك أنه نفذ التحليل؛ ولم يشهد بأن النموذج يمثل الواقع.</p>
+<h3>قائمة الفحص بعد التشغيل</h3>
+<ul>
+<li>راجع رسائل التحذير والأخطاء، وحدد إن كانت تؤثر على الاتزان أو صلابة العناصر أو نتائج حالة بعينها.</li>
+<li>ابحث عن Instability أو Zero/Negative Stiffness أو Degrees of Freedom غير مقيدة دون سبب.</li>
+<li>راجع العناصر غير المتصلة والعقد المكررة أو المتقاربة جدًا والـDuplicate Objects.</li>
+<li>افحص التشوهات؛ أي حركة غير منطقية أو دوران كبير جدًا قد يشير إلى قيد ناقص أو عنصر غير متصل.</li>
+<li>راجع ردود الأفعال ومجموعها مقارنة بمجموع الأحمال المطبقة، مع مراعاة إشارات الاتجاهات والحالات المدروسة.</li>
+<li>تأكد أن كل Load Case المطلوبة حُسبت، وأن التركيبات تعتمد على الحالات الصحيحة.</li>
+<li>احفظ نسخة بعد التحليل واكتب تاريخ التشغيل وإصدار البرنامج واسم المصمم والمراجع.</li>
+</ul>
+<div class="note"><strong>فرّق بين Warning وError:</strong> ليست كل رسالة تحذير تعني فشل الحل، وليست كل حالة بلا رسائل تحذير سليمة. افهم الرسالة وموقعها وتأثيرها، وافحص الموديل بصريًا وعدديًا. دليل التحليل العام من CSI يشرح الافتراضات النظرية وراء بعض خواص النمذجة والتحليل؛ يجب قراءة الدليل الموافق للبرنامج والإصدار المستخدم.</div>
+</section>
+
+<section id="review">
+<h2>13. مراجعة النتائج: لا تبدأ من جدول التسليح</h2>
+<p>المراجعة المنطقية تبدأ من النتائج العامة ثم تنتقل للتفاصيل. من الأفضل تتبع ترتيب ثابت حتى لا تركز على رقم تسليح عمود وتفوت خطأ في مصدر الكتلة أو اتزان الحمل.</p>
+<figure class="diagram"><svg viewBox="0 0 900 320" role="img" aria-labelledby="fig12t fig12d"><title id="fig12t">تسلسل مراجعة نتائج التحليل الإنشائي</title><desc id="fig12d">مخطط يوضح مراجعة التشوهات أولًا ثم ردود الأفعال وقوى الطوابق ثم القوى الداخلية وأخيرًا تصميم القطاعات والتفاصيل.</desc><rect x="10" y="10" width="880" height="300" rx="16" fill="#f3f6f9"/><g fill="#dce6ef" stroke="#52677d" stroke-width="2"><rect x="45" y="75" width="165" height="70" rx="10"/><rect x="255" y="75" width="165" height="70" rx="10"/><rect x="465" y="75" width="165" height="70" rx="10"/><rect x="675" y="75" width="180" height="70" rx="10" fill="#f5dba7"/></g><g stroke="#52677d" stroke-width="3" fill="none"><path d="M210 110H255M420 110H465M630 110H675"/></g><g fill="#17324d" font-family="Tahoma,Arial" font-size="17" text-anchor="middle"><text x="127" y="103">التشوهات</text><text x="127" y="128" font-size="14">شكل الحركة</text><text x="337" y="103">ردود الأفعال</text><text x="337" y="128" font-size="14">اتزان الأحمال</text><text x="547" y="103">القوى الداخلية</text><text x="547" y="128" font-size="14">عزوم وقص ومحاور</text><text x="765" y="103">التصميم</text><text x="765" y="128" font-size="14">مقاومة وخدمة</text></g><path d="M125 160V225H765V160" stroke="#b8893c" stroke-width="2" stroke-dasharray="6 5" fill="none"/><text x="445" y="255" font-family="Tahoma,Arial" font-size="16" fill="#17324d" text-anchor="middle">تكرار دورة المراجعة بعد أي تعديل جوهري</text></svg><figcaption>الشكل (12): راجع النموذج من الصورة العامة إلى العنصر، ثم أعد التحقق بعد التعديل. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<h3>أ. التشوهات والانجراف</h3>
+<p>اعرض Deformed Shape لكل حالة مؤثرة، وتحقق من اتجاه الحركة وشكل الإزاحة. افحص الإزاحة الكلية والانجراف النسبي بين الأدوار (Story Drift) طبقًا لتعريف الكود وحدود الخدمة أو الزلازل. انتبه لاختلاف الإزاحة عند مركز الكتلة عن نقاط أطراف الدور في حالة الالتواء.</p>
+<h3>ب. ردود الأفعال والاتزان</h3>
+<p>اجمع ردود الأفعال عند القواعد لكل حالة، وقارنها بإجمالي الأحمال الرأسية والأفقية والعزوم المطبقة بعد توحيد الوحدات والإشارات. الفروق البسيطة قد ترتبط بالتقريب أو طريقة العرض، أما الفرق الكبير فيستدعي البحث عن حمل ناقص أو مضاعف أو مسند غير صحيح أو جزء غير متصل.</p>
+<h3>ج. قوى العناصر</h3>
+<p>راجع مخططات N وV وM وT للكمرات والأعمدة، وقوى الحوائط والـShell، والـSection Cuts عند الحاجة. راقب القفزات المفاجئة وغير المبررة في القوى، وتأكد أن موضع قراءة النتائج يطابق المحور المحلي واتجاه القطاع. لا تقارن قيمتين من محاور أو وحدات مختلفة.</p>
+<h3>د. المقارنة المستقلة</h3>
+<p>أجرِ فحصًا يدويًا تقريبيًا لعنصر أو أكثر: وزن دور نموذجي، رد فعل عمود داخلي، حمل حائط على كمرة، أو عزم كمرة بسيطة. الغرض اكتشاف خطأ إدخال بعامل 10 أو 100 أو ازدواج حمل أو مسار نقل غير صحيح، وليس استبدال التحليل الكامل بحساب تقريبي.</p>
+</section>
+
+<section id="design">
+<h2>14. التصميم داخل البرنامج ومراجعة التسليح</h2>
+<p>التحليل ينتج استجابات النموذج، أما التصميم فيستخدم قوى التصميم وخصائص القطاع والكود وإعداداته للتحقق من المقاومة والخدمة والتفاصيل. قبل تشغيل Design، راجع كود التصميم وإصداره، Design Preferences، أبعاد القطاعات، مقاومات المواد، الغطاء، أقطار الحديد، أطوال التثبيت، حدود النحافة أو متطلبات الزلازل، وأي Overwrites تم إدخالها.</p>
+<div class="table-wrap"><table><thead><tr><th>العنصر</th><th>ماذا تراجع بعد التصميم؟</th><th>تحقق إضافي</th></tr></thead><tbody>
+<tr><td>الكمرات</td><td>تسليح الانحناء والقص والالتواء إن انطبق، وحدود التسليح والتفاصيل.</td><td>استمرارية الحديد، مناطق العزم السالب، القص قرب المساند، العقد والرباط.</td></tr>
+<tr><td>الأعمدة</td><td>تفاعل N-Mx-My، النحافة، نسبة التسليح، والاتجاهات المحلية.</td><td>تسليح العمود الفعلي، التزاحم، الوصلات، مناطق الحبس، واتصال الكمرة والعمود.</td></tr>
+<tr><td>الحوائط</td><td>قوى المحور والعزوم والقص وتوزيع الإجهادات.</td><td>Boundary Elements، تفاصيل النهايات، الفتحات، والربط مع البلاطات والأساسات.</td></tr>
+<tr><td>البلاطات</td><td>عزوم الشرائح، القص أحادي الاتجاه، القص الثاقب والترخيم.</td><td>تسليح علوي وسفلي، Drop Panels، الفتحات، مناطق الأعمدة والأركان.</td></tr>
+<tr><td>اللبشات</td><td>العزوم والقص والقص الثاقب وضغط التربة والهبوط.</td><td>تأثير صلابة التربة، التلامس، الطفو، سماكة القاعدة، ومناطق الحوائط والأعمدة.</td></tr>
+</tbody></table></div>
+<p>في SAFE، راجع إعدادات الكود والتصميم والـPunching Check Overwrites، ولا تكتفِ بلون النتيجة أو نسبة الاستغلال. افحص المحيط الحرج ومواقع الأعمدة والحواف والفتحات، وراجع ما إذا كان النظام يوفر تفاصيل تسليح قابلة للتنفيذ. كما يجب فحص الترخيم قصير وطويل الأمد حسب طريقة التصميم والكود وظروف التحميل.</p>
+<div class="note warning"><strong>التسليح الناتج ليس لوحة تنفيذية تلقائيًا.</strong> يجب تحويل النتائج إلى تفاصيل قابلة للتنفيذ ومراجعة أطوال التثبيت والوصلات والخطافات والغطاء والتزاحم والتعارض مع المعماري والـMEP. وإذا كان البرنامج لا يغطي فحصًا أو تفصيلة مطلوبة، أجرِ الفحص بطريقة مستقلة موثقة.</div>
+</section>
+
+<section id="transfer">
+<h2>15. نقل الأحمال من ETABS إلى SAFE: راجع ما انتقل فعلًا</h2>
+<p>العمل المتكامل بين ETABS وSAFE مفيد عندما تحتاج إلى تحليل المبنى في ETABS ثم تصميم بلاطة أو لبشة في SAFE. لكن عملية التصدير أو الربط ليست ضمانًا أن كل افتراضات النموذج انتقلت كما هي. تختلف الخيارات بحسب الإصدارات وطريقة التبادل، لذلك راجع خطوات الإصدار المستخدم ووثائقه.</p>
+<figure class="diagram"><svg viewBox="0 0 900 330" role="img" aria-labelledby="fig13t fig13d"><title id="fig13t">تدفق البيانات من ETABS إلى SAFE</title><desc id="fig13d">رسم يوضح نموذج المبنى في ETABS ثم استخراج الأحمال وردود الأفعال والمناسيب، وبعدها بناء نموذج البلاطة أو اللبشة في SAFE ومراجعة المدخلات قبل التصميم.</desc><rect x="10" y="10" width="880" height="310" rx="16" fill="#f3f6f9"/><g fill="#dce6ef" stroke="#52677d" stroke-width="3"><rect x="65" y="60" width="260" height="185" rx="12"/><rect x="575" y="60" width="260" height="185" rx="12"/></g><g stroke="#52677d" stroke-width="3" fill="none"><path d="M100 95H290M100 145H290M100 195H290M150 95V245M240 95V245"/><path d="M610 180H800M630 180V220M680 180V220M730 180V220M780 180V220"/></g><g stroke="#b8893c" stroke-width="4" fill="none"><path d="M325 155H575M560 142L580 155L560 168"/></g><g fill="#17324d" font-family="Tahoma,Arial" font-size="19" text-anchor="middle"><text x="195" y="42">ETABS</text><text x="705" y="42">SAFE</text><text x="450" y="135">تبادل بيانات</text><text x="450" y="180" font-size="14">أحمال · ردود أفعال · مناسيب</text><text x="195" y="275" font-size="15">نموذج المبنى والأدوار</text><text x="705" y="275" font-size="15">بلاطة أو لبشة وتحليلها</text></g></svg><figcaption>الشكل (13): التبادل بين البرنامجين مرحلة تحقق مستقلة، وليس مجرد أمر Export/Import. <span>رسم أصلي تعليمي</span></figcaption></figure>
+<h3>قائمة تحقق قبل اعتماد نموذج SAFE</h3>
+<ol>
+<li>حدد هل النموذج لبشة أم بلاطة دور أم قاعدة منفصلة، وحدد المساحة والحدود ومناسيب العناصر.</li>
+<li>راجع أماكن الأعمدة والحوائط واتجاهاتها وأبعادها ومناسيب الدعم، وتأكد من تطابقها مع نموذج ETABS.</li>
+<li>حدد أنواع الأحمال التي انتقلت: هل تشمل الوزن الذاتي أم لا؟ هل التشطيبات والحوائط والأحمال الحية موجودة؟</li>
+<li>تأكد من عدم تكرار Self Weight أو أي حمل تم إدخاله مرة أخرى يدويًا.</li>
+<li>قارن مجموع الأحمال الرأسية وردود الأفعال بين النموذجين للحالات القابلة للمقارنة، بعد توحيد الوحدات والإشارات.</li>
+<li>راجع تركيبات الأحمال في SAFE، وما إذا كانت حالات التحليل أو معاملات الجمع مطابقة للغرض والكود.</li>
+<li>إذا استخدمت نوابض تربة، راجع المصدر والوحدات والتوزيع وافتراضات الشد والضغط والطفو.</li>
+<li>نفذ فحصًا مستقلًا للقص الثاقب والانحناء والقص والهبوط، ولا تعتمد على التسليح المرسل قبل مراجعة الفروض.</li>
+</ol>
+<div class="note"><strong>نقطة حساسة:</strong> تساوي رد فعل عمود في ETABS مع حمل العمود في SAFE لا يكفي وحده. يجب معرفة حالة التحميل التي تمثلها القيمة، وهل هي خدمة أم مقاومة، وهل تتضمن تأثيرات P-Delta أو تركيبات معينة، وهل اتجاه الإشارة والوحدات متطابقان.</div>
+</section>
+
+<section id="sap">
+<h2>16. متى يكون SAP2000 هو الاختيار الأفضل؟</h2>
+<p>استخدم SAP2000 عندما تكون طبيعة المنشأ أو طريقة التحليل عامة أو غير نمطية بحيث لا يكون تمثيل المبنى التقليدي هو الأنسب. قد يشمل ذلك الأبراج، المنشآت الصناعية، الهياكل الفراغية، بعض الخزانات، الدعامات، الأنظمة ذات الأشكال الخاصة، أو نماذج تتطلب تحكمًا عامًا في أنواع العناصر وحالات التحليل. هذا لا يعني أن كل منشأ من هذه الأنواع لا يمكن تحليله ببرنامج آخر؛ الاختيار يعتمد على خصائص النموذج وإمكانات الإصدار.</p>
+<p>ميزة البرنامج ليست أنه يعطي نتائج «أدق» تلقائيًا؛ الدقة ترتبط بملاءمة النموذج والتحقق من الخواص والتحميل والتقسيم والحالات. قبل بدء نموذج SAP2000، اكتب فرضياتك: هل تستخدم Frame أم Shell أم Solid؟ هل التحليل خطي أم لاخطي؟ هل توجد مراحل تنفيذ أو أحمال متحركة أو استجابة زمنية؟ ثم تحقق من إمكانية تمثيل الفرضيات ضمن الإصدار المتاح.</p>
+</section>
+
+<section id="example">
+<h2>17. مسار مشروع تطبيقي: مبنى خرسانة متعدد الأدوار مع لبشة</h2>
+<p>لنفترض مبنى خرسانة مسلحة من عدة أدوار، به بلاطات وكمرات وأعمدة وحوائط قص، ويرتكز على لبشة. الخطوات التالية توضح تسلسل العمل فقط؛ لا تتضمن قطاعات أو أحمال أو معاملات تصميم رقمية لأنها تعتمد على بيانات مشروع حقيقي.</p>
+<ol>
+<li><strong>استلام البيانات:</strong> راجع المعماري والإنشائي وتقرير التربة وإصدار الكود وموقع المشروع.</li>
+<li><strong>تكوين النموذج العام:</strong> عرّف المحاور والمناسيب، والمواد والقطاعات، والأعمدة والكمرات والحوائط والبلاطات.</li>
+<li><strong>التحقق من الاتصال:</strong> راجع العقد والمحاور المحلية والـOffsets والفتحات والـDiaphragms والـMesh.</li>
+<li><strong>تعريف الأحمال:</strong> افصل الوزن الذاتي عن التشطيبات والحوائط والأحمال الحية والرياح والزلازل والأحمال الخاصة.</li>
+<li><strong>حالات التحليل:</strong> أنشئ الحالات المطلوبة حسب الكود، وعرف Mass Source وModal وResponse Spectrum وP-Delta عند انطباقها.</li>
+<li><strong>تشغيل التحليل:</strong> راجع الأخطاء والتحذيرات والتشوهات وردود الأفعال والاتزان قبل التصميم.</li>
+<li><strong>التصميم الأولي:</strong> صمم الكمرات والأعمدة والحوائط والبلاطات، وافحص الانجراف والقص والتفاصيل.</li>
+<li><strong>نقل نموذج الأساس:</strong> انقل الأحمال أو ردود الأفعال الملائمة إلى SAFE، وتحقق من مجموع الأحمال والدعم.</li>
+<li><strong>تصميم اللبشة:</strong> راجع ضغط التربة والطفو والهبوط والانحناء والقص والثقب والتسليح.</li>
+<li><strong>إغلاق المراجعة:</strong> قارن الحسابات المستقلة، ونسق اللوحات، وسجل أي تعديلات على النموذج والقطاعات.</li>
+</ol>
+<figure class="diagram"><svg viewBox="0 0 900 360" role="img" aria-labelledby="fig14t fig14d"><title id="fig14t">دورة العمل العملية لمشروع مبنى ولبشة</title><desc id="fig14d">مخطط متسلسل يبدأ ببيانات المشروع وينتقل إلى نموذج ETABS والتحليل والتصميم ثم SAFE وتصميم اللبشة ثم المراجعة وإصدار اللوحات.</desc><rect x="10" y="10" width="880" height="340" rx="16" fill="#f3f6f9"/><g fill="#dce6ef" stroke="#52677d" stroke-width="2"><rect x="330" y="35" width="240" height="48" rx="8"/><rect x="330" y="112" width="240" height="48" rx="8"/><rect x="330" y="189" width="240" height="48" rx="8"/><rect x="330" y="266" width="240" height="48" rx="8" fill="#c9e3d6"/></g><g stroke="#52677d" stroke-width="3" fill="none"><path d="M450 83V112M450 160V189M450 237V266"/></g><g fill="#17324d" font-family="Tahoma,Arial" font-size="18" text-anchor="middle"><text x="450" y="66">مدخلات المشروع</text><text x="450" y="143">ETABS: نموذج وتحليل</text><text x="450" y="220">SAFE: البلاطة / اللبشة</text><text x="450" y="296">مراجعة وإصدار اللوحات</text></g><path d="M585 290H755V60H585" stroke="#b8893c" stroke-width="2" stroke-dasharray="6 5" fill="none"/><text x="760" y="175" font-family="Tahoma,Arial" font-size="15" fill="#17324d" transform="rotate(90 760 175)" text-anchor="middle">تعديل ثم إعادة التحليل عند الحاجة</text></svg><figcaption>الشكل (14): العمل تكراري؛ أي تغيير مؤثر في الموديل يستلزم إعادة تحليل ومراجعة النتائج. <span>رسم أصلي تعليمي</span></figcaption></figure>
+</section>
+
+<section id="mistakes">
+<h2>18. أخطاء شائعة لازم تمنعها من البداية</h2>
+<ul>
+<li>بناء الموديل من صورة أو DXF دون تدقيق الأبعاد والمحاور والمناسيب.</li>
+<li>تجاهل عدم اتصال كمرة بعمود أو وجود عقد مكررة قريبة من بعضها.</li>
+<li>إسناد Diaphragm صلب لكل البلاطات دون دراسة الفتحات والمرونة والشكل.</li>
+<li>تكرار الوزن الذاتي أو تحميل الحوائط والتشطيبات أكثر من مرة.</li>
+<li>الخلط بين Load Pattern وLoad Case وLoad Combination.</li>
+<li>استخدام Mass Source افتراضي دون التحقق من مكونات الكتلة.</li>
+<li>نسخ معاملات Response Spectrum أو Scale Factor من مشروع مختلف.</li>
+<li>تجاهل تأثير P-Delta أو تفعيله دون التحقق من حالات التحليل وتسلسلها.</li>
+<li>استخدام نوابض تربة بوحدات أو قيم غير متوافقة مع تقرير التربة.</li>
+<li>الاعتماد على ألوان Contours دون قراءة القيم والاتجاهات والوحدات.</li>
+<li>قبول نسبة التصميم أو التسليح دون مراجعة الكود والتفاصيل وقابلية التنفيذ.</li>
+<li>تعديل الموديل بعد التحليل وعدم إعادة تشغيل الحالات المتأثرة به.</li>
+</ul>
+</section>
+
+<section id="checklist">
+<h2>19. قائمة مراجعة قبل اعتماد الموديل</h2>
+<div class="panel">
+<h3>الهندسة والخواص</h3>
+<ul><li>المحاور والمناسيب والارتفاعات مطابقة للوحات.</li><li>أبعاد وسمك القطاعات والخامات والوحدات صحيحة.</li><li>العناصر متصلة، والمحاور المحلية والـOffsets والـReleases مبررة.</li><li>الـMesh والـDiaphragm يمثلان سلوك البلاطات والحوائط.</li></ul>
+<h3>الأحمال والتحليل</h3>
+<ul><li>لا يوجد تكرار للوزن الذاتي أو الحوائط أو التشطيبات.</li><li>Load Patterns وLoad Cases وCombinations معرفة ومراجعة.</li><li>Mass Source والـModal والـResponse Spectrum متوافقة مع الكود عند الحاجة.</li><li>تأثيرات P-Delta والحالات الخاصة ممثلة عند انطباقها.</li></ul>
+<h3>النتائج والتصميم</h3>
+<ul><li>لا توجد لااستقرارية غير مفسرة أو تحذيرات مؤثرة.</li><li>التشوهات والانجراف وردود الأفعال والاتزان تمت مراجعتها.</li><li>القوى الداخلية والاتجاهات المحلية والقيم والوحدات صحيحة.</li><li>تم إجراء فحوصات مستقلة للحالات الحرجة.</li><li>تمت مراجعة القص والثقب والترخيم والتفاصيل والتسليح وقابلية التنفيذ.</li><li>تم توثيق فرضيات الموديل وإصداره وتاريخ التحليل والمراجعة.</li></ul>
+</div>
+</section>
+
+<section id="refs">
+<h2>20. المراجع الفنية وحدود استخدامها</h2>
+<p>المراجع التالية هي مراجع رسمية من الشركة المطورة للبرامج، وتساعد على فهم طريقة النمذجة والتحليل وإعدادات البرنامج. تختلف واجهات الاستخدام والخصائص المتاحة حسب الإصدار؛ لذلك يجب فتح دليل الإصدار المثبت لديك وعدم تطبيق تعليمات إصدار قديم على إصدار جديد دون مراجعة.</p>
+<ol class="refs">
+<li><a href="https://www.csiamerica.com/about" target="_blank" rel="noopener">Computers and Structures, Inc. – About / Product Overview</a>: وصف عام لنطاق ETABS وSAFE وSAP2000.</li>
+<li><a href="https://web.wiki.csiamerica.com/wiki/spaces/doc/pages/1245505" target="_blank" rel="noopener">CSI Knowledge Base – CSI Analysis Reference Manual</a>: يوضح أن المرجع يغطي المبادئ الفنية العامة للنمذجة والتحليل والتصميم في برامج CSI، وأن النسخة المتاحة ضمن البرنامج من Help &gt; Documentation &gt; Manuals.</li>
+<li><a href="https://docs.csiamerica.com/manuals/etabs/Analysis%20Reference.pdf" target="_blank" rel="noopener">CSI Analysis Reference Manual – ETABS 2016 PDF</a>: مرجع نظري منشور من CSI. يجب مراعاة أن هذا ملف إصدار 2016، فلا يُستخدم باعتباره دليل واجهة حديثة.</li>
+<li><a href="https://docs.csiamerica.com/help-files/sap/Menus/Define/Load_Cases/Define_Load_Cases.htm" target="_blank" rel="noopener">CSI Help – Define Load Cases</a>: يشرح دور Load Case والفرق بينه وبين Load Pattern.</li>
+<li><a href="https://docs.csiamerica.com/help-files/etabs/Menus/Assign/Shell/Diaphragms_Shells.htm" target="_blank" rel="noopener">CSI ETABS Help – Diaphragms, Shells</a>: يوضح تعيين قيود الـDiaphragm على عناصر Shell الأفقية.</li>
+<li><a href="https://docs.csiamerica.com/help-files/safe/Getting_Started/General_Modeling_Process_and_Tips.htm" target="_blank" rel="noopener">CSI SAFE Help – General Modeling Process and Tips</a>: يوضح خطوات إنشاء نموذج SAFE، وإعداد الكود والوحدات والمواد والخواص والشبكة.</li>
+</ol>
+<p><strong>مراجع الكود:</strong> يجب استخدام إصدار الكود المحلي المعتمد للمشروع (مثل ECP أو SBC) مع مراجع الأحمال والزلازل والخرسانة المرتبطة به. لم نضع هنا معاملات أو نسبًا عددية عامة لتركيبات الأحمال أو مصدر الكتلة أو معاملات الصلابة؛ لأن هذه القيم تعتمد على إصدار الكود ونوع المنشأ والاستخدام والجهة المختصة. لا تنقل إعدادات مشروع آخر دون مطابقة نص الكود المعتمد.</p>
+</section>
+
+<section id="faq">
+<h2>أسئلة متكررة</h2>
+<h3>هل يكفي أن ينتهي التحليل دون Errors؟</h3>
+<p>لا. يجب مراجعة التحذيرات والاتصال والاتزان والتشوهات وردود الأفعال والنتائج. انتهاء الحل العددي لا يثبت صحة الفرضيات أو الأحمال أو تمثيل المنشأ.</p>
+<h3>هل Load Pattern هو نفسه Load Case؟</h3>
+<p>لا. الـPattern يصف الحمل، والـCase يصف طريقة تطبيقه وحساب الاستجابة، والـCombination يجمع نتائج الحالات طبقًا لقواعد التصميم والخدمة.</p>
+<h3>هل أستخدم Rigid Diaphragm في كل الأدوار؟</h3>
+<p>ليس بالضرورة. يجب اختيار فرضية تمثيل البلاطة من سلوكها وصلابتها وفتحاتها وشكل الدور ومسار القوى ومتطلبات الكود.</p>
+<h3>هل SAFE ضروري بعد ETABS؟</h3>
+<p>ليس في كل مشروع. إذا كان تصميم البلاطات أو الأساسات يحتاج نموذجًا منفصلًا أكثر ملاءمة، يمكن استخدام SAFE، مع التحقق من الأحمال وردود الأفعال والوحدات والافتراضات المنقولة.</p>
+<h3>هل أعتمد التسليح الخارج من البرنامج مباشرة؟</h3>
+<p>لا. راجع الكود وإعدادات التصميم والقطاعات والتفاصيل والقص والترخيم والتشققات والتزاحم وقابلية التنفيذ، وأجرِ فحوصات مستقلة للحالات الحرجة.</p>
+</section>
+
+<div class="tags"><span class="tag">ETABS</span><span class="tag">SAFE</span><span class="tag">SAP2000</span><span class="tag">التحليل الإنشائي</span><span class="tag">النمذجة الإنشائية</span><span class="tag">P-Delta</span><span class="tag">Response Spectrum</span><span class="tag">Mass Source</span><span class="tag">Diaphragm</span><span class="tag">Finite Element</span></div>
+<a class="cta" href="https://hamzaaldeeb.github.io/">للاطلاع على السيرة الذاتية والمشروعات والخدمات الهندسية – م. حمزة أبو الديب</a>
+<div class="footer">
+<p><strong>إعداد:</strong> م. حمزة أبو الديب – مهندس تصميم إنشائي | الديب للتصميم الإنشائي.</p>
+<p>مقالات مرتبطة:</p>
+<div class="related">
+<a href="/structural-codes-comparison.html">مقارنة الأكواد</a>
+<a href="/rc-column-design.html">تصميم الأعمدة</a>
+<a href="/reinforced-concrete-beams.html">تصميم الكمرات</a>
+<a href="/reinforced-concrete-slabs.html">تصميم البلاطات</a>
+<a href="/stairs-retaining-walls-tanks.html">العناصر الإنشائية الخاصة</a>
+<a href="/articles.html">كل المقالات</a>
+</div>
+<p class="small">المحتوى تعليمي ولا يغني عن التصميم والمراجعة والاعتماد من مهندس إنشائي مؤهل وفق الكود المعتمد وبيانات المشروع.</p>
+</div>
+</article></main>
+</body></html>
