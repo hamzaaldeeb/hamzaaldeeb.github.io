@@ -355,6 +355,14 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 .permit-request{margin-top:12px;padding:9px 15px;border:0;border-radius:8px;background:var(--acc);color:#111;font:inherit;font-weight:700;cursor:pointer}
 
 
+/* Personal photos feed */
+.pp-feed{display:grid;gap:22px;max-width:560px;margin:0 auto}
+.pp-post{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.pp-post img{display:block;width:100%;height:auto}
+.pp-body{padding:14px 18px 16px}
+.pp-body p{margin:0 0 8px;font-size:.98rem}
+.pp-body .pp-tags{color:var(--acc);font-size:.88rem;line-height:1.7;margin:0;word-spacing:4px}
+
 /* Accessibility and print-friendly CV */
 :focus-visible{scroll-margin-top:82px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
@@ -1588,6 +1596,56 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   </div>
 </div>
 
+
+<section id="personal-photos">
+  <div class="wrap">
+    <h2><span class="ar">صور شخصية</span><span class="en">Personal Photos</span></h2>
+    <div class="pp-feed">
+      <article class="pp-post">
+        <img src="/personal-photos/suit-portrait.jpg" alt="Structural engineer in Makkah" loading="lazy" decoding="async">
+        <div class="pp-body">
+          <p class="ar">أنا م. حمزة أبو الديب، مهندس تصميم إنشائي في مكة المكرمة. بصمم وبحلل المباني الخرسانية وبجهز اللوحات والمذكرات الحسابية.</p><p class="en">I'm Eng. Hamza Al Deeb, a structural design engineer in Makkah. I design and analyze reinforced-concrete buildings and prepare drawings and calculation reports.</p>
+          <p class="pp-tags ar" dir="rtl">#مهندس_إنشائي #تصميم_إنشائي #مكة_المكرمة</p><p class="pp-tags en" dir="ltr">#StructuralEngineer #Makkah #ETABS</p>
+        </div>
+      </article>
+      <article class="pp-post">
+        <img src="/personal-photos/blue-plaid-portrait.jpg" alt="Engineering consultancy" loading="lazy" decoding="async">
+        <div class="pp-body">
+          <p class="ar">من المكتب. شغلي على نماذج ETABS وSAFE وSAP2000 وAutoCAD، وبتابع كل مشروع بحسب كود SBC وACI وECP.</p><p class="en">From the office. I work with ETABS, SAFE, SAP2000 and AutoCAD, following SBC, ACI and ECP as each project requires.</p>
+          <p class="pp-tags ar" dir="rtl">#استشارات_هندسية #مكتب_هندسي #السعودية</p><p class="pp-tags en" dir="ltr">#EngineeringConsultant #StructuralDesign #SaudiArabia</p>
+        </div>
+      </article>
+      <article class="pp-post">
+        <img src="/personal-photos/road-selfie.jpg" alt="Site supervision" loading="lazy" decoding="async">
+        <div class="pp-body">
+          <p class="ar">من الطريق. الخبرة عندي مش مكتب بس، فيه زيارات موقع وإشراف على التنفيذ وفحص بنود الأعمال.</p><p class="en">On the road. My work is not only at a desk: it includes site visits, execution supervision and work-item inspection.</p>
+          <p class="pp-tags ar" dir="rtl">#إشراف_هندسي #موقع_عمل #مهندس_موقع</p><p class="pp-tags en" dir="ltr">#SiteEngineer #ConstructionSupervision #CivilEngineering</p>
+        </div>
+      </article>
+      <article class="pp-post">
+        <img src="/personal-photos/mecca-clock-tower-selfie.jpg" alt="Makkah Al-Mukarramah" loading="lazy" decoding="async">
+        <div class="pp-body">
+          <p class="ar">قدام برج الساعة في مكة المكرمة، المدينة اللي أشتغل فيها وبخدم مشاريعها.</p><p class="en">In front of the Makkah Clock Tower, the city where I work and serve projects.</p>
+          <p class="pp-tags ar" dir="rtl">#مكة_المكرمة #برج_الساعة #مهندس_في_مكة</p><p class="pp-tags en" dir="ltr">#Makkah #MakkahClockTower #EngineerInMakkah</p>
+        </div>
+      </article>
+      <article class="pp-post">
+        <img src="/personal-photos/umrah-photo.jpg" alt="Umrah" loading="lazy" decoding="async">
+        <div class="pp-body">
+          <p class="ar">لحظة من العمرة في الحرم المكي. الحمد لله على نعمة القرب من بيته.</p><p class="en">A moment from Umrah at the Grand Mosque in Makkah. Grateful to be close to the Holy House.</p>
+          <p class="pp-tags ar" dir="rtl">#عمرة #الحرم_المكي #مكة_المكرمة</p><p class="pp-tags en" dir="ltr">#Umrah #MasjidAlHaram #Makkah</p>
+        </div>
+      </article>
+      <article class="pp-post">
+        <img src="/personal-photos/soldier-portrait.jpg" alt="A salute to Egypt" loading="lazy" decoding="async">
+        <div class="pp-body">
+          <p class="ar">صورة بطابع عسكري وعلم مصر، تحية لبلدي الأصلي. أنا اشتغلت في مشروعات في مصر والسعودية.</p><p class="en">A portrait with a military look and the Egyptian flag, a salute to my home country. I have worked on projects in both Egypt and Saudi Arabia.</p>
+          <p class="pp-tags ar" dir="rtl">#مصر #مهندس_مصري #السعودية_ومصر</p><p class="pp-tags en" dir="ltr">#Egypt #EgyptianEngineer #EgyptAndSaudi</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 </main>
 
 <a class="floating-whatsapp" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D9%88%D8%B5%D9%84%D8%AA%20%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%AD%D9%85%D8%B2%D8%A9%20%D8%A3%D8%A8%D9%88%20%D8%A7%D9%84%D8%AF%D9%8A%D8%A8%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A9%20%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9." target="_blank" rel="noopener" aria-label="ابدأ استفسارًا هندسيًا عبر واتساب"><span class="whatsapp-status-dot" aria-hidden="true"></span><span class="ar">ابدأ استفسارك واتساب</span><span class="en">WhatsApp Inquiry</span></a>
