@@ -355,6 +355,14 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 .permit-request{margin-top:12px;padding:9px 15px;border:0;border-radius:8px;background:var(--acc);color:#111;font:inherit;font-weight:700;cursor:pointer}
 
 
+/* Personal photos feed */
+.pp-feed{display:grid;gap:22px;max-width:560px;margin:0 auto}
+.pp-post{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.pp-post img{display:block;width:100%;height:auto}
+.pp-body{padding:14px 18px 16px}
+.pp-body p{margin:0 0 8px;font-size:.98rem}
+.pp-body .pp-tags{color:var(--acc);font-size:.88rem;line-height:1.7;margin:0;word-spacing:4px}
+
 /* Accessibility and print-friendly CV */
 :focus-visible{scroll-margin-top:82px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
@@ -1588,6 +1596,56 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
   </div>
 </div>
 
+
+<section id="personal-photos">
+  <div class="wrap">
+    <h2><span class="ar">صور شخصية</span><span class="en">Personal Photos</span></h2>
+    <div class="pp-feed">
+      <article class="pp-post">
+        <img src="/personal-photos/suit-portrait.jpg" alt="Structural engineer in Makkah" loading="lazy" decoding="async">
+        <div class="pp-body">
+          <p class="ar">أنا المهندس حمزة أبو الديب، مهندس تصميم إنشائي في مكة المكرمة. شغلي هو تحويل أفكار المباني إلى تصميمات آمنة ومدروسة، من التحليل الإنشائي وحتى تسليم اللوحات التنفيذية والمذكرات الحسابية.</p><p class="en">I'm Eng. Hamza Al Deeb, a structural design engineer based in Makkah. I turn building ideas into safe, carefully studied designs, from structural analysis to delivered working drawings and calculation reports.</p>
+          <p class="pp-tags ar" dir="rtl">#حمزة_أبو_الديب #مهندس_إنشائي #تصميم_إنشائي #مكة_المكرمة</p><p class="pp-tags en" dir="ltr">#HamzaAlDeeb #StructuralEngineer #Makkah #StructuralDesign</p>
+        </div>
+      </article>
+      <article class="pp-post">
+        <img src="/personal-photos/blue-plaid-portrait.jpg" alt="Engineering consultancy" loading="lazy" decoding="async">
+        <div class="pp-body">
+          <p class="ar">من المكتب، قلب الشغل الفني. يومي بيدور على نماذج ETABS وSAFE وSAP2000 ورسومات AutoCAD، وكل نموذج بتراجع نتائجه على الكود المنطبق على المشروع: SBC وACI وECP.</p><p class="en">From the office, where the technical work happens. My day runs on ETABS, SAFE and SAP2000 models and AutoCAD drawings, each checked against the code its project follows: SBC, ACI or ECP.</p>
+          <p class="pp-tags ar" dir="rtl">#استشارات_هندسية #مكتب_هندسي #السعودية</p><p class="pp-tags en" dir="ltr">#EngineeringConsultant #StructuralDesign #SaudiArabia</p>
+        </div>
+      </article>
+      <article class="pp-post">
+        <img src="/personal-photos/road-selfie.jpg" alt="Site supervision" loading="lazy" decoding="async">
+        <div class="pp-body">
+          <p class="ar">ومن الطريق إلى الموقع. الهندسة مش مكتب وشاشة وبس؛ زيارات الموقع والإشراف على التنفيذ وفحص بنود الأعمال جزء أساسي من شغلي، عشان اللي على الورق يطلع زيه بالظبط على الأرض.</p><p class="en">From the road to the site. Engineering is not just a desk and a screen; site visits, execution supervision and work-item inspection are a core part of my work, so what's on paper comes out exactly the same on the ground.</p>
+          <p class="pp-tags ar" dir="rtl">#إشراف_هندسي #موقع_عمل #مهندس_موقع</p><p class="pp-tags en" dir="ltr">#SiteEngineer #ConstructionSupervision #CivilEngineering</p>
+        </div>
+      </article>
+      <article class="pp-post">
+        <img src="/personal-photos/mecca-clock-tower-selfie.jpg" alt="Makkah Al-Mukarramah" loading="lazy" decoding="async">
+        <div class="pp-body">
+          <p class="ar">قدام برج الساعة، في قلب مكة المكرمة. المدينة اللي بشتغل فيها، وبحاول أسيب فيها بصمة مع كل مشروع.</p><p class="en">In front of the Makkah Clock Tower, in the heart of Makkah. The city I work in, and where I try to leave a mark with every project.</p>
+          <p class="pp-tags ar" dir="rtl">#مكة_المكرمة #برج_الساعة #مهندس_في_مكة</p><p class="pp-tags en" dir="ltr">#Makkah #MakkahClockTower #EngineerInMakkah</p>
+        </div>
+      </article>
+      <article class="pp-post">
+        <img src="/personal-photos/umrah-photo.jpg" alt="Umrah" loading="lazy" decoding="async">
+        <div class="pp-body">
+          <p class="ar">لحظة عمرة لا تُنسى من الحرم المكي الشريف. الحمد لله على نعمة القرب من بيته العتيق.</p><p class="en">An unforgettable Umrah moment at the Grand Mosque in Makkah. Grateful for the blessing of standing this close to the Holy House.</p>
+          <p class="pp-tags ar" dir="rtl">#عمرة #الحرم_المكي #مكة_المكرمة</p><p class="pp-tags en" dir="ltr">#Umrah #MasjidAlHaram #Makkah</p>
+        </div>
+      </article>
+      <article class="pp-post">
+        <img src="/personal-photos/soldier-portrait.jpg" alt="A salute to Egypt" loading="lazy" decoding="async">
+        <div class="pp-body">
+          <p class="ar">صورة بطابع عسكري وعلم مصر، تحية لبلدي وموطني الأصلي. فخور بجذوري المصرية، وبخبرة شغل ممتدة بين مصر والسعودية.</p><p class="en">A military-styled portrait with the Egyptian flag, a salute to my home country. Proud of my Egyptian roots, and of work experience that spans Egypt and Saudi Arabia.</p>
+          <p class="pp-tags ar" dir="rtl">#مصر #مهندس_مصري #السعودية_ومصر</p><p class="pp-tags en" dir="ltr">#Egypt #EgyptianEngineer #EgyptAndSaudi</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 </main>
 
 <a class="floating-whatsapp" href="https://wa.me/966561565066?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D9%88%D8%B5%D9%84%D8%AA%20%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%AD%D9%85%D8%B2%D8%A9%20%D8%A3%D8%A8%D9%88%20%D8%A7%D9%84%D8%AF%D9%8A%D8%A8%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A9%20%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9." target="_blank" rel="noopener" aria-label="ابدأ استفسارًا هندسيًا عبر واتساب"><span class="whatsapp-status-dot" aria-hidden="true"></span><span class="ar">ابدأ استفسارك واتساب</span><span class="en">WhatsApp Inquiry</span></a>
