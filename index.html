@@ -994,70 +994,130 @@ section .wrap>h2::before{width:4px;height:20px;flex:0 0 4px}
 <style>
 #featured-projects{padding:34px 0 30px;border-top:1px solid var(--line)}#featured-projects h2{margin:0 0 10px}
 #featured-projects .fp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:18px}
-#featured-projects .fp-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s}
-#featured-projects .fp-card:hover,#featured-projects .fp-card:focus-visible{transform:translateY(-4px);border-color:rgba(245,165,36,.65)}
-#featured-projects .fp-card img{width:100%;height:190px;object-fit:cover;display:block;background:#0b1220}
-#featured-projects .fp-body{padding:16px 18px 18px}
+#featured-projects .fp-card{display:flex;flex-direction:column;text-align:inherit;font:inherit;padding:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;color:inherit;cursor:pointer;transition:transform .2s,border-color .2s}
+#featured-projects .fp-card:hover,#featured-projects .fp-card:focus-visible{transform:translateY(-4px);border-color:rgba(245,165,36,.65);outline:none}
+#featured-projects .fp-thumb{display:block;aspect-ratio:4/3;background:#0b1220;width:100%}
+#featured-projects .fp-thumb img{width:100%;height:100%;object-fit:contain;display:block}
+#featured-projects .fp-body{display:block;padding:16px 18px 18px}
 #featured-projects .fp-type{display:inline-block;font-size:.8rem;font-weight:700;color:#ffc45b;border:1px solid rgba(245,165,36,.5);border-radius:999px;padding:2px 11px}
-#featured-projects h3{margin:10px 0 8px;font-size:1.12rem}
-#featured-projects .fp-row{margin:4px 0;font-size:.92rem;line-height:1.7;color:var(--muted,#bdc9dc)}
+#featured-projects .fp-title{display:block;margin:10px 0 8px;font-size:1.12rem}
+#featured-projects .fp-row{display:block;margin:4px 0;font-size:.92rem;line-height:1.7;color:var(--muted,#bdc9dc)}
 #featured-projects .fp-row b{color:#ffd27c}
-#featured-projects .fp-more{text-align:center;margin-top:22px}
-.latest-articles a{display:block;padding:8px 12px;border:1px solid var(--line);border-radius:10px;color:#ffd27c;text-decoration:none;font-size:.92rem}.latest-articles a:hover{border-color:var(--acc)}
+#featured-projects .fp-open{display:block;margin-top:10px;color:#ffc45b;font-weight:700;font-size:.9rem}
+.fp-modal{position:fixed;inset:0;z-index:9999;background:rgba(3,8,18,.88);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:20px 12px}
+.fp-modal.open{display:flex}
+.fp-dialog{position:relative;width:min(100%,900px);background:#0f1a30;border:1px solid var(--line);border-radius:16px;padding:20px 18px 24px;margin:auto}
+.fp-close{position:sticky;top:0;float:left;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#14233f;color:#fff;font-size:24px;line-height:1;cursor:pointer;z-index:2}
+.fp-gal{display:grid;gap:12px;margin:8px 0 18px;clear:both}
+.fp-gal img{width:100%;height:auto;max-height:78vh;object-fit:contain;background:#0b1220;border-radius:10px;display:block}
+.fp-info .meta{color:#ffc45b;font-size:.85rem;font-weight:700}.fp-info h3{margin:6px 0 10px;font-size:1.3rem}.fp-info p{line-height:1.9;margin:8px 0}
 </style>
+<style>.latest-articles a{display:block;padding:8px 12px;border:1px solid var(--line);border-radius:10px;color:#ffd27c;text-decoration:none;font-size:.92rem}.latest-articles a:hover{border-color:var(--acc)}</style>
 <div id="featured-projects" class="fp-section">
   <div class="wrap">
     <h2><span class="ar">أبرز المشاريع</span><span class="en">Featured Projects</span></h2>
-    <p class="projects-intro ar">ست نماذج من أعمالي: النوع، والموقع، ونطاق العمل، والبرامج المستخدمة. اضغط على أي بطاقة لعرض كل المشاريع بصورها.</p>
-    <p class="projects-intro en">Six examples of my work: type, area, scope and tools. Tap any card to see all projects with their photos.</p>
+    <p class="projects-intro ar">نماذج من أعمالي: النوع، والموقع، ونطاق العمل، والبرامج المستخدمة. اضغط على أي مشروع لعرض تفاصيله وكل صوره.</p>
+    <p class="projects-intro en">Examples of my work: type, area, scope and tools. Tap any project to see its details and all photos.</p>
     <div class="fp-grid">
-<a class="fp-card" href="#projects">
-<img src="IMG-20261111-WA0002.jpg" alt="عمارة ٨ أدوار" loading="lazy" decoding="async">
-<div class="fp-body"><span class="fp-type"><span class="ar">مبنى سكني – عمارة</span><span class="en">Residential building</span></span>
-<h3><span class="ar">عمارة ٨ أدوار</span><span class="en">8-Storey Residential Building</span></h3>
-<p class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">منشآت خالدة – مكة المكرمة</span><span class="en">Munshaat Khalda – Makkah</span></p>
-<p class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">أعمدة مزروعة، منها أعمدة على كابولي بطول ٢ م، ومساحات واسعة بلا أعمدة.</span><span class="en">Transfer columns, including columns on a 2 m cantilever, and wide column-free spaces.</span></p>
-<p class="fp-row"><b><span class="ar">البرامج:</span><span class="en">Tools:</span></b> <span class="ar">AutoCAD، ETABS، SAFE</span><span class="en">AutoCAD, ETABS, SAFE</span></p></div></a>
-<a class="fp-card" href="#projects">
-<img src="IMG-20261112-WA0052.jpg" alt="عمارة سكنية – ١١ وحدة" loading="lazy" decoding="async">
-<div class="fp-body"><span class="fp-type"><span class="ar">مبنى سكني – عمارة</span><span class="en">Residential building</span></span>
-<h3><span class="ar">عمارة سكنية – ١١ وحدة</span><span class="en">Residential Building – 11 Units</span></h3>
-<p class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">منشآت خالدة – مكة المكرمة</span><span class="en">Munshaat Khalda – Makkah</span></p>
-<p class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">دور مواقف، وأرضي، ودورين متكررين، ومبيتات؛ دراسة أماكن الأعمدة لتحقيق عدد المواقف المطلوب.</span><span class="en">Parking level, ground floor, two typical floors and mezzanine; column layout set to achieve the required parking count.</span></p>
-</div></a>
-<a class="fp-card" href="#projects">
-<img src="IMG-20261112-WA0039.jpg" alt="فيلا سكنية – العوالي" loading="lazy" decoding="async">
-<div class="fp-body"><span class="fp-type"><span class="ar">فيلا سكنية</span><span class="en">Residential villa</span></span>
-<h3><span class="ar">فيلا سكنية – العوالي</span><span class="en">Residential Villa – Al Awali</span></h3>
-<p class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">العوالي، مكة المكرمة</span><span class="en">Al Awali, Makkah</span></p>
-<p class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">بدرومان، وأرضي وأول وعلوي، و٤ حمامات سباحة؛ دراسة أحمال التربة حتى ٩ م أسفل منسوب الصفر.</span><span class="en">Two basements, ground, first and upper floors, four swimming pools; soil loads evaluated down to 9 m below ±0.00.</span></p>
-</div></a>
-<a class="fp-card" href="#projects">
-<img src="IMG-20261111-WA0021.jpg" alt="مستشفى الناصر الطبي" loading="lazy" decoding="async">
-<div class="fp-body"><span class="fp-type"><span class="ar">مبنى طبي – مستشفى</span><span class="en">Healthcare – hospital</span></span>
-<h3><span class="ar">مستشفى الناصر الطبي</span><span class="en">Al Nasser Medical Hospital</span></h3>
-<p class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">برج العرب – الإسكندرية (ECG)</span><span class="en">Borg El Arab, Alexandria (ECG)</span></p>
-<p class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">قطعة ١٥٠٠ م²: بدروم ودور انتظار وخمسة أدوار بغرف عمليات وكشف وإقامة.</span><span class="en">1,500 m² plot: basement, parking level and five floors with operating, examination and patient rooms.</span></p>
-<p class="fp-row"><b><span class="ar">البرامج:</span><span class="en">Tools:</span></b> <span class="ar">AutoCAD، ETABS، SAFE</span><span class="en">AutoCAD, ETABS, SAFE</span></p></div></a>
-<a class="fp-card" href="#projects">
-<img src="Screenshot_٢٠٢٦١١٠٩_١٤١٠١٢_Chrome.jpg" alt="مول تجاري – ١٠٠٠٠ م²" loading="lazy" decoding="async">
-<div class="fp-body"><span class="fp-type"><span class="ar">مبنى تجاري – مول</span><span class="en">Commercial – shopping mall</span></span>
-<h3><span class="ar">مول تجاري – ١٠٠٠٠ م²</span><span class="en">Commercial Mall – 10,000 m²</span></h3>
-<p class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">العاشر من رمضان (BK Group)</span><span class="en">10th of Ramadan City (BK Group)</span></p>
-<p class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">تصميم وتحليل إنشائي، وحصر كميات حديد التسليح والخرسانة.</span><span class="en">Structural design and analysis, plus reinforcement steel and concrete quantity takeoffs.</span></p>
-<p class="fp-row"><b><span class="ar">البرامج:</span><span class="en">Tools:</span></b> <span class="ar">AutoCAD، ETABS، SAFE</span><span class="en">AutoCAD, ETABS, SAFE</span></p></div></a>
-<a class="fp-card" href="#projects">
-<img src="IMG-20261109-WA0003.jpg" alt="مدرسة العلمين" loading="lazy" decoding="async">
-<div class="fp-body"><span class="fp-type"><span class="ar">مبنى تعليمي – مدرسة</span><span class="en">Educational – school</span></span>
-<h3><span class="ar">مدرسة العلمين</span><span class="en">Al Alamein School</span></h3>
-<p class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">ECG</span><span class="en">ECG</span></p>
-<p class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">فلات سلاب وبانلد بيم وسوليد سلاب، وقاعات ٢٠×٢٥ م بلا أعمدة داخلية، وحمامات سباحة وخزانات.</span><span class="en">Flat slabs, panelled beams and solid slabs; 20 × 25 m halls without internal columns; pools and water tanks.</span></p>
-<p class="fp-row"><b><span class="ar">البرامج:</span><span class="en">Tools:</span></b> <span class="ar">AutoCAD، ETABS، SAFE</span><span class="en">AutoCAD, ETABS, SAFE</span></p></div></a>
+<button type="button" class="fp-card" data-fp="4" aria-haspopup="dialog">
+<span class="fp-thumb"><img src="project-thumbs/project-4.jpg" alt="عمارة ٨ أدوار" loading="eager"></span>
+<span class="fp-body"><span class="fp-type"><span class="ar">مبنى سكني – عمارة</span><span class="en">Residential building</span></span>
+<strong class="fp-title"><span class="ar">عمارة ٨ أدوار</span><span class="en">8-Storey Residential Building</span></strong>
+<span class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">منشآت خالدة – مكة المكرمة</span><span class="en">Munshaat Khalda – Makkah</span></span>
+<span class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">أعمدة مزروعة، منها أعمدة على كابولي بطول ٢ م، ومساحات واسعة بلا أعمدة.</span><span class="en">Transfer columns, including columns on a 2 m cantilever, and wide column-free spaces.</span></span>
+<span class="fp-row"><b><span class="ar">البرامج:</span><span class="en">Tools:</span></b> <span class="ar">AutoCAD، ETABS، SAFE</span><span class="en">AutoCAD, ETABS, SAFE</span></span><span class="fp-open"><span class="ar">عرض التفاصيل والصور ←</span><span class="en">View details &amp; photos →</span></span></span></button>
+<button type="button" class="fp-card" data-fp="6" aria-haspopup="dialog">
+<span class="fp-thumb"><img src="project-thumbs/project-6.jpg" alt="عمارة سكنية – ١١ وحدة" loading="eager"></span>
+<span class="fp-body"><span class="fp-type"><span class="ar">مبنى سكني – عمارة</span><span class="en">Residential building</span></span>
+<strong class="fp-title"><span class="ar">عمارة سكنية – ١١ وحدة</span><span class="en">Residential Building – 11 Units</span></strong>
+<span class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">منشآت خالدة – مكة المكرمة</span><span class="en">Munshaat Khalda – Makkah</span></span>
+<span class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">دور مواقف، وأرضي، ودورين متكررين، ومبيتات؛ دراسة أماكن الأعمدة لتحقيق عدد المواقف المطلوب.</span><span class="en">Parking level, ground floor, two typical floors and mezzanine; column layout set to achieve the required parking count.</span></span>
+<span class="fp-open"><span class="ar">عرض التفاصيل والصور ←</span><span class="en">View details &amp; photos →</span></span></span></button>
+<button type="button" class="fp-card" data-fp="5" aria-haspopup="dialog">
+<span class="fp-thumb"><img src="project-thumbs/project-5.jpg" alt="عمارة سكنية – ٦ أدوار" loading="eager"></span>
+<span class="fp-body"><span class="fp-type"><span class="ar">مبنى سكني – عمارة</span><span class="en">Residential building</span></span>
+<strong class="fp-title"><span class="ar">عمارة سكنية – ٦ أدوار</span><span class="en">6-Storey Residential Building</span></strong>
+<span class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">منشآت خالدة – مكة المكرمة</span><span class="en">Munshaat Khalda – Makkah</span></span>
+<span class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">عمارة سكنية مكوّنة من ٦ أدوار.</span><span class="en">A 6-storey residential building.</span></span>
+<span class="fp-open"><span class="ar">عرض التفاصيل والصور ←</span><span class="en">View details &amp; photos →</span></span></span></button>
+<button type="button" class="fp-card" data-fp="8" aria-haspopup="dialog">
+<span class="fp-thumb"><img src="project-thumbs/project-8.jpg" alt="فيلا سكنية – العوالي" loading="eager"></span>
+<span class="fp-body"><span class="fp-type"><span class="ar">فيلا سكنية</span><span class="en">Residential villa</span></span>
+<strong class="fp-title"><span class="ar">فيلا سكنية – العوالي</span><span class="en">Residential Villa – Al Awali</span></strong>
+<span class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">العوالي، مكة المكرمة</span><span class="en">Al Awali, Makkah</span></span>
+<span class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">بدرومان، وأرضي وأول وعلوي، و٤ حمامات سباحة؛ دراسة أحمال التربة حتى ٩ م أسفل منسوب الصفر.</span><span class="en">Two basements, ground, first and upper floors, four swimming pools; soil loads evaluated down to 9 m below ±0.00.</span></span>
+<span class="fp-open"><span class="ar">عرض التفاصيل والصور ←</span><span class="en">View details &amp; photos →</span></span></span></button>
+<button type="button" class="fp-card" data-fp="9" aria-haspopup="dialog">
+<span class="fp-thumb"><img src="project-thumbs/project-9.jpg" alt="فيلا سكنية – مكة المكرمة" loading="eager"></span>
+<span class="fp-body"><span class="fp-type"><span class="ar">فيلا سكنية</span><span class="en">Residential villa</span></span>
+<strong class="fp-title"><span class="ar">فيلا سكنية – مكة المكرمة</span><span class="en">Residential Villa – Makkah</span></strong>
+<span class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">منشآت خالدة – مكة المكرمة</span><span class="en">Munshaat Khalda – Makkah</span></span>
+<span class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">بدروم بحمام سباحة، ودور أرضي وأول، ومبيتات بارتفاعات تصل إلى ٤.٥ م.</span><span class="en">Basement with a swimming pool, ground and first floors, and mezzanines up to 4.5 m high.</span></span>
+<span class="fp-open"><span class="ar">عرض التفاصيل والصور ←</span><span class="en">View details &amp; photos →</span></span></span></button>
+<button type="button" class="fp-card" data-fp="7" aria-haspopup="dialog">
+<span class="fp-thumb"><img src="project-thumbs/project-7.jpg" alt="فيلا سكنية – أرضي وأول وملحقات" loading="eager"></span>
+<span class="fp-body"><span class="fp-type"><span class="ar">فيلا سكنية</span><span class="en">Residential villa</span></span>
+<strong class="fp-title"><span class="ar">فيلا سكنية – أرضي وأول وملحقات</span><span class="en">Residential Villa – Ground, First & Annex</span></strong>
+<span class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">منشآت خالدة – مكة المكرمة</span><span class="en">Munshaat Khalda – Makkah</span></span>
+<span class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">فيلا سكنية من دور أرضي وأول وملحقات.</span><span class="en">A residential villa with ground, first and annex floors.</span></span>
+<span class="fp-open"><span class="ar">عرض التفاصيل والصور ←</span><span class="en">View details &amp; photos →</span></span></span></button>
+<button type="button" class="fp-card" data-fp="10" aria-haspopup="dialog">
+<span class="fp-thumb"><img src="project-thumbs/project-10.jpg" alt="مستشفى الناصر الطبي ومركز دراز الطبي" loading="eager"></span>
+<span class="fp-body"><span class="fp-type"><span class="ar">مبنى طبي – مستشفى ومركز طبي</span><span class="en">Healthcare – hospital & medical center</span></span>
+<strong class="fp-title"><span class="ar">مستشفى الناصر الطبي ومركز دراز الطبي</span><span class="en">Al Nasser Medical Hospital & Daraz Medical Center</span></strong>
+<span class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">برج العرب – الإسكندرية (ECG)</span><span class="en">Borg El Arab, Alexandria (ECG)</span></span>
+<span class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">مستشفى على قطعة ١٥٠٠ م²: بدروم ودور انتظار وخمسة أدوار بغرف عمليات وكشف وإقامة.</span><span class="en">Hospital on a 1,500 m² plot: basement, parking level and five floors with operating, examination and patient rooms.</span></span>
+<span class="fp-row"><b><span class="ar">البرامج:</span><span class="en">Tools:</span></b> <span class="ar">AutoCAD، ETABS، SAFE</span><span class="en">AutoCAD, ETABS, SAFE</span></span><span class="fp-open"><span class="ar">عرض التفاصيل والصور ←</span><span class="en">View details &amp; photos →</span></span></span></button>
+<button type="button" class="fp-card" data-fp="2" aria-haspopup="dialog">
+<span class="fp-thumb"><img src="project-thumbs/project-2.jpg" alt="مول ساندرا – برج العرب" loading="eager"></span>
+<span class="fp-body"><span class="fp-type"><span class="ar">مبنى تجاري – مول</span><span class="en">Commercial – shopping mall</span></span>
+<strong class="fp-title"><span class="ar">مول ساندرا – برج العرب</span><span class="en">Sandra Mall – Borg El Arab</span></strong>
+<span class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">برج العرب – الإسكندرية (ECG)</span><span class="en">Borg El Arab, Alexandria (ECG)</span></span>
+<span class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">مول ٤٢٠٠ م² بنظام الفلات سلاب ومساحات واسعة بين الأعمدة.</span><span class="en">A 4,200 m² mall using a flat-slab system with wide column spacing.</span></span>
+<span class="fp-row"><b><span class="ar">البرامج:</span><span class="en">Tools:</span></b> <span class="ar">AutoCAD، ETABS، SAFE</span><span class="en">AutoCAD, ETABS, SAFE</span></span><span class="fp-open"><span class="ar">عرض التفاصيل والصور ←</span><span class="en">View details &amp; photos →</span></span></span></button>
+<button type="button" class="fp-card" data-fp="3" aria-haspopup="dialog">
+<span class="fp-thumb"><img src="project-thumbs/project-3.jpg" alt="مول تجاري – العاشر من رمضان" loading="eager"></span>
+<span class="fp-body"><span class="fp-type"><span class="ar">مبنى تجاري – مول</span><span class="en">Commercial – shopping mall</span></span>
+<strong class="fp-title"><span class="ar">مول تجاري – العاشر من رمضان</span><span class="en">Commercial Mall – 10th of Ramadan City</span></strong>
+<span class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">العاشر من رمضان (BK Group)</span><span class="en">10th of Ramadan City (BK Group)</span></span>
+<span class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">مول ١٠٠٠٠ م²: تصميم وتحليل إنشائي، وحصر كميات حديد التسليح والخرسانة.</span><span class="en">A 10,000 m² mall: structural design and analysis, plus reinforcement steel and concrete quantity takeoffs.</span></span>
+<span class="fp-row"><b><span class="ar">البرامج:</span><span class="en">Tools:</span></b> <span class="ar">AutoCAD، ETABS، SAFE</span><span class="en">AutoCAD, ETABS, SAFE</span></span><span class="fp-open"><span class="ar">عرض التفاصيل والصور ←</span><span class="en">View details &amp; photos →</span></span></span></button>
+<button type="button" class="fp-card" data-fp="1" aria-haspopup="dialog">
+<span class="fp-thumb"><img src="project-thumbs/project-1.jpg" alt="مسجد بمدينة العاشر من رمضان" loading="eager"></span>
+<span class="fp-body"><span class="fp-type"><span class="ar">مبنى ديني – مسجد</span><span class="en">Religious – mosque</span></span>
+<strong class="fp-title"><span class="ar">مسجد بمدينة العاشر من رمضان</span><span class="en">Mosque – 10th of Ramadan City</span></strong>
+<span class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">العاشر من رمضان (BK Group)</span><span class="en">10th of Ramadan City (BK Group)</span></span>
+<span class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">فلات سلاب بارتفاعات حتى ٩ م وبحور حتى ٨ م، وسوليد سلاب في أجزاء من المشروع.</span><span class="en">Flat slab with heights up to 9 m and spans up to 8 m, plus solid slabs in parts of the project.</span></span>
+<span class="fp-row"><b><span class="ar">البرامج:</span><span class="en">Tools:</span></b> <span class="ar">AutoCAD، ETABS، SAFE</span><span class="en">AutoCAD, ETABS, SAFE</span></span><span class="fp-open"><span class="ar">عرض التفاصيل والصور ←</span><span class="en">View details &amp; photos →</span></span></span></button>
+<button type="button" class="fp-card" data-fp="0" aria-haspopup="dialog">
+<span class="fp-thumb"><img src="project-thumbs/project-0.jpg" alt="مدرسة العلمين" loading="eager"></span>
+<span class="fp-body"><span class="fp-type"><span class="ar">مبنى تعليمي – مدرسة</span><span class="en">Educational – school</span></span>
+<strong class="fp-title"><span class="ar">مدرسة العلمين</span><span class="en">Al Alamein School</span></strong>
+<span class="fp-row"><b><span class="ar">الموقع:</span><span class="en">Area:</span></b> <span class="ar">ECG</span><span class="en">ECG</span></span>
+<span class="fp-row"><b><span class="ar">النطاق:</span><span class="en">Scope:</span></b> <span class="ar">فلات سلاب وبانلد بيم وسوليد سلاب، وقاعات ٢٠×٢٥ م بلا أعمدة داخلية، وحمامات سباحة وخزانات.</span><span class="en">Flat slabs, panelled beams and solid slabs; 20 × 25 m halls without internal columns; pools and water tanks.</span></span>
+<span class="fp-row"><b><span class="ar">البرامج:</span><span class="en">Tools:</span></b> <span class="ar">AutoCAD، ETABS، SAFE</span><span class="en">AutoCAD, ETABS, SAFE</span></span><span class="fp-open"><span class="ar">عرض التفاصيل والصور ←</span><span class="en">View details &amp; photos →</span></span></span></button>
     </div>
-    <p class="fp-more"><a class="btn project-btn" href="#projects">▦ <span class="ar">عرض كل المشاريع</span><span class="en">View all projects</span></a></p>
   </div>
 </div>
-
+<div class="fp-modal" id="fpModal" role="dialog" aria-modal="true" aria-hidden="true"><div class="fp-dialog"><button type="button" class="fp-close" id="fpClose" aria-label="إغلاق">×</button><div class="fp-gal" id="fpGal"></div><div class="fp-info" id="fpInfo"></div></div></div>
+<script>
+(function(){
+  var modal=document.getElementById('fpModal'),gal=document.getElementById('fpGal'),info=document.getElementById('fpInfo'),last=null;
+  function close(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';gal.innerHTML='';info.innerHTML='';if(last)last.focus()}
+  document.querySelectorAll('#featured-projects .fp-card').forEach(function(b){
+    b.addEventListener('click',function(){
+      var art=document.querySelectorAll('#projects .project-card')[+b.dataset.fp];if(!art)return;
+      last=b;gal.innerHTML='';info.innerHTML='';
+      art.querySelectorAll('img.project-image').forEach(function(im){var n=document.createElement('img');n.src=im.getAttribute('src');n.alt=im.alt||'';gal.appendChild(n)});
+      var body=art.querySelector('.project-body');if(body)info.innerHTML=body.innerHTML;
+      modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';modal.scrollTop=0;document.getElementById('fpClose').focus();
+    });
+  });
+  document.getElementById('fpClose').addEventListener('click',close);
+  modal.addEventListener('click',function(e){if(e.target===modal)close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))close()});
+})();
+</script>
 <section id="services" class="alt">
   <div class="wrap">
     <h2><span class="ar">الخدمات الهندسية</span><span class="en">Engineering Services</span></h2>
